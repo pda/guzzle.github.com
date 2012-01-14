@@ -121,7 +121,19 @@
   <div class="well">
       <h4>Table of contents</h4>
       <ul>
-<li><a class="reference internal" href="#">Upgrading from Guzzle 1.x to Guzzle 2.0</a></li>
+<li><a class="reference internal" href="#">Upgrading from Guzzle 1.x to Guzzle 2.0</a><ul>
+<li><a class="reference internal" href="#general">General</a></li>
+<li><a class="reference internal" href="#common">Common</a></li>
+<li><a class="reference internal" href="#http">HTTP</a><ul>
+<li><a class="reference internal" href="#events">Events</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#service">Service</a><ul>
+<li><a class="reference internal" href="#service-description-filters">Service description Filters</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
   </div>
@@ -138,6 +150,64 @@
        
   <div class="section" id="upgrading-from-guzzle-1-x-to-guzzle-2-0">
 <h1>Upgrading from Guzzle 1.x to Guzzle 2.0<a class="headerlink" href="#upgrading-from-guzzle-1-x-to-guzzle-2-0" title="Permalink to this headline">¶</a></h1>
+<p>Guzzle 2.0 has been released.  This release brings a framework that is leaps and bounds better than its predecessor, but it does introduce some breaking changes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using Guzzle 1.0 in product and aren&#8217;t ready to migrate yet, you can always checkout Guzzle using the 1.0.4 tag
+<tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git://github.com/guzzle/guzzle.git</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">v1.0.4</span></tt></p>
+</div>
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Guzzle now uses composer for dependency management and no longer uses git submodules</li>
+</ul>
+</div>
+<div class="section" id="common">
+<h2>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Guzzle\Common\Inspector</span></tt> was moved to <tt class="docutils literal"><span class="pre">Guzzle\Service\Inspector</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Guzzle\Common\Inflector</span></tt> was moved to <tt class="docutils literal"><span class="pre">Guzzle\Common\Inflector</span></tt></li>
+<li>Accepting ZF1 or ZF2 cache in ZendCacheAdapter</li>
+</ul>
+</div>
+<div class="section" id="http">
+<h2>HTTP<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Dropped the code-level persistent connection handling in favor of utilizing curl multi&#8217;s connect cache.  Every request is now by default passed through the same curl multi handle, so you will see improved support for persistent connections when sending requests to the same host serially or in parallel.</li>
+<li>Removed the ability to determine the Content-Type of an EntityBody based on the file extension and now simply relying on finfo</li>
+<li>Removing <tt class="docutils literal"><span class="pre">Guzzle\Http\Pool</span></tt> and now using <tt class="docutils literal"><span class="pre">Guzzle\Http\Curl\CurlMulti</span></tt></li>
+<li>The helper methods from <tt class="docutils literal"><span class="pre">Guzzle\Http\Message\RequestFactory</span></tt> have been removed to prevent confusion and encourage developers to use <tt class="docutils literal"><span class="pre">Guzzle\Http\Client</span></tt> to create requests.</li>
+<li>A client object implementation has been added to the <tt class="docutils literal"><span class="pre">Guzzle\Http</span></tt> namespace for developers who do not need commands or service descriptions.</li>
+<li>Removed custom rawurlencode function from <tt class="docutils literal"><span class="pre">Guzzle\Http\QueryString</span></tt> because PHP 5.3 now properly deals with tilde characters.</li>
+<li>Clients can now send one or more requests in an array using the <tt class="docutils literal"><span class="pre">send()</span></tt> method, so the <tt class="docutils literal"><span class="pre">batch()</span></tt> method was removed.</li>
+<li><tt class="docutils literal"><span class="pre">Guzzle\Http\Message\AbstractMessage::hasHeader()</span></tt> now returns true if the header is found using exact matching.  If the header is found using a regex or case-insensitive match, then it will return the name of the found header.</li>
+</ul>
+<div class="section" id="events">
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Guzzle now uses the <a class="reference external" href="https://github.com/symfony/event-dispatcher">Symfony2 EventDispatcher</a> component to handle its event system.</li>
+<li>The naming conventions used for emitting events has been cleaned up a bit, so some of the previous events being emitted have been renamed or removed.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="service">
+<h2>Service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Service description builders are no longer instantiated and just use a static build() method to create ServiceDescriptions</li>
+<li>Using <tt class="docutils literal"><span class="pre">{{}}</span></tt> instead of <tt class="docutils literal"><span class="pre">$.</span></tt> to reference other services as a dependency for another service</li>
+<li>Removing caching arguments from ServiceBuilder because the data being cached is extremely fast to generate. Added a method to serialize the ServiceDescription in case a ServiceDescription needs to be cached in at the  application level.</li>
+</ul>
+<div class="section" id="service-description-filters">
+<h3>Service description Filters<a class="headerlink" href="#service-description-filters" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Guzzle now uses the <a class="reference external" href="https://github.com/symfony/Validator">Symfony2 Validator</a> component to handle validating that values in a service description satisfy any constraints.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please let us know if you see something missing from this document.  I think this covers most of the major updates.</p>
+</div>
+</div>
+</div>
 </div>
 
 
