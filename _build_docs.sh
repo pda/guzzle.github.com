@@ -13,5 +13,6 @@ sed -i '' 's,$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html,$(SPHINXBU
 make html GA=1
 
 if [ "$push" != "" ]; then
+  cd ..
   git add -A && git commit -m 'Updating' && git push origin master
 fi
