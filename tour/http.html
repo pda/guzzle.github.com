@@ -149,6 +149,7 @@
 <li><a class="reference internal" href="#history-plugin">History plugin</a></li>
 <li><a class="reference internal" href="#mock-plugin">Mock Plugin</a></li>
 <li><a class="reference internal" href="#basic-auth-plugin">Basic Auth Plugin</a></li>
+<li><a class="reference internal" href="#batch-queue-plugin">Batch Queue Plugin</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#wrapping-it-all-up">Wrapping it all up</a></li>
@@ -685,6 +686,37 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$xml</span><span class="o">-&gt;</span><span class="na">person</span> <span class="k">as</span> <span class="nv">$person</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="nv">$person</span><span class="o">-&gt;</span><span class="na">email</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="batch-queue-plugin">
+<h3>Batch Queue Plugin<a class="headerlink" href="#batch-queue-plugin" title="Permalink to this headline">¶</a></h3>
+<p>Send a large number of requests using the batch queue plugin.  Any request created by a client will automatically be tracked and queued by the BatchQueuePlugin. In the constructor of the plugin, you can specify the maximum amount of requests to keep in queue before implicitly flushing, or set 0 to never automatically flush.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\BatchQueuePlugin</span><span class="p">;</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
+
+<span class="c1">// Here we are saying that if 10 or more requests are in the batch queue,</span>
+<span class="c1">// then it must automatically flush the queue and send the requests.</span>
+<span class="nv">$batchPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BatchQueuePlugin</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
+
+<span class="c1">// Add the batch plugin to the client object</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$batchPlugin</span><span class="p">);</span>
+
+<span class="c1">// Queue up some requests on the BatchQueuePlugin</span>
+<span class="nv">$request1</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+<span class="nv">$request2</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+<span class="nv">$request3</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+
+<span class="c1">// If the batch plugin is handy, you can call the flush method directly</span>
+<span class="nv">$batchPlugin</span><span class="o">-&gt;</span><span class="na">flush</span><span class="p">();</span>
+
+<span class="c1">// If you no longer have the batch plugin handy, you can emit the &#39;flush&#39; event</span>
+<span class="c1">// from the client</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">&#39;flush&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
