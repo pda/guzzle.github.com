@@ -229,7 +229,8 @@
 
 <span class="k">use</span> <span class="nx">Guzzle\Service\Description\XmlDescriptionBuilder</span><span class="p">;</span>
 
-<span class="nv">$builder</span> <span class="o">=</span> <span class="nx">XmlDescriptionBuilder</span><span class="o">::</span><span class="na">build</span><span class="p">(</span><span class="s1">&#39;/path/to/client.xml&#39;</span><span class="p">);</span>
+<span class="nv">$description</span> <span class="o">=</span> <span class="nx">XmlDescriptionBuilder</span><span class="o">::</span><span class="na">build</span><span class="p">(</span><span class="s1">&#39;/path/to/client.xml&#39;</span><span class="p">);</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">setDescription</span><span class="p">(</span><span class="nv">$description</span><span class="p">);</span>
 
 <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getCommand</span><span class="p">(</span><span class="s1">&#39;delete_comment&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="m">123</span>
@@ -548,7 +549,7 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_shortname = 'guzzle';
-    var disqus_identifier = 'Guzzle';
+    var disqus_identifier = 'guide/service/creating_dynamic_commands';
     (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
