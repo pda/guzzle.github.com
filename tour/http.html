@@ -482,6 +482,17 @@
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getCurlOptions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>You can add cURL options to every request sent from your client by adding configuration options to the client that are prefixed with &#8220;curl.&#8221;.  Clients will automatically map cURL constants for keys and values to their correct PHP value.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Guzzle\Http\Client</span><span class="p">(</span><span class="s1">&#39;https://example.com/&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;curl.CURLOPT_SSL_VERIFYHOST&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;curl.CURLOPT_SSL_VERIFYPEER&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;curl.CURLOPT_PROXY&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;proxy.mydomain.com:8080&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;curl.CURLOPT_PROXYTYPE&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;CURLPROXY_HTTP&#39;</span>
+<span class="p">));</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="plugins-for-common-http-request-behavior">
