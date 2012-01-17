@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.3.0">
+
+	<title>Class Guzzle\Http\Plugin\ExponentialBackoffPlugin | Guzzle</title>
+
+	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
+	<script type="text/javascript" src="elementlist.js?3911087833"></script>
+	<script type="text/javascript">
+		var ApiGen = ApiGen || {};
+		ApiGen.options = {"elementDetailsCollapsed":true,"elementsOrder":"natural"};
+	</script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1298244258">
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-22752917-1"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+		<div id="groups">
+
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-Guzzle.html">Guzzle</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Common.html">Common</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-Guzzle.Http.html">Http</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
+						</li>
+				<li class="active"><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Service.html">Service</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Service.Command.html">Command</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Guzzle.Http.Plugin.BasicAuthPlugin.html">BasicAuthPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">BatchQueuePlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.CachePlugin.html">CachePlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.CookiePlugin.html">CookiePlugin</a></li>
+				<li class="active"><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">ExponentialBackoffPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.HistoryPlugin.html">HistoryPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.LogPlugin.html">LogPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.Md5ValidatorPlugin.html">Md5ValidatorPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.MockPlugin.html">MockPlugin</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Guzzle.Http.Plugin.html" title="Summary of Guzzle\Http\Plugin"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ExponentialBackoffPlugin</h1>
+
+	<div class="description">
+	
+<p>Plugin to automatically retry failed HTTP requests using truncated
+exponential backoff.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b>Guzzle\Http\Plugin\ExponentialBackoffPlugin</b>			
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Plugin.html">Plugin</a><br>
+
+		<b>Located at</b> Guzzle/Http/Plugin/ExponentialBackoffPlugin.php<br>
+	</div>
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="getSubscribedEvents" id="_getSubscribedEvents">
+
+		<td class="attributes"><code>
+			
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSubscribedEvents">#</a>
+		<code>getSubscribedEvents( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code>__construct( <span>integer <var>$maxRetries</var> = <span class="php-num">3</span></span>, <span>array <var>$failureCodes</var> = <span class="php-keyword1">null</span></span>, <span><code><a href="class-Closure.html">Closure</a></code>|array <var>$delayClosure</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Construct a new exponential backoff plugin</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Construct a new exponential backoff plugin</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$maxRetries</var></dt>
+					<dd><code>integer</code><br> (optional) The maximum number of time to retry a request</dd>
+					<dt><var>$failureCodes</var></dt>
+					<dd><code>array</code><br> (optional) Pass a custom list of failure codes.</dd>
+					<dt><var>$delayClosure</var></dt>
+					<dd><code><code><a href="class-Closure.html">Closure</a></code>|array</code><br> (optional) Method used to calculate the delay between requests. The method must
+accept an integer containing the current number of retries and return an integer
+representing how many seconds to delay</dd>
+				</dl></div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setMaxRetries" id="_setMaxRetries">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">Guzzle\Http\Plugin\ExponentialBackoffPlugin</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setMaxRetries">#</a>
+		<code>setMaxRetries( <span>integer <var>$maxRetries</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the maximum number of retries the plugin should use before failing the
+request</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the maximum number of retries the plugin should use before failing the
+request</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$maxRetries</var></dt>
+					<dd><code>integer</code><br> The maximum number of retries.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">Guzzle\Http\Plugin\ExponentialBackoffPlugin</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getMaxRetries" id="_getMaxRetries">
+
+		<td class="attributes"><code>
+			
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMaxRetries">#</a>
+		<code>getMaxRetries( )</code>
+
+		<div class="description short">
+			
+<p>Get the maximum number of retries the plugin will attempt</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the maximum number of retries the plugin will attempt</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFailureCodes" id="_getFailureCodes">
+
+		<td class="attributes"><code>
+			
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFailureCodes">#</a>
+		<code>getFailureCodes( )</code>
+
+		<div class="description short">
+			
+<p>Get the HTTP response codes that should be retried using truncated
+exponential backoff</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the HTTP response codes that should be retried using truncated
+exponential backoff</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setFailureCodes" id="_setFailureCodes">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">Guzzle\Http\Plugin\ExponentialBackoffPlugin</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setFailureCodes">#</a>
+		<code>setFailureCodes( <span>array <var>$codes</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the HTTP response codes that should be retried using truncated
+exponential backoff</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the HTTP response codes that should be retried using truncated
+exponential backoff</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$codes</var></dt>
+					<dd><code>array</code><br> Array of HTTP response codes</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">Guzzle\Http\Plugin\ExponentialBackoffPlugin</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="calculateWait" id="_calculateWait">
+
+		<td class="attributes"><code>
+			
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_calculateWait">#</a>
+		<code>calculateWait( <span>integer <var>$retries</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Determine how long to wait using truncated exponential backoff</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Determine how long to wait using truncated exponential backoff</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$retries</var></dt>
+					<dd><code>integer</code><br> Number of retries so far</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="onRequestSent" id="_onRequestSent">
+
+		<td class="attributes"><code>
+			
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_onRequestSent">#</a>
+		<code>onRequestSent( <span><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a> <var>$event</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Called when a request has been sent</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Called when a request has been sent</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$event</var></dt>
+					<dd><code><code><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a></code></code></dd>
+				</dl></div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="onRequestPoll" id="_onRequestPoll">
+
+		<td class="attributes"><code>
+			
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_onRequestPoll">#</a>
+		<code>onRequestPoll( <span><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a> <var>$event</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Called when a request is polling in the curl mutli object</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Called when a request is polling in the curl mutli object</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$event</var></dt>
+					<dd><code><code><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a></code></code></dd>
+				</dl></div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="DELAY_PARAM" id="DELAY_PARAM">
+
+		<td class="attributes"><code>
+			
+			string
+		</code></td>
+		<td class="name"><code>
+<b>DELAY_PARAM</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'plugins.exponential_backoff.retry_time'</span></code></td>
+		<td class="description"><div>
+			<a href="#DELAY_PARAM" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="failureCodes" id="$failureCodes">
+
+		<td class="attributes"><code>
+			
+			protected 
+			array
+		</code></td>
+
+		<td class="name">
+<var>$failureCodes</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$failureCodes" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Array of response codes that must be retried</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Array of response codes that must be retried</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="maxRetries" id="$maxRetries">
+
+		<td class="attributes"><code>
+			
+			protected 
+			integer
+		</code></td>
+
+		<td class="name">
+<var>$maxRetries</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$maxRetries" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Maximum number of times to retry a request</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Maximum number of times to retry a request</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="state" id="$state">
+
+		<td class="attributes"><code>
+			
+			protected 
+			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>
+		</code></td>
+
+		<td class="name">
+<var>$state</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$state" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Request state information</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Request state information</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="delayClosure" id="$delayClosure">
+
+		<td class="attributes"><code>
+			
+			protected 
+			<code><a href="class-Closure.html">Closure</a></code>
+		</code></td>
+
+		<td class="name">
+<var>$delayClosure</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$delayClosure" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+</div>
+
+	<div id="footer">
+		Guzzle API documentation generated by <a href="http://apigen.org">ApiGen 2.3.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

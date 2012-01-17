@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.3.0">
+
+	<title>Class Guzzle\Http\QueryString | Guzzle</title>
+
+	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
+	<script type="text/javascript" src="elementlist.js?3911087833"></script>
+	<script type="text/javascript">
+		var ApiGen = ApiGen || {};
+		ApiGen.options = {"elementDetailsCollapsed":true,"elementsOrder":"natural"};
+	</script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1298244258">
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-22752917-1"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+		<div id="groups">
+
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-Guzzle.html">Guzzle</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Common.html">Common</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-Guzzle.Http.html">Http</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Service.html">Service</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Service.Command.html">Command</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Guzzle.Http.Client.html">Client</a></li>
+				<li><a href="class-Guzzle.Http.Cookie.html">Cookie</a></li>
+				<li><a href="class-Guzzle.Http.EntityBody.html">EntityBody</a></li>
+				<li class="active"><a href="class-Guzzle.Http.QueryString.html">QueryString</a></li>
+				<li><a href="class-Guzzle.Http.Url.html">Url</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Guzzle.Http.ClientInterface.html">ClientInterface</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Guzzle.Http.HttpException.html">HttpException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Guzzle.Http.html" title="Summary of Guzzle\Http"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class QueryString</h1>
+
+	<div class="description">
+	
+<p>Query string object to handle managing query string parameters and
+aggregating those parameters together as a string.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a>
+			
+			 implements 
+				<a href="class-ArrayAccess.html">ArrayAccess</a>, 
+			
+				<a href="class-IteratorAggregate.html">IteratorAggregate</a>, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b>Guzzle\Http\QueryString</b>			
+			
+			
+		</dd>
+	</dl>
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a><br>
+
+		<b>Located at</b> Guzzle/Http/QueryString.php<br>
+	</div>
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__toString" id="___toString">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___toString">#</a>
+		<code>__toString( )</code>
+
+		<div class="description short">
+			
+<p>Convert the querystring parameters to a querystring string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Convert the querystring parameters to a querystring string</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="aggregateUsingComma" id="_aggregateUsingComma">
+
+		<td class="attributes"><code>
+			
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_aggregateUsingComma">#</a>
+		<code>aggregateUsingComma( <span>string <var>$key</var></span>, <span>array <var>$value</var></span>, <span>boolean <var>$encodeFields</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$encodeValues</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Aggregate multi-valued parameters by joining the values using a comma</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Aggregate multi-valued parameters by joining the values using a comma</p>
+
+<pre>
+<span class="php-var">$queryString</span> = <span
+class="php-keyword1">new</span> \Guzzle\Http\QueryString();
+<span
+class="php-var">$queryString</span>-&gt;setAggregator(<span
+class="php-var">$queryString</span>-&gt;aggregateUsingComma);
+<span
+class="php-var">$queryString</span>-&gt;replace(<span
+class="php-keyword1">array</span>(
+    <span
+class="php-quote">'value'</span> =&gt; <span
+class="php-keyword1">array</span>(<span class="php-num">1</span>, <span
+class="php-num">2</span>, <span class="php-num">3</span>)
+));
+
+<span
+class="php-keyword1">echo</span> <span
+class="php-var">$queryString</span>; <span
+class="php-comment">// outputs: ?value=1,2,3</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br> The name of the query string parameter</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>array</code><br>$values The values of the parameter</dd>
+					<dt><var>$encodeFields</var></dt>
+					<dd><code>boolean</code><br> (optional) Set to TRUE to encode field names</dd>
+					<dt><var>$encodeValues</var></dt>
+					<dd><code>boolean</code><br> (optional) Set to TRUE to encode values</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>Returns an array of the combined values<br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFieldSeparator" id="_getFieldSeparator">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFieldSeparator">#</a>
+		<code>getFieldSeparator( )</code>
+
+		<div class="description short">
+			
+<p>Get the query string field separator</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the query string field separator</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPrefix" id="_getPrefix">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPrefix">#</a>
+		<code>getPrefix( )</code>
+
+		<div class="description short">
+			
+<p>Get the query string prefix</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the query string prefix</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getValueSeparator" id="_getValueSeparator">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getValueSeparator">#</a>
+		<code>getValueSeparator( )</code>
+
+		<div class="description short">
+			
+<p>Get the query string value separator</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the query string value separator</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isEncodingFields" id="_isEncodingFields">
+
+		<td class="attributes"><code>
+			
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isEncodingFields">#</a>
+		<code>isEncodingFields( )</code>
+
+		<div class="description short">
+			
+<p>Returns whether or not field names are being urlencoded when converting the
+query string object to a string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns whether or not field names are being urlencoded when converting the
+query string object to a string</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isEncodingValues" id="_isEncodingValues">
+
+		<td class="attributes"><code>
+			
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isEncodingValues">#</a>
+		<code>isEncodingValues( )</code>
+
+		<div class="description short">
+			
+<p>Returns whether or not values are being urlencoded when converting the query
+string object to a string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns whether or not values are being urlencoded when converting the query
+string object to a string</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setAggregateFunction" id="_setAggregateFunction">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setAggregateFunction">#</a>
+		<code>setAggregateFunction( <span>callback|null <var>$callback</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Provide a function for combining multi-valued query string parameters into a
+single or multiple fields</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Provide a function for combining multi-valued query string parameters into a
+single or multiple fields</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd><code>callback|null</code><br> A function or callback array that accepts a $key, $value, $encodeFields, and
+$encodeValues as arguments and returns an associative array containing the
+combined values. Set to null to remove any custom aggregator.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code></code><br>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Guzzle.Http.QueryString.html#_aggregateUsingComma">Guzzle\Http\QueryString::aggregateUsingComma()</a></code></code> <br>
+				</div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setEncodeFields" id="_setEncodeFields">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setEncodeFields">#</a>
+		<code>setEncodeFields( <span>boolean <var>$encode</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set whether or not field names should be urlencoded when converting the query
+string object to a string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set whether or not field names should be urlencoded when converting the query
+string object to a string</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$encode</var></dt>
+					<dd><code>boolean</code><br> Set to TRUE to encode field names, FALSE to not encode field names</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setEncodeValues" id="_setEncodeValues">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setEncodeValues">#</a>
+		<code>setEncodeValues( <span>boolean <var>$encode</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set whether or not field values should be urlencoded when converting the
+query string object to a string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set whether or not field values should be urlencoded when converting the
+query string object to a string</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$encode</var></dt>
+					<dd><code>boolean</code><br> Set to TRUE to encode field values, FALSE to not encode field values</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setFieldSeparator" id="_setFieldSeparator">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setFieldSeparator">#</a>
+		<code>setFieldSeparator( <span>string <var>$separator</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the query string separator</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the query string separator</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$separator</var></dt>
+					<dd><code>string</code><br> The query string separator that will separate fields</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setPrefix" id="_setPrefix">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setPrefix">#</a>
+		<code>setPrefix( <span>string <var>$prefix</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the query string prefix</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the query string prefix</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$prefix</var></dt>
+					<dd><code>string</code><br> Prefix to use with the query string (e.g. '?')</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setValueSeparator" id="_setValueSeparator">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setValueSeparator">#</a>
+		<code>setValueSeparator( <span>string <var>$separator</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the query string value separator</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the query string value separator</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$separator</var></dt>
+					<dd><code>string</code><br> The query string separator that will separate values from fields</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="urlEncode" id="_urlEncode">
+
+		<td class="attributes"><code>
+			
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_urlEncode">#</a>
+		<code>urlEncode( )</code>
+
+		<div class="description short">
+			
+<p>Returns an array of url encoded field names and values</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns an array of url encoded field names and values</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="encodeData" id="_encodeData">
+
+		<td class="attributes"><code>
+			
+			 protected 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_encodeData">#</a>
+		<code>encodeData( <span>array <var>$data</var></span>, <span>boolean <var>$encodeFields</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$encodeValues</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Url encode parameter data.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Url encode parameter data.</p>
+
+<p>If a parameter value is an array and no aggregator has been set, the values
+of the array will be converted into a PHP compatible form array. If an
+aggregator is set, the values will be converted using the aggregator
+function</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd><code>array</code><br> The data to encode</dd>
+					<dt><var>$encodeFields</var></dt>
+					<dd><code>boolean</code><br> (optional) Toggle URL encoding of fields</dd>
+					<dt><var>$encodeValues</var></dt>
+					<dd><code>boolean</code><br> (optional) Toggle URL encoding of values</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>Returns an array of encoded values and keys<br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Guzzle.Common.Collection.html#methods">Guzzle\Common\Collection</a></caption>
+	<tr>
+		<td><code>
+<a href="class-Guzzle.Common.Collection.html#___construct">__construct()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_add">add()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_clear">clear()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_count">count()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_filter">filter()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_get">get()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_getAll">getAll()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_getIterator">getIterator()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_getKeys">getKeys()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_hasKey">hasKey()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_hasValue">hasValue()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_map">map()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_merge">merge()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_offsetExists">offsetExists()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_offsetGet">offsetGet()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_offsetSet">offsetSet()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_offsetUnset">offsetUnset()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_remove">remove()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_replace">replace()</a>, 
+<a href="class-Guzzle.Common.Collection.html#_set">set()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary inherited">
+	<caption>Constants inherited from <a href="class-Guzzle.Common.Collection.html#constants">Guzzle\Common\Collection</a></caption>
+	<tr>
+		<td><code>
+<a href="class-Guzzle.Common.Collection.html#MATCH_EXACT"><b>MATCH_EXACT</b></a>, 
+<a href="class-Guzzle.Common.Collection.html#MATCH_IGNORE_CASE"><b>MATCH_IGNORE_CASE</b></a>, 
+<a href="class-Guzzle.Common.Collection.html#MATCH_REGEX"><b>MATCH_REGEX</b></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="fieldSeparator" id="$fieldSeparator">
+
+		<td class="attributes"><code>
+			
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$fieldSeparator</var>		</td>
+		<td class="value"><code><span class="php-quote">'&amp;'</span></code></td>
+		<td class="description"><div>
+			<a href="#$fieldSeparator" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The query string field separator (e.g. '&amp;')</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The query string field separator (e.g. '&amp;')</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="valueSeparator" id="$valueSeparator">
+
+		<td class="attributes"><code>
+			
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$valueSeparator</var>		</td>
+		<td class="value"><code><span class="php-quote">'='</span></code></td>
+		<td class="description"><div>
+			<a href="#$valueSeparator" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The query string value separator (e.g. '=')</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The query string value separator (e.g. '=')</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="prefix" id="$prefix">
+
+		<td class="attributes"><code>
+			
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$prefix</var>		</td>
+		<td class="value"><code><span class="php-quote">'?'</span></code></td>
+		<td class="description"><div>
+			<a href="#$prefix" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The query string prefix</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The query string prefix</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="encodeFields" id="$encodeFields">
+
+		<td class="attributes"><code>
+			
+			protected 
+			boolean
+		</code></td>
+
+		<td class="name">
+<var>$encodeFields</var>		</td>
+		<td class="value"><code><span class="php-keyword1">true</span></code></td>
+		<td class="description"><div>
+			<a href="#$encodeFields" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Are the field names being urlencoded?</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Are the field names being urlencoded?</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="encodeValues" id="$encodeValues">
+
+		<td class="attributes"><code>
+			
+			protected 
+			boolean
+		</code></td>
+
+		<td class="name">
+<var>$encodeValues</var>		</td>
+		<td class="value"><code><span class="php-keyword1">true</span></code></td>
+		<td class="description"><div>
+			<a href="#$encodeValues" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Are the field values being urlencoded?</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Are the field values being urlencoded?</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="aggregator" id="$aggregator">
+
+		<td class="attributes"><code>
+			
+			protected 
+			function
+		</code></td>
+
+		<td class="name">
+<var>$aggregator</var>		</td>
+		<td class="value"><code><span class="php-keyword1">null</span></code></td>
+		<td class="description"><div>
+			<a href="#$aggregator" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>A callback fuction for combining multi-valued query string values</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>A callback fuction for combining multi-valued query string values</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Guzzle.Common.Collection.html#properties">Guzzle\Common\Collection</a></caption>
+	<tr>
+		<td><code>
+<a href="class-Guzzle.Common.Collection.html#$data"><var>$data</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+</div>
+
+	<div id="footer">
+		Guzzle API documentation generated by <a href="http://apigen.org">ApiGen 2.3.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

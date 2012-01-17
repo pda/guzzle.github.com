@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.3.0">
+
+	<title>Tree | Guzzle</title>
+
+	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
+	<script type="text/javascript" src="elementlist.js?3911087833"></script>
+	<script type="text/javascript">
+		var ApiGen = ApiGen || {};
+		ApiGen.options = {"elementDetailsCollapsed":true,"elementsOrder":"natural"};
+	</script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1298244258">
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-22752917-1"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+		<div id="groups">
+
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Guzzle.html">Guzzle</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Common.html">Common</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Http.html">Http</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Service.html">Service</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Service.Command.html">Command</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-ArrayIterator.html">ArrayIterator</a></li>
+				<li><a href="class-Closure.html">Closure</a></li>
+				<li><a href="class-Guzzle.Common.AbstractHasDispatcher.html">Guzzle\Common\AbstractHasDispatcher</a></li>
+				<li><a href="class-Guzzle.Common.Cache.AbstractCacheAdapter.html">Guzzle\Common\Cache\AbstractCacheAdapter</a></li>
+				<li><a href="class-Guzzle.Common.Cache.DoctrineCacheAdapter.html">Guzzle\Common\Cache\DoctrineCacheAdapter</a></li>
+				<li><a href="class-Guzzle.Common.Cache.ZendCacheAdapter.html">Guzzle\Common\Cache\ZendCacheAdapter</a></li>
+				<li><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></li>
+				<li><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a></li>
+				<li><a href="class-Guzzle.Common.Log.AbstractLogAdapter.html">Guzzle\Common\Log\AbstractLogAdapter</a></li>
+				<li><a href="class-Guzzle.Common.Log.ClosureLogAdapter.html">Guzzle\Common\Log\ClosureLogAdapter</a></li>
+				<li><a href="class-Guzzle.Common.Log.MonologLogAdapter.html">Guzzle\Common\Log\MonologLogAdapter</a></li>
+				<li><a href="class-Guzzle.Common.Log.ZendLogAdapter.html">Guzzle\Common\Log\ZendLogAdapter</a></li>
+				<li><a href="class-Guzzle.Common.NullObject.html">Guzzle\Common\NullObject</a></li>
+				<li><a href="class-Guzzle.Common.Stream.html">Guzzle\Common\Stream</a></li>
+				<li><a href="class-Guzzle.Common.XmlElement.html">Guzzle\Common\XmlElement</a></li>
+				<li><a href="class-Guzzle.Guzzle.html">Guzzle\Guzzle</a></li>
+				<li><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></li>
+				<li><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></li>
+				<li><a href="class-Guzzle.Http.CookieJar.ArrayCookieJar.html">Guzzle\Http\CookieJar\ArrayCookieJar</a></li>
+				<li><a href="class-Guzzle.Http.CookieJar.FileCookieJar.html">Guzzle\Http\CookieJar\FileCookieJar</a></li>
+				<li><a href="class-Guzzle.Http.Curl.CurlHandle.html">Guzzle\Http\Curl\CurlHandle</a></li>
+				<li><a href="class-Guzzle.Http.Curl.CurlMulti.html">Guzzle\Http\Curl\CurlMulti</a></li>
+				<li><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></li>
+				<li><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></li>
+				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></li>
+				<li><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></li>
+				<li><a href="class-Guzzle.Http.Message.RequestFactory.html">Guzzle\Http\Message\RequestFactory</a></li>
+				<li><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.BasicAuthPlugin.html">Guzzle\Http\Plugin\BasicAuthPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">Guzzle\Http\Plugin\BatchQueuePlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.CachePlugin.html">Guzzle\Http\Plugin\CachePlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.CookiePlugin.html">Guzzle\Http\Plugin\CookiePlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">Guzzle\Http\Plugin\ExponentialBackoffPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.HistoryPlugin.html">Guzzle\Http\Plugin\HistoryPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.LogPlugin.html">Guzzle\Http\Plugin\LogPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.Md5ValidatorPlugin.html">Guzzle\Http\Plugin\Md5ValidatorPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.MockPlugin.html">Guzzle\Http\Plugin\MockPlugin</a></li>
+				<li><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></li>
+				<li><a href="class-Guzzle.Http.Url.html">Guzzle\Http\Url</a></li>
+				<li><a href="class-Guzzle.Service.Client.html">Guzzle\Service\Client</a></li>
+				<li><a href="class-Guzzle.Service.Command.AbstractCommand.html">Guzzle\Service\Command\AbstractCommand</a></li>
+				<li><a href="class-Guzzle.Service.Command.ClosureCommand.html">Guzzle\Service\Command\ClosureCommand</a></li>
+				<li><a href="class-Guzzle.Service.Command.CommandSet.html">Guzzle\Service\Command\CommandSet</a></li>
+				<li><a href="class-Guzzle.Service.Description.ApiCommand.html">Guzzle\Service\Description\ApiCommand</a></li>
+				<li><a href="class-Guzzle.Service.Description.DynamicCommandFactory.html">Guzzle\Service\Description\DynamicCommandFactory</a></li>
+				<li><a href="class-Guzzle.Service.Description.JsonDescriptionBuilder.html">Guzzle\Service\Description\JsonDescriptionBuilder</a></li>
+				<li><a href="class-Guzzle.Service.Description.ServiceDescription.html">Guzzle\Service\Description\ServiceDescription</a></li>
+				<li><a href="class-Guzzle.Service.Description.XmlDescriptionBuilder.html">Guzzle\Service\Description\XmlDescriptionBuilder</a></li>
+				<li><a href="class-Guzzle.Service.Inflector.html">Guzzle\Service\Inflector</a></li>
+				<li><a href="class-Guzzle.Service.Inspector.html">Guzzle\Service\Inspector</a></li>
+				<li><a href="class-Guzzle.Service.ResourceIterator.html">Guzzle\Service\ResourceIterator</a></li>
+				<li><a href="class-Guzzle.Service.ResourceIteratorApplyBatched.html">Guzzle\Service\ResourceIteratorApplyBatched</a></li>
+				<li><a href="class-Guzzle.Service.ServiceBuilder.html">Guzzle\Service\ServiceBuilder</a></li>
+				<li><a href="class-Reflection.html">Reflection</a></li>
+				<li><a href="class-SimpleXMLElement.html">SimpleXMLElement</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-ArrayAccess.html">ArrayAccess</a></li>
+				<li><a href="class-Countable.html">Countable</a></li>
+				<li><a href="class-Guzzle.Common.Cache.CacheAdapterInterface.html">Guzzle\Common\Cache\CacheAdapterInterface</a></li>
+				<li><a href="class-Guzzle.Common.GuzzleExceptionInterface.html">Guzzle\Common\GuzzleExceptionInterface</a></li>
+				<li><a href="class-Guzzle.Common.HasDispatcherInterface.html">Guzzle\Common\HasDispatcherInterface</a></li>
+				<li><a href="class-Guzzle.Common.Log.LogAdapterInterface.html">Guzzle\Common\Log\LogAdapterInterface</a></li>
+				<li><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></li>
+				<li><a href="class-Guzzle.Http.CookieJar.CookieJarInterface.html">Guzzle\Http\CookieJar\CookieJarInterface</a></li>
+				<li><a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">Guzzle\Http\Curl\CurlMultiInterface</a></li>
+				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html">Guzzle\Http\Message\EntityEnclosingRequestInterface</a></li>
+				<li><a href="class-Guzzle.Http.Message.MessageInterface.html">Guzzle\Http\Message\MessageInterface</a></li>
+				<li><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></li>
+				<li><a href="class-Guzzle.Service.ClientInterface.html">Guzzle\Service\ClientInterface</a></li>
+				<li><a href="class-Guzzle.Service.Command.CommandInterface.html">Guzzle\Service\Command\CommandInterface</a></li>
+				<li><a href="class-Guzzle.Service.Description.CommandFactoryInterface.html">Guzzle\Service\Description\CommandFactoryInterface</a></li>
+				<li><a href="class-Guzzle.Service.Description.DescriptionBuilderInterface.html">Guzzle\Service\Description\DescriptionBuilderInterface</a></li>
+				<li><a href="class-Iterator.html">Iterator</a></li>
+				<li><a href="class-IteratorAggregate.html">IteratorAggregate</a></li>
+				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
+				<li><a href="class-Serializable.html">Serializable</a></li>
+				<li><a href="class-Traversable.html">Traversable</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Exception.html">Exception</a></li>
+				<li><a href="class-Guzzle.Common.ExceptionCollection.html">Guzzle\Common\ExceptionCollection</a></li>
+				<li><a href="class-Guzzle.Http.Curl.CurlException.html">Guzzle\Http\Curl\CurlException</a></li>
+				<li><a href="class-Guzzle.Http.HttpException.html">Guzzle\Http\HttpException</a></li>
+				<li><a href="class-Guzzle.Http.Message.BadResponseException.html">Guzzle\Http\Message\BadResponseException</a></li>
+				<li><a href="class-Guzzle.Http.Message.RequestException.html">Guzzle\Http\Message\RequestException</a></li>
+				<li><a href="class-Guzzle.Service.Command.CommandSetException.html">Guzzle\Service\Command\CommandSetException</a></li>
+				<li><a href="class-HttpException.html">HttpException</a></li>
+				<li><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></li>
+				<li><a href="class-LogicException.html">LogicException</a></li>
+				<li><a href="class-RuntimeException.html">RuntimeException</a></li>
+				<li><a href="class-UnexpectedValueException.html">UnexpectedValueException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+<span>Namespace</span>			</li>
+			<li>
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li class="active">
+<span>Tree</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content">
+	<h1>Tree</h1>
+
+		<h3>Classes</h3>
+<div class="tree">
+	<ul>
+
+			<li><div class="notlast"><a href="class-ArrayIterator.html">ArrayIterator</a>
+			 implements 
+				<a href="class-Iterator.html">Iterator</a>, 
+			
+				<a href="class-Traversable.html">Traversable</a>, 
+			
+				<a href="class-ArrayAccess.html">ArrayAccess</a>, 
+			
+				<a href="class-SeekableIterator.html">SeekableIterator</a>, 
+			
+				<a href="class-Serializable.html">Serializable</a>, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Closure.html">Closure</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.AbstractHasDispatcher.html">Guzzle\Common\AbstractHasDispatcher</a>
+			 implements 
+				<a href="class-Guzzle.Common.HasDispatcherInterface.html">Guzzle\Common\HasDispatcherInterface</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a>
+			 implements 
+				<a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Service.Client.html">Guzzle\Service\Client</a>
+			 implements 
+				<a href="class-Guzzle.Service.ClientInterface.html">Guzzle\Service\ClientInterface</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Curl.CurlMulti.html">Guzzle\Http\Curl\CurlMulti</a>
+			 implements 
+				<a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">Guzzle\Http\Curl\CurlMultiInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Plugin.MockPlugin.html">Guzzle\Http\Plugin\MockPlugin</a>
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.ResourceIterator.html">Guzzle\Service\ResourceIterator</a>
+			 implements 
+				<a href="class-Iterator.html">Iterator</a>, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Service.ResourceIteratorApplyBatched.html">Guzzle\Service\ResourceIteratorApplyBatched</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.Cache.AbstractCacheAdapter.html">Guzzle\Common\Cache\AbstractCacheAdapter</a>
+			 implements 
+				<a href="class-Guzzle.Common.Cache.CacheAdapterInterface.html">Guzzle\Common\Cache\CacheAdapterInterface</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.Cache.DoctrineCacheAdapter.html">Guzzle\Common\Cache\DoctrineCacheAdapter</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Common.Cache.ZendCacheAdapter.html">Guzzle\Common\Cache\ZendCacheAdapter</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a>
+			 implements 
+				<a href="class-ArrayAccess.html">ArrayAccess</a>, 
+			
+				<a href="class-IteratorAggregate.html">IteratorAggregate</a>, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Service.Command.AbstractCommand.html">Guzzle\Service\Command\AbstractCommand</a>
+			 implements 
+				<a href="class-Guzzle.Service.Command.CommandInterface.html">Guzzle\Service\Command\CommandInterface</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Service.Command.ClosureCommand.html">Guzzle\Service\Command\ClosureCommand</a>
+			
+			
+			</div>
+
+				</ul></li></ul></li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.Log.AbstractLogAdapter.html">Guzzle\Common\Log\AbstractLogAdapter</a>
+			 implements 
+				<a href="class-Guzzle.Common.Log.LogAdapterInterface.html">Guzzle\Common\Log\LogAdapterInterface</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.Log.ClosureLogAdapter.html">Guzzle\Common\Log\ClosureLogAdapter</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.Log.MonologLogAdapter.html">Guzzle\Common\Log\MonologLogAdapter</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Common.Log.ZendLogAdapter.html">Guzzle\Common\Log\ZendLogAdapter</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.NullObject.html">Guzzle\Common\NullObject</a>
+			 implements 
+				<a href="class-Iterator.html">Iterator</a>, 
+			
+				<a href="class-Countable.html">Countable</a>, 
+			
+				<a href="class-ArrayAccess.html">ArrayAccess</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.Stream.html">Guzzle\Common\Stream</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Guzzle.html">Guzzle\Guzzle</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.CookieJar.ArrayCookieJar.html">Guzzle\Http\CookieJar\ArrayCookieJar</a>
+			 implements 
+				<a href="class-Guzzle.Http.CookieJar.CookieJarInterface.html">Guzzle\Http\CookieJar\CookieJarInterface</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Http.CookieJar.FileCookieJar.html">Guzzle\Http\CookieJar\FileCookieJar</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Curl.CurlHandle.html">Guzzle\Http\Curl\CurlHandle</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a>
+			 implements 
+				<a href="class-Guzzle.Http.Message.MessageInterface.html">Guzzle\Http\Message\MessageInterface</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a>
+			 implements 
+				<a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a>
+			 implements 
+				<a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html">Guzzle\Http\Message\EntityEnclosingRequestInterface</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Message.RequestFactory.html">Guzzle\Http\Message\RequestFactory</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Plugin.BasicAuthPlugin.html">Guzzle\Http\Plugin\BasicAuthPlugin</a>
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">Guzzle\Http\Plugin\BatchQueuePlugin</a>
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Plugin.CachePlugin.html">Guzzle\Http\Plugin\CachePlugin</a>
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Plugin.CookiePlugin.html">Guzzle\Http\Plugin\CookiePlugin</a>
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">Guzzle\Http\Plugin\ExponentialBackoffPlugin</a>
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Plugin.HistoryPlugin.html">Guzzle\Http\Plugin\HistoryPlugin</a>
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface, 
+			
+				<a href="class-IteratorAggregate.html">IteratorAggregate</a>, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Plugin.LogPlugin.html">Guzzle\Http\Plugin\LogPlugin</a>
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Plugin.Md5ValidatorPlugin.html">Guzzle\Http\Plugin\Md5ValidatorPlugin</a>
+			 implements 
+Symfony\Component\EventDispatcher\EventSubscriberInterface
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Url.html">Guzzle\Http\Url</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Command.CommandSet.html">Guzzle\Service\Command\CommandSet</a>
+			 implements 
+				<a href="class-IteratorAggregate.html">IteratorAggregate</a>, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Description.ApiCommand.html">Guzzle\Service\Description\ApiCommand</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Description.DynamicCommandFactory.html">Guzzle\Service\Description\DynamicCommandFactory</a>
+			 implements 
+				<a href="class-Guzzle.Service.Description.CommandFactoryInterface.html">Guzzle\Service\Description\CommandFactoryInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Description.JsonDescriptionBuilder.html">Guzzle\Service\Description\JsonDescriptionBuilder</a>
+			 implements 
+				<a href="class-Guzzle.Service.Description.DescriptionBuilderInterface.html">Guzzle\Service\Description\DescriptionBuilderInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Description.ServiceDescription.html">Guzzle\Service\Description\ServiceDescription</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Description.XmlDescriptionBuilder.html">Guzzle\Service\Description\XmlDescriptionBuilder</a>
+			 implements 
+				<a href="class-Guzzle.Service.Description.DescriptionBuilderInterface.html">Guzzle\Service\Description\DescriptionBuilderInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Inflector.html">Guzzle\Service\Inflector</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Inspector.html">Guzzle\Service\Inspector</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.ServiceBuilder.html">Guzzle\Service\ServiceBuilder</a>
+			 implements 
+				<a href="class-ArrayAccess.html">ArrayAccess</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Reflection.html">Reflection</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-SimpleXMLElement.html">SimpleXMLElement</a>
+			 implements 
+				<a href="class-Traversable.html">Traversable</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Common.XmlElement.html">Guzzle\Common\XmlElement</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li class="last"><div class="last">Symfony\Component\EventDispatcher\Event			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a>
+			 implements 
+				<a href="class-ArrayAccess.html">ArrayAccess</a>, 
+			
+				<a href="class-IteratorAggregate.html">IteratorAggregate</a>
+			
+			
+			</div>
+
+		</li>
+		</ul></li>
+	</ul>
+</div>
+
+		<h3>Interfaces</h3>
+<div class="tree">
+	<ul>
+
+			<li><div class="notlast"><a href="class-ArrayAccess.html">ArrayAccess</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.Cache.CacheAdapterInterface.html">Guzzle\Common\Cache\CacheAdapterInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.GuzzleExceptionInterface.html">Guzzle\Common\GuzzleExceptionInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.HasDispatcherInterface.html">Guzzle\Common\HasDispatcherInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.Log.LogAdapterInterface.html">Guzzle\Common\Log\LogAdapterInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a>
+			 implements 
+				<a href="class-Guzzle.Common.HasDispatcherInterface.html">Guzzle\Common\HasDispatcherInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.CookieJar.CookieJarInterface.html">Guzzle\Http\CookieJar\CookieJarInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">Guzzle\Http\Curl\CurlMultiInterface</a>
+			 implements 
+				<a href="class-Guzzle.Common.HasDispatcherInterface.html">Guzzle\Common\HasDispatcherInterface</a>, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html">Guzzle\Http\Message\EntityEnclosingRequestInterface</a>
+			 implements 
+				<a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Message.MessageInterface.html">Guzzle\Http\Message\MessageInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a>
+			 implements 
+				<a href="class-Guzzle.Http.Message.MessageInterface.html">Guzzle\Http\Message\MessageInterface</a>, 
+			
+				<a href="class-Guzzle.Common.HasDispatcherInterface.html">Guzzle\Common\HasDispatcherInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.ClientInterface.html">Guzzle\Service\ClientInterface</a>
+			 implements 
+				<a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Command.CommandInterface.html">Guzzle\Service\Command\CommandInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Description.CommandFactoryInterface.html">Guzzle\Service\Description\CommandFactoryInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Description.DescriptionBuilderInterface.html">Guzzle\Service\Description\DescriptionBuilderInterface</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Iterator.html">Iterator</a>
+			 implements 
+				<a href="class-Traversable.html">Traversable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-IteratorAggregate.html">IteratorAggregate</a>
+			 implements 
+				<a href="class-Traversable.html">Traversable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-SeekableIterator.html">SeekableIterator</a>
+			 implements 
+				<a href="class-Iterator.html">Iterator</a>, 
+			
+				<a href="class-Traversable.html">Traversable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Serializable.html">Serializable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li class="last"><div class="last"><a href="class-Traversable.html">Traversable</a>
+			
+			
+			</div>
+
+		</li>
+		
+	</ul>
+</div>
+
+
+		<h3>Exceptions</h3>
+<div class="tree">
+	<ul>
+
+			<li class="last"><div class="last"><a href="class-Exception.html">Exception</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li><div class="notlast"><a href="class-Guzzle.Common.ExceptionCollection.html">Guzzle\Common\ExceptionCollection</a>
+			 implements 
+				<a href="class-Guzzle.Common.GuzzleExceptionInterface.html">Guzzle\Common\GuzzleExceptionInterface</a>, 
+			
+				<a href="class-IteratorAggregate.html">IteratorAggregate</a>, 
+			
+				<a href="class-Countable.html">Countable</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-Guzzle.Http.HttpException.html">Guzzle\Http\HttpException</a>
+			 implements 
+				<a href="class-Guzzle.Common.GuzzleExceptionInterface.html">Guzzle\Common\GuzzleExceptionInterface</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Http.Message.RequestException.html">Guzzle\Http\Message\RequestException</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Http.Message.BadResponseException.html">Guzzle\Http\Message\BadResponseException</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-Guzzle.Http.Curl.CurlException.html">Guzzle\Http\Curl\CurlException</a>
+			
+			
+			</div>
+
+				</ul></li></ul></li></ul></li>
+
+			<li><div class="notlast"><a href="class-HttpException.html">HttpException</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li><div class="notlast"><a href="class-LogicException.html">LogicException</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li class="last"><div class="last"><a href="class-InvalidArgumentException.html">InvalidArgumentException</a>
+			
+			
+			</div>
+
+				</ul></li>
+
+			<li class="last"><div class="last"><a href="class-RuntimeException.html">RuntimeException</a>
+			
+			
+			</div>
+
+				<ul>
+
+			<li><div class="notlast"><a href="class-Guzzle.Service.Command.CommandSetException.html">Guzzle\Service\Command\CommandSetException</a>
+			
+			
+			</div>
+
+				</li>
+
+			<li class="last"><div class="last"><a href="class-UnexpectedValueException.html">UnexpectedValueException</a>
+			
+			
+			</div>
+
+		</li>
+		</ul></li></ul></li>
+	</ul>
+</div>
+</div>
+
+	<div id="footer">
+		Guzzle API documentation generated by <a href="http://apigen.org">ApiGen 2.3.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

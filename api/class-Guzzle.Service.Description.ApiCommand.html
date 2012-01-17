@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.3.0">
+
+	<title>Class Guzzle\Service\Description\ApiCommand | Guzzle</title>
+
+	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
+	<script type="text/javascript" src="elementlist.js?3911087833"></script>
+	<script type="text/javascript">
+		var ApiGen = ApiGen || {};
+		ApiGen.options = {"elementDetailsCollapsed":true,"elementsOrder":"natural"};
+	</script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1298244258">
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-22752917-1"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+		<div id="groups">
+
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-Guzzle.html">Guzzle</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Common.html">Common</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Guzzle.Http.html">Http</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-Guzzle.Service.html">Service</a>
+						<span></span>
+						<ul>
+				<li><a href="namespace-Guzzle.Service.Command.html">Command</a>
+						</li>
+				<li class="active"><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Guzzle.Service.Description.ApiCommand.html">ApiCommand</a></li>
+				<li><a href="class-Guzzle.Service.Description.DynamicCommandFactory.html">DynamicCommandFactory</a></li>
+				<li><a href="class-Guzzle.Service.Description.JsonDescriptionBuilder.html">JsonDescriptionBuilder</a></li>
+				<li><a href="class-Guzzle.Service.Description.ServiceDescription.html">ServiceDescription</a></li>
+				<li><a href="class-Guzzle.Service.Description.XmlDescriptionBuilder.html">XmlDescriptionBuilder</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Guzzle.Service.Description.CommandFactoryInterface.html">CommandFactoryInterface</a></li>
+				<li><a href="class-Guzzle.Service.Description.DescriptionBuilderInterface.html">DescriptionBuilderInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Guzzle.Service.Description.html" title="Summary of Guzzle\Service\Description"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ApiCommand</h1>
+
+	<div class="description">
+	
+<p>Data object holding the information of an API command</p>
+
+	</div>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Service.html">Service</a>\<a href="namespace-Guzzle.Service.Description.html">Description</a><br>
+
+		<b>Located at</b> Guzzle/Service/Description/ApiCommand.php<br>
+	</div>
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code>__construct( <span>array <var>$config</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Constructor</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Constructor</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$config</var></dt>
+					<dd><code>array</code><br> Array of configuration data using the following keys string name Name of the
+command tring doc Method documentation string method HTTP method of the command
+string path (optional) Path routing information of the command to include in the
+path string class (optional) Concrete class that implements this command array
+params Associative array of parameters for the command with each parameter
+containing the following keys: name - Parameter name type - Type of variable
+(boolean, integer, string, array, class name, etc...) required - Whether or not
+the parameter is required default - Default value doc - Documentation min_length
+- Minimum length max_length - Maximum length location - One of query, path,
+header, or body static - Whether or not the param can be changed from this value
+prepend - Text to prepend when adding this value to a location append - Text to
+append when adding to a location filter - Comma separated list of filters to run
+the value through. Must be a callable Can call static class methods by
+separating the class and function with ::</dd>
+				</dl></div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getData" id="_getData">
+
+		<td class="attributes"><code>
+			
+			 public 
+			true
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getData">#</a>
+		<code>getData( )</code>
+
+		<div class="description short">
+			
+<p>Get as an array</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get as an array</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>true</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getParams" id="_getParams">
+
+		<td class="attributes"><code>
+			
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getParams">#</a>
+		<code>getParams( )</code>
+
+		<div class="description short">
+			
+<p>Get the params of the command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the params of the command</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getParam" id="_getParam">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getParam">#</a>
+		<code>getParam( <span>string <var>$param</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get a single parameter of the command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a single parameter of the command</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$param</var></dt>
+					<dd><code>string</code><br> Parameter to retrieve by name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|null</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getMethod" id="_getMethod">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMethod">#</a>
+		<code>getMethod( )</code>
+
+		<div class="description short">
+			
+<p>Get the HTTP method of the command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the HTTP method of the command</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConcreteClass" id="_getConcreteClass">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConcreteClass">#</a>
+		<code>getConcreteClass( )</code>
+
+		<div class="description short">
+			
+<p>Get the concrete command class that implements this command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the concrete command class that implements this command</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getName" id="_getName">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getName">#</a>
+		<code>getName( )</code>
+
+		<div class="description short">
+			
+<p>Get the name of the command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the name of the command</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDoc" id="_getDoc">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDoc">#</a>
+		<code>getDoc( )</code>
+
+		<div class="description short">
+			
+<p>Get the documentation for the command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the documentation for the command</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPath" id="_getPath">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPath">#</a>
+		<code>getPath( )</code>
+
+		<div class="description short">
+			
+<p>Get the path routing information to append to the path of the generated
+request</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the path routing information to append to the path of the generated
+request</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="params" id="$params">
+
+		<td class="attributes"><code>
+			
+			protected 
+			array
+		</code></td>
+
+		<td class="name">
+<var>$params</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$params" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Parameters</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Parameters</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="config" id="$config">
+
+		<td class="attributes"><code>
+			
+			protected 
+			array
+		</code></td>
+
+		<td class="name">
+<var>$config</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$config" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Configuration data</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Configuration data</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+</div>
+
+	<div id="footer">
+		Guzzle API documentation generated by <a href="http://apigen.org">ApiGen 2.3.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
