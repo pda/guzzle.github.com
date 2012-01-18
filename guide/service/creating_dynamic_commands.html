@@ -132,6 +132,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#use-custom-types-for-data-validation">Use custom <tt class="docutils literal"><span class="pre">&lt;types&gt;</span></tt> for data validation</a></li>
+<li><a class="reference internal" href="#sending-put-and-post-requests">Sending PUT and POST requests</a></li>
 <li><a class="reference internal" href="#including-other-service-descriptions">Including other service descriptions</a><ul>
 <li><a class="reference internal" href="#xml">XML</a></li>
 <li><a class="reference internal" href="#json">JSON</a></li>
@@ -141,12 +142,7 @@
 </li>
 <li><a class="reference internal" href="#creating-json-service-descriptions">Creating JSON service descriptions</a></li>
 <li><a class="reference internal" href="#use-dynamic-and-concrete-commands">Use Dynamic and Concrete Commands</a></li>
-<li><a class="reference internal" href="#caveats-with-service-descriptions">Caveats with service descriptions</a><ul>
-<li><a class="reference internal" href="#no-code-completion">No code completion</a></li>
-<li><a class="reference internal" href="#no-custom-response-processing">No custom response processing</a></li>
-<li><a class="reference internal" href="#weak-support-for-custom-entity-bodies">Weak support for custom entity bodies</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#response-processing">Response processing</a></li>
 </ul>
 </li>
 </ul>
@@ -437,6 +433,23 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 </pre></div>
 </div>
 </div>
+<div class="section" id="sending-put-and-post-requests">
+<h3>Sending PUT and POST requests<a class="headerlink" href="#sending-put-and-post-requests" title="Permalink to this headline">¶</a></h3>
+<p>Service descriptions allow for a flexible way to send PUT and POST requests where the entity body of the request needs to be in a specific format.  You may have noticed that the PUT/POST commands in the example XML service description force the end-developer to build an XML entity body from scratch.  A better way of implementing these entity enclosing requests would be to allow the end-developers set body parameters using a SimpleXMLElement object.  This can be achieved by using the &#8220;type&#8221; parameter type and specifying a class:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">path=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:SimpleXMLElement&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/command&gt;</span>
+</pre></div>
+</div>
+<p>If you are sending JSON data, you should consider allowing end-developers to set body parameters using an array.  You can then convert an array to a JSON string by using the <tt class="docutils literal"><span class="pre">filter</span></tt> attribute of a parameter:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">path=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:array&quot;</span> <span class="na">filter=</span><span class="s">&quot;json_encode&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/command&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="including-other-service-descriptions">
 <h3>Including other service descriptions<a class="headerlink" href="#including-other-service-descriptions" title="Permalink to this headline">¶</a></h3>
 <p>You can include other service descriptions in your service description files as long as the service description you are including uses the same format (e.g. XML can include XML and JSON can include JSON).</p>
@@ -509,32 +522,10 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 <h2>Use Dynamic and Concrete Commands<a class="headerlink" href="#use-dynamic-and-concrete-commands" title="Permalink to this headline">¶</a></h2>
 <p>Concrete commands are much better suited for interacting with complex web services or dealing with custom entity bodies that must be generated based on command parameters.  Never fear&#8211; web service clients can utilize both concrete and dynamic commands.  When retrieving a command by name (<tt class="docutils literal"><span class="pre">$command</span> <span class="pre">=</span> <span class="pre">$client-&gt;getCommand('command_name')</span></tt>), the client will first check if it has a service description and if the service descriptions has a command defined by the name of &#8216;command_name.&#8217;  If the client has a dynamic command named &#8216;command_name&#8217;, then a dynamic command will be created and returned.  If the client does not have a service description or its service description does not have a command defined by that name, it will see if a concrete command class maps to that name.  If it does, it will create the concrete command class and return it.  Whether or not the command is a concrete command or dynamic command doesn&#8217;t matter to the end-developer as long as the developer can execute the command and get back a valuable response.</p>
 </div>
-<div class="section" id="caveats-with-service-descriptions">
-<h2>Caveats with service descriptions<a class="headerlink" href="#caveats-with-service-descriptions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="no-code-completion">
-<h3>No code completion<a class="headerlink" href="#no-code-completion" title="Permalink to this headline">¶</a></h3>
-<p>Dynamic commands cannot be directly instantiated and don&#8217;t have setter methods to easily build up a command.  This means that you won&#8217;t get code completion.</p>
-</div>
-<div class="section" id="no-custom-response-processing">
-<h3>No custom response processing<a class="headerlink" href="#no-custom-response-processing" title="Permalink to this headline">¶</a></h3>
-<p>Dynamic commands can&#8217;t perform any type of response processing to create more valuable command results.  This means, for example, that the result of a command to retrieve a user will return a <tt class="docutils literal"><span class="pre">\SimpleXMLElement</span></tt>, not a <tt class="docutils literal"><span class="pre">User</span></tt> object.  Have an idea for how to make this better?  Let us know!</p>
-</div>
-<div class="section" id="weak-support-for-custom-entity-bodies">
-<h3>Weak support for custom entity bodies<a class="headerlink" href="#weak-support-for-custom-entity-bodies" title="Permalink to this headline">¶</a></h3>
-<p>XML service descriptions are great for creating relatively simple commands, but you may have noticed that the PUT/POST commands in the example XML service description force the end-developer to build an XML entity body from scratch to send with those requests.  This is fine for relatively simple clients, but a better way of implementing these entity enclosing requests might be to create models for the bodies of the commands and force end-developers to set the data parameter using a model by specifying the class in the parameter&#8217;s type attribute:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!-- ... --&gt;</span>
-<span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">path=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;doc&gt;</span>Create a user<span class="nt">&lt;/doc&gt;</span>
-    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;class:Guzzle\Service\MyService\Model\User&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="na">doc=</span><span class="s">&quot;User model&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/command&gt;</span>
-<span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_comment&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">path=</span><span class="s">&quot;/comments&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;doc&gt;</span>Create a comment<span class="nt">&lt;/doc&gt;</span>
-    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;class:Guzzle\Service\MyService\Model\Comment&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="na">doc=</span><span class="s">&quot;Comment model&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/command&gt;</span>
-<span class="c">&lt;!-- ... --&gt;</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="response-processing">
+<h2>Response processing<a class="headerlink" href="#response-processing" title="Permalink to this headline">¶</a></h2>
+<p>Dynamic commands can&#8217;t perform any type of response processing to create more valuable command results.  This means, for example, that the result of a command to retrieve a user will return a <tt class="docutils literal"><span class="pre">\SimpleXMLElement</span></tt>, not a <tt class="docutils literal"><span class="pre">User</span></tt> object.</p>
+<p>Have an idea for how to make this better?  Let us know!</p>
 </div>
 </div>
 
