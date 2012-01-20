@@ -229,7 +229,9 @@ Symfony\Component\EventDispatcher\EventSubscriberInterface
 					<dt><var>$serialize</var></dt>
 					<dd><code>boolean</code><br> (optional) Set to TRUE to serialize data before writing</dd>
 					<dt><var>$defaultLifetime</var></dt>
-					<dd><code>integer</code><br> (optional) Set the default cache lifetime</dd>
+					<dd><code>integer</code><br> (optional) The number of seconds that a cache entry should be considered fresh
+when no explicit freshness information is provided in a response. Explicit
+Cache-Control or Expires headers override this value</dd>
 				</dl></div>
 
 
