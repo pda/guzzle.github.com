@@ -220,7 +220,7 @@
 
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Guzzle\Http\Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;cache.override_ttl&#39;</span> <span class="o">=&gt;</span> <span class="m">3600</span><span class="p">,</span>
-    <span class="s1">&#39;cacche.revalidate&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;never&#39;</span>
+    <span class="s1">&#39;cache.revalidate&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;never&#39;</span>
 <span class="p">));</span>
 
 <span class="k">echo</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;cache.override_ttl&#39;</span><span class="p">);</span>
