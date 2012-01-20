@@ -362,6 +362,16 @@
 <span class="p">));</span>
 </pre></div>
 </div>
+<p><strong>Always</strong> sanitize user supplied data when sending POST requests:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Prevent users from accessing sensitive files by sanitizing input</span>
+<span class="nv">$_POST</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;firstname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;@/etc/passwd&#39;</span><span class="p">);</span>
+<span class="nv">$request</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;http://www.example.com&#39;</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">&#39;firstname&#39;</span> <span class="o">=&gt;</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;firstname&#39;</span><span class="p">])</span>
+<span class="p">));</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="dealing-with-errors">
 <h4>Dealing with errors<a class="headerlink" href="#dealing-with-errors" title="Permalink to this headline">¶</a></h4>
