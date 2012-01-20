@@ -168,14 +168,12 @@
   <div class="section" id="building-web-service-clients">
 <h1>Building web service clients<a class="headerlink" href="#building-web-service-clients" title="Permalink to this headline">¶</a></h1>
 <p>Building web service clients using commands is better than creating requests manually.</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li>Better choice for maintainability, features, and ease of use.</li>
 <li>Best practices are inherently implemented for the end-developer.</li>
 <li>Changes can be made to the underlying request and response processing without breaking the interface.</li>
 <li>Can create <a class="reference internal" href="../guide/service/creating_dynamic_commands.html"><em>dynamic commands</em></a> based on a service description.</li>
 </ol>
-</div></blockquote>
 <p>Simple web service clients make the assumption that the end-developer has an intricate understanding of how to send requests to a web service and how that web service will respond.  If you want to build a reusable RESTful web service client for an application you plan on maintaining, then creating a simple client might not cut it.  Simple clients might work for extremely simple web services (like <a class="reference external" href="http://developer.yahoo.com/weather/">Yahoo weather</a> for example) or quickly prototyping, but when you&#8217;re dealing with a huge web service with a ton of options (e.g. Amazon S3), then you&#8217;re going to want to build a robust web service client that executes commands.</p>
 <p>A command-based web service client that abstracts away the HTTP request and response makes a client more future-proof; if the API you are interacting with changes (for example, adds a required field), then you would only have to update the command in one place rather than every single file in your project that interacts with the web service.  Guzzle uses the <a class="reference external" href="http://en.wikipedia.org/wiki/Command_pattern">command pattern</a> for building requests and processing responses.  Abstracting the underlying implementation helps new developers to quickly send requests to an API using any of the best-practices coded into the command itself, rather than assuming that every developer on your team has an intricate understanding of the web service.</p>
 <p>Commands can also be created for developers dynamically using a <a class="reference internal" href="../guide/service/creating_dynamic_commands.html"><em>service description</em></a>.</p>
@@ -183,8 +181,8 @@
 <div class="section" id="setting-up">
 <h2>Setting up<a class="headerlink" href="#setting-up" title="Permalink to this headline">¶</a></h2>
 <p>The first thing you will need to do is create the directory structure of your project.  You can quickly create the required directory structure of your project by cloning the <a class="reference external" href="https://github.com/guzzle/guzzle-client-template">guzzle client template</a> and running the phing build script.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /path/to/guzzle/build
-<span class="nv">$ </span>phing template
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /path/to/guzzle-client-template
+<span class="nv">$ </span>phing
 </pre></div>
 </div>
 <p>This phing build target will ask you a series of questions and generate a template for your web service client at a requested path.  The directory structure should mirror the following:</p>

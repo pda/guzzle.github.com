@@ -510,6 +510,10 @@
 <div class="section" id="plugins-for-common-http-request-behavior">
 <h2>Plugins for common HTTP request behavior<a class="headerlink" href="#plugins-for-common-http-request-behavior" title="Permalink to this headline">¶</a></h2>
 <p>Guzzle provides easy to use request plugins that add behavior to requests based on signal slot event notifications.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Any event subscriber attached to the <tt class="docutils literal"><span class="pre">EventDispatcher</span></tt> of a <tt class="docutils literal"><span class="pre">Client</span></tt> object will automatically be attached to all request objects created by the client.  This allows you to attach, for example, a  HistoryPlugin to a client object, and from that point on, every request sent through that client will utilize the HistoryPlugin.</p>
+</div>
 <div class="section" id="over-the-wire-logging">
 <h3>Over the wire logging<a class="headerlink" href="#over-the-wire-logging" title="Permalink to this headline">¶</a></h3>
 <p>Use the <tt class="docutils literal"><span class="pre">Guzzle\Http\Plugin\LogPlugin</span></tt> to view all data sent over the wire, including entity bodies and redirects:</p>
