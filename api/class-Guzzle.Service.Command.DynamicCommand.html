@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="ApiGen 2.3.0">
 
-	<title>Class Guzzle\Service\Command\ClosureCommand | Guzzle</title>
+	<title>Class Guzzle\Service\Command\DynamicCommand | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
 	<script type="text/javascript" src="elementlist.js?3862983676"></script>
@@ -78,9 +78,9 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-Guzzle.Service.Command.AbstractCommand.html">AbstractCommand</a></li>
-				<li class="active"><a href="class-Guzzle.Service.Command.ClosureCommand.html">ClosureCommand</a></li>
+				<li><a href="class-Guzzle.Service.Command.ClosureCommand.html">ClosureCommand</a></li>
 				<li><a href="class-Guzzle.Service.Command.CommandSet.html">CommandSet</a></li>
-				<li><a href="class-Guzzle.Service.Command.DynamicCommand.html">DynamicCommand</a></li>
+				<li class="active"><a href="class-Guzzle.Service.Command.DynamicCommand.html">DynamicCommand</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -131,14 +131,11 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class ClosureCommand</h1>
+	<h1>Class DynamicCommand</h1>
 
 	<div class="description">
 	
-<p>A ClosureCommand is a command that allows dynamic commands to be created at
-runtime using a closure to prepare the request. A closure key and \Closure value
-must be passed to the command in the constructor. The closure must accept the
-command object as an argument.</p>
+<p>A command that creates requests based on ApiCommands</p>
 
 	</div>
 
@@ -166,7 +163,7 @@ command object as an argument.</p>
 		</dd>
 		<dd style="padding-left:60px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b>Guzzle\Service\Command\ClosureCommand</b>			
+<b>Guzzle\Service\Command\DynamicCommand</b>			
 			
 			
 		</dd>
@@ -183,7 +180,7 @@ command object as an argument.</p>
 		
 		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Service.html">Service</a>\<a href="namespace-Guzzle.Service.Command.html">Command</a><br>
 
-		<b>Located at</b> Guzzle/Service/Command/ClosureCommand.php<br>
+		<b>Located at</b> Guzzle/Service/Command/DynamicCommand.php<br>
 	</div>
 
 
@@ -217,10 +214,6 @@ command object as an argument.</p>
 
 
 
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br>if a closure was not passed<br>
-				</div>
 
 
 		</div>
@@ -254,10 +247,6 @@ command object as an argument.</p>
 
 
 
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-UnexpectedValueException.html">UnexpectedValueException</a></code></code><br>If the closure does not return a request<br>
-				</div>
 
 
 		</div>
