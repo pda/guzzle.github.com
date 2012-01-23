@@ -1,0 +1,44 @@
+#!/bin/bash
+
+push=$1
+
+# Build phar files in the background
+phing -f ../guzzle/build.xml &
+phing -f ../guzzle/build.xml -Dmin=true &
+
+if [ ! -d _docs ]; then
+  git clone git@github.com:guzzle/guzzle-docs.git _docs || exit 1
+else
+  cd _docs && git reset --hard && git pull origin master || exit 1
+  cd ..
+fi
+
+# Build API docs
+if [ -d "../guzzle/src/Guzzle" ]; then
+  apigen --quiet yes --source ../guzzle/src --destination api --title Guzzle --google-analytics UA-22752917-1 --download no --source-code no &
+fi
+
+# Build documentation
+cd _docs
+sed -i '' 's,build/$(LANG),../,g' Makefile
+sed -i '' 's,$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html,$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR),g' Makefile
+make html GA=1 &
+
+wait || exit 1
+
+cd ..
+
+# Only overwrite the phar if it exists
+if [ -f "../guzzle/guzzle.phar" ]; then
+    cp ../guzzle/guzzle.phar ./
+fi
+
+# Only overwrite the phar if it exists
+if [ -f "../guzzle/guzzle-min.phar" ]; then
+    cp ../guzzle/guzzle-min.phar ./
+fi
+
+# Push to github to publish the site
+if [ "$push" != "" ]; then
+  git add -A && git commit -m 'Updating' && git push origin master
+fi
