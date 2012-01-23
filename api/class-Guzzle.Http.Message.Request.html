@@ -340,7 +340,7 @@ well.</dd>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="onComplete" id="_onComplete">
+	<tr data-order="onRequestError" id="_onRequestError">
 
 		<td class="attributes"><code>
 			
@@ -351,29 +351,27 @@ well.</dd>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_onComplete">#</a>
-		<code>onComplete( <span><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a> <var>$request</var></span>, <span><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a> <var>$response</var></span> )</code>
+		<a class="anchor" href="#_onRequestError">#</a>
+		<code>onRequestError( <span><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a> <var>$event</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Default onComplete method that will throw exceptions if an unsuccessful
-response is received.</p>
+<p>Default method that will throw exceptions if an unsuccessful response is
+received.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Default onComplete method that will throw exceptions if an unsuccessful
-response is received.</p>
+<p>Default method that will throw exceptions if an unsuccessful response is
+received.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$request</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request that completed</dd>
-					<dt><var>$response</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></code></code><br> Response that was received</dd>
+					<dt><var>$event</var></dt>
+					<dd><code><code><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a></code></code><br> Received</dd>
 				</dl></div>
 
 
@@ -1887,66 +1885,6 @@ header is removed from the request</dd>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="setOnComplete" id="_setOnComplete">
-
-		<td class="attributes"><code>
-			
-			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setOnComplete">#</a>
-		<code>setOnComplete( <span>mixed <var>$callable</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Setting an onComplete method will override the default behavior of throwing
-an exception when an unsuccessful response is received. The callable function
-passed to this method should resemble the following prototype:</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Setting an onComplete method will override the default behavior of throwing
-an exception when an unsuccessful response is received. The callable function
-passed to this method should resemble the following prototype:</p>
-
-<p>function myOncompleteFunction(RequestInterface $request, Response $response,
-\Closure $default);</p>
-
-<p>The default onComplete method can be invoked from your custom handler by
-calling the $default closure passed to your function. You can override the
-response of a request by returning a Response object in your onComplete
-callback.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callable</var></dt>
-					<dd><code>mixed</code><br> Method to invoke when a request completes.</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br>
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br>if the method is not callable<br>
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestInterface.html#_setOnComplete">Guzzle\Http\Message\RequestInterface::setOnComplete</a></code></div>
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="setEventDispatcher" id="_setEventDispatcher">
 
 		<td class="attributes"><code>
@@ -2144,6 +2082,43 @@ like cache-control</p>
 				<h4>Returns</h4>
 				<div class="list">
 					<code><code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getEventArray" id="_getEventArray">
+
+		<td class="attributes"><code>
+			
+			 protected 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getEventArray">#</a>
+		<code>getEventArray( )</code>
+
+		<div class="description short">
+			
+<p>Get an array containing the request and response for event notifications</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get an array containing the request and response for event notifications</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>
 				</div>
 
 
@@ -2508,34 +2483,6 @@ like cache-control</p>
 					<h4>Param</h4>
 					<div class="list">
 							<code>string</code><br>Auth password<br>
-					</div>
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="onComplete" id="$onComplete">
-
-		<td class="attributes"><code>
-			
-			protected 
-			
-		</code></td>
-
-		<td class="name">
-<var>$onComplete</var>		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$onComplete" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-					<h4>Param</h4>
-					<div class="list">
-							<code>mixed</code><br>Callable function used to process the response<br>
 					</div>
 			</div>
 		</div></td>

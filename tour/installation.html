@@ -136,13 +136,12 @@
 <li><a class="reference internal" href="#installing-guzzle">Installing Guzzle</a><ul>
 <li><a class="reference internal" href="#adding-guzzle-to-a-project-using-phar">Adding Guzzle to a project using PHAR</a></li>
 <li><a class="reference internal" href="#adding-guzzle-to-a-project-using-composer">Adding Guzzle to a project using Composer</a></li>
-<li><a class="reference internal" href="#installing-guzzle-from-github">Installing Guzzle from GitHub</a><ul>
+<li><a class="reference internal" href="#installing-guzzle-from-github">Installing Guzzle from GitHub</a></li>
+<li><a class="reference internal" href="#installing-using-pear">Installing using PEAR</a></li>
 <li><a class="reference internal" href="#using-your-own-autoloader">Using your own autoloader</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#running-the-unit-tests">Running the unit tests</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#framework-integrations">Framework integrations</a><ul>
 <li><a class="reference internal" href="#using-guzzle-with-symfony">Using Guzzle with Symfony</a></li>
 <li><a class="reference internal" href="#using-guzzle-with-silex">Using Guzzle with Silex</a></li>
@@ -182,15 +181,15 @@
 <h2>Installing Guzzle<a class="headerlink" href="#installing-guzzle" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="adding-guzzle-to-a-project-using-phar">
 <h3>Adding Guzzle to a project using PHAR<a class="headerlink" href="#adding-guzzle-to-a-project-using-phar" title="Permalink to this headline">¶</a></h3>
-<p>Guzzle is distributed using a PHAR file that compresses all of the required classes into a single file.  In order to simplify installing Guzzle, <a class="reference external" href="https://github.com/seldaek/monolog">Monolog</a>, <a class="reference external" href="https://github.com/doctrine/common">Doctrine Common</a> Cache layer, <a class="reference external" href="https://github.com/symfony/Validator">Symfony2&#8217;s Validator</a>, and <a class="reference external" href="https://github.com/symfony/EventDispatcher">Symfony2&#8217;s EventDispatcher</a> are included.  Including the Guzzle phar file in your application will automatically configure autoloading so everything should just work.  You can download the Guzzle phar file from <a class="reference external" href="https://github.com/downloads/guzzle/guzzle/guzzle.phar">https://github.com/downloads/guzzle/guzzle/guzzle.phar</a>:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="err">$</span> <span class="nx">wget</span> <span class="o">--</span><span class="nx">quiet</span> <span class="nx">https</span><span class="o">://</span><span class="nx">github</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">downloads</span><span class="o">/</span><span class="nx">guzzle</span><span class="o">/</span><span class="nx">guzzle</span><span class="o">/</span><span class="nx">guzzle</span><span class="o">.</span><span class="nx">phar</span>
+<p>Guzzle is distributed using a PHAR file that compresses all of the required classes into a single file.  In order to simplify installing Guzzle, <a class="reference external" href="https://github.com/seldaek/monolog">Monolog</a>, <a class="reference external" href="https://github.com/doctrine/common">Doctrine Common</a> Cache layer, <a class="reference external" href="https://github.com/symfony/Validator">Symfony2&#8217;s Validator</a>, and <a class="reference external" href="https://github.com/symfony/EventDispatcher">Symfony2&#8217;s EventDispatcher</a> are included.  Including the Guzzle phar file in your application will automatically configure autoloading so everything should just work.  You can download the Guzzle phar file from <a class="reference external" href="http://guzzlephp.org/guzzle.phar">http://guzzlephp.org/guzzle.phar</a>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="err">$</span> <span class="nx">wget</span> <span class="o">--</span><span class="nx">quiet</span> <span class="nx">http</span><span class="o">://</span><span class="nx">d</span><span class="o">.</span><span class="nx">guzzlephp</span><span class="o">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">guzzle</span><span class="o">-</span><span class="nx">phar</span>
 </pre></div>
 </div>
 <p>And include it in your scripts:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">require</span> <span class="s1">&#39;/path/to/guzzle.phar&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If you already have your own autoloader and don&#8217;t want to install the extra libraries, you can install the minimal PHAR distribution of Guzzle at <a class="reference external" href="https://github.com/downloads/guzzle/guzzle/guzzle-min.phar">https://github.com/downloads/guzzle/guzzle/guzzle-min.phar</a>.</p>
+<p>If you already have your own autoloader and don&#8217;t want to install the extra libraries, you can install the minimal PHAR distribution of Guzzle at <a class="reference external" href="http://guzzlephp.org/guzzle-min.phar">http://guzzlephp.org/guzzle-min.phar</a>.</p>
 </div>
 <div class="section" id="adding-guzzle-to-a-project-using-composer">
 <h3>Adding Guzzle to a project using Composer<a class="headerlink" href="#adding-guzzle-to-a-project-using-composer" title="Permalink to this headline">¶</a></h3>
@@ -216,8 +215,17 @@
 <span class="err">$</span> <span class="nx">php</span> <span class="nx">composer</span><span class="o">.</span><span class="nx">phar</span> <span class="nx">install</span> <span class="o">--</span><span class="nx">install</span><span class="o">-</span><span class="nx">suggests</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="installing-using-pear">
+<h3>Installing using PEAR<a class="headerlink" href="#installing-using-pear" title="Permalink to this headline">¶</a></h3>
+<p>Guzzle can be installed through PEAR:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nx">pear</span> <span class="nx">channel</span><span class="o">-</span><span class="nx">discover</span> <span class="nx">guzzlephp</span><span class="o">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">pear</span>
+<span class="nx">pear</span> <span class="nx">install</span> <span class="nx">guzzle</span><span class="o">/</span><span class="nx">guzzle</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="using-your-own-autoloader">
-<h4>Using your own autoloader<a class="headerlink" href="#using-your-own-autoloader" title="Permalink to this headline">¶</a></h4>
+<h3>Using your own autoloader<a class="headerlink" href="#using-your-own-autoloader" title="Permalink to this headline">¶</a></h3>
 <p>You will need to add Guzzle and Guzzle&#8217;s dependencies to your application&#8217;s autoloader.  If your application does not already use an autoloader, you can use the <a class="reference external" href="https://github.com/symfony/ClassLoader">Symfony2 ClassLoader</a> component:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -233,13 +241,12 @@
 </div>
 </div>
 <div class="section" id="running-the-unit-tests">
-<h3>Running the unit tests<a class="headerlink" href="#running-the-unit-tests" title="Permalink to this headline">¶</a></h3>
+<h2>Running the unit tests<a class="headerlink" href="#running-the-unit-tests" title="Permalink to this headline">¶</a></h2>
 <p>Guzzle is unit tested using PHPUnit.  You will need to create your own phpunit.xml file in order to run the unit tests.  You can customize this file to suit your testing needs:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="err">$</span> <span class="nx">cp</span> <span class="nx">phpunit</span><span class="o">.</span><span class="nx">xml</span><span class="o">.</span><span class="nx">dist</span> <span class="nx">phpunit</span><span class="o">.</span><span class="nx">xml</span>
 </pre></div>
 </div>
 <p>You will need to install <a class="reference external" href="http://nodejs.org/">node.js</a> v0.5.0 or newer in order to test the cURL implementation.</p>
-</div>
 </div>
 <div class="section" id="framework-integrations">
 <h2>Framework integrations<a class="headerlink" href="#framework-integrations" title="Permalink to this headline">¶</a></h2>

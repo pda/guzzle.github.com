@@ -21,15 +21,15 @@ Installing Guzzle
 Adding Guzzle to a project using PHAR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Guzzle is distributed using a PHAR file that compresses all of the required classes into a single file.  In order to simplify installing Guzzle, `Monolog <https://github.com/seldaek/monolog>`_, `Doctrine Common <https://github.com/doctrine/common>`_ Cache layer, `Symfony2's Validator <https://github.com/symfony/Validator>`_, and `Symfony2's EventDispatcher <https://github.com/symfony/EventDispatcher>`_ are included.  Including the Guzzle phar file in your application will automatically configure autoloading so everything should just work.  You can download the Guzzle phar file from https://github.com/downloads/guzzle/guzzle/guzzle.phar::
+Guzzle is distributed using a PHAR file that compresses all of the required classes into a single file.  In order to simplify installing Guzzle, `Monolog <https://github.com/seldaek/monolog>`_, `Doctrine Common <https://github.com/doctrine/common>`_ Cache layer, `Symfony2's Validator <https://github.com/symfony/Validator>`_, and `Symfony2's EventDispatcher <https://github.com/symfony/EventDispatcher>`_ are included.  Including the Guzzle phar file in your application will automatically configure autoloading so everything should just work.  You can download the Guzzle phar file from http://guzzlephp.org/guzzle.phar::
 
-    $ wget --quiet https://github.com/downloads/guzzle/guzzle/guzzle.phar
+    $ wget --quiet http://d.guzzlephp.org/guzzle-phar
 
 And include it in your scripts::
 
     require '/path/to/guzzle.phar';
 
-If you already have your own autoloader and don't want to install the extra libraries, you can install the minimal PHAR distribution of Guzzle at https://github.com/downloads/guzzle/guzzle/guzzle-min.phar.
+If you already have your own autoloader and don't want to install the extra libraries, you can install the minimal PHAR distribution of Guzzle at http://guzzlephp.org/guzzle-min.phar.
 
 Adding Guzzle to a project using Composer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,8 +56,16 @@ Guzzle can be installed from source by cloning the Guzzle github repository and 
     $ wget --quiet http://getcomposer.org/composer.phar
     $ php composer.phar install --install-suggests
 
+Installing using PEAR
+~~~~~~~~~~~~~~~~~~~~~
+
+Guzzle can be installed through PEAR::
+
+    pear channel-discover guzzlephp.org/pear
+    pear install guzzle/guzzle
+
 Using your own autoloader
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You will need to add Guzzle and Guzzle's dependencies to your application's autoloader.  If your application does not already use an autoloader, you can use the `Symfony2 ClassLoader <https://github.com/symfony/ClassLoader>`_ component::
 
@@ -72,7 +80,7 @@ You will need to add Guzzle and Guzzle's dependencies to your application's auto
     $classLoader->register();
 
 Running the unit tests
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Guzzle is unit tested using PHPUnit.  You will need to create your own phpunit.xml file in order to run the unit tests.  You can customize this file to suit your testing needs::
 
