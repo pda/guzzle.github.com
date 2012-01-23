@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="ApiGen 2.3.0">
 
-	<title>Class Guzzle\Http\Plugin\BatchQueuePlugin | Guzzle</title>
+	<title>Class Guzzle\Http\Plugin\OauthPlugin | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
 	<script type="text/javascript" src="elementlist.js?3301172774"></script>
@@ -78,7 +78,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-Guzzle.Http.Plugin.BasicAuthPlugin.html">BasicAuthPlugin</a></li>
-				<li class="active"><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">BatchQueuePlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">BatchQueuePlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.CachePlugin.html">CachePlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.CookiePlugin.html">CookiePlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">ExponentialBackoffPlugin</a></li>
@@ -86,7 +86,7 @@
 				<li><a href="class-Guzzle.Http.Plugin.LogPlugin.html">LogPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.Md5ValidatorPlugin.html">Md5ValidatorPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.MockPlugin.html">MockPlugin</a></li>
-				<li><a href="class-Guzzle.Http.Plugin.OauthPlugin.html">OauthPlugin</a></li>
+				<li class="active"><a href="class-Guzzle.Http.Plugin.OauthPlugin.html">OauthPlugin</a></li>
 			</ul>
 
 
@@ -129,26 +129,19 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class BatchQueuePlugin</h1>
+	<h1>Class OauthPlugin</h1>
 
 	<div class="description">
 	
-<p>Queues requests and sends them in parallel when a flush event is recevied.
-You can call the flush() method on the plugin or emit a 'flush' event from the
-client on which the plugin is attached.</p>
-
-<p>This plugin probably will not work well with plugins that implicitly send
-requests (ExponentialBackoffPlugin, CachePlugin) or CommandSets.</p>
+<p>OAuth 1.0 signing plugin</p>
 
 	</div>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-<b>Guzzle\Http\Plugin\BatchQueuePlugin</b>			
+<b>Guzzle\Http\Plugin\OauthPlugin</b>			
 			 implements 
-Symfony\Component\EventDispatcher\EventSubscriberInterface, 
-			
-				<a href="class-Countable.html">Countable</a>
+Symfony\Component\EventDispatcher\EventSubscriberInterface
 			
 			
 		</dd>
@@ -165,12 +158,58 @@ Symfony\Component\EventDispatcher\EventSubscriberInterface,
 		
 		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Plugin.html">Plugin</a><br>
 
-		<b>Located at</b> Guzzle/Http/Plugin/BatchQueuePlugin.php<br>
+				<b>See:</b>
+				<a
+href="http://oauth.net/core/1.0/#rfc.section.9.1.1">http://oauth.net/core/1.0/#rfc.section.9.1.1</a><br>
+		<b>Located at</b> Guzzle/Http/Plugin/OauthPlugin.php<br>
 	</div>
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code>__construct( <span>array <var>$config</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Create a new OAuth 1.0 plugin</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Create a new OAuth 1.0 plugin</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$config</var></dt>
+					<dd><code>array</code><br> Configuration array containing these parameters: string 'consumer_key' Consumer
+key string 'consumer_secret' Consumer secret string 'token' Token string
+'token_secret' Token secret string 'version' (optional) OAuth version. Defaults
+to 1.0 string 'signature_method' (optional) Custom signature method
+array|Closure 'signature_callback' (optional) Custom signature callback that
+accepts a string to sign and a signing key</dd>
+				</dl></div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getSubscribedEvents" id="_getSubscribedEvents">
 
 		<td class="attributes"><code>
@@ -200,160 +239,6 @@ Symfony\Component\EventDispatcher\EventSubscriberInterface,
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="__construct" id="___construct">
-
-		<td class="attributes"><code>
-			
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span>integer <var>$autoFlushCount</var> = <span class="php-num">0</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$autoFlushCount</var></dt>
-					<dd><code>integer</code><br> (optional) Set to &gt;0 to automatically flush the queue when the number of
-requests is &gt; $autoFlushCount</dd>
-				</dl></div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="count" id="_count">
-
-		<td class="attributes"><code>
-			
-			 public 
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_count">#</a>
-		<code>count( )</code>
-
-		<div class="description short">
-			
-<p>Get a count of the requests in queue</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Get a count of the requests in queue</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>integer</code><br>
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Countable.html#_count">Countable::count</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="removeRequest" id="_removeRequest">
-
-		<td class="attributes"><code>
-			
-			 public 
-			<code><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">Guzzle\Http\Plugin\BatchQueuePlugin</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_removeRequest">#</a>
-		<code>removeRequest( <span><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a> <var>$request</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Remove a request from the queue</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Remove a request from the queue</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$request</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to remove</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">Guzzle\Http\Plugin\BatchQueuePlugin</a></code></code><br>
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="onRequestCreate" id="_onRequestCreate">
-
-		<td class="attributes"><code>
-			
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_onRequestCreate">#</a>
-		<code>onRequestCreate( <span><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a> <var>$event</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Add request to the queue</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Add request to the queue</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$event</var></dt>
-					<dd><code><code><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a></code></code></dd>
-				</dl></div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="onRequestBeforeSend" id="_onRequestBeforeSend">
 
 		<td class="attributes"><code>
@@ -370,22 +255,20 @@ requests is &gt; $autoFlushCount</dd>
 
 		<div class="description short">
 			
-<p>Ensures that queued requests that get sent outside of the context of the
-batch plugin get removed from the queue</p>
+<p>Request before-send event handler</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Ensures that queued requests that get sent outside of the context of the
-batch plugin get removed from the queue</p>
+<p>Request before-send event handler</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$event</var></dt>
-					<dd><code><code><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a></code></code></dd>
+					<dd><code><code><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a></code></code><br> Event received</dd>
 				</dl></div>
 
 
@@ -394,33 +277,88 @@ batch plugin get removed from the queue</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="flush" id="_flush">
+	<tr data-order="getSignature" id="_getSignature">
 
 		<td class="attributes"><code>
 			
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_flush">#</a>
-		<code>flush( )</code>
+		<a class="anchor" href="#_getSignature">#</a>
+		<code>getSignature( <span><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a> <var>$request</var></span>, <span>integer <var>$timestamp</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Flush the queue</p>
+<p>Calculate signature for request</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Flush the queue</p>
+<p>Calculate signature for request</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to generate a signature for</dd>
+					<dt><var>$timestamp</var></dt>
+					<dd><code>integer</code><br> Timestamp to use for nonce</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getStringToSign" id="_getStringToSign">
+
+		<td class="attributes"><code>
+			
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getStringToSign">#</a>
+		<code>getStringToSign( <span><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a> <var>$request</var></span>, <span>integer <var>$timestamp</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Calculate string to sign</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Calculate string to sign</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to generate a signature for</dd>
+					<dt><var>$timestamp</var></dt>
+					<dd><code>integer</code><br> Timestamp to use for nonce</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
 
 
 
@@ -435,6 +373,37 @@ batch plugin get removed from the queue</p>
 
 
 
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="config" id="$config">
+
+		<td class="attributes"><code>
+			
+			protected 
+			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>
+		</code></td>
+
+		<td class="name">
+<var>$config</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$config" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Configuration settings</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Configuration settings</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 
 </div>
