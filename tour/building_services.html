@@ -132,13 +132,7 @@
       <h4>Table of contents</h4>
       <ul>
 <li><a class="reference internal" href="#">Building web service clients</a><ul>
-<li><a class="reference internal" href="#setting-up">Setting up</a><ul>
-<li><a class="reference internal" href="#command">Command/</a></li>
-<li><a class="reference internal" href="#tests">Tests/</a></li>
-<li><a class="reference internal" href="#client-php">Client.php</a></li>
-<li><a class="reference internal" href="#phpunit-xml-dist">phpunit.xml.dist</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#setting-up">Setting up</a></li>
 <li><a class="reference internal" href="#create-a-client">Create a client</a></li>
 <li><a class="reference internal" href="#create-commands">Create commands</a><ul>
 <li><a class="reference internal" href="#commands-help-to-hide-complexity">Commands help to hide complexity</a></li>
@@ -181,42 +175,58 @@
 <div class="section" id="setting-up">
 <h2>Setting up<a class="headerlink" href="#setting-up" title="Permalink to this headline">¶</a></h2>
 <p>The first thing you will need to do is create the directory structure of your project.  You can quickly create the required directory structure of your project by cloning the <a class="reference external" href="https://github.com/guzzle/guzzle-client-template">guzzle client template</a> and running the phing build script.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /path/to/guzzle-client-template
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/guzzle/guzzle-client-template.git
+<span class="nv">$ </span><span class="nb">cd </span>guzzle-client-template
 <span class="nv">$ </span>phing
 </pre></div>
 </div>
-<p>This phing build target will ask you a series of questions and generate a template for your web service client at a requested path.  The directory structure should mirror the following:</p>
-<div class="highlight-none"><div class="highlight"><pre>Command\
-    &lt;Name...&gt;Command.php
-Tests\
-    mock\
-        &lt;Name...&gt;Response
-    Command\
-        &lt;Name...&gt;CommandTest.php
-    &lt;Service&gt;ClientTest.php
-    bootstrap.php
-&lt;Service&gt;Client.php
+<p>This phing build target will ask you a series of questions and generate a template for your web service client at your desired path.  The directory structure should resemble the following (of course substituting FootBar for your web service client&#8217;s name):</p>
+<div class="highlight-none"><div class="highlight"><pre>src/FooBar/
+........... FooBarClient.php
+........... client.xml
+........... Command/
+.................... CommandName.php
+tests/
+...... mock/
+...... FooBar/
+.............. Command/
+....................... CommandNameTest.php
+.............. FooBarClientTest.php
+...... bootstrap.php
 phpunit.xml.dist
 composer.json
 </pre></div>
 </div>
-<p>After running the phing build target to generate the project&#8217;s skeleton, you will need to modify the Client.php file by updating the factory method, adding a constructor if needed, and adding any class properties.</p>
-<div class="section" id="command">
-<h3>Command/<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
-<p>Place all of the commands for your web service in this folder.</p>
-</div>
-<div class="section" id="tests">
-<h3>Tests/<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h3>
-<p>Place your <tt class="docutils literal"><span class="pre">bootstrap.php</span></tt> file in this folder.  The boostrap.php file is responsible for setting up PHPUnit tests.</p>
-</div>
-<div class="section" id="client-php">
-<h3>Client.php<a class="headerlink" href="#client-php" title="Permalink to this headline">¶</a></h3>
-<p>Rename this class to the CamelCase name of the web service you are implementing followed by <tt class="docutils literal"><span class="pre">Client</span></tt>.  Use strict CamelCasing (e.g. Xml is correct, XML is not).  A good client name would be something like <tt class="docutils literal"><span class="pre">FooBarClient.php</span></tt>.</p>
-</div>
-<div class="section" id="phpunit-xml-dist">
-<h3>phpunit.xml.dist<a class="headerlink" href="#phpunit-xml-dist" title="Permalink to this headline">¶</a></h3>
-<p>Different developers will configure their development environment differently.  A phpunit.xml file is required to run PHPUnit tests against your service.  <tt class="docutils literal"><span class="pre">phpunit.xml.dist</span></tt> provides a template for developers to copy and modify.</p>
-</div>
+<p>After running the phing build target to generate the project&#8217;s skeleton, you will need to modify the <em>FooBarClient.php</em> file by updating the factory method, adding a constructor if needed, and adding any class properties.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>src/FooBar/Command/</td>
+<td>Place all of the commands for your web service in this folder.</td>
+</tr>
+<tr><td>src/FooBar/FooBarClient.php</td>
+<td>Rename this class to the CamelCase name of the web service you are implementing followed by <tt class="docutils literal"><span class="pre">Client</span></tt>.  Use
+strict CamelCasing (e.g. Xml is correct, XML is not).  A good client name would be something like
+<tt class="docutils literal"><span class="pre">FooBarClient.php</span></tt>.</td>
+</tr>
+<tr><td>phpunit.xml.dist</td>
+<td>Different developers will configure their development environment differently.  A phpunit.xml file is required
+to run PHPUnit tests against your service.  <tt class="docutils literal"><span class="pre">phpunit.xml.dist</span></tt> provides a template for developers to copy and
+modify.</td>
+</tr>
+<tr><td>tests/</td>
+<td>Place your <tt class="docutils literal"><span class="pre">bootstrap.php</span></tt> file in this folder.  The boostrap.php file is responsible for setting up PHPUnit
+tests.</td>
+</tr>
+<tr><td>tests/mock</td>
+<td>Place mock response files in this folder.  Mock response files include HTTP response headers and the entity body
+of a response.  Keep each HTTP response in a separate file.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="create-a-client">
 <h2>Create a client<a class="headerlink" href="#create-a-client" title="Permalink to this headline">¶</a></h2>
@@ -302,7 +312,7 @@ composer.json
 <p>Commands can be created in one of two ways: create a concrete command class that extends <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\AbstractCommand</span></tt> or <a class="reference internal" href="../guide/service/creating_dynamic_commands.html"><em>create a dynamic command based on a service description</em></a>.  We will describe how to create concrete commands below.</p>
 <div class="section" id="commands-help-to-hide-complexity">
 <h3>Commands help to hide complexity<a class="headerlink" href="#commands-help-to-hide-complexity" title="Permalink to this headline">¶</a></h3>
-<p>Commands are the method in which you abstract away the underlying format of the requests that need to be sent to take action on a web service.  Commands in Guzzle are meant to be built by executing a series of setter methods on a command object.  Commands are only validated when they are being executed.  A <tt class="docutils literal"><span class="pre">Guzzle\Service\Client</span></tt> object is responsible for executing commands.  Commands created for your web service must implement <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\CommandIterface</span></tt>, but it&#8217;s easier to extend the <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\AbstractCommand</span></tt> class and implement the <tt class="docutils literal"><span class="pre">build()</span></tt> method.  The <tt class="docutils literal"><span class="pre">build()</span></tt> method is responsible for using the arguments of the command to build one or more HTTP requests.</p>
+<p>Commands are the method in which you abstract away the underlying format of the requests that need to be sent to take action on a web service.  Commands in Guzzle are meant to be built by executing a series of setter methods on a command object.  Commands are only validated when they are being executed.  A <tt class="docutils literal"><span class="pre">Guzzle\Service\Client</span></tt> object is responsible for executing commands.  Commands created for your web service must implement <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\CommandInterface</span></tt>, but it&#8217;s easier to extend the <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\AbstractCommand</span></tt> class and implement the <tt class="docutils literal"><span class="pre">build()</span></tt> method.  The <tt class="docutils literal"><span class="pre">build()</span></tt> method is responsible for using the arguments of the command to build one or more HTTP requests.</p>
 </div>
 <div class="section" id="docblock-annotations-for-commands">
 <h3>Docblock annotations for commands<a class="headerlink" href="#docblock-annotations-for-commands" title="Permalink to this headline">¶</a></h3>
