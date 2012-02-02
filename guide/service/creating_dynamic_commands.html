@@ -372,9 +372,9 @@ not provided before executing the command.</td>
 <td>Text to append to the value if the value is set.</td>
 <td><tt class="docutils literal"><span class="pre">append=&quot;.this_is_added_after&quot;</span></tt></td>
 </tr>
-<tr><td>filter</td>
+<tr><td>filters</td>
 <td>CSV list of functions or static functions that modifies a string</td>
-<td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">filter=&quot;strtoupper,strrev&quot;</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">filters=&quot;strtoupper,strrev&quot;</span></tt></td>
 </tr>
 </tbody>
 </table>
@@ -443,10 +443,10 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 <span class="nt">&lt;/command&gt;</span>
 </pre></div>
 </div>
-<p>If you are sending JSON data, you should consider allowing end-developers to set body parameters using an array.  You can then convert an array to a JSON string by using the <tt class="docutils literal"><span class="pre">filter</span></tt> attribute of a parameter:</p>
+<p>If you are sending JSON data, you should consider allowing end-developers to set body parameters using an array.  You can then convert an array to a JSON string by using the <tt class="docutils literal"><span class="pre">filters</span></tt> attribute of a parameter:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">path=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:array&quot;</span> <span class="na">filter=</span><span class="s">&quot;json_encode&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:array&quot;</span> <span class="na">filters=</span><span class="s">&quot;json_encode&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/command&gt;</span>
 </pre></div>
 </div>
@@ -510,7 +510,7 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
                 <span class="s2">&quot;test&quot;</span><span class="o">:</span> <span class="p">{</span>
                     <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
                     <span class="s2">&quot;required&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                    <span class="s2">&quot;filter&quot;</span><span class="o">:</span> <span class="s2">&quot;strtolower&quot;</span>
+                    <span class="s2">&quot;filters&quot;</span><span class="o">:</span> <span class="s2">&quot;strtolower&quot;</span>
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">}</span>
