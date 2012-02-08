@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="ApiGen 2.3.0">
 
-	<title>Class Guzzle\Common\Event | Guzzle</title>
+	<title>Class Guzzle\Http\UriTemplate | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
 	<script type="text/javascript" src="elementlist.js?2109760675"></script>
@@ -39,7 +39,7 @@
 				<li class="active"><a href="namespace-Guzzle.html">Guzzle</a>
 						<span></span>
 						<ul>
-				<li class="active"><a href="namespace-Guzzle.Common.html">Common</a>
+				<li><a href="namespace-Guzzle.Common.html">Common</a>
 						<span></span>
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
@@ -47,7 +47,7 @@
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Http.html">Http</a>
+				<li class="active"><a href="namespace-Guzzle.Http.html">Http</a>
 						<span></span>
 						<ul>
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
@@ -77,24 +77,23 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Guzzle.Common.AbstractHasDispatcher.html">AbstractHasDispatcher</a></li>
-				<li><a href="class-Guzzle.Common.Collection.html">Collection</a></li>
-				<li class="active"><a href="class-Guzzle.Common.Event.html">Event</a></li>
-				<li><a href="class-Guzzle.Common.NullObject.html">NullObject</a></li>
-				<li><a href="class-Guzzle.Common.Stream.html">Stream</a></li>
-				<li><a href="class-Guzzle.Common.XmlElement.html">XmlElement</a></li>
+				<li><a href="class-Guzzle.Http.Client.html">Client</a></li>
+				<li><a href="class-Guzzle.Http.Cookie.html">Cookie</a></li>
+				<li><a href="class-Guzzle.Http.EntityBody.html">EntityBody</a></li>
+				<li><a href="class-Guzzle.Http.QueryString.html">QueryString</a></li>
+				<li class="active"><a href="class-Guzzle.Http.UriTemplate.html">UriTemplate</a></li>
+				<li><a href="class-Guzzle.Http.Url.html">Url</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-Guzzle.Common.GuzzleExceptionInterface.html">GuzzleExceptionInterface</a></li>
-				<li><a href="class-Guzzle.Common.HasDispatcherInterface.html">HasDispatcherInterface</a></li>
+				<li><a href="class-Guzzle.Http.ClientInterface.html">ClientInterface</a></li>
 			</ul>
 
 
 			<h3>Exceptions</h3>
 			<ul>
-				<li><a href="class-Guzzle.Common.ExceptionCollection.html">ExceptionCollection</a></li>
+				<li><a href="class-Guzzle.Http.HttpException.html">HttpException</a></li>
 			</ul>
 
 
@@ -119,7 +118,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Guzzle.Common.html" title="Summary of Guzzle\Common"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Http.html" title="Summary of Guzzle\Http"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -134,31 +133,14 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Event</h1>
+	<h1>Class UriTemplate</h1>
 
 	<div class="description">
 	
-<p>Default event for Guzzle notifications</p>
+<p>Expands URI templates using an array of variables</p>
 
 	</div>
 
-	<dl class="tree">
-		<dd style="padding-left:0px">
-Symfony\Component\EventDispatcher\Event
-			
-			
-		</dd>
-		<dd style="padding-left:30px">
-			<img src="resources/inherit.png" alt="Extended by">
-<b>Guzzle\Common\Event</b>			
-			 implements 
-				<a href="class-ArrayAccess.html">ArrayAccess</a>, 
-			
-				<a href="class-IteratorAggregate.html">IteratorAggregate</a>
-			
-			
-		</dd>
-	</dl>
 
 
 
@@ -169,9 +151,12 @@ Symfony\Component\EventDispatcher\Event
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Common.html">Common</a><br>
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a><br>
 
-		<b>Located at</b> Guzzle/Common/Event.php<br>
+				<b>Link:</b>
+				<a
+href="http://tools.ietf.org/html/draft-gregorio-uritemplate-08">http://tools.ietf.org/html/draft-gregorio-uritemplate-08</a><br>
+		<b>Located at</b> Guzzle/Http/UriTemplate.php<br>
 	</div>
 
 
@@ -189,24 +174,20 @@ Symfony\Component\EventDispatcher\Event
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span>array <var>$context</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code>__construct( <span>string <var>$template</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Constructor</p>
-
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Constructor</p>
-
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$context</var></dt>
-					<dd><code>array</code><br> Contextual information</dd>
+					<dt><var>$template</var></dt>
+					<dd><code>string</code><br> (optional) URI template to expand</dd>
 				</dl></div>
 
 
@@ -215,158 +196,166 @@ Symfony\Component\EventDispatcher\Event
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getIterator" id="_getIterator">
+	<tr data-order="getTemplate" id="_getTemplate">
 
 		<td class="attributes"><code>
 			
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getIterator">#</a>
-		<code>getIterator( )</code>
+		<a class="anchor" href="#_getTemplate">#</a>
+		<code>getTemplate( )</code>
 
 		<div class="description short">
 			
+<p>Get the URI template</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Get the URI template</p>
 
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-IteratorAggregate.html#_getIterator">IteratorAggregate::getIterator</a></code></div>
+
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="offsetGet" id="_offsetGet">
+	<tr data-order="setTemplate" id="_setTemplate">
 
 		<td class="attributes"><code>
 			
 			 public 
-			
+			<code><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_offsetGet">#</a>
-		<code>offsetGet( <span> <var>$offset</var></span> )</code>
+		<a class="anchor" href="#_setTemplate">#</a>
+		<code>setTemplate( <span>string <var>$template</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Set the URI template</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Set the URI template</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$template</var></dt>
+					<dd><code>string</code><br> URI template to expand</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a></code></code><br>
+				</div>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-ArrayAccess.html#_offsetGet">ArrayAccess::offsetGet</a></code></div>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="offsetSet" id="_offsetSet">
+	<tr data-order="expand" id="_expand">
 
 		<td class="attributes"><code>
 			
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_offsetSet">#</a>
-		<code>offsetSet( <span> <var>$offset</var></span>, <span> <var>$value</var></span> )</code>
+		<a class="anchor" href="#_expand">#</a>
+		<code>expand( <span>array <var>$variables</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Expand the URI template using the supplied variables</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Expand the URI template using the supplied variables</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$variables</var></dt>
+					<dd><code>array</code><br> Variables to use with the expansion</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Returns the expanded template<br>
+				</div>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-ArrayAccess.html#_offsetSet">ArrayAccess::offsetSet</a></code></div>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="offsetExists" id="_offsetExists">
+	<tr data-order="setRegex" id="_setRegex">
 
 		<td class="attributes"><code>
 			
 			 public 
-			
+			<code><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_offsetExists">#</a>
-		<code>offsetExists( <span> <var>$offset</var></span> )</code>
+		<a class="anchor" href="#_setRegex">#</a>
+		<code>setRegex( <span>string <var>$regex</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Set the regular expression used to identify URI templates</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Set the regular expression used to identify URI templates</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$regex</var></dt>
+					<dd><code>string</code><br> Regular expression</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a></code></code><br>
+				</div>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-ArrayAccess.html#_offsetExists">ArrayAccess::offsetExists</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="offsetUnset" id="_offsetUnset">
-
-		<td class="attributes"><code>
-			
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_offsetUnset">#</a>
-		<code>offsetUnset( <span> <var>$offset</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-ArrayAccess.html#_offsetUnset">ArrayAccess::offsetUnset</a></code></div>
 		</div>
 		</div></td>
 	</tr>

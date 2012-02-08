@@ -272,7 +272,7 @@ of a response.  Keep each HTTP response in a separate file.</td>
     <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">factory</span><span class="p">(</span><span class="nv">$config</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$default</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-            <span class="s1">&#39;base_url&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;{{scheme}}://{{username}}.test.com/&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;base_url&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;{scheme}://{username}.test.com/&#39;</span><span class="p">,</span>
             <span class="s1">&#39;scheme&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;https&#39;</span>
         <span class="p">);</span>
         <span class="nv">$required</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;base_url&#39;</span><span class="p">);</span>
@@ -436,7 +436,7 @@ not provided before executing the command.</td>
 
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">build</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/{{key}}&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/{key}&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;X-Header&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;other_value&#39;</span><span class="p">));</span>
     <span class="p">}</span>
 

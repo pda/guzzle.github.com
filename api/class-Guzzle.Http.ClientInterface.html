@@ -7,7 +7,7 @@
 	<title>Interface Guzzle\Http\ClientInterface | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
-	<script type="text/javascript" src="elementlist.js?3301172774"></script>
+	<script type="text/javascript" src="elementlist.js?2109760675"></script>
 	<script type="text/javascript">
 		var ApiGen = ApiGen || {};
 		ApiGen.options = {"elementDetailsCollapsed":true,"elementsOrder":"natural"};
@@ -81,6 +81,7 @@
 				<li><a href="class-Guzzle.Http.Cookie.html">Cookie</a></li>
 				<li><a href="class-Guzzle.Http.EntityBody.html">EntityBody</a></li>
 				<li><a href="class-Guzzle.Http.QueryString.html">QueryString</a></li>
+				<li><a href="class-Guzzle.Http.UriTemplate.html">UriTemplate</a></li>
 				<li><a href="class-Guzzle.Http.Url.html">Url</a></li>
 			</ul>
 
@@ -263,7 +264,86 @@ client's config.</dd>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="inject" id="_inject">
+	<tr data-order="setUriTemplate" id="_setUriTemplate">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setUriTemplate">#</a>
+		<code>setUriTemplate( <span><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a> <var>$uriTemplate</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the URI template expander to use with the client</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the URI template expander to use with the client</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$uriTemplate</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a></code></code></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getUriTemplate" id="_getUriTemplate">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getUriTemplate">#</a>
+		<code>getUriTemplate( )</code>
+
+		<div class="description short">
+			
+<p>Get the URI template expander used by the client</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the URI template expander used by the client</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a></code></code><br>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="expandTemplate" id="_expandTemplate">
 
 		<td class="attributes"><code>
 			
@@ -274,27 +354,27 @@ client's config.</dd>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_inject">#</a>
-		<code>inject( <span>string <var>$string</var></span> )</code>
+		<a class="anchor" href="#_expandTemplate">#</a>
+		<code>expandTemplate( <span>string <var>$template</var></span>, <span>array <var>$variables</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Inject configuration values into a formatted string with {{param}} as a
-parameter delimiter (replace param with the configuration value name)</p>
+<p>Expand a URI template using client configuration data</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Inject configuration values into a formatted string with {{param}} as a
-parameter delimiter (replace param with the configuration value name)</p>
+<p>Expand a URI template using client configuration data</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$string</var></dt>
-					<dd><code>string</code><br> String to inject config values into</dd>
+					<dt><var>$template</var></dt>
+					<dd><code>string</code><br> URI template to expand</dd>
+					<dt><var>$variables</var></dt>
+					<dd><code>array</code><br> (optional) Additional variables to use in the expansion</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -319,7 +399,7 @@ parameter delimiter (replace param with the configuration value name)</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createRequest">#</a>
-		<code>createRequest( <span>string <var>$method</var> = <code><a href="class-Guzzle.Http.Message.RequestInterface.html#GET">Guzzle\Http\Message\RequestInterface::<b>GET</b></a></code></span>, <span>string <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>createRequest( <span>string <var>$method</var> = <code><a href="class-Guzzle.Http.Message.RequestInterface.html#GET">Guzzle\Http\Message\RequestInterface::<b>GET</b></a></code></span>, <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -338,9 +418,9 @@ parameter delimiter (replace param with the configuration value name)</p>
 					<dt><var>$method</var></dt>
 					<dd><code>string</code><br> (optional) HTTP method. Defaults to GET</dd>
 					<dt><var>$uri</var></dt>
-					<dd><code>string</code><br> (optional) Resource URI. Use an absolute path to override the base path of the
-client, or a relative path to append to the base path of the client. The URI can
-contain the querystring as well.</dd>
+					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
+base path, or a relative path to append. Use an array to provide a URI template
+and additional variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
 					<dt><var>$body</var></dt>
@@ -416,26 +496,24 @@ not an option and the request sent from the client must be created manually.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getBaseUrl">#</a>
-		<code>getBaseUrl( <span>boolean <var>$inject</var> = <span class="php-keyword1">true</span></span> )</code>
+		<code>getBaseUrl( <span>boolean <var>$expand</var> = <span class="php-keyword1">true</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Get the base service endpoint URL with configuration options injected into
-the configuration setting.</p>
+<p>Get the client's base URL as either an expanded or raw URI template</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the base service endpoint URL with configuration options injected into
-the configuration setting.</p>
+<p>Get the client's base URL as either an expanded or raw URI template</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$inject</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to FALSE to get the raw base URL</dd>
+					<dt><var>$expand</var></dt>
+					<dd><code>boolean</code><br> (optional) Set to FALSE to get the raw base URL without URI template expansion</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -443,10 +521,6 @@ the configuration setting.</p>
 					<code>string</code><br>
 				</div>
 
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-RuntimeException.html">RuntimeException</a></code></code><br>if a base URL has not been set<br>
-				</div>
 
 
 		</div>
@@ -468,13 +542,13 @@ the configuration setting.</p>
 
 		<div class="description short">
 			
-<p>Set the base service endpoint URL</p>
+<p>Set the base URL of the client</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Set the base service endpoint URL</p>
+<p>Set the base URL of the client</p>
 
 
 
@@ -552,7 +626,7 @@ appended to the User-Agent header of all reqeusts.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code>get( <span>string <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>get( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -569,8 +643,9 @@ appended to the User-Agent header of all reqeusts.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string</code><br>$path (optional) Resource URI of the request. Use an absolute path to override
-the base path, or a relative path to append</dd>
+					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
+base path, or a relative path to append. Use an array to provide a URI template
+and additional variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
 					<dt><var>$body</var></dt>
@@ -599,7 +674,7 @@ the base path, or a relative path to append</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_head">#</a>
-		<code>head( <span>string <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>head( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -616,8 +691,9 @@ the base path, or a relative path to append</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append</dd>
+					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
+base path, or a relative path to append. Use an array to provide a URI template
+and additional variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
 				</dl></div>
@@ -644,7 +720,7 @@ base path, or a relative path to append</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code>delete( <span>string <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>delete( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -661,8 +737,9 @@ base path, or a relative path to append</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append</dd>
+					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
+base path, or a relative path to append. Use an array to provide a URI template
+and additional variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
 				</dl></div>
@@ -689,7 +766,7 @@ base path, or a relative path to append</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_put">#</a>
-		<code>put( <span>string <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>put( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -706,8 +783,9 @@ base path, or a relative path to append</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append</dd>
+					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
+base path, or a relative path to append. Use an array to provide a URI template
+and additional variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
 					<dt><var>$body</var></dt>
@@ -736,7 +814,7 @@ base path, or a relative path to append</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_post">#</a>
-		<code>post( <span>string <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|string|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$postBody</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>post( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|string|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$postBody</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -753,8 +831,9 @@ base path, or a relative path to append</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append it.</dd>
+					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
+base path, or a relative path to append. Use an array to provide a URI template
+and additional variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
 					<dt><var>$postBody</var></dt>
@@ -785,7 +864,7 @@ fields to send in the body of the request. Prefix a value in the array with the
 
 		<td class="name"><div>
 		<a class="anchor" href="#_options">#</a>
-		<code>options( <span>string <var>$uri</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>options( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -802,8 +881,9 @@ fields to send in the body of the request. Prefix a value in the array with the
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or relative path to append</dd>
+					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
+base path, or a relative path to append. Use an array to provide a URI template
+and additional variables to use in the URI template expansion.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
