@@ -7,7 +7,7 @@
 	<title>Namespace Guzzle\Http\Plugin | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
-	<script type="text/javascript" src="elementlist.js?1998636414"></script>
+	<script type="text/javascript" src="elementlist.js?3632848454"></script>
 	<script type="text/javascript">
 		var ApiGen = ApiGen || {};
 		ApiGen.options = {"elementDetailsCollapsed":true,"elementsOrder":"natural"};
@@ -77,10 +77,10 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.Plugin.BasicAuthPlugin.html">BasicAuthPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">BatchQueuePlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.CachePlugin.html">CachePlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.CookiePlugin.html">CookiePlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.CurlAuthPlugin.html">CurlAuthPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">ExponentialBackoffPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.HistoryPlugin.html">HistoryPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.LogPlugin.html">LogPlugin</a></li>
@@ -134,10 +134,6 @@
 <table class="summary" id="classes">
 <caption>Classes summary</caption>
 <tr>
-	<td class="name"><a href="class-Guzzle.Http.Plugin.BasicAuthPlugin.html">BasicAuthPlugin</a></td>
-	<td>Adds HTTP basic auth to all requests sent from a client</td>
-</tr>
-<tr>
 	<td class="name"><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">BatchQueuePlugin</a></td>
 	<td>Queues requests and sends them in parallel when a flush event is recevied. You
 can call the flush() method on the plugin or emit a 'flush' event from the
@@ -154,6 +150,11 @@ private data can be cached).</td>
 <tr>
 	<td class="name"><a href="class-Guzzle.Http.Plugin.CookiePlugin.html">CookiePlugin</a></td>
 	<td>Adds, extracts, and persists cookies between HTTP requests</td>
+</tr>
+<tr>
+	<td class="name"><a href="class-Guzzle.Http.Plugin.CurlAuthPlugin.html">CurlAuthPlugin</a></td>
+	<td>Adds specified curl auth to all requests sent from a client Defaults to
+CURLAUTH_BASIC if none supplied</td>
 </tr>
 <tr>
 	<td class="name"><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">ExponentialBackoffPlugin</a></td>

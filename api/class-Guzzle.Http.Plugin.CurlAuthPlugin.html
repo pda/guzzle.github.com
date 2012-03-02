@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="ApiGen 2.3.0">
 
-	<title>Class Guzzle\Http\Plugin\BasicAuthPlugin | Guzzle</title>
+	<title>Class Guzzle\Http\Plugin\CurlAuthPlugin | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
-	<script type="text/javascript" src="elementlist.js?1998636414"></script>
+	<script type="text/javascript" src="elementlist.js?3632848454"></script>
 	<script type="text/javascript">
 		var ApiGen = ApiGen || {};
 		ApiGen.options = {"elementDetailsCollapsed":true,"elementsOrder":"natural"};
@@ -77,10 +77,10 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Guzzle.Http.Plugin.BasicAuthPlugin.html">BasicAuthPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">BatchQueuePlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.CachePlugin.html">CachePlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.CookiePlugin.html">CookiePlugin</a></li>
+				<li class="active"><a href="class-Guzzle.Http.Plugin.CurlAuthPlugin.html">CurlAuthPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">ExponentialBackoffPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.HistoryPlugin.html">HistoryPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.LogPlugin.html">LogPlugin</a></li>
@@ -129,17 +129,18 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class BasicAuthPlugin</h1>
+	<h1>Class CurlAuthPlugin</h1>
 
 	<div class="description">
 	
-<p>Adds HTTP basic auth to all requests sent from a client</p>
+<p>Adds specified curl auth to all requests sent from a client Defaults to
+CURLAUTH_BASIC if none supplied</p>
 
 	</div>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-<b>Guzzle\Http\Plugin\BasicAuthPlugin</b>			
+<b>Guzzle\Http\Plugin\CurlAuthPlugin</b>			
 			 implements 
 Symfony\Component\EventDispatcher\EventSubscriberInterface
 			
@@ -158,7 +159,7 @@ Symfony\Component\EventDispatcher\EventSubscriberInterface
 		
 		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Plugin.html">Plugin</a><br>
 
-		<b>Located at</b> Guzzle/Http/Plugin/BasicAuthPlugin.php<br>
+		<b>Located at</b> Guzzle/Http/Plugin/CurlAuthPlugin.php<br>
 	</div>
 
 
@@ -176,7 +177,7 @@ Symfony\Component\EventDispatcher\EventSubscriberInterface
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span>string <var>$username</var></span>, <span>string <var>$password</var></span> )</code>
+		<code>__construct( <span>string <var>$username</var></span>, <span>string <var>$password</var></span>, <span>integer <var>$scheme</var> = CURLAUTH_BASIC</span> )</code>
 
 		<div class="description short">
 			
@@ -196,6 +197,8 @@ Symfony\Component\EventDispatcher\EventSubscriberInterface
 					<dd><code>string</code><br> HTTP basic auth username</dd>
 					<dt><var>$password</var></dt>
 					<dd><code>string</code><br> Password</dd>
+					<dt><var>$scheme</var></dt>
+					<dd><code>integer</code><br> Curl auth scheme</dd>
 				</dl></div>
 
 
