@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Client | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
-	<script type="text/javascript" src="elementlist.js?3632848454"></script>
+	<script type="text/javascript" src="elementlist.js?2085661936"></script>
 	<script type="text/javascript">
 		var ApiGen = ApiGen || {};
 		ApiGen.options = {"elementDetailsCollapsed":true,"elementsOrder":"natural"};
@@ -384,6 +384,89 @@ client's config.</dd>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getDefaultHeaders" id="_getDefaultHeaders">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDefaultHeaders">#</a>
+		<code>getDefaultHeaders( )</code>
+
+		<div class="description short">
+			
+<p>Get the default HTTP headers to add to each request created by the client</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the default HTTP headers to add to each request created by the client</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br>
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_getDefaultHeaders">Guzzle\Http\ClientInterface::getDefaultHeaders</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDefaultHeaders" id="_setDefaultHeaders">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDefaultHeaders">#</a>
+		<code>setDefaultHeaders( <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the default HTTP headers to add to each request created by the client</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the default HTTP headers to add to each request created by the client</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$headers</var></dt>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Default HTTP headers</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code></code><br>
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_setDefaultHeaders">Guzzle\Http\ClientInterface::setDefaultHeaders</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="expandTemplate" id="_expandTemplate">
 
 		<td class="attributes"><code>
@@ -577,7 +660,7 @@ followed by template variables<br>
 
 		<td class="attributes"><code>
 			
-			 public 
+			 protected 
 			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
@@ -614,8 +697,6 @@ behaviors and properties to the request.</p>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_prepareRequest">Guzzle\Http\ClientInterface::prepareRequest</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -1226,6 +1307,50 @@ requests.</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="setRequestFactory" id="_setRequestFactory">
+
+		<td class="attributes"><code>
+			
+			 public 
+			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setRequestFactory">#</a>
+		<code>setRequestFactory( <span><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html">Guzzle\Http\Message\RequestFactoryInterface</a> <var>$factory</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set the request factory to use with the client when creating requests</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set the request factory to use with the client when creating requests</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$factory</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html">Guzzle\Http\Message\RequestFactoryInterface</a></code></code><br> Request factory</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code></code><br>
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_setRequestFactory">Guzzle\Http\ClientInterface::setRequestFactory</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 	<table class="summary inherited">
@@ -1246,29 +1371,57 @@ requests.</p>
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="userAgent" id="$userAgent">
+	<tr data-order="defaultHeaders" id="$defaultHeaders">
 
 		<td class="attributes"><code>
 			
 			protected 
-			string
+			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>
 		</code></td>
 
 		<td class="name">
-<var>$userAgent</var>		</td>
-		<td class="value"><code><span class="php-keyword1">null</span></code></td>
+<var>$defaultHeaders</var>		</td>
+		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$userAgent" class="anchor">#</a>
+			<a href="#$defaultHeaders" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>User-Agent header to apply to all requests</p>
+<p>Default HTTP headers to set on each request</p>
 
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>User-Agent header to apply to all requests</p>
+<p>Default HTTP headers to set on each request</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="requestFactory" id="$requestFactory">
+
+		<td class="attributes"><code>
+			
+			protected 
+			<code><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html">Guzzle\Http\Message\RequestFactoryInterface</a></code>
+		</code></td>
+
+		<td class="name">
+<var>$requestFactory</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$requestFactory" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Request factory used by the client</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Request factory used by the client</p>
 
 
 			</div>

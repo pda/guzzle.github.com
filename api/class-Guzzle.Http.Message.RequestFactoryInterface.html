@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="ApiGen 2.3.0">
 
-	<title>Class Guzzle\Http\Message\RequestFactory | Guzzle</title>
+	<title>Interface Guzzle\Http\Message\RequestFactoryInterface | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?1841058525"></script>
 	<script type="text/javascript" src="elementlist.js?2085661936"></script>
@@ -80,7 +80,7 @@
 				<li><a href="class-Guzzle.Http.Message.AbstractMessage.html">AbstractMessage</a></li>
 				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">EntityEnclosingRequest</a></li>
 				<li><a href="class-Guzzle.Http.Message.Request.html">Request</a></li>
-				<li class="active"><a href="class-Guzzle.Http.Message.RequestFactory.html">RequestFactory</a></li>
+				<li><a href="class-Guzzle.Http.Message.RequestFactory.html">RequestFactory</a></li>
 				<li><a href="class-Guzzle.Http.Message.Response.html">Response</a></li>
 			</ul>
 
@@ -88,7 +88,7 @@
 			<ul>
 				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html">EntityEnclosingRequestInterface</a></li>
 				<li><a href="class-Guzzle.Http.Message.MessageInterface.html">MessageInterface</a></li>
-				<li><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html">RequestFactoryInterface</a></li>
+				<li class="active"><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html">RequestFactoryInterface</a></li>
 				<li><a href="class-Guzzle.Http.Message.RequestInterface.html">RequestInterface</a></li>
 			</ul>
 
@@ -136,28 +136,21 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class RequestFactory</h1>
+	<h1>Interface RequestFactoryInterface</h1>
 
 	<div class="description">
 	
-<p>Default HTTP request factory used to create the default
-Guzzle\Http\Message\Request and Guzzle\Http\Message\EntityEnclosingRequest
-objects.</p>
+<p>Request factory used to create HTTP requests</p>
 
 	</div>
 
-	<dl class="tree">
-		<dd style="padding-left:0px">
-<b>Guzzle\Http\Message\RequestFactory</b>			
-			 implements 
-				<a href="class-Guzzle.Http.Message.RequestFactoryInterface.html">Guzzle\Http\Message\RequestFactoryInterface</a>
-			
-			
-		</dd>
-	</dl>
 
 
 
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-Guzzle.Http.Message.RequestFactory.html">Guzzle\Http\Message\RequestFactory</a>
+	</div>
 
 
 
@@ -167,49 +160,12 @@ objects.</p>
 		
 		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Message.html">Message</a><br>
 
-		<b>Located at</b> Guzzle/Http/Message/RequestFactory.php<br>
+		<b>Located at</b> Guzzle/Http/Message/RequestFactoryInterface.php<br>
 	</div>
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="getInstance" id="_getInstance">
-
-		<td class="attributes"><code>
-			
-			 public static
-			<code><a href="class-Guzzle.Http.Message.RequestFactory.html">Guzzle\Http\Message\RequestFactory</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getInstance">#</a>
-		<code>getInstance( )</code>
-
-		<div class="description short">
-			
-<p>Get a cached instance of the default request factory</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Get a cached instance of the default request factory</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.RequestFactory.html">Guzzle\Http\Message\RequestFactory</a></code></code><br>
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="parseMessage" id="_parseMessage">
 
 		<td class="attributes"><code>
@@ -253,8 +209,6 @@ array of request headers # body: string containing the request body<br>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html#_parseMessage">Guzzle\Http\Message\RequestFactoryInterface::parseMessage</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -297,8 +251,6 @@ array of request headers # body: string containing the request body<br>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html#_fromMessage">Guzzle\Http\Message\RequestFactoryInterface::fromMessage</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -354,8 +306,6 @@ e.g. 80 # user - e.g. michael # pass - e.g. rocks # path - e.g. / OR /index.html
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html#_fromParts">Guzzle\Http\Message\RequestFactoryInterface::fromParts</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -406,8 +356,6 @@ well.</dd>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html#_create">Guzzle\Http\Message\RequestFactoryInterface::create</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -419,129 +367,6 @@ well.</dd>
 
 
 
-	<table class="summary" id="properties">
-	<caption>Properties summary</caption>
-	<tr data-order="requestHeaders" id="$requestHeaders">
-
-		<td class="attributes"><code>
-			
-			protected static
-			Standard
-		</code></td>
-
-		<td class="name">
-<var>$requestHeaders</var>		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>(
-    <span class="php-quote">'accept'</span>, <span class="php-quote">'accept-charset'</span>, <span class="php-quote">'accept-encoding'</span>, <span class="php-quote">'accept-language'</span>,
-    <span class="php-quote">'authorization'</span>, <span class="php-quote">'cache-control'</span>, <span class="php-quote">'connection'</span>, <span class="php-quote">'cookie'</span>,
-    <span class="php-quote">'content-length'</span>, <span class="php-quote">'content-type'</span>, <span class="php-quote">'date'</span>, <span class="php-quote">'expect'</span>, <span class="php-quote">'from'</span>, <span class="php-quote">'host'</span>,
-    <span class="php-quote">'if-match'</span>, <span class="php-quote">'if-modified-since'</span>, <span class="php-quote">'if-none-match'</span>, <span class="php-quote">'if-range'</span>,
-    <span class="php-quote">'if-unmodified-since'</span>, <span class="php-quote">'max-forwards'</span>, <span class="php-quote">'pragma'</span>, <span class="php-quote">'proxy-authorization'</span>,
-    <span class="php-quote">'range'</span>, <span class="php-quote">'referer'</span>, <span class="php-quote">'te'</span>, <span class="php-quote">'transfer-encoding'</span>, <span class="php-quote">'upgrade'</span>, <span class="php-quote">'user-agent'</span>,
-    <span class="php-quote">'via'</span>, <span class="php-quote">'warning'</span>
-)</code></td>
-		<td class="description"><div>
-			<a href="#$requestHeaders" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>request headers</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>request headers</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="instance" id="$instance">
-
-		<td class="attributes"><code>
-			
-			protected static
-			<code><a href="class-Guzzle.Http.Message.RequestFactory.html">Guzzle\Http\Message\RequestFactory</a></code>
-		</code></td>
-
-		<td class="name">
-<var>$instance</var>		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$instance" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>Singleton instance of the default request factory</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>Singleton instance of the default request factory</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="requestClass" id="$requestClass">
-
-		<td class="attributes"><code>
-			
-			protected 
-			string
-		</code></td>
-
-		<td class="name">
-<var>$requestClass</var>		</td>
-		<td class="value"><code><span class="php-quote">'Guzzle\\Http\\Message\\Request'</span></code></td>
-		<td class="description"><div>
-			<a href="#$requestClass" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>Class to instantiate for GET, HEAD, and DELETE requests</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>Class to instantiate for GET, HEAD, and DELETE requests</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="entityEnclosingRequestClass" id="$entityEnclosingRequestClass">
-
-		<td class="attributes"><code>
-			
-			protected 
-			string
-		</code></td>
-
-		<td class="name">
-<var>$entityEnclosingRequestClass</var>		</td>
-		<td class="value"><code><span class="php-quote">'Guzzle\\Http\\Message\\EntityEnclosingRequest'</span></code></td>
-		<td class="description"><div>
-			<a href="#$entityEnclosingRequestClass" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>Class to instantiate for POST and PUT requests</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>Class to instantiate for POST and PUT requests</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 
 </div>
