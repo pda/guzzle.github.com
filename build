@@ -37,7 +37,7 @@ fi
 
 cd src
 
-composer.phar install --install-suggests
+phing test-init
 
 # Get the latest tag (minus the leading 'v')
 latest=`git describe --abbrev=0 --tags | cut -d v -f 2`
@@ -45,9 +45,9 @@ cd ..
 
 # Build phar files in the background
 echo "Building guzzle.phar"
-phing -f src/build.xml &
+phing -f src/build.xml 
 echo "Building guzzle-min.phar"
-phing -f src/build.xml -Dmin=true &
+phing -f src/build.xml -Dmin=true
 
 # Build PEAR package
 echo "Building PEAR package"
