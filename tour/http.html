@@ -150,6 +150,7 @@
 </li>
 <li><a class="reference internal" href="#entity-bodies">Entity Bodies</a></li>
 <li><a class="reference internal" href="#responses">Responses</a></li>
+<li><a class="reference internal" href="#request-and-response-headers">Request and response headers</a></li>
 <li><a class="reference internal" href="#send-http-requests-in-parallel">Send HTTP requests in parallel</a></li>
 <li><a class="reference internal" href="#managed-persistent-http-connections">Managed persistent HTTP connections</a></li>
 <li><a class="reference internal" href="#low-level-curl-access">Low level cURL access</a></li>
@@ -485,6 +486,38 @@
 </pre></div>
 </div>
 <p>The entity body of a response can be retrieved by calling <tt class="docutils literal"><span class="pre">$response-&gt;getBody()</span></tt>.  Pass TRUE to this method to retrieve the body as a string rather than an EntityBody object;  this is a convenience feature&#8211; an EntityBody can be cast as a string.</p>
+</div>
+<div class="section" id="request-and-response-headers">
+<h3>Request and response headers<a class="headerlink" href="#request-and-response-headers" title="Permalink to this headline">¶</a></h3>
+<p>HTTP message headers are case insensitive, multiple occurences of any header can be present in an HTTP message (whether it&#8217;s valid or not), and some servers require specific casing of particular headers.  Because of this, request and response headers are stored in <tt class="docutils literal"><span class="pre">Guzzle\Http\Messsage\Header</span></tt> objects.  The Header object can be cast as a string, counted, or iterated to retrieve each value from the header.  Casting a Header object to a string will return all of the header values concatenated together using a glue string (typically &#8216;, &#8216;).  Let&#8217;s take the following example to see what is returned:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;http://www.example.com&#39;</span><span class="p">);</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">addHeader</span><span class="p">(</span><span class="s1">&#39;Foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">);</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">addHeader</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">);</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">addHeader</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;123&#39;</span><span class="p">);</span>
+
+<span class="c1">// Requests can be cast as a string. Output is &quot;bar, baz&quot;</span>
+<span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getHeader</span><span class="p">(</span><span class="s1">&#39;Foo&#39;</span><span class="p">);</span>
+
+<span class="c1">// You can count the number of headers of a particular case insensitive name (2 in this example)</span>
+<span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getHeader</span><span class="p">(</span><span class="s1">&#39;foO&#39;</span><span class="p">));</span>
+
+<span class="c1">// You can interate over Header objects</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getHeader</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$header</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$header</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getHeader</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">);</span>
+<span class="c1">// Outputs: &quot;123&quot;</span>
+
+<span class="c1">// Missing headers return NULL</span>
+<span class="nv">$nullValue</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getHeader</span><span class="p">(</span><span class="s1">&#39;Missing&#39;</span><span class="p">);</span>
+
+<span class="c1">// You can see all of the different variations of a header by calling raw() on the Header</span>
+<span class="nb">var_export</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getHeader</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">raw</span><span class="p">());</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="send-http-requests-in-parallel">
 <h3>Send HTTP requests in parallel<a class="headerlink" href="#send-http-requests-in-parallel" title="Permalink to this headline">¶</a></h3>
