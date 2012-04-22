@@ -2,16 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Building web service clients &mdash; Guzzle v2.0.0 documentation</title>
+    <title>Building web service clients &mdash; Guzzle 2.0.0 documentation</title>
+    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap.css?v=2" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css?v=5" type="text/css" />
     <link rel="stylesheet" href="../_static/prettify/prettify.css?v=1" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -25,7 +28,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/prettify/prettify.js"></script>
-    <link rel="top" title="Guzzle v2.0.0 documentation" href="../index.html" />
+    <link rel="top" title="Guzzle 2.0.0 documentation" href="../index.html" />
     <link rel="up" title="Tour" href="index.html" />
     <link rel="next" title="Guides" href="../guide/index.html" />
     <link rel="prev" title="Consuming web services using web service clients" href="using_services.html" />
@@ -204,24 +207,24 @@ composer.json
 <col width="75%" />
 </colgroup>
 <tbody valign="top">
-<tr><td>src/FooBar/Command/</td>
+<tr class="row-odd"><td>src/FooBar/Command/</td>
 <td>Place all of the commands for your web service in this folder.</td>
 </tr>
-<tr><td>src/FooBar/FooBarClient.php</td>
+<tr class="row-even"><td>src/FooBar/FooBarClient.php</td>
 <td>Rename this class to the CamelCase name of the web service you are implementing followed by <tt class="docutils literal"><span class="pre">Client</span></tt>.  Use
 strict CamelCasing (e.g. Xml is correct, XML is not).  A good client name would be something like
 <tt class="docutils literal"><span class="pre">FooBarClient.php</span></tt>.</td>
 </tr>
-<tr><td>phpunit.xml.dist</td>
+<tr class="row-odd"><td>phpunit.xml.dist</td>
 <td>Different developers will configure their development environment differently.  A phpunit.xml file is required
 to run PHPUnit tests against your service.  <tt class="docutils literal"><span class="pre">phpunit.xml.dist</span></tt> provides a template for developers to copy and
 modify.</td>
 </tr>
-<tr><td>tests/</td>
+<tr class="row-even"><td>tests/</td>
 <td>Place your <tt class="docutils literal"><span class="pre">bootstrap.php</span></tt> file in this folder.  The boostrap.php file is responsible for setting up PHPUnit
 tests.</td>
 </tr>
-<tr><td>tests/mock</td>
+<tr class="row-odd"><td>tests/mock</td>
 <td>Place mock response files in this folder.  Mock response files include HTTP response headers and the entity body
 of a response.  Keep each HTTP response in a separate file.</td>
 </tr>
@@ -344,13 +347,13 @@ of a response.  Keep each HTTP response in a separate file.</td>
 <col width="43%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Attribute</th>
+<tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Description</th>
 <th class="head">Example</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><tt class="docutils literal"><span class="pre">type</span></tt></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">type</span></tt></td>
 <td>Type of variable (array, boolean, class, date, enum, float,
 integer, regex, string, timestamp).  Some type commands accept
 arguments by separating the type and argument with a colon
@@ -359,43 +362,43 @@ arguments by separating the type and argument with a colon
 <p class="last"><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">type=&quot;array&quot;</span></tt></p>
 </td>
 </tr>
-<tr><td><tt class="docutils literal"><span class="pre">required</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">required</span></tt></td>
 <td>Whether or not the argument is required.  If a required parameter
 is not set and you try to execute a command, an exception will be
 thrown.</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">required=&quot;true&quot;</span></tt> or
 <tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">required=&quot;false&quot;</span></tt></td>
 </tr>
-<tr><td><tt class="docutils literal"><span class="pre">default</span></tt></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">default</span></tt></td>
 <td>Default value of the parameter that will be used if a value is
 not provided before executing the command.</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">default=&quot;default-value!&quot;</span></tt></td>
 </tr>
-<tr><td><tt class="docutils literal"><span class="pre">doc</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">doc</span></tt></td>
 <td>Documentation for the parameter.</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">doc=&quot;This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">documentation&quot;</span></tt></td>
 </tr>
-<tr><td><tt class="docutils literal"><span class="pre">min_length</span></tt></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">min_length</span></tt></td>
 <td>Minimum value length.</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">min_length=&quot;5&quot;</span></tt></td>
 </tr>
-<tr><td><tt class="docutils literal"><span class="pre">max_length</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">max_length</span></tt></td>
 <td>Maximum value length.</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">max_length=&quot;15&quot;</span></tt></td>
 </tr>
-<tr><td><tt class="docutils literal"><span class="pre">static</span></tt></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">static</span></tt></td>
 <td>A value that cannot be changed.</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">static=&quot;this</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">changed&quot;</span></tt></td>
 </tr>
-<tr><td><tt class="docutils literal"><span class="pre">prepend</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">prepend</span></tt></td>
 <td>Text to prepend to the value if the value is set.</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">prepend=&quot;this_is_added_before.&quot;</span></tt></td>
 </tr>
-<tr><td><tt class="docutils literal"><span class="pre">append</span></tt></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">append</span></tt></td>
 <td>Text to append to the value if the value is set.</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">append=&quot;.this_is_added_after&quot;</span></tt></td>
 </tr>
-<tr><td><tt class="docutils literal"><span class="pre">filters</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">filters</span></tt></td>
 <td>CSV list of functions or static functions that modifies a string</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">filters=&quot;strtoupper,strrev&quot;</span></tt></td>
 </tr>
@@ -466,7 +469,7 @@ not provided before executing the command.</td>
     <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;shh!secret&#39;</span>
 <span class="p">));</span>
 
-<span class="nv">$command</span> <span class="o">=</span> <span class="nx">client</span><span class="o">-&gt;</span><span class="na">getCommand</span><span class="p">(</span><span class="s1">&#39;simple&#39;</span><span class="p">);</span>
+<span class="nv">$command</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getCommand</span><span class="p">(</span><span class="s1">&#39;simple&#39;</span><span class="p">);</span>
 <span class="nv">$command</span><span class="o">-&gt;</span><span class="na">setKey</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
 
 <span class="c1">// Result will be an instance of Awesomeobject</span>

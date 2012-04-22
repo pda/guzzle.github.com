@@ -24,6 +24,16 @@
 # 6. Discover Guzzle channel
 #    pear channel-discover guzzlephp.org/pear
 
+# Install doc related stuff if needed
+if [ "`which sphinx-build`" = '' ]; then
+    cwd="`pwd`"
+    cd /tmp
+    sudo easy_install pip
+    sudo pip install sphinx
+    sudo pip install pygments
+    cd $cwd
+fi
+
 push=$1
 
 # Install and update Guzzle
@@ -45,7 +55,7 @@ cd ..
 
 # Build phar files in the background
 echo "Building guzzle.phar"
-phing -f src/build.xml 
+phing -f src/build.xml
 echo "Building guzzle-min.phar"
 phing -f src/build.xml -Dmin=true
 

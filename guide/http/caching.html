@@ -2,16 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Caching &mdash; Guzzle v2.0.0 documentation</title>
+    <title>Caching &mdash; Guzzle 2.0.0 documentation</title>
+    
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap.css?v=2" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css?v=5" type="text/css" />
     <link rel="stylesheet" href="../../_static/prettify/prettify.css?v=1" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
@@ -25,7 +28,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/prettify/prettify.js"></script>
-    <link rel="top" title="Guzzle v2.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="Guzzle 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Guides" href="../index.html" />
     <link rel="next" title="Upgrading from Guzzle 1.x to Guzzle 2.0" href="../upgrade/1.0-2.0.html" />
     <link rel="prev" title="Creating Dynamic Commands" href="../service/creating_dynamic_commands.html" />
@@ -196,7 +199,7 @@
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// If the response to the request is cacheable, then the response will be cached for 100 seconds</span>
-<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cache.override_ttl&#39;</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cache.override_ttl&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -219,7 +222,7 @@
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Guzzle\Http\Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;cache.override_ttl&#39;</span> <span class="o">=&gt;</span> <span class="m">3600</span><span class="p">,</span>
+    <span class="s1">&#39;cache.override_ttl&#39;</span> <span class="o">=&gt;</span> <span class="mi">3600</span><span class="p">,</span>
     <span class="s1">&#39;cache.revalidate&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;never&#39;</span>
 <span class="p">));</span>
 

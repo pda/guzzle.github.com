@@ -2,16 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>HTTP client for PHP &mdash; Guzzle v2.0.0 documentation</title>
+    <title>HTTP client for PHP &mdash; Guzzle 2.0.0 documentation</title>
+    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap.css?v=2" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css?v=5" type="text/css" />
     <link rel="stylesheet" href="../_static/prettify/prettify.css?v=1" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -25,7 +28,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/prettify/prettify.js"></script>
-    <link rel="top" title="Guzzle v2.0.0 documentation" href="../index.html" />
+    <link rel="top" title="Guzzle 2.0.0 documentation" href="../index.html" />
     <link rel="up" title="Tour" href="index.html" />
     <link rel="next" title="Consuming web services using web service clients" href="using_services.html" />
     <link rel="prev" title="Installation" href="installation.html" />
@@ -234,7 +237,7 @@
 <span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
 
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://baseurl.com/api/v{{version}}&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;version&#39;</span> <span class="o">=&gt;</span> <span class="m">1</span>
+    <span class="s1">&#39;version&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
 <span class="p">));</span>
 
 <span class="c1">// Relative to base URL (http://baseurl.com/api/v1/path?query=123&amp;value=abc)</span>
@@ -281,9 +284,9 @@
 </pre></div>
 </div>
 <p>Request objects are all about building an HTTP message.  Each part of an HTTP request message can be set individually using methods on the request object or set in bulk using the setUrl() method.  Here&#8217;s the format of an HTTP request with each part of the request referencing the method used to change it:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nx">PUT</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">/</span><span class="nx">path</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span><span class="o">?</span><span class="nx">query</span><span class="o">=</span><span class="m">123</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="nx">HTTP</span><span class="o">/</span><span class="m">1.1</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span>
-<span class="nx">X</span><span class="o">-</span><span class="nx">Header</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="o">:</span> <span class="nb">header</span>
-<span class="nx">Content</span><span class="o">-</span><span class="nx">Length</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="o">:</span> <span class="m">4</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nx">PUT</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">/</span><span class="nx">path</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span><span class="o">?</span><span class="nx">query</span><span class="o">=</span><span class="mi">123</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span>
+<span class="nx">X</span><span class="o">-</span><span class="nx">Header</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="o">:</span> <span class="nx">header</span>
+<span class="nx">Content</span><span class="o">-</span><span class="nx">Length</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="o">:</span> <span class="mi">4</span>
 
 <span class="nx">data</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
 </pre></div>
@@ -294,37 +297,37 @@
 <col width="76%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><ol class="first last loweralpha simple">
+<tr class="row-odd"><td><ol class="first last loweralpha simple">
 <li><strong>Method</strong></li>
 </ol>
 </td>
 <td>The request method can only be set when instantiating a request</td>
 </tr>
-<tr><td><ol class="first last loweralpha simple" start="2">
+<tr class="row-even"><td><ol class="first last loweralpha simple" start="2">
 <li><strong>Path</strong></li>
 </ol>
 </td>
 <td><tt class="docutils literal"><span class="pre">$request-&gt;setPath('/path');</span></tt></td>
 </tr>
-<tr><td><ol class="first last loweralpha simple" start="3">
+<tr class="row-odd"><td><ol class="first last loweralpha simple" start="3">
 <li><strong>Query</strong></li>
 </ol>
 </td>
 <td><tt class="docutils literal"><span class="pre">$request-&gt;getQuery()-&gt;set('query',</span> <span class="pre">'123');</span> <span class="pre">//</span> <span class="pre">see</span> <span class="pre">``Guzzle\Http\QueryString</span></tt></td>
 </tr>
-<tr><td><ol class="first last loweralpha simple" start="4">
+<tr class="row-even"><td><ol class="first last loweralpha simple" start="4">
 <li><strong>Protocol version</strong></li>
 </ol>
 </td>
 <td><tt class="docutils literal"><span class="pre">$request-&gt;setProtocolVersion('1.1');</span></tt></td>
 </tr>
-<tr><td><ol class="first last loweralpha simple" start="5">
+<tr class="row-odd"><td><ol class="first last loweralpha simple" start="5">
 <li><strong>Header</strong></li>
 </ol>
 </td>
 <td><tt class="docutils literal"><span class="pre">$request-&gt;setHeader('X-Header',</span> <span class="pre">'header');</span></tt></td>
 </tr>
-<tr><td><ol class="first last loweralpha simple" start="6">
+<tr class="row-even"><td><ol class="first last loweralpha simple" start="6">
 <li><strong>Entity Body</strong></li>
 </ol>
 </td>
@@ -402,7 +405,7 @@
 <span class="c1">// Add custom error handling to any request created by this client</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addListener</span><span class="p">(</span><span class="s1">&#39;request.error&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nx">Event</span> <span class="nv">$event</span><span class="p">)</span> <span class="p">{</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getStatusCode</span><span class="p">()</span> <span class="o">==</span> <span class="m">401</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getStatusCode</span><span class="p">()</span> <span class="o">==</span> <span class="mi">401</span><span class="p">)</span> <span class="p">{</span>
 
         <span class="nv">$newRequest</span> <span class="o">=</span> <span class="nv">$event</span><span class="p">[</span><span class="s1">&#39;request&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">clone</span><span class="p">();</span>
         <span class="nv">$newRequest</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;X-Auth-Header&#39;</span><span class="p">,</span> <span class="nx">MyApplication</span><span class="o">::</span><span class="na">getNewAuthToken</span><span class="p">());</span>
@@ -741,7 +744,7 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\HistoryPlugin</span><span class="p">;</span>
 
 <span class="nv">$history</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HistoryPlugin</span><span class="p">();</span>
-<span class="nv">$history</span><span class="o">-&gt;</span><span class="na">setLimit</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+<span class="nv">$history</span><span class="o">-&gt;</span><span class="na">setLimit</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$history</span><span class="p">);</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://www.yahoo.com/&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
@@ -761,8 +764,8 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <span class="k">use</span> <span class="nx">Guzzle\Http\Message\Response</span><span class="p">;</span>
 
 <span class="nv">$mock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MockPlugin</span><span class="p">();</span>
-<span class="nv">$mock</span><span class="o">-&gt;</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="m">200</span><span class="p">))</span>
-     <span class="o">-&gt;</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="m">404</span><span class="p">));</span>
+<span class="nv">$mock</span><span class="o">-&gt;</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+     <span class="o">-&gt;</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="mi">404</span><span class="p">));</span>
 
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$mock</span><span class="p">);</span>
 
@@ -801,7 +804,7 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 
 <span class="c1">// Here we are saying that if 10 or more requests are in the batch queue,</span>
 <span class="c1">// then it must automatically flush the queue and send the requests.</span>
-<span class="nv">$batchPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BatchQueuePlugin</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
+<span class="nv">$batchPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BatchQueuePlugin</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 
 <span class="c1">// Add the batch plugin to the client object</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$batchPlugin</span><span class="p">);</span>

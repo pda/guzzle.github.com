@@ -2,16 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Creating Dynamic Commands &mdash; Guzzle v2.0.0 documentation</title>
+    <title>Creating Dynamic Commands &mdash; Guzzle 2.0.0 documentation</title>
+    
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap.css?v=2" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css?v=5" type="text/css" />
     <link rel="stylesheet" href="../../_static/prettify/prettify.css?v=1" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
@@ -25,7 +28,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/prettify/prettify.js"></script>
-    <link rel="top" title="Guzzle v2.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="Guzzle 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Guides" href="../index.html" />
     <link rel="next" title="Caching" href="../http/caching.html" />
     <link rel="prev" title="Creating Plugins and Observers" href="../http/creating_plugins.html" />
@@ -239,7 +242,7 @@
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">setDescription</span><span class="p">(</span><span class="nv">$description</span><span class="p">);</span>
 
 <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getCommand</span><span class="p">(</span><span class="s1">&#39;delete_comment&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="m">123</span>
+    <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">123</span>
 <span class="p">));</span>
 
 <span class="nv">$httpResponse</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
@@ -266,32 +269,32 @@ If you are attaching a JSON service description, use the JsonDescriptionBuilder.
 <col width="86%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Attribute</th>
+<tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>name</td>
+<tr class="row-even"><td>name</td>
 <td>The key used to reference the command.  Use snake_casing.</td>
 </tr>
-<tr><td>method</td>
+<tr class="row-odd"><td>method</td>
 <td>The HTTP method the command will execute (GET, HEAD, DELETE, POST,
 PUT, OPTIONS).</td>
 </tr>
-<tr><td>uri</td>
+<tr class="row-even"><td>uri</td>
 <td>The URI template of the request (e.g. <tt class="docutils literal"><span class="pre">/path/to/users</span></tt>).  The path
 can be absolute or relative.  A relative path will append to the path
 set on the base_url of the service.  This attribute can contain
 <tt class="docutils literal"><span class="pre">{key_name}</span></tt> URI templates, where <tt class="docutils literal"><span class="pre">key_name</span></tt> is a parameter in
 command or set in the associated client&#8217;s configuration data.</td>
 </tr>
-<tr><td>extends</td>
+<tr class="row-odd"><td>extends</td>
 <td>Extend a previously defined command in the same XML description to
 inherit every attribute of the parent command including params.  Any
 settings specified in the chile command will override settings from
 inherited from the parent.</td>
 </tr>
-<tr><td>class</td>
+<tr class="row-even"><td>class</td>
 <td>Optional.  Specify a <tt class="docutils literal"><span class="pre">concrete</span> <span class="pre">command</span></tt> class that will be
 instantiated when the command is created.  This is useful for
 implementing complex response processing</td>
@@ -315,19 +318,19 @@ implementing complex response processing</td>
 <col width="35%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Attribute</th>
+<tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Description</th>
 <th class="head">Example</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>location</td>
+<tr class="row-even"><td>location</td>
 <td>The location in which the parameter will be added to the
 generated request.</td>
 <td><tt class="docutils literal"><span class="pre">location=&quot;query&quot;</span></tt> or
 <tt class="docutils literal"><span class="pre">location=&quot;header:X-Header&quot;</span></tt></td>
 </tr>
-<tr><td>type</td>
+<tr class="row-odd"><td>type</td>
 <td>Type of variable (array, boolean, class, date, enum, float,
 integer, regex, string, timestamp).  Some type commands accept
 arguments by separating the type and argument with a colon
@@ -336,43 +339,43 @@ arguments by separating the type and argument with a colon
 <p class="last"><tt class="docutils literal"><span class="pre">type=&quot;array&quot;</span></tt></p>
 </td>
 </tr>
-<tr><td>required</td>
+<tr class="row-even"><td>required</td>
 <td>Whether or not the argument is required.  If a required parameter
 is not set and you try to execute a command, an exception will be
 thrown.</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">required=&quot;true&quot;</span></tt> or
 <tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">required=&quot;false&quot;</span></tt></td>
 </tr>
-<tr><td>default</td>
+<tr class="row-odd"><td>default</td>
 <td>Default value of the parameter that will be used if a value is
 not provided before executing the command.</td>
 <td><tt class="docutils literal"><span class="pre">default=&quot;default-value!&quot;</span></tt></td>
 </tr>
-<tr><td>doc</td>
+<tr class="row-even"><td>doc</td>
 <td>Documentation for the parameter.</td>
 <td><tt class="docutils literal"><span class="pre">doc=&quot;This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">documentation&quot;</span></tt></td>
 </tr>
-<tr><td>min_length</td>
+<tr class="row-odd"><td>min_length</td>
 <td>Minimum value length.</td>
 <td><tt class="docutils literal"><span class="pre">min_length=&quot;5&quot;</span></tt></td>
 </tr>
-<tr><td>max_length</td>
+<tr class="row-even"><td>max_length</td>
 <td>Maximum value length.</td>
 <td><tt class="docutils literal"><span class="pre">max_length=&quot;15&quot;</span></tt></td>
 </tr>
-<tr><td>static</td>
+<tr class="row-odd"><td>static</td>
 <td>A value that cannot be changed.</td>
 <td><tt class="docutils literal"><span class="pre">static=&quot;this</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">changed&quot;</span></tt></td>
 </tr>
-<tr><td>prepend</td>
+<tr class="row-even"><td>prepend</td>
 <td>Text to prepend to the value if the value is set.</td>
 <td><tt class="docutils literal"><span class="pre">prepend=&quot;this_is_added_before.&quot;</span></tt></td>
 </tr>
-<tr><td>append</td>
+<tr class="row-odd"><td>append</td>
 <td>Text to append to the value if the value is set.</td>
 <td><tt class="docutils literal"><span class="pre">append=&quot;.this_is_added_after&quot;</span></tt></td>
 </tr>
-<tr><td>filters</td>
+<tr class="row-even"><td>filters</td>
 <td>CSV list of functions or static functions that modifies a string</td>
 <td><tt class="docutils literal"><span class="pre">&#64;guzzle</span> <span class="pre">key</span> <span class="pre">filters=&quot;strtoupper,strrev&quot;</span></tt></td>
 </tr>
@@ -385,21 +388,21 @@ not provided before executing the command.</td>
 <col width="91%" />
 </colgroup>
 <tbody valign="top">
-<tr><td>query</td>
+<tr class="row-odd"><td>query</td>
 <td>Sets a query string value using the key and value of the parameter.  A custom query string key
 can be used by providing the custom key after the query location separated by a colon
 (e.g. <tt class="docutils literal"><span class="pre">location=&quot;query:QueryKey</span></tt>)&#8221;</td>
 </tr>
-<tr><td>header</td>
+<tr class="row-even"><td>header</td>
 <td>The parameter will be added as a header.  The header will be set as the name of the parameter
 or you can specify a custom header by providing the custom header after the header location
 separated by a colon (e.g. <tt class="docutils literal"><span class="pre">location=&quot;header:X-Custom-Header&quot;</span></tt>)</td>
 </tr>
-<tr><td rowspan="2">body</td>
+<tr class="row-odd"><td rowspan="2">body</td>
 <td rowspan="2">The parameter value will be used as the body of the generated HTTP request</td>
 </tr>
-<tr></tr>
-<tr><td>data</td>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td>data</td>
 <td>This is the default location of parameters that do not contain a location attribute</td>
 </tr>
 </tbody>
@@ -412,21 +415,25 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 <p>You can use the <tt class="docutils literal"><span class="pre">type</span></tt> attribute on command parameters to enforce parameter values match a certain filter or are of a certain type.  For example, you could create a command parameter that must match a regular expression using the following snippet of code:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;client&gt;</span>
-    <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;example_command&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span> <span class="na">uri=</span><span class="s">&quot;/{{username}}&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;my_parameter&quot;</span> <span class="na">type=</span><span class="s">&quot;regex:/[0-9a-zA-z_\-]+/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/command&gt;</span>
+    <span class="nt">&lt;commands&gt;</span>
+        <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;example_command&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span> <span class="na">uri=</span><span class="s">&quot;/{{username}}&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;my_parameter&quot;</span> <span class="na">type=</span><span class="s">&quot;regex:/[0-9a-zA-z_\-]+/&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/command&gt;</span>
+    <span class="nt">&lt;/commands&gt;</span>
 <span class="nt">&lt;/client&gt;</span>
 </pre></div>
 </div>
 <p>When an end-developer creates this command, they will need to pass a value that matches the <tt class="docutils literal"><span class="pre">/[0-9a-zA-z_\-]+/</span></tt> regular expression.  If a supplied parameter does not match this regular expression, an exception will be thrown.  If you use this same pattern in various parts of your XML service description, then you could create a shortcut <tt class="docutils literal"><span class="pre">&lt;type&gt;</span></tt> node and reference your custom type in each command.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;types&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle.Service.Filter.Regex&quot;</span> <span class="na">default=</span><span class="s">&quot;/[0-9a-zA-z_\-]+/&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/types&gt;</span>
 <span class="nt">&lt;client&gt;</span>
-    <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;example_command&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span> <span class="na">uri=</span><span class="s">&quot;/{{username}}&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;my_parameter&quot;</span> <span class="na">type=</span><span class="s">&quot;username&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/command&gt;</span>
+    <span class="nt">&lt;types&gt;</span>
+        <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle.Service.Filter.Regex&quot;</span> <span class="na">default=</span><span class="s">&quot;/[0-9a-zA-z_\-]+/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/types&gt;</span>
+    <span class="nt">&lt;commands&gt;</span>
+        <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;example_command&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span> <span class="na">uri=</span><span class="s">&quot;/{{username}}&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;my_parameter&quot;</span> <span class="na">type=</span><span class="s">&quot;username&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/command&gt;</span>
+    <span class="nt">&lt;/commands&gt;</span>
 <span class="nt">&lt;/client&gt;</span>
 </pre></div>
 </div>
@@ -435,16 +442,24 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 <h3>Sending PUT and POST requests<a class="headerlink" href="#sending-put-and-post-requests" title="Permalink to this headline">¶</a></h3>
 <p>Service descriptions allow for a flexible way to send PUT and POST requests where the entity body of the request needs to be in a specific format.  You may have noticed that the PUT/POST commands in the example XML service description force the end-developer to build an XML entity body from scratch.  A better way of implementing these entity enclosing requests would be to allow the end-developers set body parameters using a SimpleXMLElement object.  This can be achieved by using the &#8220;type&#8221; parameter type and specifying a class:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">uri=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:SimpleXMLElement&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/command&gt;</span>
+<span class="nt">&lt;client&gt;</span>
+    <span class="nt">&lt;commands&gt;</span>
+        <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">uri=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:SimpleXMLElement&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/command&gt;</span>
+    <span class="nt">&lt;/commands&gt;</span>
+<span class="nt">&lt;/client&gt;</span>
 </pre></div>
 </div>
 <p>If you are sending JSON data, you should consider allowing end-developers to set body parameters using an array.  You can then convert an array to a JSON string by using the <tt class="docutils literal"><span class="pre">filters</span></tt> attribute of a parameter:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">uri=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:array&quot;</span> <span class="na">filters=</span><span class="s">&quot;json_encode&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/command&gt;</span>
+<span class="nt">&lt;client&gt;</span>
+    <span class="nt">&lt;commands&gt;</span>
+        <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">uri=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:array&quot;</span> <span class="na">filters=</span><span class="s">&quot;json_encode&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/command&gt;</span>
+    <span class="nt">&lt;/commands&gt;</span>
+<span class="nt">&lt;/client&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -454,10 +469,12 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 <div class="section" id="xml">
 <h4>XML<a class="headerlink" href="#xml" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-xml"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;includes&gt;
-    &lt;include uri="/path/to/service.xml" /&gt;
-    &lt;include uri="../../relative/path/to/service.xml"
-&lt;/types&gt;</pre>
+&lt;client&gt;
+    &lt;includes&gt;
+        &lt;include uri="/path/to/service.xml" /&gt;
+        &lt;include uri="../../relative/path/to/service.xml"
+    &lt;/includes&gt;
+&lt;/client&gt;</pre>
 </div>
 </div>
 <div class="section" id="json">
