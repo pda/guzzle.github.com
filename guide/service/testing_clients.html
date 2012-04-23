@@ -186,7 +186,7 @@
 <div class="section" id="files">
 <h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
 <p>The basic skeleton of a project can be generated using the phing build script from the Guzzle client template (<a class="reference external" href="https://github.com/guzzle/guzzle-client-template">https://github.com/guzzle/guzzle-client-template</a>).  You will be prompted to answer several questions about your web service and a skeleton client project will be generated for you.</p>
-<p>In order to unit test your client, a developer would need to copy phpunit.xml.dst to phpunit.xml and make any needed modifications.  As a best practice and security measure for you and your contributors, it is recommended to add an ignore statement to your SCM so that phpunit.xml is ignored.</p>
+<p>In order to unit test your client, a developer would need to copy phpunit.xml.dist to phpunit.xml and make any needed modifications.  As a best practice and security measure for you and your contributors, it is recommended to add an ignore statement to your SCM so that phpunit.xml is ignored.</p>
 </div>
 <div class="section" id="bootstrapping">
 <h3>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this headline">¶</a></h3>
@@ -223,7 +223,7 @@
 <p>You can perform integration testing with a web service over the internet by making calls directly to the service.  If the web service you are requesting uses a complex signing algorithm or some other specific implementation, then you may want to include at least one actual network test that can be run specifically through the command line using <a class="reference external" href="http://www.phpunit.de/manual/current/en/appendixes.annotations.html#appendixes.annotations.group">PHPUnit group annotations</a>.</p>
 <div class="section" id="group-internet-annotation">
 <h4>&#64;group internet annotation<a class="headerlink" href="#group-internet-annotation" title="Permalink to this headline">¶</a></h4>
-<p>When creating tests that require an internet connection, it is recommended that you add <tt class="docutils literal"><span class="pre">&#64;group</span> <span class="pre">internet</span></tt> annotations to your unit tests to specify which tests require network connectivity.  You can then <a class="reference external" href="http://www.phpunit.de/manual/current/en/appendixes.configuration.html">modify your phpunit.xml.dst</a> file to exclude the internet group by default:</p>
+<p>When creating tests that require an internet connection, it is recommended that you add <tt class="docutils literal"><span class="pre">&#64;group</span> <span class="pre">internet</span></tt> annotations to your unit tests to specify which tests require network connectivity.  You can then <a class="reference external" href="http://www.phpunit.de/manual/current/en/appendixes.configuration.html">modify your phpunit.xml.dist</a> file to exclude the internet group by default:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;groups&gt;</span>
   <span class="nt">&lt;exclude&gt;</span>
     <span class="nt">&lt;group&gt;</span>internet<span class="nt">&lt;/group&gt;</span>
@@ -235,7 +235,7 @@
 </div>
 <div class="section" id="api-credentials">
 <h4>API credentials<a class="headerlink" href="#api-credentials" title="Permalink to this headline">¶</a></h4>
-<p>If API  credentials are required to run your integration tests, you must add <tt class="docutils literal"><span class="pre">&lt;php&gt;</span></tt> parameters to your phpunit.xml.dst file and extract these parameters in your boostrap.php file.</p>
+<p>If API  credentials are required to run your integration tests, you must add <tt class="docutils literal"><span class="pre">&lt;php&gt;</span></tt> parameters to your phpunit.xml.dist file and extract these parameters in your boostrap.php file.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;phpunit</span> <span class="na">bootstrap=</span><span class="s">&quot;./tests/bootstrap.php&quot;</span> <span class="na">colors=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;php&gt;</span>
@@ -303,7 +303,7 @@ Content-Type: application/xml
 </pre></div>
 </div>
 <p>The above code queues a single 200 response with an empty body.  Responses are queued using a FIFO order; this response will be returned by the server when it receives the first request and then removed from the queue.  If a request is received by a server with no queued responses, an exception will be thrown in your unit test.</p>
-<p>You can inspect the requests that the server has retrieved by calling <tt class="docutils literal"><span class="pre">$this-&gt;getServer()-&gt;getReceivedRequests()</span></tt>.  This method accepts an optional <tt class="docutils literal"><span class="pre">$hydrate</span></tt> parameter that specifies if you are retrieving an array of string HTTP requests or an array of <tt class="docutils literal"><span class="pre">Guzzle\Http\RequestInterface</span></tt> subclassed objects.  &#8220;Hydrating&#8221; the requests will allow greater flexibility in your unit tests so that you can get easily assert the state of the various parts of a request.</p>
+<p>You can inspect the requests that the server has retrieved by calling <tt class="docutils literal"><span class="pre">$this-&gt;getServer()-&gt;getReceivedRequests()</span></tt>.  This method accepts an optional <tt class="docutils literal"><span class="pre">$hydrate</span></tt> parameter that specifies if you are retrieving an array of string HTTP requests or an array of <tt class="docutils literal"><span class="pre">Guzzle\Http\RequestInterface</span></tt> subclassed objects.  &#8220;Hydrating&#8221; the requests will allow greater flexibility in your unit tests so that you can  easily assert the state of the various parts of a request.</p>
 <p>You will need to modify the base_url of your web service client in order to use it against the test server.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 

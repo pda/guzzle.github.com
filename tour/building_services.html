@@ -169,11 +169,11 @@
 <li>Better choice for maintainability, features, and ease of use.</li>
 <li>Best practices are inherently implemented for the end-developer.</li>
 <li>Changes can be made to the underlying request and response processing without breaking the interface.</li>
-<li>Can create <a class="reference internal" href="../guide/service/creating_dynamic_commands.html"><em>dynamic commands</em></a> based on a service description.</li>
+<li>Can create <a class="reference internal" href="../guide/service/service_descriptions.html"><em>service description</em></a> to create dynamic HTTP requests.</li>
 </ol>
 <p>Simple web service clients make the assumption that the end-developer has an intricate understanding of how to send requests to a web service and how that web service will respond.  If you want to build a reusable RESTful web service client for an application you plan on maintaining, then creating a simple client might not cut it.  Simple clients might work for extremely simple web services (like <a class="reference external" href="http://developer.yahoo.com/weather/">Yahoo weather</a> for example) or quickly prototyping, but when you&#8217;re dealing with a huge web service with a ton of options (e.g. Amazon S3), then you&#8217;re going to want to build a robust web service client that executes commands.</p>
 <p>A command-based web service client that abstracts away the HTTP request and response makes a client more future-proof; if the API you are interacting with changes (for example, adds a required field), then you would only have to update the command in one place rather than every single file in your project that interacts with the web service.  Guzzle uses the <a class="reference external" href="http://en.wikipedia.org/wiki/Command_pattern">command pattern</a> for building requests and processing responses.  Abstracting the underlying implementation helps new developers to quickly send requests to an API using any of the best-practices coded into the command itself, rather than assuming that every developer on your team has an intricate understanding of the web service.</p>
-<p>Commands can also be created for developers dynamically using a <a class="reference internal" href="../guide/service/creating_dynamic_commands.html"><em>service description</em></a>.</p>
+<p>Commands can also be created for developers dynamically using a <a class="reference internal" href="../guide/service/service_descriptions.html"><em>service description</em></a>.</p>
 <p>The following document will describe how to build a command-based web service client for Guzzle.</p>
 <div class="section" id="setting-up">
 <h2>Setting up<a class="headerlink" href="#setting-up" title="Permalink to this headline">¶</a></h2>
@@ -184,20 +184,20 @@
 </pre></div>
 </div>
 <p>This phing build target will ask you a series of questions and generate a template for your web service client at your desired path.  The directory structure should resemble the following (of course substituting FooBar for your web service client&#8217;s name):</p>
-<div class="highlight-none"><div class="highlight"><pre>src/FooBar/
-........... FooBarClient.php
-........... client.xml
-........... Command/
-.................... CommandName.php
-tests/
-...... mock/
-...... FooBar/
-.............. Command/
-....................... CommandNameTest.php
-.............. FooBarClientTest.php
-...... bootstrap.php
-phpunit.xml.dist
-composer.json
+<div class="highlight-none"><div class="highlight"><pre>./src/FooBar/
+├── FooBarClient.php
+├── client.xml
+├── Command/
+│   ├── CommandName.php
+├── tests/
+│   ├── mock/
+|   ├── FooBar/
+|   |   ├── Command/
+|   |   |   └── CommandNameTest.php
+|   |   └── FooBarClientTest.php
+|   └── bootstrap.php
+├── phpunit.xml.dist
+├── composer.json
 </pre></div>
 </div>
 <p>After running the phing build target to generate the project&#8217;s skeleton, you will need to modify the <em>FooBarClient.php</em> file by updating the factory method, adding a constructor if needed, and adding any class properties.</p>
@@ -312,7 +312,7 @@ of a response.  Keep each HTTP response in a separate file.</td>
 </div>
 <div class="section" id="create-commands">
 <h2>Create commands<a class="headerlink" href="#create-commands" title="Permalink to this headline">¶</a></h2>
-<p>Commands can be created in one of two ways: create a concrete command class that extends <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\AbstractCommand</span></tt> or <a class="reference internal" href="../guide/service/creating_dynamic_commands.html"><em>create a dynamic command based on a service description</em></a>.  We will describe how to create concrete commands below.</p>
+<p>Commands can be created in one of two ways: create a concrete command class that extends <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\AbstractCommand</span></tt> or <a class="reference internal" href="../guide/service/service_descriptions.html"><em>create a dynamic command based on a service description</em></a>.  We will describe how to create concrete commands below.</p>
 <div class="section" id="commands-help-to-hide-complexity">
 <h3>Commands help to hide complexity<a class="headerlink" href="#commands-help-to-hide-complexity" title="Permalink to this headline">¶</a></h3>
 <p>Commands are the method in which you abstract away the underlying format of the requests that need to be sent to take action on a web service.  Commands in Guzzle are meant to be built by executing a series of setter methods on a command object.  Commands are only validated when they are being executed.  A <tt class="docutils literal"><span class="pre">Guzzle\Service\Client</span></tt> object is responsible for executing commands.  Commands created for your web service must implement <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\CommandInterface</span></tt>, but it&#8217;s easier to extend the <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\AbstractCommand</span></tt> class and implement the <tt class="docutils literal"><span class="pre">build()</span></tt> method.  The <tt class="docutils literal"><span class="pre">build()</span></tt> method is responsible for using the arguments of the command to build one or more HTTP requests.</p>

@@ -173,7 +173,7 @@
 <p>Guzzle&#8217;s awesome HTTP support provides the raw materials needed to build robust web service clients.  Guzzle&#8217;s service layer provides the glue needed to bring it all together.</p>
 <div class="section" id="command-based-web-service-clients">
 <h2>Command based web service clients<a class="headerlink" href="#command-based-web-service-clients" title="Permalink to this headline">¶</a></h2>
-<p>Command based web service clients help to hide the underlying implementation of an API by following the <a class="reference external" href="http://en.wikipedia.org/wiki/Command_pattern">command pattern</a> and giving a concrete class to each action that can be taken on a web service.</p>
+<p>Command based web service clients help to hide the underlying implementation of an API by following the <a class="reference external" href="http://en.wikipedia.org/wiki/Command_pattern">command pattern</a> and giving a concrete class or service description to each action that can be taken on a web service.</p>
 <div class="section" id="instantiating-web-service-clients-using-a-servicebuilder">
 <h3>Instantiating web service clients using a ServiceBuilder<a class="headerlink" href="#instantiating-web-service-clients-using-a-servicebuilder" title="Permalink to this headline">¶</a></h3>
 <p>The best way to instantiate Guzzle web service clients is to let Guzzle handle building the clients for you using a ServiceBuilder.  A ServiceBuilder is responsible for creating concrete client objects based on configuration settings and helps to manage credentials for different environments.</p>
@@ -279,13 +279,13 @@
 </div>
 <div class="section" id="referencing-other-clients-in-parameters">
 <h4>Referencing other clients in parameters<a class="headerlink" href="#referencing-other-clients-in-parameters" title="Permalink to this headline">¶</a></h4>
-<p>If one of your clients depends on another client as one of its parameters, you can reference that client by name by enclosing the client&#8217;s reference key in <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">}}</span></tt>:</p>
+<p>If one of your clients depends on another client as one of its parameters, you can reference that client by name by enclosing the client&#8217;s reference key in <tt class="docutils literal"><span class="pre">{</span> <span class="pre">}</span></tt>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;token&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;access_key&quot;</span><span class="o">:</span> <span class="s2">&quot;xyz&quot;</span>
     <span class="p">},</span>
     <span class="s2">&quot;client&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;token_client&quot;</span><span class="o">:</span> <span class="s2">&quot;{{token}}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;token_client&quot;</span><span class="o">:</span> <span class="s2">&quot;{token}&quot;</span><span class="p">,</span>
         <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -411,7 +411,7 @@
 </div>
 <div class="section" id="next-steps">
 <h3>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h3>
-<p>Check the documentation of the web service client you are using to see the available commands for the client.  Some clients will mix <a class="reference internal" href="../guide/service/creating_dynamic_commands.html"><em>dynamic commands</em></a> with concrete commands, so will need to check if an XML or JSON file is shipped with the client that defines dynamic commands.</p>
+<p>Check the documentation of the web service client you are using to see the available commands for the client.  Some clients will mix <a class="reference internal" href="../guide/service/service_descriptions.html"><em>service descriptions</em></a> with concrete commands, so will need to check if an XML or JSON service description is present.</p>
 </div>
 </div>
 </div>

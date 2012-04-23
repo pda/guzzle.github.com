@@ -170,7 +170,7 @@
 <p>Plugins can be attached to any subject, or object in Guzzle that implements that <tt class="docutils literal"><span class="pre">Guzzle\Common\HasDispatcherInterface</span></tt>.</p>
 <div class="section" id="subscribing-to-a-subject">
 <h3>Subscribing to a subject<a class="headerlink" href="#subscribing-to-a-subject" title="Permalink to this headline">¶</a></h3>
-<p>Observers subscribe to subjects and receive every event emitted from the subject.  You can subscribe an instantiated observer to an event by getting the <tt class="docutils literal"><span class="pre">EventDispatcher</span></tt> object from the subject and calling  its <tt class="docutils literal"><span class="pre">addSubscriber()</span></tt> method.:</p>
+<p>You can subscribe an instantiated observer to an event by getting the <tt class="docutils literal"><span class="pre">EventDispatcher</span></tt> object from the subject and calling  its <tt class="docutils literal"><span class="pre">addSubscriber()</span></tt> method.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nv">$testPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TestPlugin</span><span class="p">();</span>
