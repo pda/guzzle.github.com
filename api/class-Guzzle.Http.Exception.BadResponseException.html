@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Class Guzzle\Http\Curl\CurlException | Guzzle</title>
+	<title>Class Guzzle\Http\Exception\BadResponseException | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,6 +38,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
@@ -45,7 +47,9 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li class="active"><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -61,6 +65,8 @@
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
 						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
+						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
 						</li>
@@ -71,21 +77,16 @@
 
 
 		<div id="elements">
-			<h3>Classes</h3>
-			<ul>
-				<li><a href="class-Guzzle.Http.Curl.CurlHandle.html">CurlHandle</a></li>
-				<li><a href="class-Guzzle.Http.Curl.CurlMulti.html">CurlMulti</a></li>
-			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li><a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">CurlMultiInterface</a></li>
-			</ul>
 
 
 			<h3>Exceptions</h3>
 			<ul>
-				<li class="active"><a href="class-Guzzle.Http.Curl.CurlException.html">CurlException</a></li>
+				<li class="active"><a href="class-Guzzle.Http.Exception.BadResponseException.html">BadResponseException</a></li>
+				<li><a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">ClientErrorResponseException</a></li>
+				<li><a href="class-Guzzle.Http.Exception.CurlException.html">CurlException</a></li>
+				<li><a href="class-Guzzle.Http.Exception.RequestException.html">RequestException</a></li>
+				<li><a href="class-Guzzle.Http.Exception.ServerErrorResponseException.html">ServerErrorResponseException</a></li>
 			</ul>
 
 
@@ -110,7 +111,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Guzzle.Http.Curl.html" title="Summary of Guzzle\Http\Curl"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Http.Exception.html" title="Summary of Guzzle\Http\Exception"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -125,12 +126,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class CurlException</h1>
+	<h1>Class BadResponseException</h1>
 
 
 	<div class="description">
 	
-<p>cURL request exception</p>
+<p>Http request exception thrown when a bad response is received</p>
 
 	</div>
 
@@ -143,36 +144,44 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by" />
-			<a href="class-Guzzle.Http.HttpException.html"><span>Guzzle\Http\HttpException</span></a>
+			<a href="class-RuntimeException.html"><span>RuntimeException</span></a>
 			
-			 implements 
-				<a href="class-Guzzle.Common.GuzzleExceptionInterface.html"><span>Guzzle\Common\GuzzleExceptionInterface</span></a>
 			
 			
 		</dd>
 		<dd style="padding-left:60px">
 			<img src="resources/inherit.png" alt="Extended by" />
-			<a href="class-Guzzle.Http.Message.RequestException.html"><span>Guzzle\Http\Message\RequestException</span></a>
+			<a href="class-Guzzle.Common.Exception.RuntimeException.html"><span>Guzzle\Common\Exception\RuntimeException</span></a>
 			
+			 implements 
+				<a href="class-Guzzle.Common.GuzzleException.html"><span>Guzzle\Common\GuzzleException</span></a>
 			
 			
 		</dd>
 		<dd style="padding-left:90px">
 			<img src="resources/inherit.png" alt="Extended by" />
-			<a href="class-Guzzle.Http.Message.BadResponseException.html"><span>Guzzle\Http\Message\BadResponseException</span></a>
+			<a href="class-Guzzle.Http.Exception.RequestException.html"><span>Guzzle\Http\Exception\RequestException</span></a>
 			
+			 implements 
+				<a href="class-Guzzle.Http.HttpException.html"><span>Guzzle\Http\HttpException</span></a>
 			
 			
 		</dd>
 		<dd style="padding-left:120px">
 			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>Guzzle\Http\Curl\CurlException</span></b>			
+<b><span>Guzzle\Http\Exception\BadResponseException</span></b>			
 			
 			
 		</dd>
 	</dl>
 
 
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">Guzzle\Http\Exception\ClientErrorResponseException</a>, 
+			<a href="class-Guzzle.Http.Exception.CurlException.html">Guzzle\Http\Exception\CurlException</a>, 
+			<a href="class-Guzzle.Http.Exception.ServerErrorResponseException.html">Guzzle\Http\Exception\ServerErrorResponseException</a>
+	</div>
 
 
 
@@ -182,16 +191,61 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Curl.html">Curl</a><br />
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Exception.html">Exception</a><br />
 		
 
-		<b>Located at</b> Guzzle/Http/Curl/CurlException.php<br />
+		<b>Located at</b> Guzzle/Http/Exception/BadResponseException.php<br />
 	</div>
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="setError" id="_setError">
+	<tr data-order="factory" id="_factory">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-Guzzle.Http.Exception.BadResponseException.html">Guzzle\Http\Exception\BadResponseException</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_factory">#</a>
+		<code>factory( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span>, <span><code><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></code> <var>$response</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Factory method to create a new response exception based on the response
+code.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Factory method to create a new response exception based on the response
+code.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request</dd>
+					<dt><var>$response</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></code></code><br> Response received</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Exception.BadResponseException.html">Guzzle\Http\Exception\BadResponseException</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setResponse" id="_setResponse">
 
 		<td class="attributes"><code>
 			 public 
@@ -201,27 +255,25 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setError">#</a>
-		<code>setError( <span>string <var>$error</var></span>, <span>integer <var>$number</var></span> )</code>
+		<a class="anchor" href="#_setResponse">#</a>
+		<code>setResponse( <span><code><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></code> <var>$response</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Set the cURL error message</p>
+<p>Set the response that caused the exception</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Set the cURL error message</p>
+<p>Set the response that caused the exception</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$error</var></dt>
-					<dd><code>string</code><br> Curl error</dd>
-					<dt><var>$number</var></dt>
-					<dd><code>integer</code><br> Curl error number</dd>
+					<dt><var>$response</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></code></code><br> Response to set</dd>
 				</dl></div>
 
 
@@ -230,71 +282,35 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getError" id="_getError">
+	<tr data-order="getResponse" id="_getResponse">
 
 		<td class="attributes"><code>
 			 public 
-			string
+			<code><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getError">#</a>
-		<code>getError( )</code>
+		<a class="anchor" href="#_getResponse">#</a>
+		<code>getResponse( )</code>
 
 		<div class="description short">
 			
-<p>Get the associated cURL error message</p>
+<p>Get the response that caused the exception</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the associated cURL error message</p>
+<p>Get the response that caused the exception</p>
 
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br />
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getErrorNo" id="_getErrorNo">
-
-		<td class="attributes"><code>
-			 public 
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getErrorNo">#</a>
-		<code>getErrorNo( )</code>
-
-		<div class="description short">
-			
-<p>Get the associated cURL error number</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Get the associated cURL error number</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>integer</code><br />
+					<code><code><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></code></code><br />
 				</div>
 
 
@@ -305,20 +321,11 @@
 	</table>
 
 	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-Guzzle.Http.Message.BadResponseException.html#methods">Guzzle\Http\Message\BadResponseException</a></caption>
+	<caption>Methods inherited from <a href="class-Guzzle.Http.Exception.RequestException.html#methods">Guzzle\Http\Exception\RequestException</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-Guzzle.Http.Message.BadResponseException.html#_getResponse">getResponse()</a>, 
-			<a href="class-Guzzle.Http.Message.BadResponseException.html#_setResponse">setResponse()</a>
-		</code></td>
-	</tr>
-	</table>
-	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-Guzzle.Http.Message.RequestException.html#methods">Guzzle\Http\Message\RequestException</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Guzzle.Http.Message.RequestException.html#_getRequest">getRequest()</a>, 
-			<a href="class-Guzzle.Http.Message.RequestException.html#_setRequest">setRequest()</a>
+			<a href="class-Guzzle.Http.Exception.RequestException.html#_getRequest">getRequest()</a>, 
+			<a href="class-Guzzle.Http.Exception.RequestException.html#_setRequest">setRequest()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -346,10 +353,10 @@
 
 
 	<table class="summary inherited">
-	<caption>Properties inherited from <a href="class-Guzzle.Http.Message.RequestException.html#properties">Guzzle\Http\Message\RequestException</a></caption>
+	<caption>Properties inherited from <a href="class-Guzzle.Http.Exception.RequestException.html#properties">Guzzle\Http\Exception\RequestException</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-Guzzle.Http.Message.RequestException.html#$request"><var>$request</var></a>
+			<a href="class-Guzzle.Http.Exception.RequestException.html#$request"><var>$request</var></a>
 		</code></td>
 	</tr>
 	</table>

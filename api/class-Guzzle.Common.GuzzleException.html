@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Interface Guzzle\Common\GuzzleExceptionInterface | Guzzle</title>
+	<title>Interface Guzzle\Common\GuzzleException | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,6 +38,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
@@ -46,6 +48,8 @@
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -60,6 +64,8 @@
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
 						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
@@ -83,15 +89,11 @@
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li class="active"><a href="class-Guzzle.Common.GuzzleExceptionInterface.html">GuzzleExceptionInterface</a></li>
+				<li class="active"><a href="class-Guzzle.Common.GuzzleException.html">GuzzleException</a></li>
 				<li><a href="class-Guzzle.Common.HasDispatcherInterface.html">HasDispatcherInterface</a></li>
 			</ul>
 
 
-			<h3>Exceptions</h3>
-			<ul>
-				<li><a href="class-Guzzle.Common.ExceptionCollection.html">ExceptionCollection</a></li>
-			</ul>
 
 
 		</div>
@@ -130,7 +132,7 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Interface GuzzleExceptionInterface</h1>
+	<h1>Interface GuzzleException</h1>
 
 
 	<div class="description">
@@ -145,15 +147,28 @@
 
 	<div>
 		<h4>Direct known implementers</h4>
-			<a href="class-Guzzle.Common.ExceptionCollection.html">Guzzle\Common\ExceptionCollection</a>, 
+			<a href="class-Guzzle.Common.Exception.BadMethodCallException.html">Guzzle\Common\Exception\BadMethodCallException</a>, 
+			<a href="class-Guzzle.Common.Exception.ExceptionCollection.html">Guzzle\Common\Exception\ExceptionCollection</a>, 
+			<a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a>, 
+			<a href="class-Guzzle.Common.Exception.RuntimeException.html">Guzzle\Common\Exception\RuntimeException</a>, 
+			<a href="class-Guzzle.Common.Exception.UnexpectedValueException.html">Guzzle\Common\Exception\UnexpectedValueException</a>, 
 			<a href="class-Guzzle.Http.HttpException.html">Guzzle\Http\HttpException</a>
 	</div>
 
 	<div>
 		<h4>Indirect known implementers</h4>
-			<a href="class-Guzzle.Http.Curl.CurlException.html">Guzzle\Http\Curl\CurlException</a>, 
-			<a href="class-Guzzle.Http.Message.BadResponseException.html">Guzzle\Http\Message\BadResponseException</a>, 
-			<a href="class-Guzzle.Http.Message.RequestException.html">Guzzle\Http\Message\RequestException</a>
+			<a href="class-Guzzle.Http.Exception.BadResponseException.html">Guzzle\Http\Exception\BadResponseException</a>, 
+			<a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">Guzzle\Http\Exception\ClientErrorResponseException</a>, 
+			<a href="class-Guzzle.Service.Exception.ServiceNotFoundException.html">Guzzle\Service\Exception\ServiceNotFoundException</a>, 
+			<a href="class-Guzzle.Service.Exception.ValidationException.html">Guzzle\Service\Exception\ValidationException</a>, 
+			<a href="class-Guzzle.Http.Exception.CurlException.html">Guzzle\Http\Exception\CurlException</a>, 
+			<a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a>, 
+			<a href="class-Guzzle.Http.Exception.ServerErrorResponseException.html">Guzzle\Http\Exception\ServerErrorResponseException</a>, 
+			<a href="class-Guzzle.Service.Exception.ClientNotFoundException.html">Guzzle\Service\Exception\ClientNotFoundException</a>, 
+			<a href="class-Guzzle.Service.Exception.CommandException.html">Guzzle\Service\Exception\CommandException</a>, 
+			<a href="class-Guzzle.Service.Exception.DescriptionBuilderException.html">Guzzle\Service\Exception\DescriptionBuilderException</a>, 
+			<a href="class-Guzzle.Service.Exception.JsonException.html">Guzzle\Service\Exception\JsonException</a>, 
+			<a href="class-Guzzle.Service.Exception.ServiceBuilderException.html">Guzzle\Service\Exception\ServiceBuilderException</a>
 	</div>
 
 
@@ -164,7 +179,7 @@
 		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Common.html">Common</a><br />
 		
 
-		<b>Located at</b> Guzzle/Common/GuzzleExceptionInterface.php<br />
+		<b>Located at</b> Guzzle/Common/GuzzleException.php<br />
 	</div>
 
 

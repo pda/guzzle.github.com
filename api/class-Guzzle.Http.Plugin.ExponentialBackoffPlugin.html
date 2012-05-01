@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Plugin\ExponentialBackoffPlugin | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,6 +38,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
@@ -46,6 +48,8 @@
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -60,6 +64,8 @@
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
 						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
@@ -175,7 +181,7 @@ exponential backoff.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span>integer <var>$maxRetries</var> = <span class="php-num">3</span></span>, <span>array <var>$failureCodes</var> = <span class="php-keyword1">null</span></span>, <span><code><a href="class-Closure.html">Closure</a></code>|array <var>$delayClosure</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>__construct( <span>integer <var>$maxRetries</var> = <span class="php-num">3</span></span>, <span>array|callable <var>$failureCodes</var> = <span class="php-keyword1">null</span></span>, <span>callable <var>$delayFunction</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -194,13 +200,54 @@ exponential backoff.</p>
 					<dt><var>$maxRetries</var></dt>
 					<dd><code>integer</code><br> (optional) The maximum number of time to retry a request</dd>
 					<dt><var>$failureCodes</var></dt>
-					<dd><code>array</code><br> (optional) Pass a custom list of failure codes.</dd>
-					<dt><var>$delayClosure</var></dt>
-					<dd><code><code><a href="class-Closure.html">Closure</a></code>|array</code><br> (optional) Method used to calculate the delay between requests. The method must
+					<dd><code>array|callable</code><br> (optional) Pass a custom list of failure codes. This can be a list of numeric
+codes that match the response code, a list of reason phrases that can match the
+reason phrase of a request, or a list of cURL error code integers. By default,
+this plugin retries 500 and 503 responses as well as various CURL connection
+errors. You can pass in a callable that will be used to determine if a response
+failed and must be retried.</dd>
+					<dt><var>$delayFunction</var></dt>
+					<dd><code>callable</code><br> (optional) Method used to calculate the delay between requests. The method must
 accept an integer containing the current number of retries and return an integer
 representing how many seconds to delay</dd>
 				</dl></div>
 
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDefaultFailureCodes" id="_getDefaultFailureCodes">
+
+		<td class="attributes"><code>
+			 public static
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDefaultFailureCodes">#</a>
+		<code>getDefaultFailureCodes( )</code>
+
+		<div class="description short">
+			
+<p>Get a default array of codes and cURL errors to retry</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a default array of codes and cURL errors to retry</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
 
 
 
@@ -451,13 +498,13 @@ exponential backoff</p>
 
 		<div class="description short">
 			
-<p>Called when a request has been sent</p>
+<p>Called when a request has been sent and isn't finished processing</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Called when a request has been sent</p>
+<p>Called when a request has been sent and isn't finished processing</p>
 
 
 
@@ -502,6 +549,43 @@ exponential backoff</p>
 				<div class="list"><dl>
 					<dt><var>$event</var></dt>
 					<dd><code><code><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a></code></code></dd>
+				</dl></div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="retryRequest" id="_retryRequest">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_retryRequest">#</a>
+		<code>retryRequest( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Trigger a request to retry</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Trigger a request to retry</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to retry</dd>
 				</dl></div>
 
 

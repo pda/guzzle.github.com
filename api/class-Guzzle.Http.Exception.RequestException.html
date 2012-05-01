@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Class Guzzle\Common\ExceptionCollection | Guzzle</title>
+	<title>Class Guzzle\Http\Exception\RequestException | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -34,18 +34,22 @@
 			<ul>
 				<li class="active"><a href="namespace-Guzzle.html">Guzzle<span></span></a>
 						<ul>
-				<li class="active"><a href="namespace-Guzzle.Common.html">Common<span></span></a>
+				<li><a href="namespace-Guzzle.Common.html">Common<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
+				<li class="active"><a href="namespace-Guzzle.Http.html">Http<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li class="active"><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -61,6 +65,8 @@
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
 						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
+						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
 						</li>
@@ -71,26 +77,16 @@
 
 
 		<div id="elements">
-			<h3>Classes</h3>
-			<ul>
-				<li><a href="class-Guzzle.Common.AbstractHasDispatcher.html">AbstractHasDispatcher</a></li>
-				<li><a href="class-Guzzle.Common.Collection.html">Collection</a></li>
-				<li><a href="class-Guzzle.Common.Event.html">Event</a></li>
-				<li><a href="class-Guzzle.Common.NullObject.html">NullObject</a></li>
-				<li><a href="class-Guzzle.Common.Stream.html">Stream</a></li>
-				<li><a href="class-Guzzle.Common.XmlElement.html">XmlElement</a></li>
-			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li><a href="class-Guzzle.Common.GuzzleExceptionInterface.html">GuzzleExceptionInterface</a></li>
-				<li><a href="class-Guzzle.Common.HasDispatcherInterface.html">HasDispatcherInterface</a></li>
-			</ul>
 
 
 			<h3>Exceptions</h3>
 			<ul>
-				<li class="active"><a href="class-Guzzle.Common.ExceptionCollection.html">ExceptionCollection</a></li>
+				<li><a href="class-Guzzle.Http.Exception.BadResponseException.html">BadResponseException</a></li>
+				<li><a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">ClientErrorResponseException</a></li>
+				<li><a href="class-Guzzle.Http.Exception.CurlException.html">CurlException</a></li>
+				<li class="active"><a href="class-Guzzle.Http.Exception.RequestException.html">RequestException</a></li>
+				<li><a href="class-Guzzle.Http.Exception.ServerErrorResponseException.html">ServerErrorResponseException</a></li>
 			</ul>
 
 
@@ -115,7 +111,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Guzzle.Common.html" title="Summary of Guzzle\Common"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Http.Exception.html" title="Summary of Guzzle\Http\Exception"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -130,12 +126,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class ExceptionCollection</h1>
+	<h1>Class RequestException</h1>
 
 
 	<div class="description">
 	
-<p>Collection of exceptions</p>
+<p>Http request exception</p>
 
 	</div>
 
@@ -148,20 +144,42 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>Guzzle\Common\ExceptionCollection</span></b>			
+			<a href="class-RuntimeException.html"><span>RuntimeException</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-Guzzle.Common.Exception.RuntimeException.html"><span>Guzzle\Common\Exception\RuntimeException</span></a>
+			
 			 implements 
-				<a href="class-Guzzle.Common.GuzzleExceptionInterface.html"><span>Guzzle\Common\GuzzleExceptionInterface</span></a>, 
+				<a href="class-Guzzle.Common.GuzzleException.html"><span>Guzzle\Common\GuzzleException</span></a>
 			
-				<a href="class-IteratorAggregate.html"><span>IteratorAggregate</span></a>, 
 			
-				<a href="class-Countable.html"><span>Countable</span></a>
+		</dd>
+		<dd style="padding-left:90px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Guzzle\Http\Exception\RequestException</span></b>			
+			 implements 
+				<a href="class-Guzzle.Http.HttpException.html"><span>Guzzle\Http\HttpException</span></a>
 			
 			
 		</dd>
 	</dl>
 
 
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Guzzle.Http.Exception.BadResponseException.html">Guzzle\Http\Exception\BadResponseException</a>
+	</div>
 
+	<div>
+		<h4>Indirect known subclasses</h4>
+			<a href="class-Guzzle.Http.Exception.ClientErrorResponseException.html">Guzzle\Http\Exception\ClientErrorResponseException</a>, 
+			<a href="class-Guzzle.Http.Exception.CurlException.html">Guzzle\Http\Exception\CurlException</a>, 
+			<a href="class-Guzzle.Http.Exception.ServerErrorResponseException.html">Guzzle\Http\Exception\ServerErrorResponseException</a>
+	</div>
 
 
 
@@ -170,49 +188,49 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Common.html">Common</a><br />
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Exception.html">Exception</a><br />
 		
 
-		<b>Located at</b> Guzzle/Common/ExceptionCollection.php<br />
+		<b>Located at</b> Guzzle/Http/Exception/RequestException.php<br />
 	</div>
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="add" id="_add">
+	<tr data-order="setRequest" id="_setRequest">
 
 		<td class="attributes"><code>
 			 public 
-			ExceptionCollection;
+			<code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_add">#</a>
-		<code>add( <span><code><a href="class-Guzzle.Common.ExceptionCollection.html">Guzzle\Common\ExceptionCollection</a></code>|<code><a href="class-Exception.html">Exception</a></code> <var>$e</var></span> )</code>
+		<a class="anchor" href="#_setRequest">#</a>
+		<code>setRequest( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Add exceptions to the collection</p>
+<p>Set the request that caused the exception</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Add exceptions to the collection</p>
+<p>Set the request that caused the exception</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$e</var></dt>
-					<dd><code><code><a href="class-Guzzle.Common.ExceptionCollection.html">Guzzle\Common\ExceptionCollection</a></code>|<code><a href="class-Exception.html">Exception</a></code></code><br> Exception to add</dd>
+					<dt><var>$request</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to set</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>ExceptionCollection;</code><br />
+					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br />
 				</div>
 
 
@@ -220,79 +238,39 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="count" id="_count">
+	<tr data-order="getRequest" id="_getRequest">
 
 		<td class="attributes"><code>
 			 public 
-			integer
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_count">#</a>
-		<code>count( )</code>
+		<a class="anchor" href="#_getRequest">#</a>
+		<code>getRequest( )</code>
 
 		<div class="description short">
 			
-<p>Get the total number of request exceptions</p>
+<p>Get the request that caused the exception</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the total number of request exceptions</p>
+<p>Get the request that caused the exception</p>
 
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>integer</code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Countable.html#_count">Countable::count</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getIterator" id="_getIterator">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-ArrayIterator.html">ArrayIterator</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getIterator">#</a>
-		<code>getIterator( )</code>
-
-		<div class="description short">
-			
-<p>Allows array-like iteration over the request exceptions</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Allows array-like iteration over the request exceptions</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-ArrayIterator.html">ArrayIterator</a></code></code><br />
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-IteratorAggregate.html#_getIterator">IteratorAggregate::getIterator</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -322,29 +300,25 @@
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="exceptions" id="$exceptions">
+	<tr data-order="request" id="$request">
 
 		<td class="attributes"><code>
 			protected 
-			array
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 		</code></td>
 
 		<td class="name">
-<var>$exceptions</var>		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+<var>$request</var>		</td>
+		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$exceptions" class="anchor">#</a>
+			<a href="#$request" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>Array of Exceptions</p>
-
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>Array of Exceptions</p>
-
 
 			</div>
 		</div></td>

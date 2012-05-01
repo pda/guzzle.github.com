@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Curl\CurlMulti | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,6 +38,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
@@ -46,6 +48,8 @@
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li class="active"><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -61,6 +65,8 @@
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
 						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
+						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
 						</li>
@@ -75,6 +81,7 @@
 			<ul>
 				<li><a href="class-Guzzle.Http.Curl.CurlHandle.html">CurlHandle</a></li>
 				<li class="active"><a href="class-Guzzle.Http.Curl.CurlMulti.html">CurlMulti</a></li>
+				<li><a href="class-Guzzle.Http.Curl.RequestMediator.html">RequestMediator</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -83,10 +90,6 @@
 			</ul>
 
 
-			<h3>Exceptions</h3>
-			<ul>
-				<li><a href="class-Guzzle.Http.Curl.CurlException.html">CurlException</a></li>
-			</ul>
 
 
 		</div>
@@ -561,7 +564,7 @@ objects</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Common.ExceptionCollection.html">Guzzle\Common\ExceptionCollection</a></code></code><br>if any requests threw exceptions during the transfer.<br />
+					<code><code><a href="class-Guzzle.Common.Exception.ExceptionCollection.html">Guzzle\Common\Exception\ExceptionCollection</a></code></code><br>if any requests threw exceptions during the transfer.<br />
 				</div>
 
 
@@ -787,7 +790,7 @@ objects</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Curl.CurlException.html">Guzzle\Http\Curl\CurlException</a></code></code><br>on Curl error<br />
+					<code><code><a href="class-Guzzle.Http.Exception.CurlException.html">Guzzle\Http\Exception\CurlException</a></code></code><br>on Curl error<br />
 				</div>
 
 
@@ -961,6 +964,38 @@ objects</p>
 			<div class="description detailed hidden">
 				
 <p>Queued exceptions</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="multiErrors" id="$multiErrors">
+
+		<td class="attributes"><code>
+			protected 
+			array
+		</code></td>
+
+		<td class="name">
+<var>$multiErrors</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(
+    CURLM_BAD_HANDLE      =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'CURLM_BAD_HANDLE'</span>, <span class="php-quote">'The passed-in handle is not a valid CURLM handle.'</span>),
+    CURLM_BAD_EASY_HANDLE =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'CURLM_BAD_EASY_HANDLE'</span>, <span class="php-quote">&quot;An easy handle was not good/valid. It could mean that it isn't an easy handle at all, or possibly that the handle already is in used by this or another multi handle.&quot;</span>),
+    CURLM_OUT_OF_MEMORY   =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'CURLM_OUT_OF_MEMORY'</span>, <span class="php-quote">'You are doomed.'</span>),
+    CURLM_INTERNAL_ERROR  =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'CURLM_INTERNAL_ERROR'</span>, <span class="php-quote">'This can only be returned if libcurl bugs. Please report it to us!'</span>)
+)</code></td>
+		<td class="description"><div>
+			<a href="#$multiErrors" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>cURL multi error values and codes</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>cURL multi error values and codes</p>
 
 
 			</div>

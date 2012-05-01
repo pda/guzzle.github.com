@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Class Guzzle\Http\Message\RequestException | Guzzle</title>
+	<title>Class Guzzle\Service\Exception\CommandSetException | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,21 +38,25 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
-				<li class="active"><a href="namespace-Guzzle.Http.html">Http<span></span></a>
+				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
 						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Message.html">Message</a>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
+				<li class="active"><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Command.html">Command<span></span></a>
 						<ul>
@@ -60,6 +64,8 @@
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+				<li class="active"><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
 						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
@@ -71,28 +77,19 @@
 
 
 		<div id="elements">
-			<h3>Classes</h3>
-			<ul>
-				<li><a href="class-Guzzle.Http.Message.AbstractMessage.html">AbstractMessage</a></li>
-				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">EntityEnclosingRequest</a></li>
-				<li><a href="class-Guzzle.Http.Message.Request.html">Request</a></li>
-				<li><a href="class-Guzzle.Http.Message.RequestFactory.html">RequestFactory</a></li>
-				<li><a href="class-Guzzle.Http.Message.Response.html">Response</a></li>
-			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html">EntityEnclosingRequestInterface</a></li>
-				<li><a href="class-Guzzle.Http.Message.MessageInterface.html">MessageInterface</a></li>
-				<li><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html">RequestFactoryInterface</a></li>
-				<li><a href="class-Guzzle.Http.Message.RequestInterface.html">RequestInterface</a></li>
-			</ul>
 
 
 			<h3>Exceptions</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.Message.BadResponseException.html">BadResponseException</a></li>
-				<li class="active"><a href="class-Guzzle.Http.Message.RequestException.html">RequestException</a></li>
+				<li><a href="class-Guzzle.Service.Exception.ClientNotFoundException.html">ClientNotFoundException</a></li>
+				<li><a href="class-Guzzle.Service.Exception.CommandException.html">CommandException</a></li>
+				<li class="active"><a href="class-Guzzle.Service.Exception.CommandSetException.html">CommandSetException</a></li>
+				<li><a href="class-Guzzle.Service.Exception.DescriptionBuilderException.html">DescriptionBuilderException</a></li>
+				<li><a href="class-Guzzle.Service.Exception.JsonException.html">JsonException</a></li>
+				<li><a href="class-Guzzle.Service.Exception.ServiceBuilderException.html">ServiceBuilderException</a></li>
+				<li><a href="class-Guzzle.Service.Exception.ServiceNotFoundException.html">ServiceNotFoundException</a></li>
+				<li><a href="class-Guzzle.Service.Exception.ValidationException.html">ValidationException</a></li>
 			</ul>
 
 
@@ -117,7 +114,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Guzzle.Http.Message.html" title="Summary of Guzzle\Http\Message"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Service.Exception.html" title="Summary of Guzzle\Service\Exception"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -132,12 +129,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class RequestException</h1>
+	<h1>Class CommandSetException</h1>
 
 
 	<div class="description">
 	
-<p>Http request exception</p>
+<p>Command Set exception</p>
 
 	</div>
 
@@ -150,31 +147,21 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by" />
-			<a href="class-Guzzle.Http.HttpException.html"><span>Guzzle\Http\HttpException</span></a>
+			<a href="class-RuntimeException.html"><span>RuntimeException</span></a>
 			
-			 implements 
-				<a href="class-Guzzle.Common.GuzzleExceptionInterface.html"><span>Guzzle\Common\GuzzleExceptionInterface</span></a>
 			
 			
 		</dd>
 		<dd style="padding-left:60px">
 			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>Guzzle\Http\Message\RequestException</span></b>			
+<b><span>Guzzle\Service\Exception\CommandSetException</span></b>			
 			
 			
 		</dd>
 	</dl>
 
 
-	<div>
-		<h4>Direct known subclasses</h4>
-			<a href="class-Guzzle.Http.Message.BadResponseException.html">Guzzle\Http\Message\BadResponseException</a>
-	</div>
 
-	<div>
-		<h4>Indirect known subclasses</h4>
-			<a href="class-Guzzle.Http.Curl.CurlException.html">Guzzle\Http\Curl\CurlException</a>
-	</div>
 
 
 
@@ -183,49 +170,44 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Message.html">Message</a><br />
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Service.html">Service</a>\<a href="namespace-Guzzle.Service.Exception.html">Exception</a><br />
 		
 
-		<b>Located at</b> Guzzle/Http/Message/RequestException.php<br />
+		<b>Located at</b> Guzzle/Service/Exception/CommandSetException.php<br />
 	</div>
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="setRequest" id="_setRequest">
+	<tr data-order="getCommands" id="_getCommands">
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.RequestException.html">Guzzle\Http\Message\RequestException</a></code>
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setRequest">#</a>
-		<code>setRequest( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span> )</code>
+		<a class="anchor" href="#_getCommands">#</a>
+		<code>getCommands( )</code>
 
 		<div class="description short">
 			
-<p>Set the request that caused the exception</p>
+<p>Get the invalid commands in the CommandSet</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Set the request that caused the exception</p>
+<p>Get the invalid commands in the CommandSet</p>
 
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$request</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to set</dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.RequestException.html">Guzzle\Http\Message\RequestException</a></code></code><br />
+					<code>array</code><br />
 				</div>
 
 
@@ -233,36 +215,37 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getRequest" id="_getRequest">
+	<tr data-order="setCommands" id="_setCommands">
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getRequest">#</a>
-		<code>getRequest( )</code>
+		<a class="anchor" href="#_setCommands">#</a>
+		<code>setCommands( <span>array <var>$commands</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Get the request that caused the exception</p>
+<p>Set the invalid commands in the CommandSet</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the request that caused the exception</p>
+<p>Set the invalid commands in the CommandSet</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$commands</var></dt>
+					<dd><code>array</code><br> Array of Command objects</dd>
+				</dl></div>
 
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
-				</div>
 
 
 
@@ -293,32 +276,6 @@
 
 
 
-	<table class="summary" id="properties">
-	<caption>Properties summary</caption>
-	<tr data-order="request" id="$request">
-
-		<td class="attributes"><code>
-			protected 
-			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
-		</code></td>
-
-		<td class="name">
-<var>$request</var>		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$request" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-Exception.html#properties">Exception</a></caption>

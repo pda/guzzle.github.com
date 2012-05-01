@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Class HttpException | Guzzle</title>
+	<title>Class Guzzle\Common\Exception\InvalidArgumentException | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -32,11 +32,13 @@
 		<div id="groups">
 			<h3>Namespaces</h3>
 			<ul>
-				<li><a href="namespace-Guzzle.html">Guzzle<span></span></a>
+				<li class="active"><a href="namespace-Guzzle.html">Guzzle<span></span></a>
 						<ul>
-				<li><a href="namespace-Guzzle.Common.html">Common<span></span></a>
+				<li class="active"><a href="namespace-Guzzle.Common.html">Common<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
+						</li>
+				<li class="active"><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
@@ -46,6 +48,8 @@
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -61,8 +65,10 @@
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
 						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
+						</li>
 							</ul></li></ul></li>
-				<li class="active"><a href="namespace-PHP.html">PHP</a>
+				<li><a href="namespace-PHP.html">PHP</a>
 						</li>
 			</ul>
 		</div>
@@ -71,35 +77,16 @@
 
 
 		<div id="elements">
-			<h3>Classes</h3>
-			<ul>
-				<li><a href="class-ArrayIterator.html">ArrayIterator</a></li>
-				<li><a href="class-Closure.html">Closure</a></li>
-				<li><a href="class-SimpleXMLElement.html">SimpleXMLElement</a></li>
-			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li><a href="class-ArrayAccess.html">ArrayAccess</a></li>
-				<li><a href="class-Countable.html">Countable</a></li>
-				<li><a href="class-Iterator.html">Iterator</a></li>
-				<li><a href="class-IteratorAggregate.html">IteratorAggregate</a></li>
-				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
-				<li><a href="class-Serializable.html">Serializable</a></li>
-				<li><a href="class-Traversable.html">Traversable</a></li>
-			</ul>
 
 
 			<h3>Exceptions</h3>
 			<ul>
-				<li><a href="class-BadFunctionCallException.html">BadFunctionCallException</a></li>
-				<li><a href="class-BadMethodCallException.html">BadMethodCallException</a></li>
-				<li><a href="class-Exception.html">Exception</a></li>
-				<li class="active"><a href="class-HttpException.html">HttpException</a></li>
-				<li><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></li>
-				<li><a href="class-LogicException.html">LogicException</a></li>
-				<li><a href="class-RuntimeException.html">RuntimeException</a></li>
-				<li><a href="class-UnexpectedValueException.html">UnexpectedValueException</a></li>
+				<li><a href="class-Guzzle.Common.Exception.BadMethodCallException.html">BadMethodCallException</a></li>
+				<li><a href="class-Guzzle.Common.Exception.ExceptionCollection.html">ExceptionCollection</a></li>
+				<li class="active"><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">InvalidArgumentException</a></li>
+				<li><a href="class-Guzzle.Common.Exception.RuntimeException.html">RuntimeException</a></li>
+				<li><a href="class-Guzzle.Common.Exception.UnexpectedValueException.html">UnexpectedValueException</a></li>
 			</ul>
 
 
@@ -124,7 +111,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-PHP.html" title="Summary of PHP"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Common.Exception.html" title="Summary of Guzzle\Common\Exception"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -139,9 +126,14 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class HttpException</h1>
+	<h1>Class InvalidArgumentException</h1>
 
 
+	<div class="description">
+	
+<p>Guzzle exception</p>
+
+	</div>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
@@ -152,7 +144,23 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>HttpException</span></b>			
+			<a href="class-LogicException.html"><span>LogicException</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-InvalidArgumentException.html"><span>InvalidArgumentException</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:90px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Guzzle\Common\Exception\InvalidArgumentException</span></b>			
+			 implements 
+				<a href="class-Guzzle.Common.GuzzleException.html"><span>Guzzle\Common\GuzzleException</span></a>
 			
 			
 		</dd>
@@ -167,51 +175,21 @@
 
 	<div class="info">
 		
-		<b>PHP Extension:</b> <a href="http://php.net/manual/book.http.php" title="Go to PHP documentation">Http</a><br />
 		
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Common.html">Common</a>\<a href="namespace-Guzzle.Common.Exception.html">Exception</a><br />
 		
 
-		<b>Documented at</b> <a href="http://php.net/manual/class.httpexception.php" title="Go to PHP documentation">php.net</a><br />
+		<b>Located at</b> Guzzle/Common/Exception/InvalidArgumentException.php<br />
 	</div>
 
 
-	<table class="summary" id="methods">
-	<caption>Methods summary</caption>
-	<tr data-order="__toString" id="___toString">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#___toString">#</a>
-		<code><a href="http://php.net/manual/httpexception.tostring.php" title="Go to PHP documentation">__toString</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	</table>
 
 	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-Exception.html#methods">Exception</a></caption>
 	<tr>
 		<td><code>
 			<a href="class-Exception.html#___construct">__construct()</a>, 
+			<a href="class-Exception.html#___toString">__toString()</a>, 
 			<a href="class-Exception.html#_getCode">getCode()</a>, 
 			<a href="class-Exception.html#_getFile">getFile()</a>, 
 			<a href="class-Exception.html#_getLine">getLine()</a>, 
@@ -228,33 +206,6 @@
 
 
 
-	<table class="summary" id="properties">
-	<caption>Properties summary</caption>
-	<tr data-order="innerException" id="$innerException">
-
-		<td class="attributes"><code>
-			public 
-			
-		</code></td>
-
-		<td class="name">
-				<a href="http://php.net/manual/class.httpexception.php#httpexception.props.innerexception" title="Go to PHP documentation"><var>$innerException</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$innerException" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-Exception.html#properties">Exception</a></caption>

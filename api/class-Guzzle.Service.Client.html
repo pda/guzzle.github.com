@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Service\Client | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,6 +38,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
@@ -46,6 +48,8 @@
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -60,6 +64,8 @@
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
 						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
@@ -306,7 +312,7 @@ enabled on the client to use this functionality.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-BadMethodCallException.html">BadMethodCallException</a></code></code><br>when a command is not found or magic methods are disabled<br />
+					<code><code><a href="class-Guzzle.Common.Exception.BadMethodCallException.html">Guzzle\Common\Exception\BadMethodCallException</a></code></code><br>when a command is not found or magic methods are disabled<br />
 				</div>
 
 
@@ -405,7 +411,7 @@ InvalidArgumentException is thrown.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br>if no command can be found by name<br />
+					<code><code><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a></code></code><br>if no command can be found by name<br />
 				</div>
 
 
@@ -535,8 +541,8 @@ is passed<br />
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br>if an invalid command is passed<br />
-					<code><code><a href="class-Guzzle.Service.Command.CommandSetException.html">Guzzle\Service\Command\CommandSetException</a></code></code><br>if a set contains commands associated with other clients<br />
+					<code><code><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a></code></code><br>if an invalid command is passed<br />
+					<code><code><a href="class-Guzzle.Service.Exception.CommandSetException.html">Guzzle\Service\Exception\CommandSetException</a></code></code><br>if a set contains commands associated with other clients<br />
 				</div>
 
 
@@ -677,73 +683,17 @@ factory if it is not already present on the client</dd>
 
 
 
-	<table class="summary" id="constants">
-	<caption>Constants summary</caption>
-	<tr data-order="MAGIC_CALL_DISABLED" id="MAGIC_CALL_DISABLED">
 
-		<td class="attributes"><code>
-			integer
+	<table class="summary inherited">
+	<caption>Constants inherited from <a href="class-Guzzle.Service.ClientInterface.html#constants">Guzzle\Service\ClientInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Guzzle.Service.ClientInterface.html#MAGIC_CALL_DISABLED"><b>MAGIC_CALL_DISABLED</b></a>, 
+			<a href="class-Guzzle.Service.ClientInterface.html#MAGIC_CALL_EXECUTE"><b>MAGIC_CALL_EXECUTE</b></a>, 
+			<a href="class-Guzzle.Service.ClientInterface.html#MAGIC_CALL_RETURN"><b>MAGIC_CALL_RETURN</b></a>
 		</code></td>
-		<td class="name"><code>
-<b>MAGIC_CALL_DISABLED</b>		</code></td>
-		<td class="value"><code><span class="php-num">0</span></code></td>
-		<td class="description"><div>
-			<a href="#MAGIC_CALL_DISABLED" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="MAGIC_CALL_RETURN" id="MAGIC_CALL_RETURN">
-
-		<td class="attributes"><code>
-			integer
-		</code></td>
-		<td class="name"><code>
-<b>MAGIC_CALL_RETURN</b>		</code></td>
-		<td class="value"><code><span class="php-num">1</span></code></td>
-		<td class="description"><div>
-			<a href="#MAGIC_CALL_RETURN" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="MAGIC_CALL_EXECUTE" id="MAGIC_CALL_EXECUTE">
-
-		<td class="attributes"><code>
-			integer
-		</code></td>
-		<td class="name"><code>
-<b>MAGIC_CALL_EXECUTE</b>		</code></td>
-		<td class="value"><code><span class="php-num">2</span></code></td>
-		<td class="description"><div>
-			<a href="#MAGIC_CALL_EXECUTE" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
 	</tr>
 	</table>
-
 
 
 	<table class="summary" id="properties">

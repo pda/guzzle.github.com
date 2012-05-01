@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Message\AbstractMessage | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,6 +38,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
@@ -46,6 +48,8 @@
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li class="active"><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -61,6 +65,8 @@
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
 						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
+						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
 						</li>
@@ -75,6 +81,7 @@
 			<ul>
 				<li class="active"><a href="class-Guzzle.Http.Message.AbstractMessage.html">AbstractMessage</a></li>
 				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">EntityEnclosingRequest</a></li>
+				<li><a href="class-Guzzle.Http.Message.Header.html">Header</a></li>
 				<li><a href="class-Guzzle.Http.Message.Request.html">Request</a></li>
 				<li><a href="class-Guzzle.Http.Message.RequestFactory.html">RequestFactory</a></li>
 				<li><a href="class-Guzzle.Http.Message.Response.html">Response</a></li>
@@ -89,11 +96,6 @@
 			</ul>
 
 
-			<h3>Exceptions</h3>
-			<ul>
-				<li><a href="class-Guzzle.Http.Message.BadResponseException.html">BadResponseException</a></li>
-				<li><a href="class-Guzzle.Http.Message.RequestException.html">RequestException</a></li>
-			</ul>
 
 
 		</div>
@@ -220,6 +222,51 @@ object is a reference to the internal object.</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="addHeader" id="_addHeader">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addHeader">#</a>
+		<code>addHeader( <span>string <var>$header</var></span>, <span>string <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Add a header to an existing collection of headers.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Add a header to an existing collection of headers.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$header</var></dt>
+					<dd><code>string</code><br> Header name to add</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>string</code><br> Value of the header</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code></code><br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_addHeader">Guzzle\Http\Message\MessageInterface::addHeader</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="addHeaders" id="_addHeaders">
 
 		<td class="attributes"><code>
@@ -267,24 +314,26 @@ object is a reference to the internal object.</p>
 
 		<td class="attributes"><code>
 			 public 
-			string|null
+			string|<code><a href="class-Guzzle.Http.Message.Header.html">Guzzle\Http\Message\Header</a></code>|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getHeader">#</a>
-		<code>getHeader( <span>string <var>$header</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$match</var> = <code><a href="class-Guzzle.Common.Collection.html#MATCH_EXACT">Guzzle\Common\Collection::<b>MATCH_EXACT</b></a></code></span> )</code>
+		<code>getHeader( <span>string <var>$header</var></span>, <span>boolean <var>$string</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Retrieve an HTTP header by name</p>
+<p>Retrieve an HTTP header by name. Performs a case-insensitive search of all
+headers.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Retrieve an HTTP header by name</p>
+<p>Retrieve an HTTP header by name. Performs a case-insensitive search of all
+headers.</p>
 
 
 
@@ -292,17 +341,14 @@ object is a reference to the internal object.</p>
 				<div class="list"><dl>
 					<dt><var>$header</var></dt>
 					<dd><code>string</code><br> Header to retrieve.</dd>
-					<dt><var>$default</var></dt>
-					<dd><code>mixed</code><br> (optional) If the header is not found, the passed $default value will be
-returned</dd>
-					<dt><var>$match</var></dt>
-					<dd><code>integer</code><br> (optional) Match mode: 0 - Exact match 1 - Case insensitive match 2 - Regular
-expression match</dd>
+					<dt><var>$string</var></dt>
+					<dd><code>boolean</code><br> (optional) Set to true to get the header as a string</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string|null</code><br>Returns the matching HTTP header value or NULL if the header is not found<br />
+					<code>string|<code><a href="class-Guzzle.Http.Message.Header.html">Guzzle\Http\Message\Header</a></code>|null</code><br>Returns NULL if no matching header is found. Returns a string if $string is set
+to TRUE. Returns a Header object if a matching header is found.<br />
 				</div>
 
 
@@ -323,7 +369,7 @@ expression match</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getHeaders">#</a>
-		<code>getHeaders( <span>array <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$match</var> = <code><a href="class-Guzzle.Common.Collection.html#MATCH_EXACT">Guzzle\Common\Collection::<b>MATCH_EXACT</b></a></code></span> )</code>
+		<code>getHeaders( <span>array <var>$names</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -339,227 +385,21 @@ expression match</dd>
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$headers</var></dt>
-					<dd><code>array</code><br>$names (optional) Pass an array of header names to retrieve only a particular
-subset of headers.</dd>
-					<dt><var>$match</var></dt>
-					<dd><code>integer</code><br> (optional) Match mode</dd>
+					<dt><var>$names</var></dt>
+					<dd><code>array</code><br> (optional) Pass an array of header names to retrieve only a particular subset
+of headers.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br>Returns a collection of all headers if no $headers array is specified, or a
-Collection of only the headers matching the headers in the $headers array.<br />
+					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br>Returns a <code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> of all headers if no $headers array is specified, or
+a Collection of only the headers matching the headers in the $headers array.<br />
 				</div>
 
 
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Message.AbstractMessage.html#_getHeader">Guzzle\Http\Message\AbstractMessage::getHeader()</a></code></code><br />
-				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_getHeaders">Guzzle\Http\Message\MessageInterface::getHeaders</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getTokenizedHeader" id="_getTokenizedHeader">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getTokenizedHeader">#</a>
-		<code>getTokenizedHeader( <span>string <var>$header</var></span>, <span>string <var>$token</var> = <span class="php-quote">';'</span></span>, <span>integer <var>$match</var> = <code><a href="class-Guzzle.Common.Collection.html#MATCH_EXACT">Guzzle\Common\Collection::<b>MATCH_EXACT</b></a></code></span> )</code>
-
-		<div class="description short">
-			
-<p>Get a tokenized header as a Collection</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Get a tokenized header as a Collection</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$header</var></dt>
-					<dd><code>string</code><br> Header to retrieve</dd>
-					<dt><var>$token</var></dt>
-					<dd><code>string</code><br> (optional) Token separator</dd>
-					<dt><var>$match</var></dt>
-					<dd><code>integer</code><br> (optional) Match mode</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|null</code><br />
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_getTokenizedHeader">Guzzle\Http\Message\MessageInterface::getTokenizedHeader</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setTokenizedHeader" id="_setTokenizedHeader">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setTokenizedHeader">#</a>
-		<code>setTokenizedHeader( <span>string <var>$header</var></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$data</var></span>, <span>string <var>$token</var> = <span class="php-quote">';'</span></span> )</code>
-
-		<div class="description short">
-			
-<p>Set a tokenized header on the request that implodes a Collection of data into
-a string separated by a token</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Set a tokenized header on the request that implodes a Collection of data into
-a string separated by a token</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$header</var></dt>
-					<dd><code>string</code><br> Header to set</dd>
-					<dt><var>$data</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Header data</dd>
-					<dt><var>$token</var></dt>
-					<dd><code>string</code><br> (optional) Token delimiter</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code></code><br />
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br>if data is not an array or Collection<br />
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_setTokenizedHeader">Guzzle\Http\Message\MessageInterface::setTokenizedHeader</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="hasHeader" id="_hasHeader">
-
-		<td class="attributes"><code>
-			 public 
-			boolean|mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_hasHeader">#</a>
-		<code>hasHeader( <span>string <var>$header</var></span>, <span>integer <var>$match</var> = <code><a href="class-Guzzle.Common.Collection.html#MATCH_EXACT">Guzzle\Common\Collection::<b>MATCH_EXACT</b></a></code></span> )</code>
-
-		<div class="description short">
-			
-<p>Check if the specified header is present.</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Check if the specified header is present.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$header</var></dt>
-					<dd><code>string</code><br> The header to check.</dd>
-					<dt><var>$match</var></dt>
-					<dd><code>integer</code><br> (optional) Match mode</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>boolean|mixed</code><br>Returns TRUE or FALSE if the header is present and using exact matching Returns
-the matching header or FALSE if no match found and using regex or case
-insensitive matching<br />
-				</div>
-
-
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Message.AbstractMessage.html#_getHeader">Guzzle\Http\Message\AbstractMessage::getHeader()</a></code></code><br />
-				</div>
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_hasHeader">Guzzle\Http\Message\MessageInterface::hasHeader</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="removeHeader" id="_removeHeader">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_removeHeader">#</a>
-		<code>removeHeader( <span>string <var>$header</var></span>, <span>integer <var>$match</var> = <code><a href="class-Guzzle.Common.Collection.html#MATCH_EXACT">Guzzle\Common\Collection::<b>MATCH_EXACT</b></a></code></span> )</code>
-
-		<div class="description short">
-			
-<p>Remove a specific HTTP header.</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Remove a specific HTTP header.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$header</var></dt>
-					<dd><code>string</code><br> HTTP header to remove.</dd>
-					<dt><var>$match</var></dt>
-					<dd><code>integer</code><br> (optional) Bitwise match setting</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code></code><br />
-				</div>
-
-
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Message.AbstractMessage.html#_getHeader">Guzzle\Http\Message\AbstractMessage::getHeader()</a></code></code><br />
-				</div>
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_removeHeader">Guzzle\Http\Message\MessageInterface::removeHeader</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -648,6 +488,191 @@ insensitive matching<br />
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_setHeaders">Guzzle\Http\Message\MessageInterface::setHeaders</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasHeader" id="_hasHeader">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasHeader">#</a>
+		<code>hasHeader( <span>string <var>$header</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Check if the specified header is present.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check if the specified header is present.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$header</var></dt>
+					<dd><code>string</code><br> The header to check.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Returns TRUE or FALSE if the header is present<br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_hasHeader">Guzzle\Http\Message\MessageInterface::hasHeader</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeHeader" id="_removeHeader">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeHeader">#</a>
+		<code>removeHeader( <span>string <var>$header</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Remove a specific HTTP header.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Remove a specific HTTP header.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$header</var></dt>
+					<dd><code>string</code><br> HTTP header to remove.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code></code><br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_removeHeader">Guzzle\Http\Message\MessageInterface::removeHeader</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTokenizedHeader" id="_getTokenizedHeader">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTokenizedHeader">#</a>
+		<code>getTokenizedHeader( <span>string <var>$header</var></span>, <span>string <var>$token</var> = <span class="php-quote">';'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Get a tokenized header as a Collection</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a tokenized header as a Collection</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$header</var></dt>
+					<dd><code>string</code><br> Header to retrieve</dd>
+					<dt><var>$token</var></dt>
+					<dd><code>string</code><br> (optional) Token separator</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|null</code><br>Returns a Collection object containing the tokenized values if the header was
+found. Returns NULL otherwise.<br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_getTokenizedHeader">Guzzle\Http\Message\MessageInterface::getTokenizedHeader</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setTokenizedHeader" id="_setTokenizedHeader">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setTokenizedHeader">#</a>
+		<code>setTokenizedHeader( <span>string <var>$header</var></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$data</var></span>, <span>string <var>$token</var> = <span class="php-quote">';'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Set a tokenized header on the request that implodes a Collection of data into
+a string separated by a token</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set a tokenized header on the request that implodes a Collection of data into
+a string separated by a token</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$header</var></dt>
+					<dd><code>string</code><br> Header to set</dd>
+					<dt><var>$data</var></dt>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Header data</dd>
+					<dt><var>$token</var></dt>
+					<dd><code>string</code><br> (optional) Token delimiter</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Message.AbstractMessage.html">Guzzle\Http\Message\AbstractMessage</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a></code></code><br>if data is not an array or Collection<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_setTokenizedHeader">Guzzle\Http\Message\MessageInterface::setTokenizedHeader</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -866,6 +891,42 @@ like cache-control</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getHeaderString" id="_getHeaderString">
+
+		<td class="attributes"><code>
+			 protected 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getHeaderString">#</a>
+		<code>getHeaderString( )</code>
+
+		<div class="description short">
+			
+<p>Get headers as a string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get headers as a string</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 	<table class="summary inherited">
@@ -888,24 +949,24 @@ like cache-control</p>
 
 		<td class="attributes"><code>
 			protected 
-			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>
+			array
 		</code></td>
 
 		<td class="name">
 <var>$headers</var>		</td>
-		<td class="value"><code></code></td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
 			<a href="#$headers" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>Collection of HTTP headers</p>
+<p>HTTP headers</p>
 
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>Collection of HTTP headers</p>
+<p>HTTP headers</p>
 
 
 			</div>

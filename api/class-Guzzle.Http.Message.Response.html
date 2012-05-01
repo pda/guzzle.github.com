@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Message\Response | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,6 +38,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
@@ -46,6 +48,8 @@
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li class="active"><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -61,6 +65,8 @@
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
 						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
+						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
 						</li>
@@ -75,6 +81,7 @@
 			<ul>
 				<li><a href="class-Guzzle.Http.Message.AbstractMessage.html">AbstractMessage</a></li>
 				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">EntityEnclosingRequest</a></li>
+				<li><a href="class-Guzzle.Http.Message.Header.html">Header</a></li>
 				<li><a href="class-Guzzle.Http.Message.Request.html">Request</a></li>
 				<li><a href="class-Guzzle.Http.Message.RequestFactory.html">RequestFactory</a></li>
 				<li class="active"><a href="class-Guzzle.Http.Message.Response.html">Response</a></li>
@@ -89,11 +96,6 @@
 			</ul>
 
 
-			<h3>Exceptions</h3>
-			<ul>
-				<li><a href="class-Guzzle.Http.Message.BadResponseException.html">BadResponseException</a></li>
-				<li><a href="class-Guzzle.Http.Message.RequestException.html">RequestException</a></li>
-			</ul>
 
 
 		</div>
@@ -177,7 +179,7 @@
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="factory" id="_factory">
+	<tr data-order="fromMessage" id="_fromMessage">
 
 		<td class="attributes"><code>
 			 public static
@@ -187,8 +189,8 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_factory">#</a>
-		<code>factory( <span>string <var>$message</var></span> )</code>
+		<a class="anchor" href="#_fromMessage">#</a>
+		<code>fromMessage( <span>string <var>$message</var></span> )</code>
 
 		<div class="description short">
 			
@@ -215,7 +217,7 @@
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.HttpException.html">Guzzle\Http\HttpException</a></code></code><br>if an empty $message is provided<br />
+					<code><code><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a></code></code><br>if an empty $message is provided<br />
 				</div>
 
 
@@ -233,7 +235,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span>string <var>$statusCode</var></span>, <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|array <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>__construct( <span>string <var>$statusCode</var></span>, <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|array <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -254,13 +256,13 @@
 					<dt><var>$headers</var></dt>
 					<dd><code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|array</code><br> (optional) The response headers</dd>
 					<dt><var>$body</var></dt>
-					<dd><code>string|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> (optional) The body of the response</dd>
+					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> (optional) The body of the response</dd>
 				</dl></div>
 
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.BadResponseException.html">Guzzle\Http\Message\BadResponseException</a></code></code><br>if an invalid response code is given<br />
+					<code><code><a href="class-Guzzle.Http.Exception.BadResponseException.html">Guzzle\Http\Exception\BadResponseException</a></code></code><br>if an invalid response code is given<br />
 				</div>
 
 
@@ -584,7 +586,7 @@ key is set and not found<br />
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.BadResponseException.html">Guzzle\Http\Message\BadResponseException</a></code></code><br>when an invalid response code is received<br />
+					<code><code><a href="class-Guzzle.Http.Exception.BadResponseException.html">Guzzle\Http\Exception\BadResponseException</a></code></code><br>when an invalid response code is received<br />
 				</div>
 
 
@@ -779,7 +781,7 @@ status code</p>
 
 		<td class="attributes"><code>
 			 public 
-			string|integer
+			string
 			
 			</code>
 		</td>
@@ -803,7 +805,7 @@ status code</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string|integer</code><br>Returns what partial content range types this server supports.<br />
+					<code>string</code><br>Returns what partial content range types this server supports.<br />
 				</div>
 
 
@@ -935,7 +937,7 @@ allowed.<br />
 
 		<td class="attributes"><code>
 			 public 
-			string|null
+			<code><a href="class-Guzzle.Http.Message.Header.html">Guzzle\Http\Message\Header</a></code>|null
 			
 			</code>
 		</td>
@@ -959,8 +961,8 @@ allowed.<br />
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string|null</code><br>Returns a string that tells all caching mechanisms from server to client whether
-they may cache this object.<br />
+					<code><code><a href="class-Guzzle.Http.Message.Header.html">Guzzle\Http\Message\Header</a></code>|null</code><br>Returns a Header object that tells all caching mechanisms from server to client
+whether they may cache this object.<br />
 				</div>
 
 
@@ -1526,7 +1528,7 @@ href="http://www.w3.org/pub/WWW/People.html">http://www.w3.org/pub/WWW/People.ht
 
 		<td class="attributes"><code>
 			 public 
-			string|null
+			<code><a href="class-Guzzle.Http.Message.Header.html">Guzzle\Http\Message\Header</a></code>|null
 			
 			</code>
 		</td>
@@ -1550,7 +1552,7 @@ href="http://www.w3.org/pub/WWW/People.html">http://www.w3.org/pub/WWW/People.ht
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string|null</code><br>Returns the implementation-specific headers that may have various effects
+					<code><code><a href="class-Guzzle.Http.Message.Header.html">Guzzle\Http\Message\Header</a></code>|null</code><br>Returns the implementation-specific headers that may have various effects
 anywhere along the request-response chain.<br />
 				</div>
 
@@ -1672,7 +1674,7 @@ after a specified period of time.<br />
 
 		<td class="attributes"><code>
 			 public 
-			string|null
+			<code><a href="class-Guzzle.Http.Message.Header.html">Guzzle\Http\Message\Header</a></code>|null
 			
 			</code>
 		</td>
@@ -1696,7 +1698,7 @@ after a specified period of time.<br />
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string|null</code><br>An HTTP cookie.<br />
+					<code><code><a href="class-Guzzle.Http.Message.Header.html">Guzzle\Http\Message\Header</a></code>|null</code><br>An HTTP cookie.<br />
 				</div>
 
 
@@ -2385,10 +2387,12 @@ that no freshness information is available.</p>
 	<tr>
 		<td><code>
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_addCacheControlDirective">addCacheControlDirective()</a>, 
+			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_addHeader">addHeader()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_addHeaders">addHeaders()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_changedHeader">changedHeader()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getCacheControlDirective">getCacheControlDirective()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getHeader">getHeader()</a>, 
+			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getHeaderString">getHeaderString()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getHeaders">getHeaders()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getParams">getParams()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getTokenizedHeader">getTokenizedHeader()</a>, 

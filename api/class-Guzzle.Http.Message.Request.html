@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Message\Request | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,6 +38,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
@@ -46,6 +48,8 @@
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li class="active"><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -61,6 +65,8 @@
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
 						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
+						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
 						</li>
@@ -75,6 +81,7 @@
 			<ul>
 				<li><a href="class-Guzzle.Http.Message.AbstractMessage.html">AbstractMessage</a></li>
 				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">EntityEnclosingRequest</a></li>
+				<li><a href="class-Guzzle.Http.Message.Header.html">Header</a></li>
 				<li class="active"><a href="class-Guzzle.Http.Message.Request.html">Request</a></li>
 				<li><a href="class-Guzzle.Http.Message.RequestFactory.html">RequestFactory</a></li>
 				<li><a href="class-Guzzle.Http.Message.Response.html">Response</a></li>
@@ -89,11 +96,6 @@
 			</ul>
 
 
-			<h3>Exceptions</h3>
-			<ul>
-				<li><a href="class-Guzzle.Http.Message.BadResponseException.html">BadResponseException</a></li>
-				<li><a href="class-Guzzle.Http.Message.RequestException.html">RequestException</a></li>
-			</ul>
 
 
 		</div>
@@ -372,7 +374,7 @@ received.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.BadResponseException.html">Guzzle\Http\Message\BadResponseException</a></code></code><br>if the response is not successful<br />
+					<code><code><a href="class-Guzzle.Http.Exception.BadResponseException.html">Guzzle\Http\Exception\BadResponseException</a></code></code><br>if the response is not successful<br />
 				</div>
 
 
@@ -577,7 +579,7 @@ object, and set other data associated with the request.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.RequestException.html">Guzzle\Http\Message\RequestException</a></code></code><br>on a request error<br />
+					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br>on a request error<br />
 				</div>
 
 
@@ -876,14 +878,14 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 		<td class="attributes"><code>
 			 public 
-			string|integer
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getProtocolVersion">#</a>
-		<code>getProtocolVersion( <span>boolean <var>$curlValue</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code>getProtocolVersion( )</code>
 
 		<div class="description short">
 			
@@ -897,15 +899,10 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$curlValue</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to TRUE to retrieve the cURL value for the HTTP protocol version</dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string|integer</code><br />
+					<code>string</code><br />
 				</div>
 
 
@@ -1238,7 +1235,7 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.RequestException.html">Guzzle\Http\Message\RequestException</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br />
 				</div>
 
 				<h4>See</h4>
@@ -1296,33 +1293,39 @@ is the path plus the query string, fragment</p>
 
 		<td class="attributes"><code>
 			 public 
-			string
+			string|<code><a href="class-Guzzle.Http.Url.html">Guzzle\Http\Url</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getUrl">#</a>
-		<code>getUrl( )</code>
+		<code>getUrl( <span>boolean <var>$asObject</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Get the full URL of the request (e.g. 'http://www.guzzle-project.com/')</p>
+<p>Get the full URL of the request (e.g. 'http://www.guzzle-project.com/')
+scheme://username:password@domain:port/path?query_string#fragment</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the full URL of the request (e.g. 'http://www.guzzle-project.com/')</p>
-
-<p>scheme://username:password@domain:port/path?query_string#fragment</p>
-
+<p>Get the full URL of the request (e.g. 'http://www.guzzle-project.com/')
+scheme://username:password@domain:port/path?query_string#fragment</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$asObject</var></dt>
+					<dd><code>boolean</code><br> (optional) Set to TRUE to retrieve the URL as a clone of the URL object owned
+by the request</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br />
+					<code>string|<code><a href="class-Guzzle.Http.Url.html">Guzzle\Http\Url</a></code></code><br />
 				</div>
 
 
@@ -2109,7 +2112,7 @@ like cache-control</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.BadResponseException.html">Guzzle\Http\Message\BadResponseException</a></code></code><br>on unsuccessful responses<br />
+					<code><code><a href="class-Guzzle.Http.Exception.BadResponseException.html">Guzzle\Http\Exception\BadResponseException</a></code></code><br>on unsuccessful responses<br />
 				</div>
 
 
@@ -2123,9 +2126,11 @@ like cache-control</p>
 	<tr>
 		<td><code>
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_addCacheControlDirective">addCacheControlDirective()</a>, 
+			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_addHeader">addHeader()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_addHeaders">addHeaders()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getCacheControlDirective">getCacheControlDirective()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getHeader">getHeader()</a>, 
+			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getHeaderString">getHeaderString()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getHeaders">getHeaders()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getParams">getParams()</a>, 
 			<a href="class-Guzzle.Http.Message.AbstractMessage.html#_getTokenizedHeader">getTokenizedHeader()</a>, 

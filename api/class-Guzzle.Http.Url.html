@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Url | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2177352002"></script>
+	<script type="text/javascript" src="elementlist.js?600552052"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -38,6 +38,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 							</ul></li>
@@ -46,6 +48,8 @@
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Curl.html">Curl</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
@@ -60,6 +64,8 @@
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.Description.html">Description</a>
+						</li>
+				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
 						</li>
 							</ul></li></ul></li>
 				<li><a href="namespace-PHP.html">PHP</a>
@@ -84,13 +90,10 @@
 			<h3>Interfaces</h3>
 			<ul>
 				<li><a href="class-Guzzle.Http.ClientInterface.html">ClientInterface</a></li>
-			</ul>
-
-
-			<h3>Exceptions</h3>
-			<ul>
 				<li><a href="class-Guzzle.Http.HttpException.html">HttpException</a></li>
 			</ul>
+
+
 
 
 		</div>
@@ -200,6 +203,49 @@ parts are not validated.</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="parseUrl" id="_parseUrl">
+
+		<td class="attributes"><code>
+			 public static
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parseUrl">#</a>
+		<code>parseUrl( <span>string <var>$url</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Parse a URL using special handling for a subset of UTF-8 characters in the
+query string if needed.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Parse a URL using special handling for a subset of UTF-8 characters in the
+query string if needed.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$url</var></dt>
+					<dd><code>string</code><br> URL to parse</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="parseQuery" id="_parseQuery">
 
 		<td class="attributes"><code>
@@ -256,14 +302,14 @@ parts are not validated.</p>
 
 		<div class="description short">
 			
-<p>Buld a URL from parse_url parts. The generated URL will be a relative URL if
+<p>Build a URL from parse_url parts. The generated URL will be a relative URL if
 a scheme or host are not provided.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Buld a URL from parse_url parts. The generated URL will be a relative URL if
+<p>Build a URL from parse_url parts. The generated URL will be a relative URL if
 a scheme or host are not provided.</p>
 
 
@@ -706,6 +752,42 @@ if a port has not explicitly been set.</p>
 					<dt><var>$path</var></dt>
 					<dd><code>array|string</code><br> Path string or array of path segments</dd>
 				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Url.html">Guzzle\Http\Url</a></code></code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="normalizePath" id="_normalizePath">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Guzzle.Http.Url.html">Guzzle\Http\Url</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_normalizePath">#</a>
+		<code>normalizePath( )</code>
+
+		<div class="description short">
+			
+<p>Normalize the URL so that double slashes and relative paths are removed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Normalize the URL so that double slashes and relative paths are removed</p>
+
+
+
 
 				<h4>Returns</h4>
 				<div class="list">
@@ -1189,14 +1271,14 @@ if a port has not explicitly been set.</p>
 
 		<div class="description short">
 			
-<p>Combine the URL with another URL. Every part of the second URL supercede the
+<p>Combine the URL with another URL. Every part of the second URL supersede the
 current URL if that part is specified.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Combine the URL with another URL. Every part of the second URL supercede the
+<p>Combine the URL with another URL. Every part of the second URL supersede the
 current URL if that part is specified.</p>
 
 
