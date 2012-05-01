@@ -631,8 +631,11 @@
 <p>Use the <tt class="docutils literal"><span class="pre">Guzzle\Http\Plugin\LogPlugin</span></tt> to view all data sent over the wire, including entity bodies and redirects:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Common\Log\ZendLogAdapter</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\LogPlugin</span><span class="p">;</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
 
 <span class="nv">$adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZendLogAdapter</span><span class="p">(</span><span class="k">new</span> <span class="nx">\Zend_Log</span><span class="p">(</span><span class="k">new</span> <span class="nx">\Zend_Log_Writer_Stream</span><span class="p">(</span><span class="s1">&#39;php://output&#39;</span><span class="p">)));</span>
 <span class="nv">$logPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LogPlugin</span><span class="p">(</span><span class="nv">$adapter</span><span class="p">,</span> <span class="nx">LogPlugin</span><span class="o">::</span><span class="na">LOG_VERBOSE</span><span class="p">);</span>
@@ -699,9 +702,16 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <p>The <tt class="docutils literal"><span class="pre">Guzzle\Http\Plugin\ExponentialBackoffPlugin</span></tt> automatically retries failed HTTP requests using truncated exponential backoff:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\ExponentialBackoffPlugin</span><span class="p">;</span>
 
-<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="k">new</span> <span class="nx">ExponentialBackoffPlugin</span><span class="p">());</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
+
+<span class="nv">$backoffPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ExponentialBackoffPlugin</span><span class="p">();</span>
+
+<span class="c1">// Add the exponential plugin to the client object</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$backoffPlugin</span><span class="p">);</span>
+
 <span class="nv">$request</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://google.com/&#39;</span><span class="p">);</span>
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 </pre></div>
@@ -716,13 +726,18 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <p>Guzzle can leverage HTTP&#8217;s caching specifications using the <tt class="docutils literal"><span class="pre">Guzzle\Http\Plugin\CachePlugin</span></tt>.  The CachePlugin provides a private transparent proxy cache that caches HTTP responses.  The caching logic, based on <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html">RFC 2616</a>, uses HTTP headers to control caching behavior, cache lifetime, and supports ETag and Last-Modified based revalidation:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Doctrine\Common\Cache\ArrayCache</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Common\Cache\DoctrineCacheAdapter</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\CachePlugin</span><span class="p">;</span>
 
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
+
 <span class="nv">$adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DoctrineCacheAdapter</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCache</span><span class="p">());</span>
-<span class="nv">$cache</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CachePlugin</span><span class="p">(</span><span class="nv">$adapter</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$cache</span><span class="p">);</span>
+<span class="nv">$cachePlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CachePlugin</span><span class="p">(</span><span class="nv">$adapter</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+
+<span class="c1">// Add the cache plugin to the client object</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$cachePlugin</span><span class="p">);</span>
 
 <span class="nv">$request</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://www.wikipedia.org/&#39;</span><span class="p">);</span>
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
@@ -741,11 +756,17 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <p>Some web services require a Cookie in order to maintain a session.  The <tt class="docutils literal"><span class="pre">Guzzle\Http\Plugin\CookiePlugin</span></tt> will add cookies to requests and parse cookies from responses using a CookieJar object:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\CookiePlugin</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\CookieJar\ArrayCookieJar</span><span class="p">;</span>
 
-<span class="nv">$plugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CookiePlugin</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCookieJar</span><span class="p">());</span>
-<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
+
+<span class="nv">$cookiePlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CookiePlugin</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCookieJar</span><span class="p">());</span>
+
+<span class="c1">// Add the cookie plugin to the client object</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$cookiePlugin</span><span class="p">);</span>
+
 <span class="nv">$request</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://www.yahoo.com/&#39;</span><span class="p">);</span>
 
 <span class="c1">// Send the request with no cookies and parse the returned cookies</span>
@@ -763,10 +784,16 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <p>Entity bodies can sometimes be modified over the wire due to a faulty TCP transport or misbehaving proxy.  If an HTTP response contains a Content-MD5 header, then a MD5 hash of the entity body of a response can be compared against the Content-MD5 header of the response to determine if the response was delivered intact.  The <tt class="docutils literal"><span class="pre">Guzzle\Http\Plugin\Md5ValidatorPlugin</span></tt> will throw an <tt class="docutils literal"><span class="pre">UnexpectedValueException</span></tt> if the calculated MD5 hash does not match the Content-MD5 hash:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\Md5ValidatorPlugin</span><span class="p">;</span>
 
-<span class="nv">$plugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Md5ValidatorPlugin</span><span class="p">();</span>
-<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
+
+<span class="nv">$md5Plugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Md5ValidatorPlugin</span><span class="p">();</span>
+
+<span class="c1">// Add the md5 plugin to the client object</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$md5Plugin</span><span class="p">);</span>
+
 <span class="nv">$request</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://www.yahoo.com/&#39;</span><span class="p">);</span>
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 </pre></div>
@@ -778,12 +805,17 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <p>The history plugin tracks all of the requests and responses sent through a request or client.  This plugin can be useful for crawling or unit testing.  By default, the history plugin stores up to 10 requests and responses.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\HistoryPlugin</span><span class="p">;</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
 
 <span class="nv">$history</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HistoryPlugin</span><span class="p">();</span>
 <span class="nv">$history</span><span class="o">-&gt;</span><span class="na">setLimit</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 
+<span class="c1">// Add the history plugin to the client object</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$history</span><span class="p">);</span>
+
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://www.yahoo.com/&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 
 <span class="k">echo</span> <span class="nv">$history</span><span class="o">-&gt;</span><span class="na">getLastRequest</span><span class="p">();</span>
@@ -797,13 +829,17 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <p>The mock plugin is useful for testing Guzzle clients.  The mock plugin allows you to queue an array of responses that will satisfy requests sent from a client by consuming the request queue in FIFO order.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\MockPlugin</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\Message\Response</span><span class="p">;</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
 
 <span class="nv">$mock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MockPlugin</span><span class="p">();</span>
 <span class="nv">$mock</span><span class="o">-&gt;</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
      <span class="o">-&gt;</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="mi">404</span><span class="p">));</span>
 
+<span class="c1">// Add the mock plugin to the client object</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$mock</span><span class="p">);</span>
 
 <span class="c1">// The following request will receive a 200 response from the plugin</span>
@@ -819,8 +855,16 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <p>If your web service client requires basic authorization, then you can use the CurlAuthPlugin to easily add an Authorization header to each request sent by the client.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\CurlAuthPlugin</span><span class="p">;</span>
-<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlAuthPlugin</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">));</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
+
+<span class="nv">$authPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CurlAuthPlugin</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">);</span>
+
+<span class="c1">// Add the auth plugin to the client object</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$authPlugin</span><span class="p">);</span>
+
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;projects/1/people&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 <span class="nv">$xml</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimpleXMLElement</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">(</span><span class="k">true</span><span class="p">));</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$xml</span><span class="o">-&gt;</span><span class="na">person</span> <span class="k">as</span> <span class="nv">$person</span><span class="p">)</span> <span class="p">{</span>
@@ -865,8 +909,11 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <p>Guzzle ships with an OAuth 1.0 plugin that can sign requests using a consumer key, consumer secret, OAuth token, and OAuth secret.  Here&#8217;s an example showing how to send an authenticated request to the Twitter REST API:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Guzzle\Http\Client</span><span class="p">(</span><span class="s1">&#39;http://api.twitter.com/1&#39;</span><span class="p">);</span>
-<span class="nv">$oauth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Guzzle\Http\Plugin\OauthPlugin</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="k">use</span> <span class="nx">Guzzle\Http\Client</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Guzzle\Http\Plugin\OauthPlugin</span><span class="p">;</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://api.twitter.com/1&#39;</span><span class="p">);</span>
+<span class="nv">$oauth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OauthPlugin</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;consumer_key&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;my_key&#39;</span><span class="p">,</span>
     <span class="s1">&#39;consumer_secret&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_secret&#39;</span><span class="p">,</span>
     <span class="s1">&#39;token&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;my_token&#39;</span><span class="p">,</span>
