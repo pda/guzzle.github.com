@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Service\Description\ApiCommand | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?600552052"></script>
+	<script type="text/javascript" src="elementlist.js?496970331"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -41,6 +41,8 @@
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
@@ -80,15 +82,19 @@
 			<h3>Classes</h3>
 			<ul>
 				<li class="active"><a href="class-Guzzle.Service.Description.ApiCommand.html">ApiCommand</a></li>
+				<li><a href="class-Guzzle.Service.Description.ApiParam.html">ApiParam</a></li>
 				<li><a href="class-Guzzle.Service.Description.ArrayDescriptionBuilder.html">ArrayDescriptionBuilder</a></li>
 				<li><a href="class-Guzzle.Service.Description.JsonDescriptionBuilder.html">JsonDescriptionBuilder</a></li>
 				<li><a href="class-Guzzle.Service.Description.ServiceDescription.html">ServiceDescription</a></li>
+				<li><a href="class-Guzzle.Service.Description.ServiceDescriptionFactory.html">ServiceDescriptionFactory</a></li>
 				<li><a href="class-Guzzle.Service.Description.XmlDescriptionBuilder.html">XmlDescriptionBuilder</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
 				<li><a href="class-Guzzle.Service.Description.DescriptionBuilderInterface.html">DescriptionBuilderInterface</a></li>
+				<li><a href="class-Guzzle.Service.Description.ServiceDescriptionFactoryInterface.html">ServiceDescriptionFactoryInterface</a></li>
+				<li><a href="class-Guzzle.Service.Description.ServiceDescriptionInterface.html">ServiceDescriptionInterface</a></li>
 			</ul>
 
 
@@ -209,7 +215,7 @@ class and function with ::</dd>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getData" id="_getData">
+	<tr data-order="toArray" id="_toArray">
 
 		<td class="attributes"><code>
 			 public 
@@ -219,8 +225,8 @@ class and function with ::</dd>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getData">#</a>
-		<code>getData( )</code>
+		<a class="anchor" href="#_toArray">#</a>
+		<code>toArray( )</code>
 
 		<div class="description short">
 			
@@ -285,7 +291,7 @@ class and function with ::</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|null
+			<code><a href="class-Guzzle.Service.Description.ApiParam.html">Guzzle\Service\Description\ApiParam</a></code>|null
 			
 			</code>
 		</td>
@@ -314,7 +320,7 @@ class and function with ::</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|null</code><br />
+					<code><code><a href="class-Guzzle.Service.Description.ApiParam.html">Guzzle\Service\Description\ApiParam</a></code>|null</code><br />
 				</div>
 
 
@@ -507,6 +513,34 @@ class and function with ::</dd>
 
 
 
+	<table class="summary" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="DEFAULT_COMMAND_CLASS" id="DEFAULT_COMMAND_CLASS">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>DEFAULT_COMMAND_CLASS</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'Guzzle\\Service\\Command\\DynamicCommand'</span></code></td>
+		<td class="description"><div>
+			<a href="#DEFAULT_COMMAND_CLASS" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Default command class to use when none is specified</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Default command class to use when none is specified</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 
 
@@ -539,28 +573,136 @@ class and function with ::</dd>
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="config" id="$config">
+	<tr data-order="name" id="$name">
 
 		<td class="attributes"><code>
 			protected 
-			array
+			string
 		</code></td>
 
 		<td class="name">
-<var>$config</var>		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+<var>$name</var>		</td>
+		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$config" class="anchor">#</a>
+			<a href="#$name" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>Configuration data</p>
+<p>Name of the command</p>
 
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>Configuration data</p>
+<p>Name of the command</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="doc" id="$doc">
+
+		<td class="attributes"><code>
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$doc</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$doc" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Documentation</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Documentation</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="method" id="$method">
+
+		<td class="attributes"><code>
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$method</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$method" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>HTTP method</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>HTTP method</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="uri" id="$uri">
+
+		<td class="attributes"><code>
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$uri</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$uri" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>HTTP URI of the command</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>HTTP URI of the command</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="class" id="$class">
+
+		<td class="attributes"><code>
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$class</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$class" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Class of the command object</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Class of the command object</p>
 
 
 			</div>

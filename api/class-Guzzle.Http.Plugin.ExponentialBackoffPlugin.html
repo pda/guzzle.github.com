@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Plugin\ExponentialBackoffPlugin | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?600552052"></script>
+	<script type="text/javascript" src="elementlist.js?496970331"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -41,6 +41,8 @@
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
 						</li>
 							</ul></li>
 				<li class="active"><a href="namespace-Guzzle.Http.html">Http<span></span></a>
@@ -410,7 +412,7 @@ exponential backoff</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFailureCodes">#</a>
-		<code>setFailureCodes( <span>array <var>$codes</var></span> )</code>
+		<code>setFailureCodes( <span>mixed <var>$codes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -429,7 +431,7 @@ exponential backoff</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$codes</var></dt>
-					<dd><code>array</code><br> Array of HTTP response codes</dd>
+					<dd><code>mixed</code><br> Array of HTTP response codes or PHP callable</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -535,13 +537,13 @@ exponential backoff</p>
 
 		<div class="description short">
 			
-<p>Called when a request is polling in the curl mutli object</p>
+<p>Called when a request is polling in the curl multi object</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Called when a request is polling in the curl mutli object</p>
+<p>Called when a request is polling in the curl multi object</p>
 
 
 
@@ -622,6 +624,27 @@ exponential backoff</p>
 			</div>
 		</div></td>
 	</tr>
+	<tr data-order="RETRY_PARAM" id="RETRY_PARAM">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>RETRY_PARAM</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'plugins.exponential_backoff.retry_count'</span></code></td>
+		<td class="description"><div>
+			<a href="#RETRY_PARAM" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
 	</table>
 
 
@@ -632,7 +655,7 @@ exponential backoff</p>
 
 		<td class="attributes"><code>
 			protected 
-			array
+			array|callable
 		</code></td>
 
 		<td class="name">
@@ -643,13 +666,40 @@ exponential backoff</p>
 
 			<div class="description short">
 				
-<p>Array of response codes that must be retried</p>
+<p>Hash table of failure codes or PHP callable</p>
 
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>Array of response codes that must be retried</p>
+<p>Hash table of failure codes or PHP callable</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="callableFailureCodes" id="$callableFailureCodes">
+
+		<td class="attributes"><code>
+			protected 
+			boolean
+		</code></td>
+
+		<td class="name">
+<var>$callableFailureCodes</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$callableFailureCodes" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Whether or not the failure codes property is a callable</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Whether or not the failure codes property is a callable</p>
 
 
 			</div>
@@ -682,33 +732,6 @@ exponential backoff</p>
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="state" id="$state">
-
-		<td class="attributes"><code>
-			protected 
-			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>
-		</code></td>
-
-		<td class="name">
-<var>$state</var>		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$state" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>Request state information</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>Request state information</p>
-
-
-			</div>
-		</div></td>
-	</tr>
 	<tr data-order="delayClosure" id="$delayClosure">
 
 		<td class="attributes"><code>
@@ -728,6 +751,64 @@ exponential backoff</p>
 
 			<div class="description detailed hidden">
 				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="defaultFailureCodes" id="$defaultFailureCodes">
+
+		<td class="attributes"><code>
+			protected static
+			array
+		</code></td>
+
+		<td class="name">
+<var>$defaultFailureCodes</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(<span class="php-num">500</span>, <span class="php-num">503</span>,
+    CURLE_COULDNT_RESOLVE_HOST, CURLE_COULDNT_CONNECT, CURLE_WRITE_ERROR,
+    CURLE_READ_ERROR, CURLE_OPERATION_TIMEOUTED, CURLE_SSL_CONNECT_ERROR,
+    CURLE_HTTP_PORT_FAILED, CURLE_GOT_NOTHING, CURLE_SEND_ERROR,
+    CURLE_RECV_ERROR)</code></td>
+		<td class="description"><div>
+			<a href="#$defaultFailureCodes" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Array of default failure codes</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Array of default failure codes</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="defaultFailureCodesHash" id="$defaultFailureCodesHash">
+
+		<td class="attributes"><code>
+			protected static
+			array
+		</code></td>
+
+		<td class="name">
+<var>$defaultFailureCodesHash</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$defaultFailureCodesHash" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Hash cache of the default failure codes</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Hash cache of the default failure codes</p>
+
 
 			</div>
 		</div></td>

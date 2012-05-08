@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Common\Stream | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?600552052"></script>
+	<script type="text/javascript" src="elementlist.js?496970331"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -41,6 +41,8 @@
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
@@ -927,6 +929,135 @@ failure.<br />
 
 
 
+	<table class="summary" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="STREAM_TYPE" id="STREAM_TYPE">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>STREAM_TYPE</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'stream_type'</span></code></td>
+		<td class="description"><div>
+			<a href="#STREAM_TYPE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="WRAPPER_TYPE" id="WRAPPER_TYPE">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>WRAPPER_TYPE</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'wrapper_type'</span></code></td>
+		<td class="description"><div>
+			<a href="#WRAPPER_TYPE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="IS_LOCAL" id="IS_LOCAL">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>IS_LOCAL</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'is_local'</span></code></td>
+		<td class="description"><div>
+			<a href="#IS_LOCAL" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="IS_READABLE" id="IS_READABLE">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>IS_READABLE</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'is_readable'</span></code></td>
+		<td class="description"><div>
+			<a href="#IS_READABLE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="IS_WRITABLE" id="IS_WRITABLE">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>IS_WRITABLE</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'is_writable'</span></code></td>
+		<td class="description"><div>
+			<a href="#IS_WRITABLE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="SEEKABLE" id="SEEKABLE">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>SEEKABLE</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'seekable'</span></code></td>
+		<td class="description"><div>
+			<a href="#SEEKABLE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 
 
@@ -1008,6 +1139,44 @@ failure.<br />
 			<div class="description detailed hidden">
 				
 <p>Stream cached data</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="readWriteHash" id="$readWriteHash">
+
+		<td class="attributes"><code>
+			protected static
+			array
+		</code></td>
+
+		<td class="name">
+<var>$readWriteHash</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(
+    <span class="php-quote">'read'</span> =&gt; <span class="php-keyword1">array</span>(
+        <span class="php-quote">'r'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>,
+        <span class="php-quote">'rb'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+b'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>,
+        <span class="php-quote">'rt'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+t'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>
+    ),
+    <span class="php-quote">'write'</span> =&gt; <span class="php-keyword1">array</span>(
+        <span class="php-quote">'w'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'rw'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>,
+        <span class="php-quote">'w+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+b'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>,
+        <span class="php-quote">'w+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+t'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>
+    )
+)</code></td>
+		<td class="description"><div>
+			<a href="#$readWriteHash" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Hash table of readable and writeable stream types for fast lookups</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Hash table of readable and writeable stream types for fast lookups</p>
 
 
 			</div>

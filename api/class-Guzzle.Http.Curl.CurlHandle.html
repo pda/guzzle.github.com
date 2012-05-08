@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Curl\CurlHandle | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?600552052"></script>
+	<script type="text/javascript" src="elementlist.js?496970331"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -41,6 +41,8 @@
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
 						</li>
 							</ul></li>
 				<li class="active"><a href="namespace-Guzzle.Http.html">Http<span></span></a>
@@ -179,6 +181,13 @@
 		<div class="description detailed hidden">
 			
 <p>Factory method to create a new curl handle based on an HTTP request</p>
+
+<p>There are some helpful options you can set to enable specific behavior: -
+disabled_wire: This is a performance improvement that will disable some
+debugging functionality with cURL. The functionality it disabled allows you to
+see the exact HTTP request sent over the wire. - progress: Set to true to enable
+progress function callbacks. Most People don't need this, so it has been
+disabled by default.</p>
 
 
 

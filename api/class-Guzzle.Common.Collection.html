@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Common\Collection | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?600552052"></script>
+	<script type="text/javascript" src="elementlist.js?496970331"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -41,6 +41,8 @@
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
+						</li>
+				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
@@ -480,7 +482,7 @@ Collection object</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code>get( <span>string <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$match</var> = <code><a href="class-Guzzle.Common.Collection.html#MATCH_EXACT">Guzzle\Common\Collection::<b>MATCH_EXACT</b></a></code></span> )</code>
+		<code>get( <span>string <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -497,12 +499,9 @@ Collection object</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$key</var></dt>
-					<dd><code>string</code><br> Key to retrieve. $key can be a string or a regular expression.</dd>
+					<dd><code>string</code><br> Key to retrieve.</dd>
 					<dt><var>$default</var></dt>
 					<dd><code>mixed</code><br> (optional) If the key is not found, set this value to specify a default</dd>
-					<dt><var>$match</var></dt>
-					<dd><code>integer</code><br> (optional) Bitwise match setting: 0 - Exact match 1 - Case insensitive match 2
-- Regular expression match</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -526,7 +525,7 @@ Collection object</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAll">#</a>
-		<code>getAll( <span>array|string|integer <var>$keys</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$match</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code>getAll( <span>array <var>$keys</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -543,16 +542,13 @@ Collection object</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$keys</var></dt>
-					<dd><code>array|string|integer</code><br> (optional) Pass an array of keys to retrieve only a particular subset of kvp.</dd>
-					<dt><var>$match</var></dt>
-					<dd><code>integer</code><br> (optional) Key match setting: 0 - Exact match 1 - Case insensitive match 2 -
-Regular expression match</dd>
+					<dd><code>array</code><br> (optional) Pass a single key or an array of keys to retrieve only a particular
+subset of kvp.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code><br>Returns an array of all key value pairs if no $keys array is specified, or an
-array of only the key value pairs matching the values in the $keys array.<br />
+					<code>array</code><br>Returns an array of all matching key value pairs<br />
 				</div>
 
 
@@ -571,30 +567,24 @@ array of only the key value pairs matching the values in the $keys array.<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getKeys">#</a>
-		<code>getKeys( <span>string <var>$regexp</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>getKeys( )</code>
 
 		<div class="description short">
 			
-<p>Get all or a subset of matching keys</p>
+<p>Get all keys in the collection</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get all or a subset of matching keys</p>
+<p>Get all keys in the collection</p>
 
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$regexp</var></dt>
-					<dd><code>string</code><br> (optional) Pass a regular expression to return only keys matching the
-expression.</dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code><br>Returns an array of matching keys<br />
+					<code>array</code><br />
 				</div>
 
 
@@ -606,14 +596,14 @@ expression.</dd>
 
 		<td class="attributes"><code>
 			 public 
-			integer|string
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasKey">#</a>
-		<code>hasKey( <span>string <var>$key</var></span>, <span>integer <var>$match</var> = <code><a href="class-Guzzle.Common.Collection.html#MATCH_EXACT">Guzzle\Common\Collection::<b>MATCH_EXACT</b></a></code></span> )</code>
+		<code>hasKey( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
 			
@@ -631,15 +621,11 @@ expression.</dd>
 				<div class="list"><dl>
 					<dt><var>$key</var></dt>
 					<dd><code>string</code><br> The key for which to check the existence.</dd>
-					<dt><var>$match</var></dt>
-					<dd><code>integer</code><br> (optional) Bitwise key match setting: 0 - Exact match 1 - Case insensitive
-match 2 - Regular expression match</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>integer|string</code><br>Returns the key value if the key is present or FALSE if the key is not. Use ===
-matching to check if false.<br />
+					<code>boolean</code><br />
 				</div>
 
 
@@ -960,7 +946,7 @@ Collection object</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_remove">#</a>
-		<code>remove( <span>array|string <var>$key</var></span>, <span>integer <var>$match</var> = <code><a href="class-Guzzle.Common.Collection.html#MATCH_EXACT">Guzzle\Common\Collection::<b>MATCH_EXACT</b></a></code></span> )</code>
+		<code>remove( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
 			
@@ -977,15 +963,12 @@ Collection object</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$key</var></dt>
-					<dd><code>array|string</code><br> A key, regexp, or array of keys to remove</dd>
-					<dt><var>$match</var></dt>
-					<dd><code>integer</code><br> (optional) Bitwise key match setting: 0 - Exact match 1 - Case insensitive
-match 2 - Regular expression match</dd>
+					<dd><code>string</code><br> A key to remove</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br>Returns a reference to the object<br />
+					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br />
 				</div>
 
 
@@ -1077,77 +1060,52 @@ match 2 - Regular expression match</dd>
 		</div>
 		</div></td>
 	</tr>
-	</table>
-
-
-
-
-	<table class="summary" id="constants">
-	<caption>Constants summary</caption>
-	<tr data-order="MATCH_EXACT" id="MATCH_EXACT">
+	<tr data-order="getPregMatchValue" id="_getPregMatchValue">
 
 		<td class="attributes"><code>
-			integer
-		</code></td>
-		<td class="name"><code>
-<b>MATCH_EXACT</b>		</code></td>
-		<td class="value"><code><span class="php-num">0</span></code></td>
-		<td class="description"><div>
-			<a href="#MATCH_EXACT" class="anchor">#</a>
+			 public 
+			mixed
+			
+			</code>
+		</td>
 
-			<div class="description short">
-				
-			</div>
+		<td class="name"><div>
+		<a class="anchor" href="#_getPregMatchValue">#</a>
+		<code>getPregMatchValue( <span>array <var>$matches</var></span> )</code>
 
-			<div class="description detailed hidden">
-				
+		<div class="description short">
+			
+<p>Return a collection value for a match array of a preg_replace function</p>
 
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="MATCH_IGNORE_CASE" id="MATCH_IGNORE_CASE">
+		</div>
 
-		<td class="attributes"><code>
-			integer
-		</code></td>
-		<td class="name"><code>
-<b>MATCH_IGNORE_CASE</b>		</code></td>
-		<td class="value"><code><span class="php-num">1</span></code></td>
-		<td class="description"><div>
-			<a href="#MATCH_IGNORE_CASE" class="anchor">#</a>
+		<div class="description detailed hidden">
+			
+<p>Return a collection value for a match array of a preg_replace function</p>
 
-			<div class="description short">
-				
-			</div>
 
-			<div class="description detailed hidden">
-				
 
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="MATCH_REGEX" id="MATCH_REGEX">
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$matches</var></dt>
+					<dd><code>array</code><br> preg_replace* matches</dd>
+				</dl></div>
 
-		<td class="attributes"><code>
-			integer
-		</code></td>
-		<td class="name"><code>
-<b>MATCH_REGEX</b>		</code></td>
-		<td class="value"><code><span class="php-num">2</span></code></td>
-		<td class="description"><div>
-			<a href="#MATCH_REGEX" class="anchor">#</a>
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
 
-			<div class="description short">
-				
-			</div>
 
-			<div class="description detailed hidden">
-				
 
-			</div>
+		</div>
 		</div></td>
 	</tr>
 	</table>
+
+
+
+
 
 
 
