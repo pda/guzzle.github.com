@@ -7,7 +7,7 @@
 	<title>Interface Guzzle\Service\Description\ServiceDescriptionFactoryInterface | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3918131133"></script>
+	<script type="text/javascript" src="elementlist.js?2114310847"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -55,11 +55,24 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
 				<li class="active"><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
+				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
+						</li>
 				<li><a href="namespace-Guzzle.Service.Command.html">Command<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Command.Factory.html">Factory</a>
@@ -88,7 +101,7 @@
 				<li><a href="class-Guzzle.Service.Description.ArrayDescriptionBuilder.html">ArrayDescriptionBuilder</a></li>
 				<li><a href="class-Guzzle.Service.Description.JsonDescriptionBuilder.html">JsonDescriptionBuilder</a></li>
 				<li><a href="class-Guzzle.Service.Description.ServiceDescription.html">ServiceDescription</a></li>
-				<li><a href="class-Guzzle.Service.Description.ServiceDescriptionFactory.html">ServiceDescriptionFactory</a></li>
+				<li><a href="class-Guzzle.Service.Description.ServiceDescriptionAbstractFactory.html">ServiceDescriptionAbstractFactory</a></li>
 				<li><a href="class-Guzzle.Service.Description.XmlDescriptionBuilder.html">XmlDescriptionBuilder</a></li>
 			</ul>
 
@@ -153,7 +166,7 @@
 
 	<div>
 		<h4>Direct known implementers</h4>
-			<a href="class-Guzzle.Service.Description.ServiceDescriptionFactory.html">Guzzle\Service\Description\ServiceDescriptionFactory</a>
+			<a href="class-Guzzle.Service.Description.ServiceDescriptionAbstractFactory.html">Guzzle\Service\Description\ServiceDescriptionAbstractFactory</a>
 	</div>
 
 
@@ -182,7 +195,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_build">#</a>
-		<code>build( <span>string|array <var>$data</var></span>, <span>array <var>$options</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>build( <span>string|array <var>$config</var></span>, <span>array <var>$options</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -198,7 +211,7 @@
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$data</var></dt>
+					<dt><var>$config</var></dt>
 					<dd><code>string|array</code><br> File to build or array of command information</dd>
 					<dt><var>$options</var></dt>
 					<dd><code>array</code><br> (optional) Factory configuration options. cache.adapter - CacheAdapterInterface

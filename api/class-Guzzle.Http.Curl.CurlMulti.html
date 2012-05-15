@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Curl\CurlMulti | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3918131133"></script>
+	<script type="text/javascript" src="elementlist.js?2114310847"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -55,11 +55,24 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
+				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
+						</li>
 				<li><a href="namespace-Guzzle.Service.Command.html">Command<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Command.Factory.html">Factory</a>
@@ -85,6 +98,7 @@
 			<ul>
 				<li><a href="class-Guzzle.Http.Curl.CurlHandle.html">CurlHandle</a></li>
 				<li class="active"><a href="class-Guzzle.Http.Curl.CurlMulti.html">CurlMulti</a></li>
+				<li><a href="class-Guzzle.Http.Curl.CurlVersion.html">CurlVersion</a></li>
 				<li><a href="class-Guzzle.Http.Curl.RequestMediator.html">RequestMediator</a></li>
 			</ul>
 
@@ -326,46 +340,43 @@ requests added to the object in parallel.</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">Guzzle\Http\Curl\CurlMultiInterface</a></code>
+			CurlMutli
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add">#</a>
-		<code>add( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span>, <span> <var>$async</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code>add( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span>, <span>boolean <var>$async</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Adds a request to the next scope (or batch or requests to be sent). If a
-request is added using async, then the request is added to the current scope.
-This means that the request will be sent and polled if requests are currently
-being sent, or that the request will be sent in the next send operation. Add a
-request to the pool.</p>
+<p>Add a request to the pool.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Add a request to the pool.</p>
+
 <p>Adds a request to the next scope (or batch or requests to be sent). If a
 request is added using async, then the request is added to the current scope.
 This means that the request will be sent and polled if requests are currently
-being sent, or that the request will be sent in the next send operation. Add a
-request to the pool.</p>
+being sent, or that the request will be sent in the next send operation.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$request</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Returns the Request that was added</dd>
+					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to add</dd>
 					<dt><var>$async</var></dt>
-					<dd></dd>
+					<dd><code>boolean</code><br> (optional) Set to TRUE to add to the current scope</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">Guzzle\Http\Curl\CurlMultiInterface</a></code></code><br />
+					<code>CurlMutli</code><br />
 				</div>
 
 
@@ -1032,6 +1043,33 @@ objects</p>
 			<div class="description detailed hidden">
 				
 <p>Queued exceptions</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeHandles" id="$removeHandles">
+
+		<td class="attributes"><code>
+			protected 
+			array
+		</code></td>
+
+		<td class="name">
+<var>$removeHandles</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$removeHandles" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Queue of handles to remove once everything completes</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Queue of handles to remove once everything completes</p>
 
 
 			</div>

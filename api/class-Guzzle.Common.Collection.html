@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Common\Collection | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3918131133"></script>
+	<script type="text/javascript" src="elementlist.js?2114310847"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -55,11 +55,24 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
+				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
+						</li>
 				<li><a href="namespace-Guzzle.Service.Command.html">Command<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Command.Factory.html">Factory</a>
@@ -88,11 +101,13 @@
 				<li><a href="class-Guzzle.Common.Event.html">Event</a></li>
 				<li><a href="class-Guzzle.Common.NullObject.html">NullObject</a></li>
 				<li><a href="class-Guzzle.Common.Stream.html">Stream</a></li>
+				<li><a href="class-Guzzle.Common.Version.html">Version</a></li>
 				<li><a href="class-Guzzle.Common.XmlElement.html">XmlElement</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
+				<li><a href="class-Guzzle.Common.FromConfigInterface.html">FromConfigInterface</a></li>
 				<li><a href="class-Guzzle.Common.GuzzleException.html">GuzzleException</a></li>
 				<li><a href="class-Guzzle.Common.HasDispatcherInterface.html">HasDispatcherInterface</a></li>
 			</ul>
@@ -635,6 +650,47 @@ subset of kvp.</dd>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="keySearch" id="_keySearch">
+
+		<td class="attributes"><code>
+			 public 
+			false|string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_keySearch">#</a>
+		<code>keySearch( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Case insensitive search the keys in the collection</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Case insensitive search the keys in the collection</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br> Key to search for</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|string</code><br>Returns false if not found, otherwise returns the key<br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="hasValue" id="_hasValue">
 
 		<td class="attributes"><code>
@@ -1055,6 +1111,47 @@ Collection object</dd>
 				<h4>Returns</h4>
 				<div class="list">
 					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br>Returns a reference to the object<br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="inject" id="_inject">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_inject">#</a>
+		<code>inject( <span>string <var>$input</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Inject configuration settings into an input string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Inject configuration settings into an input string</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$input</var></dt>
+					<dd><code>string</code><br> Input to inject</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
 				</div>
 
 

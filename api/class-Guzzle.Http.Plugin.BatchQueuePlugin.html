@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Plugin\BatchQueuePlugin | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3918131133"></script>
+	<script type="text/javascript" src="elementlist.js?2114310847"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -55,11 +55,24 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li class="active"><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
+				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
+						</li>
 				<li><a href="namespace-Guzzle.Service.Command.html">Command<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Command.Factory.html">Factory</a>
@@ -140,7 +153,7 @@
 
 	<div class="description">
 	
-<p>Queues requests and sends them in parallel when a flush event is recevied.
+<p>Queues requests and sends them in parallel when a flush event is recievied.
 You can call the flush() method on the plugin or emit a 'flush' event from the
 client on which the plugin is attached.</p>
 
@@ -352,6 +365,47 @@ requests is &gt; $autoFlushCount</dd>
 					<dd><code><code><a href="class-Guzzle.Common.Event.html">Guzzle\Common\Event</a></code></code></dd>
 				</dl></div>
 
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addRequest" id="_addRequest">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">Guzzle\Http\Plugin\BatchQueuePlugin</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addRequest">#</a>
+		<code>addRequest( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Add request to the queue</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Add request to the queue</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to add</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Plugin.BatchQueuePlugin.html">Guzzle\Http\Plugin\BatchQueuePlugin</a></code></code><br />
+				</div>
 
 
 

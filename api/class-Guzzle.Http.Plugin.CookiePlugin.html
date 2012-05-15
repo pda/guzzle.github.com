@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Plugin\CookiePlugin | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3918131133"></script>
+	<script type="text/javascript" src="elementlist.js?2114310847"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -55,11 +55,24 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li class="active"><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
+				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
+						</li>
 				<li><a href="namespace-Guzzle.Service.Command.html">Command<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Command.Factory.html">Factory</a>
@@ -264,62 +277,6 @@
 
 
 
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="parseCookie" id="_parseCookie">
-
-		<td class="attributes"><code>
-			 public static
-			array|boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_parseCookie">#</a>
-		<code>parseCookie( <span>string <var>$cookie</var></span>, <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$decode</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			
-<p>Parse a cookie string as set in a Set-Cookie HTTP header and return data
-about the cookie</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Parse a cookie string as set in a Set-Cookie HTTP header and return data
-about the cookie</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$cookie</var></dt>
-					<dd><code>string</code><br> Cookie header value to parse</dd>
-					<dt><var>$request</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> (optional) Used to get path and domain when not using Cookie-2</dd>
-					<dt><var>$decode</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to FALSE to not urldecode the values</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array|boolean</code><br>Returns FALSE on failure or returns an array of arrays, with each of the sub
-arrays including: domain (string) - Domain of the cookie path (string) - Path of
-the cookie cookies (array) - Associative array of cookie names and values
-max_age (int) - Lifetime of the cookie in seconds version (int) - Version of the
-cookie specification. RFC 2965 is 1 secure (bool) - Whether or not this is a
-secure cookie discard (bool) - Whether or not this is a discardable cookie
-custom (string) - Custom cookie data array comment (string) - How the cookie is
-intended to be used comment_url (str)- URL that contains info on how it will be
-used port (array|str) - Array of ports or null http_only (bool) - HTTP only
-cookie<br />
-				</div>
 
 
 

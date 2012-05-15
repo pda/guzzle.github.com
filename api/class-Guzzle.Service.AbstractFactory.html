@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Class Guzzle\Guzzle | Guzzle</title>
+	<title>Class Guzzle\Service\AbstractFactory | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3918131133"></script>
+	<script type="text/javascript" src="elementlist.js?2114310847"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -55,11 +55,24 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
+				<li class="active"><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
+				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
+						</li>
 				<li><a href="namespace-Guzzle.Service.Command.html">Command<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Command.Factory.html">Factory</a>
@@ -83,9 +96,17 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Guzzle.Guzzle.html">Guzzle</a></li>
+				<li class="active"><a href="class-Guzzle.Service.AbstractFactory.html">AbstractFactory</a></li>
+				<li><a href="class-Guzzle.Service.Client.html">Client</a></li>
+				<li><a href="class-Guzzle.Service.Inflector.html">Inflector</a></li>
+				<li><a href="class-Guzzle.Service.Inspector.html">Inspector</a></li>
+				<li><a href="class-Guzzle.Service.JsonLoader.html">JsonLoader</a></li>
 			</ul>
 
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Guzzle.Service.ClientInterface.html">ClientInterface</a></li>
+			</ul>
 
 
 
@@ -111,7 +132,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Guzzle.html" title="Summary of Guzzle"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Service.html" title="Summary of Guzzle\Service"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -126,17 +147,22 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Guzzle</h1>
+	<h1>Class AbstractFactory</h1>
 
 
 	<div class="description">
 	
-<p>Guzzle information and utility class</p>
+<p>Abstract factory used to delegate class instantiation and manages caching</p>
 
 	</div>
 
 
 
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Guzzle.Service.Builder.ServiceBuilderAbstractFactory.html">Guzzle\Service\Builder\ServiceBuilderAbstractFactory</a>, 
+			<a href="class-Guzzle.Service.Description.ServiceDescriptionAbstractFactory.html">Guzzle\Service\Description\ServiceDescriptionAbstractFactory</a>
+	</div>
 
 
 
@@ -144,172 +170,76 @@
 
 
 	<div class="info">
+		<b>Abstract</b><br />
 		
-		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a><br />
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Service.html">Service</a><br />
 		
 
-		<b>Located at</b> Guzzle/Guzzle.php<br />
+		<b>Located at</b> Guzzle/Service/AbstractFactory.php<br />
 	</div>
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="getDefaultUserAgent" id="_getDefaultUserAgent">
+	<tr data-order="build" id="_build">
 
 		<td class="attributes"><code>
-			 public static
-			string
+			 public 
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getDefaultUserAgent">#</a>
-		<code>getDefaultUserAgent( )</code>
+		<a class="anchor" href="#_build">#</a>
+		<code>build( <span> <var>$config</var></span>, <span>array <var>$options</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Get the default User-Agent to add to requests sent through the library</p>
-
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the default User-Agent to add to requests sent through the library</p>
 
 
 
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br />
-				</div>
 
 
 
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getCurlInfo" id="_getCurlInfo">
+	<tr data-order="getCacheTtlKey" id="_getCacheTtlKey">
 
 		<td class="attributes"><code>
-			 public static
-			array|string|float
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getCurlInfo">#</a>
-		<code>getCurlInfo( <span>$type <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			
-<p>Get curl version information and caches a local copy for fast re-use</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Get curl version information and caches a local copy for fast re-use</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$type</var></dt>
-					<dd><code>$type</code><br>(optional) Version information to retrieve version_number - cURL 24 bit version
-number version - cURL version number, as a string ssl_version_number - OpenSSL
-24 bit version number ssl_version - OpenSSL version number, as a string
-libz_version - zlib version number, as a string host - Information about the
-host where cURL was built features - A bitmask of the CURL_VERSION_XXX constants
-protocols - An array of protocols names supported by cURL</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array|string|float</code><br>false Returns an array if no $type is provided, a string|float if a $type is
-provided and found, or false if a $type is provided and not found.<br />
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getHttpDate" id="_getHttpDate">
-
-		<td class="attributes"><code>
-			 public static
+			abstract protected 
 			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getHttpDate">#</a>
-		<code>getHttpDate( <span>string|integer <var>$date</var></span> )</code>
+		<a class="anchor" href="#_getCacheTtlKey">#</a>
+		<code>getCacheTtlKey( <span>mixed <var>$config</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Create an RFC 1123 HTTP-Date from various date values</p>
+<p>Get the string used to hold cache TTL specific information for the
+factory</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Create an RFC 1123 HTTP-Date from various date values</p>
+<p>Get the string used to hold cache TTL specific information for the
+factory</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$date</var></dt>
-					<dd><code>string|integer</code><br> Date to convert</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br />
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="inject" id="_inject">
-
-		<td class="attributes"><code>
-			 public static
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_inject">#</a>
-		<code>inject( <span>string <var>$input</var></span>, <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Inject configuration settings into an input string</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Inject configuration settings into an input string</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$input</var></dt>
-					<dd><code>string</code><br> Input to inject</dd>
 					<dt><var>$config</var></dt>
-					<dd><code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Configuration data to inject into the input</dd>
+					<dd><code>mixed</code><br> Config data being loaded</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -322,32 +252,127 @@ provided and found, or false if a $type is provided and not found.<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="reset" id="_reset">
+	<tr data-order="throwException" id="_throwException">
 
 		<td class="attributes"><code>
-			 public static
-			
+			abstract protected 
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_reset">#</a>
-		<code>reset( )</code>
+		<a class="anchor" href="#_throwException">#</a>
+		<code>throwException( <span>string <var>$message</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Reset the cached internal state</p>
+<p>Throw an exception when the abstract factory cannot instantiate anything</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Reset the cached internal state</p>
+<p>Throw an exception when the abstract factory cannot instantiate anything</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$message</var></dt>
+					<dd><code>string</code><br> (optional) Message for the exception</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Exception.html">Exception</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClassName" id="_getClassName">
+
+		<td class="attributes"><code>
+			abstract protected 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClassName">#</a>
+		<code>getClassName( <span>mixed <var>$config</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get the name of a class to instantiate for the type of data provided</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the name of a class to instantiate for the type of data provided</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$config</var></dt>
+					<dd><code>mixed</code><br> Data to use to determine a class name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFactory" id="_getFactory">
+
+		<td class="attributes"><code>
+			 protected 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFactory">#</a>
+		<code>getFactory( <span>string <var>$class</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get a factory by object name, or retrieve previously a created factory</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a factory by object name, or retrieve previously a created factory</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$class</var></dt>
+					<dd><code>string</code><br> Name of the factory class to retrieve</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
 
 
 
@@ -359,57 +384,33 @@ provided and found, or false if a $type is provided and not found.<br />
 
 
 
-	<table class="summary" id="constants">
-	<caption>Constants summary</caption>
-	<tr data-order="VERSION" id="VERSION">
-
-		<td class="attributes"><code>
-			string
-		</code></td>
-		<td class="name"><code>
-<b>VERSION</b>		</code></td>
-		<td class="value"><code><span class="php-quote">'2.4.0'</span></code></td>
-		<td class="description"><div>
-			<a href="#VERSION" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="cache" id="$cache">
+	<tr data-order="factories" id="$factories">
 
 		<td class="attributes"><code>
-			protected static
+			protected 
 			array
 		</code></td>
 
 		<td class="name">
-<var>$cache</var>		</td>
-		<td class="value"><code></code></td>
+<var>$factories</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
-			<a href="#$cache" class="anchor">#</a>
+			<a href="#$factories" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>Guzzle cache</p>
+<p>Cache of instantiated factories</p>
 
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>Guzzle cache</p>
+<p>Cache of instantiated factories</p>
 
 
 			</div>

@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Class Guzzle\Http\UriTemplate | Guzzle</title>
+	<title>Interface Guzzle\Http\Parser\Url\UrlParserInterface | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3918131133"></script>
+	<script type="text/javascript" src="elementlist.js?2114310847"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -55,11 +55,24 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
+				<li class="active"><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li class="active"><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
+				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
+						</li>
 				<li><a href="namespace-Guzzle.Service.Command.html">Command<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Command.Factory.html">Factory</a>
@@ -83,18 +96,12 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.Client.html">Client</a></li>
-				<li><a href="class-Guzzle.Http.Cookie.html">Cookie</a></li>
-				<li><a href="class-Guzzle.Http.EntityBody.html">EntityBody</a></li>
-				<li><a href="class-Guzzle.Http.QueryString.html">QueryString</a></li>
-				<li class="active"><a href="class-Guzzle.Http.UriTemplate.html">UriTemplate</a></li>
-				<li><a href="class-Guzzle.Http.Url.html">Url</a></li>
+				<li><a href="class-Guzzle.Http.Parser.Url.UrlParser.html">UrlParser</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.ClientInterface.html">ClientInterface</a></li>
-				<li><a href="class-Guzzle.Http.HttpException.html">HttpException</a></li>
+				<li class="active"><a href="class-Guzzle.Http.Parser.Url.UrlParserInterface.html">UrlParserInterface</a></li>
 			</ul>
 
 
@@ -121,7 +128,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Guzzle.Http.html" title="Summary of Guzzle\Http"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Http.Parser.Url.html" title="Summary of Guzzle\Http\Parser\Url"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -136,12 +143,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class UriTemplate</h1>
+	<h1>Interface UrlParserInterface</h1>
 
 
 	<div class="description">
 	
-<p>Expands URI templates using an array of variables</p>
+<p>URL parser interface</p>
 
 	</div>
 
@@ -149,6 +156,10 @@
 
 
 
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-Guzzle.Http.Parser.Url.UrlParser.html">Guzzle\Http\Parser\Url\UrlParser</a>
+	</div>
 
 
 
@@ -156,161 +167,53 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a><br />
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Parser.html">Parser</a>\<a href="namespace-Guzzle.Http.Parser.Url.html">Url</a><br />
 		
 
-				<b>Link:</b>
-				<a href="http://tools.ietf.org/html/draft-gregorio-uritemplate-08">http://tools.ietf.org/html/draft-gregorio-uritemplate-08</a><br />
-		<b>Located at</b> Guzzle/Http/UriTemplate.php<br />
+		<b>Located at</b> Guzzle/Http/Parser/Url/UrlParserInterface.php<br />
 	</div>
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="__construct" id="___construct">
+	<tr data-order="parseUrl" id="_parseUrl">
 
 		<td class="attributes"><code>
 			 public 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span>string <var>$template</var> = <span class="php-quote">''</span></span> )</code>
+		<a class="anchor" href="#_parseUrl">#</a>
+		<code>parseUrl( <span>string <var>$url</var></span> )</code>
 
 		<div class="description short">
 			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$template</var></dt>
-					<dd><code>string</code><br> (optional) URI template to expand</dd>
-				</dl></div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getTemplate" id="_getTemplate">
-
-		<td class="attributes"><code>
-			 public 
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getTemplate">#</a>
-		<code>getTemplate( )</code>
-
-		<div class="description short">
-			
-<p>Get the URI template</p>
+<p>Parse a URL using special handling for a subset of UTF-8 characters in the
+query string if needed.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the URI template</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br />
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setTemplate" id="_setTemplate">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setTemplate">#</a>
-		<code>setTemplate( <span>string <var>$template</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Set the URI template</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Set the URI template</p>
+<p>Parse a URL using special handling for a subset of UTF-8 characters in the
+query string if needed.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$template</var></dt>
-					<dd><code>string</code><br> URI template to expand</dd>
+					<dt><var>$url</var></dt>
+					<dd><code>string</code><br> URL to parse</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.UriTemplate.html">Guzzle\Http\UriTemplate</a></code></code><br />
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="expand" id="_expand">
-
-		<td class="attributes"><code>
-			 public 
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_expand">#</a>
-		<code>expand( <span>array <var>$variables</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Expand the URI template using the supplied variables</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Expand the URI template using the supplied variables</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$variables</var></dt>
-					<dd><code>array</code><br> Variables to use with the expansion</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br>Returns the expanded template<br />
+					<code>array</code><br>Returns an array identical to what is returned from parse_url(). When an array
+key is missing from this array, you must fill it in with NULL to avoid warnings
+in calling code.<br />
 				</div>
 
 
