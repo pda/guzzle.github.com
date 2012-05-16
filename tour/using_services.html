@@ -179,6 +179,9 @@
 <p>The best way to instantiate Guzzle web service clients is to let Guzzle handle building the clients for you using a ServiceBuilder.  A ServiceBuilder is responsible for creating concrete client objects based on configuration settings and helps to manage credentials for different environments.</p>
 <p>A ServiceBuilder can source information from an array, an XML file, SimpleXMLElement, or JSON file:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">Guzzle\Service\Builder\ServiceBuilder</span><span class="p">;</span>
+
 <span class="c1">// Source service definitions from a JSON file</span>
 <span class="nv">$builder</span> <span class="o">=</span> <span class="nx">ServiceBuilder</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="s1">&#39;services.json&#39;</span><span class="p">);</span>
 </pre></div>
@@ -193,34 +196,43 @@
 </div>
 <div class="section" id="sourcing-data-from-xml">
 <h4>Sourcing data from XML<a class="headerlink" href="#sourcing-data-from-xml" title="Permalink to this headline">¶</a></h4>
-<p>A ServiceBuilder can get information from an XML file or a SimpleXMLElement.  The XML file includes <tt class="docutils literal"><span class="pre">&lt;client&gt;</span></tt> elements that describe each web service client you will use.  Parameters need to be specified in each <tt class="docutils literal"><span class="pre">&lt;client&gt;</span></tt> element to tell a <tt class="docutils literal"><span class="pre">Guzzle\Service\ServiceBuilder</span></tt> object how to build the web service client.  Clients are given names which are handy for using multiple accounts for the same service or creating development clients vs. production clients.  Here&#8217;s an example of a services.xml that uses several <a class="reference external" href="http://aws.amazon.com/">Amazon Web Services</a> clients and the <a class="reference external" href="http://www.unfuddle.com/">Unfuddle</a> web service:</p>
+<p>A ServiceBuilder can get information from an XML file or a SimpleXMLElement.  The XML file includes <tt class="docutils literal"><span class="pre">&lt;service&gt;</span></tt> elements that describe each web service client you will use.  Parameters need to be specified in each <tt class="docutils literal"><span class="pre">&lt;service&gt;</span></tt> element to tell a <tt class="docutils literal"><span class="pre">Guzzle\Service\Builder\ServiceBuilder</span></tt> object how to build the web service client.  Clients are given names which are handy for using multiple accounts for the same service or creating development clients vs. production clients.  Here&#8217;s an example of a services.xml that uses several <a class="reference external" href="http://aws.amazon.com/">Amazon Web Services</a> clients and the <a class="reference external" href="http://www.unfuddle.com/">Unfuddle</a> web service:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
 <span class="nt">&lt;guzzle&gt;</span>
-    <span class="nt">&lt;clients&gt;</span>
+
+    <span class="c">&lt;!-- You can optionally provide a list of XML file to include --&gt;</span>
+    <span class="nt">&lt;includes&gt;</span>
+        <span class="nt">&lt;include</span> <span class="na">path=</span><span class="s">&quot;/path/to/other/services.xml&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/includes&gt;</span>
+
+    <span class="c">&lt;!-- You can optionally specify a ServiceBuilderInterface class to instantiate --&gt;</span>
+    <span class="nt">&lt;class&gt;</span>MyService.Awesome.ServiceBuilder<span class="nt">&lt;/class&gt;</span>
+
+    <span class="nt">&lt;services&gt;</span>
         <span class="c">&lt;!-- Abstract service to store AWS account credentials --&gt;</span>
-        <span class="nt">&lt;client</span> <span class="na">name=</span><span class="s">&quot;abstract.aws&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">&quot;abstract.aws&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;access_key&quot;</span> <span class="na">value=</span><span class="s">&quot;12345&quot;</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;secret_key&quot;</span> <span class="na">value=</span><span class="s">&quot;abcd&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/client&gt;</span>
+        <span class="nt">&lt;/service&gt;</span>
         <span class="c">&lt;!-- Amazon S3 client that extends the abstract client --&gt;</span>
-        <span class="nt">&lt;client</span> <span class="na">name=</span><span class="s">&quot;s3&quot;</span> <span class="na">classs=</span><span class="s">&quot;Guzzle\Aws\S3\S3Client&quot;</span> <span class="na">extends=</span><span class="s">&quot;abstract.aws&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">&quot;s3&quot;</span> <span class="na">classs=</span><span class="s">&quot;Guzzle\Aws\S3\S3Client&quot;</span> <span class="na">extends=</span><span class="s">&quot;abstract.aws&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;devpay_product_token&quot;</span> <span class="na">value=</span><span class="s">&quot;XYZ&quot;</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;devpay_user_token&quot;</span> <span class="na">value=</span><span class="s">&quot;123&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/client&gt;</span>
-        <span class="nt">&lt;client</span> <span class="na">name=</span><span class="s">&quot;simple_db&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle\Aws\SimpleDb\SimpleDbClient&quot;</span> <span class="na">extends=</span><span class="s">&quot;abstract.aws&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;client</span> <span class="na">name=</span><span class="s">&quot;sqs&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle.Aws.Sqs.SqsClient&quot;</span> <span class="na">extends=</span><span class="s">&quot;abstract.aws&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/service&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">&quot;simple_db&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle\Aws\SimpleDb\SimpleDbClient&quot;</span> <span class="na">extends=</span><span class="s">&quot;abstract.aws&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">&quot;sqs&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle.Aws.Sqs.SqsClient&quot;</span> <span class="na">extends=</span><span class="s">&quot;abstract.aws&quot;</span> <span class="nt">/&gt;</span>
         <span class="c">&lt;!-- Unfuddle client ( &quot;.&quot; in class names are converted to &quot;\&quot; )--&gt;</span>
-        <span class="nt">&lt;client</span> <span class="na">name=</span><span class="s">&quot;unfuddle&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle.Unfuddle.UnfuddleClient&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">&quot;unfuddle&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle.Unfuddle.UnfuddleClient&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">value=</span><span class="s">&quot;test-user&quot;</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span> <span class="na">value=</span><span class="s">&quot;my-password&quot;</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;subdomain&quot;</span> <span class="na">value=</span><span class="s">&quot;my-subdomain&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/client&gt;</span>
-    <span class="nt">&lt;/clients&gt;</span>
+        <span class="nt">&lt;/service&gt;</span>
+    <span class="nt">&lt;/services&gt;</span>
 <span class="nt">&lt;/guzzle&gt;</span>
 </pre></div>
 </div>
-<p>Let&#8217;s dissect what&#8217;s going on in the above XML file.  The first client defined, <tt class="docutils literal"><span class="pre">abstract.aws</span></tt>, is an <strong>abstract client</strong> that can be used by other clients to share configuration values among a number of clients.  This can be useful when clients share the same username and password (i.e. Amazon Web Services).</p>
-<p>The next client is an Amazon S3 client.  Each <tt class="docutils literal"><span class="pre">&lt;client&gt;</span></tt> nodes must contain a <tt class="docutils literal"><span class="pre">class</span></tt> attribute that references the full class name of the client being created (you can substitute PHP&#8217;s namespace separator, <tt class="docutils literal"><span class="pre">\</span></tt>, with a period <tt class="docutils literal"><span class="pre">.</span></tt>).  Client nodes can inherit parameters from other previously defined nodes.  The above Amazon S3 client is inheriting configuration settings from the abstract.aws client and adding <a class="reference external" href="http://aws.amazon.com/devpay/">Amazon DevPay</a> related parameters.  As you can see from the <a class="reference external" href="http://aws.amazon.com/simpledb/">Amazon SimpleDB</a> and <a class="reference external" href="http://aws.amazon.com/sqs/">Amazon SQS</a> clients, not all clients will require additional parameters.</p>
+<p>Let&#8217;s dissect what&#8217;s going on in the above XML file.  The first client defined, <tt class="docutils literal"><span class="pre">abstract.aws</span></tt>, is an <strong>abstract client</strong> that can be used by other clients to share configuration values among a number of clients.  This can be useful when clients share the same username and password.</p>
+<p>The next client is an Amazon S3 client.  Each <tt class="docutils literal"><span class="pre">&lt;service&gt;</span></tt> nodes must contain a <tt class="docutils literal"><span class="pre">class</span></tt> attribute that references the full class name of the client being created (you can substitute PHP&#8217;s namespace separator, <tt class="docutils literal"><span class="pre">\</span></tt>, with a period <tt class="docutils literal"><span class="pre">.</span></tt>).  Client nodes can inherit parameters from other previously defined nodes.  The above Amazon S3 client is inheriting configuration settings from the abstract.aws client and adding <a class="reference external" href="http://aws.amazon.com/devpay/">Amazon DevPay</a> related parameters.  As you can see from the <a class="reference external" href="http://aws.amazon.com/simpledb/">Amazon SimpleDB</a> and <a class="reference external" href="http://aws.amazon.com/sqs/">Amazon SQS</a> clients, not all clients will require additional parameters.</p>
 </div>
 <div class="section" id="sourcing-from-an-array">
 <h4>Sourcing from an Array<a class="headerlink" href="#sourcing-from-an-array" title="Permalink to this headline">¶</a></h4>
@@ -252,25 +264,29 @@
 </div>
 <div class="section" id="sourcing-from-a-json-document">
 <h4>Sourcing from a JSON document<a class="headerlink" href="#sourcing-from-a-json-document" title="Permalink to this headline">¶</a></h4>
-<p>The above array could be represented as a JSON array:</p>
+<p>The above array could be represented as a JSON array.  Note that <tt class="docutils literal"><span class="pre">includes</span></tt> and <tt class="docutils literal"><span class="pre">class</span></tt> are optional:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;aws&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;access_key&quot;</span><span class="o">:</span> <span class="s2">&quot;xyz&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;secret&quot;</span><span class="o">:</span> <span class="s2">&quot;abc&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;s3&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Guzzle</span><span class="se">\\</span><span class="s2">Aws</span><span class="se">\\</span><span class="s2">S3</span><span class="se">\\</span><span class="s2">S3Client&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;extends&quot;</span><span class="o">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;params&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;subdomain&quot;</span><span class="o">:</span> <span class="s2">&quot;michael&quot;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;unfuddle&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Guzzle</span><span class="se">\\</span><span class="s2">Unfuddle</span><span class="se">\\</span><span class="s2">UnfuddleClient&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;params&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;test-user&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;test-password&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;subdomain&quot;</span><span class="o">:</span> <span class="s2">&quot;test&quot;</span>
+    <span class="s2">&quot;includes&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;/path/to/file.json&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Foo\Bar&quot;</span>
+    <span class="s2">&quot;services&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;aws&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;access_key&quot;</span><span class="o">:</span> <span class="s2">&quot;xyz&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;secret&quot;</span><span class="o">:</span> <span class="s2">&quot;abc&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;s3&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Guzzle</span><span class="se">\\</span><span class="s2">Aws</span><span class="se">\\</span><span class="s2">S3</span><span class="se">\\</span><span class="s2">S3Client&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;extends&quot;</span><span class="o">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;params&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;subdomain&quot;</span><span class="o">:</span> <span class="s2">&quot;michael&quot;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;unfuddle&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Guzzle</span><span class="se">\\</span><span class="s2">Unfuddle</span><span class="se">\\</span><span class="s2">UnfuddleClient&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;params&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;test-user&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;test-password&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;subdomain&quot;</span><span class="o">:</span> <span class="s2">&quot;test&quot;</span>
+            <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -281,12 +297,20 @@
 <h4>Referencing other clients in parameters<a class="headerlink" href="#referencing-other-clients-in-parameters" title="Permalink to this headline">¶</a></h4>
 <p>If one of your clients depends on another client as one of its parameters, you can reference that client by name by enclosing the client&#8217;s reference key in <tt class="docutils literal"><span class="pre">{</span> <span class="pre">}</span></tt>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;token&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;access_key&quot;</span><span class="o">:</span> <span class="s2">&quot;xyz&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;client&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;token_client&quot;</span><span class="o">:</span> <span class="s2">&quot;{token}&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span>
+    <span class="s2">&quot;services&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;token&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;My</span><span class="se">\T</span><span class="s2">oken</span><span class="se">\T</span><span class="s2">okenFactory&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;params&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;access_key&quot;</span><span class="o">:</span> <span class="s2">&quot;xyz&quot;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;client&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;My\Client&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;params&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;token_client&quot;</span><span class="o">:</span> <span class="s2">&quot;{token}&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
