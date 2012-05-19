@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Common\Cache\ClosureCacheAdapter | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2114310847"></script>
+	<script type="text/javascript" src="elementlist.js?2131279572"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -213,10 +213,10 @@
 					<dt><var>$callables</var></dt>
 					<dd><code>array</code><br> Callables to use with each cache adapter method. The required array keys are
 'contains', 'delete', 'fetch', and 'save' where each key maps to a closure or
-callable function. 'contains' Callable that accepts an $id and $options argument
-'delete' Callable that accepts an $id and $options argument 'fetch' Callable
-that accepts an $id and $options argument 'save' Callable that accepts an $id,
-$data, $lifeTime, and $options argument</dd>
+callable function. - contains: Callable that accepts an $id and $options
+argument - delete: Callable that accepts an $id and $options argument - fetch:
+Callable that accepts an $id and $options argument - save: Callable that accepts
+an $id, $data, $lifeTime, and $options argument</dd>
 				</dl></div>
 
 
@@ -255,12 +255,12 @@ $data, $lifeTime, and $options argument</dd>
 					<dt><var>$id</var></dt>
 					<dd><code>string</code><br> cache id The cache id of the entry to check for.</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>boolean</code><br>TRUE if a cache entry exists for the given cache id, FALSE otherwise.<br />
+					<code>boolean</code><br>Returns TRUE if a cache entry exists for the given cache id, FALSE otherwise.<br />
 				</div>
 
 
@@ -300,7 +300,7 @@ $data, $lifeTime, and $options argument</dd>
 					<dt><var>$id</var></dt>
 					<dd><code>string</code><br> cache id</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -345,7 +345,7 @@ $data, $lifeTime, and $options argument</dd>
 					<dt><var>$id</var></dt>
 					<dd><code>string</code><br> cache id The id of the cache entry to fetch.</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -392,10 +392,10 @@ $data, $lifeTime, and $options argument</dd>
 					<dt><var>$data</var></dt>
 					<dd><code>string</code><br> The cache entry/data.</dd>
 					<dt><var>$lifeTime</var></dt>
-					<dd><code>integer</code><br> The lifetime. If != false, sets a specific lifetime for this cache entry (null
-=&gt; infinite lifeTime).</dd>
+					<dd><code>integer</code><br> The lifetime. If != false, sets a specific lifetime for this cache entry. Set
+to null to give an infinite lifetime.</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>

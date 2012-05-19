@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Curl\CurlMulti | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2114310847"></script>
+	<script type="text/javascript" src="elementlist.js?2131279572"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -359,10 +359,13 @@ requests added to the object in parallel.</p>
 			
 <p>Add a request to the pool.</p>
 
-<p>Adds a request to the next scope (or batch or requests to be sent). If a
-request is added using async, then the request is added to the current scope.
-This means that the request will be sent and polled if requests are currently
-being sent, or that the request will be sent in the next send operation.</p>
+<p>Adds a request to a batch of requests to be sent in parallel.</p>
+
+<p>Async requests adds a request to the current scope to be executed in parallel
+with any currently executing cURL handles. You may only add an async request
+while other requests are transferring. Attempting to add an async request while
+no requests are transferring will add the request normally in the next available
+scope (typically 0).</p>
 
 
 
@@ -371,7 +374,7 @@ being sent, or that the request will be sent in the next send operation.</p>
 					<dt><var>$request</var></dt>
 					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to add</dd>
 					<dt><var>$async</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to TRUE to add to the current scope</dd>
+					<dd><code>boolean</code><br> Set to TRUE to add to the current scope</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -535,7 +538,7 @@ objects</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$hard</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to TRUE to close any open multi handles</dd>
+					<dd><code>boolean</code><br> Set to TRUE to close any open multi handles</dd>
 				</dl></div>
 
 
@@ -799,7 +802,7 @@ objects</p>
 					<dt><var>$handle</var></dt>
 					<dd><code><code><a href="class-Guzzle.Http.Curl.CurlHandle.html">Guzzle\Http\Curl\CurlHandle</a></code></code><br> Curl handle object</dd>
 					<dt><var>$curl</var></dt>
-					<dd><code>array</code><br> Curl message returned from curl_multi_info_read</dd>
+					<dd><code>array</code><br> Array returned from curl_multi_info_read</dd>
 				</dl></div>
 
 

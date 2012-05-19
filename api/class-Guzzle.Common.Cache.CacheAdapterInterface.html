@@ -7,7 +7,7 @@
 	<title>Interface Guzzle\Common\Cache\CacheAdapterInterface | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2114310847"></script>
+	<script type="text/javascript" src="elementlist.js?2131279572"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -159,8 +159,6 @@
 <p>Cache adapters allow Guzzle to utilze various frameworks for caching HTTP
 responses.</p>
 
-<p>The CacheAdapter interface was inspired by the Doctrine 2 ORM:</p>
-
 	</div>
 
 
@@ -190,7 +188,7 @@ responses.</p>
 		
 
 				<b>Link:</b>
-				<a href="http://www.doctrine-project.org/">http://www.doctrine-project.org/</a><br />
+				<a href="http://www.doctrine-project.org/">Inspired by Doctrine 2</a><br />
 		<b>Located at</b> Guzzle/Common/Cache/CacheAdapterInterface.php<br />
 	</div>
 
@@ -227,12 +225,12 @@ responses.</p>
 					<dt><var>$id</var></dt>
 					<dd><code>string</code><br> cache id The cache id of the entry to check for.</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>boolean</code><br>TRUE if a cache entry exists for the given cache id, FALSE otherwise.<br />
+					<code>boolean</code><br>Returns TRUE if a cache entry exists for the given cache id, FALSE otherwise.<br />
 				</div>
 
 
@@ -270,7 +268,7 @@ responses.</p>
 					<dt><var>$id</var></dt>
 					<dd><code>string</code><br> cache id</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -313,7 +311,7 @@ responses.</p>
 					<dt><var>$id</var></dt>
 					<dd><code>string</code><br> cache id The id of the cache entry to fetch.</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -358,10 +356,10 @@ responses.</p>
 					<dt><var>$data</var></dt>
 					<dd><code>string</code><br> The cache entry/data.</dd>
 					<dt><var>$lifeTime</var></dt>
-					<dd><code>integer</code><br> The lifetime. If != false, sets a specific lifetime for this cache entry (null
-=&gt; infinite lifeTime).</dd>
+					<dd><code>integer</code><br> The lifetime. If != false, sets a specific lifetime for this cache entry. Set
+to null to give an infinite lifetime.</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>

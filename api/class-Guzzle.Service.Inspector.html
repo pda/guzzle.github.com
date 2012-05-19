@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Service\Inspector | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2114310847"></script>
+	<script type="text/javascript" src="elementlist.js?2131279572"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -260,6 +260,55 @@ widget..."<br />
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="prepareConfig" id="_prepareConfig">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prepareConfig">#</a>
+		<code>prepareConfig( <span>array <var>$config</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$defaults</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$required</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Validate and prepare configuration parameters</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Validate and prepare configuration parameters</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$config</var></dt>
+					<dd><code>array</code><br> Configuration values to apply.</dd>
+					<dt><var>$defaults</var></dt>
+					<dd><code>array</code><br> Default parameters</dd>
+					<dt><var>$required</var></dt>
+					<dd><code>array</code><br> Required parameter names</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a></code></code><br>if a parameter is missing<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="setTypeValidation" id="_setTypeValidation">
 
 		<td class="attributes"><code>
@@ -298,55 +347,6 @@ very high performance requirements.</p>
 					<code><code><a href="class-Guzzle.Service.Inspector.html">Guzzle\Service\Inspector</a></code></code><br />
 				</div>
 
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="prepareConfig" id="_prepareConfig">
-
-		<td class="attributes"><code>
-			 public static
-			<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_prepareConfig">#</a>
-		<code>prepareConfig( <span>array <var>$config</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$defaults</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$required</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			
-<p>Validate and prepare configuration parameters</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Validate and prepare configuration parameters</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$config</var></dt>
-					<dd><code>array</code><br> Configuration values to apply.</dd>
-					<dt><var>$defaults</var></dt>
-					<dd><code>array</code><br> (optional) Default parameters</dd>
-					<dt><var>$required</var></dt>
-					<dd><code>array</code><br> (optional) Required parameter names</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br />
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a></code></code><br>if a parameter is missing<br />
-				</div>
 
 
 		</div>
@@ -428,157 +428,6 @@ very high performance requirements.</p>
 					<code><code><a href="class-Guzzle.Service.Inspector.html">Guzzle\Service\Inspector</a></code></code><br />
 				</div>
 
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="parseDocBlock" id="_parseDocBlock">
-
-		<td class="attributes"><code>
-			 public 
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_parseDocBlock">#</a>
-		<code>parseDocBlock( <span>string <var>$doc</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Get the Guzzle arguments from a DocBlock</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Get the Guzzle arguments from a DocBlock</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$doc</var></dt>
-					<dd><code>string</code><br> DocBlock to parse</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array</code><br>Returns an associative array of the parsed docblock params<br />
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="validateClass" id="_validateClass">
-
-		<td class="attributes"><code>
-			 public 
-			array|boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_validateClass">#</a>
-		<code>validateClass( <span>string <var>$className</var></span>, <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$validate</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			
-<p>Validates that a class has all of the required configuration settings</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Validates that a class has all of the required configuration settings</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$className</var></dt>
-					<dd><code>string</code><br> Name of the class to use to retrieve args</dd>
-					<dt><var>$config</var></dt>
-					<dd><code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Configuration settings</dd>
-					<dt><var>$strict</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to FALSE to allow missing required fields</dd>
-					<dt><var>$validate</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to TRUE or FALSE to validate data. Set to false when you only
-need to add default values and statics.</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array|boolean</code><br>Returns an array of errors or TRUE on success<br />
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a></code></code><br>if any args are missing and $strict is TRUE<br />
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="validateConfig" id="_validateConfig">
-
-		<td class="attributes"><code>
-			 public 
-			array|boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_validateConfig">#</a>
-		<code>validateConfig( <span>array <var>$params</var></span>, <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$validate</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			
-<p>Validates that all required args are included in a config object, and if not,
-throws an InvalidArgumentException with a helpful error message. Adds default
-args to the passed config object if the parameter was not set in the config
-object.</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Validates that all required args are included in a config object, and if not,
-throws an InvalidArgumentException with a helpful error message. Adds default
-args to the passed config object if the parameter was not set in the config
-object.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$params</var></dt>
-					<dd><code>array</code><br> Params to validate</dd>
-					<dt><var>$config</var></dt>
-					<dd><code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Configuration settings</dd>
-					<dt><var>$strict</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to FALSE to allow missing required fields</dd>
-					<dt><var>$validate</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to TRUE or FALSE to validate data. Set to false when you only
-need to add default values and statics.</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array|boolean</code><br>Returns an array of errors or TRUE on success<br />
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a></code></code><br>if any args are missing and $strict is TRUE<br />
-				</div>
 
 
 		</div>
@@ -667,6 +516,146 @@ type:string; choice:a,b,c; choice:'a','b','c'; etc...</p>
 				<h4>Returns</h4>
 				<div class="list">
 					<code>boolean|string</code><br>Returns TRUE if valid, or an error message if invalid<br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getApiParamsForClass" id="_getApiParamsForClass">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getApiParamsForClass">#</a>
+		<code>getApiParamsForClass( <span>string <var>$class</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get an array of ApiParam objects for a class using @guzzle annotations</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get an array of ApiParam objects for a class using @guzzle annotations</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$class</var></dt>
+					<dd><code>string</code><br> Name of a class to parse</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>Returns an array of ApiParam objects<br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validateConfig" id="_validateConfig">
+
+		<td class="attributes"><code>
+			 public 
+			array|boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validateConfig">#</a>
+		<code>validateConfig( <span>array <var>$params</var></span>, <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$validate</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Validates that all required args are included in a config object, and if not,
+throws an InvalidArgumentException with a helpful error message. Adds default
+args to the passed config object if the parameter was not set in the config
+object.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Validates that all required args are included in a config object, and if not,
+throws an InvalidArgumentException with a helpful error message. Adds default
+args to the passed config object if the parameter was not set in the config
+object.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd><code>array</code><br> Params to validate</dd>
+					<dt><var>$config</var></dt>
+					<dd><code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Configuration settings</dd>
+					<dt><var>$strict</var></dt>
+					<dd><code>boolean</code><br> Set to FALSE to allow missing required fields</dd>
+					<dt><var>$validate</var></dt>
+					<dd><code>boolean</code><br> Set to TRUE or FALSE to validate data. Set to false when you only need to add
+default values and statics.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array|boolean</code><br>Returns an array of errors or TRUE on success<br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Common.Exception.InvalidArgumentException.html">Guzzle\Common\Exception\InvalidArgumentException</a></code></code><br>if any args are missing and $strict is TRUE<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parseDocBlock" id="_parseDocBlock">
+
+		<td class="attributes"><code>
+			 protected 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parseDocBlock">#</a>
+		<code>parseDocBlock( <span>string <var>$doc</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get the Guzzle arguments from a DocBlock</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the Guzzle arguments from a DocBlock</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$doc</var></dt>
+					<dd><code>string</code><br> Docblock to parse</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>Returns an associative array of ApiParam objects<br />
 				</div>
 
 

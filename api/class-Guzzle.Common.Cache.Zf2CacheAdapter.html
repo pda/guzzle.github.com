@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Common\Cache\Zf2CacheAdapter | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2114310847"></script>
+	<script type="text/javascript" src="elementlist.js?2131279572"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -222,10 +222,10 @@
 					<dt><var>$cache</var></dt>
 					<dd><code>Zend\Cache\Storage\Adapter</code><br> Zend Framework 2 cache adapter</dd>
 					<dt><var>$defaultOptions</var></dt>
-					<dd><code>array</code><br>$options (optional) Hash of default options for each cache method. Array can
-contain for 'contains', 'delete', 'fetch', and 'save'. Each key must map to an
-associative array of options to merge into the options argument passed into each
-respective call.</dd>
+					<dd><code>array</code><br>$options Hash of default options for each cache method. Can contain for
+'contains', 'delete', 'fetch', and 'save'. Each key must map to an associative
+array of options to merge into the options argument passed into each respective
+call.</dd>
 				</dl></div>
 
 
@@ -264,12 +264,12 @@ respective call.</dd>
 					<dt><var>$id</var></dt>
 					<dd><code>string</code><br> cache id The cache id of the entry to check for.</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>boolean</code><br>TRUE if a cache entry exists for the given cache id, FALSE otherwise.<br />
+					<code>boolean</code><br>Returns TRUE if a cache entry exists for the given cache id, FALSE otherwise.<br />
 				</div>
 
 
@@ -309,7 +309,7 @@ respective call.</dd>
 					<dt><var>$id</var></dt>
 					<dd><code>string</code><br> cache id</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -354,7 +354,7 @@ respective call.</dd>
 					<dt><var>$id</var></dt>
 					<dd><code>string</code><br> cache id The id of the cache entry to fetch.</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -401,10 +401,10 @@ respective call.</dd>
 					<dt><var>$data</var></dt>
 					<dd><code>string</code><br> The cache entry/data.</dd>
 					<dt><var>$lifeTime</var></dt>
-					<dd><code>integer</code><br> The lifetime. If != false, sets a specific lifetime for this cache entry (null
-=&gt; infinite lifeTime).</dd>
+					<dd><code>integer</code><br> The lifetime. If != false, sets a specific lifetime for this cache entry. Set
+to null to give an infinite lifetime.</dd>
 					<dt><var>$options</var></dt>
-					<dd><code>array</code><br> (optional) Array of cache adapter options</dd>
+					<dd><code>array</code><br> Array of cache adapter options</dd>
 				</dl></div>
 
 				<h4>Returns</h4>

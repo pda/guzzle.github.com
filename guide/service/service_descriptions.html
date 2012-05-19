@@ -423,7 +423,7 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;client&gt;</span>
     <span class="nt">&lt;types&gt;</span>
-        <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle.Service.Filter.Regex&quot;</span> <span class="na">default=</span><span class="s">&quot;/[0-9a-zA-z_\-]+/&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle\Common\Validation\Regex&quot;</span> <span class="na">pattern=</span><span class="s">&quot;/[0-9a-zA-z_\-]+/&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/types&gt;</span>
     <span class="nt">&lt;commands&gt;</span>
         <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;example_command&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span> <span class="na">uri=</span><span class="s">&quot;/{{username}}&quot;</span><span class="nt">&gt;</span>

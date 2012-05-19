@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Client | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2114310847"></script>
+	<script type="text/javascript" src="elementlist.js?2131279572"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -266,9 +266,9 @@
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$baseUrl</var></dt>
-					<dd><code>string</code><br> (optional) Base URL of the web service</dd>
+					<dd><code>string</code><br> Base URL of the web service</dd>
 					<dt><var>$config</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) Configuration settings</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Configuration settings</dd>
 				</dl></div>
 
 
@@ -509,7 +509,7 @@ client's config.</dd>
 					<dt><var>$template</var></dt>
 					<dd><code>string</code><br> URI template to expand</dd>
 					<dt><var>$variables</var></dt>
-					<dd><code>array</code><br> (optional) Additional variables to use in the expansion</dd>
+					<dd><code>array</code><br> Additional variables to use in the expansion</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -635,16 +635,16 @@ object will be created if one does not exist.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$method</var></dt>
-					<dd><code>string</code><br> (optional) HTTP method. Defaults to GET</dd>
+					<dd><code>string</code><br> HTTP method. Defaults to GET</dd>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> (optional) Resource URI. Use an absolute path to override the base path of the
-client, or a relative path to append to the base path of the client. The URI can
-contain the querystring as well. Use an array to provide a URI template and
-additional variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI. Use an absolute path to override the base path of the client, or
+a relative path to append to the base path of the client. The URI can contain
+the querystring as well. Use an array to provide a URI template and additional
+variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
-					<dd><code>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> (optional) Entity body of request (POST/PUT) or response (GET)</dd>
+					<dd><code>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Entity body of request (POST/PUT) or response (GET)</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -735,7 +735,7 @@ behaviors and properties to the request.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$expand</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to FALSE to get the raw base URL without URI template expansion</dd>
+					<dd><code>boolean</code><br> Set to FALSE to get the raw base URL without URI template expansion</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -825,7 +825,7 @@ appended to the User-Agent header of all reqeusts.</p>
 					<dt><var>$userAgent</var></dt>
 					<dd><code>string</code><br> User agent string</dd>
 					<dt><var>$includeDefault</var></dt>
-					<dd><code>boolean</code><br> (optional) Set to TRUE to append the default Guzzle user agent</dd>
+					<dd><code>boolean</code><br> Set to TRUE to append the default Guzzle user agent</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -868,13 +868,13 @@ appended to the User-Agent header of all reqeusts.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append. Use an array to provide a URI template
-and additional variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
+a relative path to append. Use an array to provide a URI template and additional
+variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
-					<dd><code>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> (optional) Where to store the response entity body</dd>
+					<dd><code>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Where to store the response entity body</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -917,11 +917,11 @@ and additional variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append. Use an array to provide a URI template
-and additional variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
+a relative path to append. Use an array to provide a URI template and additional
+variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -964,11 +964,11 @@ and additional variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append. Use an array to provide a URI template
-and additional variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
+a relative path to append. Use an array to provide a URI template and additional
+variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1011,11 +1011,11 @@ and additional variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append. Use an array to provide a URI template
-and additional variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
+a relative path to append. Use an array to provide a URI template and additional
+variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
 					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Body to send in the request</dd>
 				</dl></div>
@@ -1060,11 +1060,11 @@ and additional variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append. Use an array to provide a URI template
-and additional variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
+a relative path to append. Use an array to provide a URI template and additional
+variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
 					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Body to send in the request</dd>
 				</dl></div>
@@ -1109,15 +1109,15 @@ and additional variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append. Use an array to provide a URI template
-and additional variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
+a relative path to append. Use an array to provide a URI template and additional
+variables to use in the URI template expansion.</dd>
 					<dt><var>$headers</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> (optional) HTTP headers</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$postBody</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|string|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> (optional) POST body. Can be a string, EntityBody, or associative array of POST
-fields to send in the body of the request. Prefix a value in the array with the
-@ symbol reference a file.</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|string|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> POST body. Can be a string, EntityBody, or associative array of POST fields to
+send in the body of the request. Prefix a value in the array with the @ symbol
+reference a file.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1160,9 +1160,9 @@ fields to send in the body of the request. Prefix a value in the array with the
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> (optional) Resource URI of the request. Use an absolute path to override the
-base path, or a relative path to append. Use an array to provide a URI template
-and additional variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
+a relative path to append. Use an array to provide a URI template and additional
+variables to use in the URI template expansion.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
