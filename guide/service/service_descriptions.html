@@ -7,18 +7,18 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Service Descriptions &mdash; Guzzle 2.0.0 documentation</title>
+    <title>Service Descriptions &mdash; Guzzle 2.6.2 documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/bootstrap.css?v=2" type="text/css" />
-    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css?v=5" type="text/css" />
-    <link rel="stylesheet" href="../../_static/prettify/prettify.css?v=1" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap.css?v=3" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css?v=6" type="text/css" />
+    <link rel="stylesheet" href="../../_static/prettify/prettify.css?v=2" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.0',
+        VERSION:     '2.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/prettify/prettify.js"></script>
-    <link rel="top" title="Guzzle 2.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="Guzzle 2.6.2 documentation" href="../../index.html" />
 
 <script type="text/javascript">var _gaq = []; _gaq.push(['_setAccount', 'UA-22752917-1'], ['_trackPageview']);</script>
 
@@ -95,19 +95,19 @@
         <a class="brand" href="../../index.html">Guzzle</a>
         <ul class="nav">
           <li>
-            <a href="../../index.html">home</a>
+            <a href="../../index.html">Home</a>
           </li>
           <li>
-            <a href="../../docs.html">docs</a>
+            <a href="../../docs.html">Docs</a>
           </li>
           <li>
             <a href="https://github.com/guzzle/guzzle">github</a>
           </li>
           <li>
-            <a href="https://groups.google.com/forum/?hl=en#!forum/guzzle">forum</a>
+            <a href="https://groups.google.com/forum/?hl=en#!forum/guzzle">Forum</a>
           </li>
           <li>
-            <a href="irc:irc.freenode.com/#guzzlephp">irc</a>
+            <a href="irc:irc.freenode.com/#guzzlephp">IRC</a>
           </li>
         </ul>
         <ul class="nav secondary-nav">
@@ -231,9 +231,7 @@
 </pre></div>
 </div>
 <p>If you attach this service description to a client, you would be able to execute commands by name.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">use</span> <span class="nx">Guzzle\Service\Description\ServiceDescription</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Guzzle\Service\Description\ServiceDescription</span><span class="p">;</span>
 
 <span class="nv">$description</span> <span class="o">=</span> <span class="nx">ServiceDescription</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="s1">&#39;/path/to/client.xml&#39;</span><span class="p">);</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">setDescription</span><span class="p">(</span><span class="nv">$description</span><span class="p">);</span>
@@ -409,8 +407,7 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 <h3>Use custom <tt class="docutils literal"><span class="pre">&lt;types&gt;</span></tt> for data validation<a class="headerlink" href="#use-custom-types-for-data-validation" title="Permalink to this headline">¶</a></h3>
 <p>Custom types can be registered to create shortcut references to type implementations or custom type classes that can be registered with the <tt class="docutils literal"><span class="pre">Guzzle\Service\Inspector</span></tt> class.  The <tt class="docutils literal"><span class="pre">&lt;client&gt;</span></tt> node can contain a <tt class="docutils literal"><span class="pre">&lt;types&gt;</span></tt> node which contains one or more <tt class="docutils literal"><span class="pre">&lt;type&gt;</span></tt> nodes.</p>
 <p>You can use the <tt class="docutils literal"><span class="pre">type</span></tt> attribute on command parameters to enforce parameter values match a certain filter or are of a certain type.  For example, you could create a command parameter that must match a regular expression using the following snippet of code:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;client&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;client&gt;</span>
     <span class="nt">&lt;commands&gt;</span>
         <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;example_command&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span> <span class="na">uri=</span><span class="s">&quot;/{{username}}&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;my_parameter&quot;</span> <span class="na">type=</span><span class="s">&quot;regex:/[0-9a-zA-z_\-]+/&quot;</span> <span class="nt">/&gt;</span>
@@ -420,8 +417,7 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 </pre></div>
 </div>
 <p>When an end-developer creates this command, they will need to pass a value that matches the <tt class="docutils literal"><span class="pre">/[0-9a-zA-z_\-]+/</span></tt> regular expression.  If a supplied parameter does not match this regular expression, an exception will be thrown.  If you use this same pattern in various parts of your XML service description, then you could create a shortcut <tt class="docutils literal"><span class="pre">&lt;type&gt;</span></tt> node and reference your custom type in each command.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;client&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;client&gt;</span>
     <span class="nt">&lt;types&gt;</span>
         <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">class=</span><span class="s">&quot;Guzzle\Common\Validation\Regex&quot;</span> <span class="na">pattern=</span><span class="s">&quot;/[0-9a-zA-z_\-]+/&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/types&gt;</span>
@@ -437,8 +433,7 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 <div class="section" id="sending-put-and-post-requests">
 <h3>Sending PUT and POST requests<a class="headerlink" href="#sending-put-and-post-requests" title="Permalink to this headline">¶</a></h3>
 <p>Service descriptions allow for a flexible way to send PUT and POST requests where the entity body of the request needs to be in a specific format.  You may have noticed that the PUT/POST commands in the example XML service description force the end-developer to build an XML entity body from scratch.  A better way of implementing these entity enclosing requests would be to allow the end-developers set body parameters using a SimpleXMLElement object.  This can be achieved by using the &#8220;type&#8221; parameter type and specifying a class:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;client&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;client&gt;</span>
     <span class="nt">&lt;commands&gt;</span>
         <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">uri=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:SimpleXMLElement&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
@@ -448,8 +443,7 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 </pre></div>
 </div>
 <p>If you are sending JSON data, you should consider allowing end-developers to set body parameters using an array.  You can then convert an array to a JSON string by using the <tt class="docutils literal"><span class="pre">filters</span></tt> attribute of a parameter:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;client&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;client&gt;</span>
     <span class="nt">&lt;commands&gt;</span>
         <span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;create_user&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">uri=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">type=</span><span class="s">&quot;type:array&quot;</span> <span class="na">filters=</span><span class="s">&quot;json_encode&quot;</span> <span class="na">location=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
@@ -464,13 +458,13 @@ separated by a colon (e.g. <tt class="docutils literal"><span class="pre">locati
 <p>You can include other service descriptions in your service description files as long as the service description you are including uses the same format (e.g. XML can include XML and JSON can include JSON).</p>
 <div class="section" id="xml">
 <h4>XML<a class="headerlink" href="#xml" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-xml"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;client&gt;
-    &lt;includes&gt;
-        &lt;include uri="/path/to/service.xml" /&gt;
-        &lt;include uri="../../relative/path/to/service.xml"
-    &lt;/includes&gt;
-&lt;/client&gt;</pre>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;client&gt;</span>
+    <span class="nt">&lt;includes&gt;</span>
+        <span class="nt">&lt;include</span> <span class="na">uri=</span><span class="s">&quot;/path/to/service.xml&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;include</span> <span class="na">uri=</span><span class="s">&quot;../../relative/path/to/service.xml&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/includes&gt;</span>
+<span class="nt">&lt;/client&gt;</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="json">

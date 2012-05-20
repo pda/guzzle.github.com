@@ -7,18 +7,18 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Consuming web services using web service clients &mdash; Guzzle 2.0.0 documentation</title>
+    <title>Consuming web services using web service clients &mdash; Guzzle 2.6.2 documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap.css?v=2" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css?v=5" type="text/css" />
-    <link rel="stylesheet" href="../_static/prettify/prettify.css?v=1" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap.css?v=3" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css?v=6" type="text/css" />
+    <link rel="stylesheet" href="../_static/prettify/prettify.css?v=2" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0',
+        VERSION:     '2.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/prettify/prettify.js"></script>
-    <link rel="top" title="Guzzle 2.0.0 documentation" href="../index.html" />
+    <link rel="top" title="Guzzle 2.6.2 documentation" href="../index.html" />
     <link rel="up" title="Tour" href="index.html" />
     <link rel="next" title="Building web service clients" href="building_services.html" />
     <link rel="prev" title="HTTP client for PHP" href="http.html" />
@@ -98,19 +98,19 @@
         <a class="brand" href="../index.html">Guzzle</a>
         <ul class="nav">
           <li>
-            <a href="../index.html">home</a>
+            <a href="../index.html">Home</a>
           </li>
           <li>
-            <a href="../docs.html">docs</a>
+            <a href="../docs.html">Docs</a>
           </li>
           <li>
             <a href="https://github.com/guzzle/guzzle">github</a>
           </li>
           <li>
-            <a href="https://groups.google.com/forum/?hl=en#!forum/guzzle">forum</a>
+            <a href="https://groups.google.com/forum/?hl=en#!forum/guzzle">Forum</a>
           </li>
           <li>
-            <a href="irc:irc.freenode.com/#guzzlephp">irc</a>
+            <a href="irc:irc.freenode.com/#guzzlephp">IRC</a>
           </li>
         </ul>
         <ul class="nav secondary-nav">
@@ -178,22 +178,19 @@
 <h3>Instantiating web service clients using a ServiceBuilder<a class="headerlink" href="#instantiating-web-service-clients-using-a-servicebuilder" title="Permalink to this headline">¶</a></h3>
 <p>The best way to instantiate Guzzle web service clients is to let Guzzle handle building the clients for you using a ServiceBuilder.  A ServiceBuilder is responsible for creating concrete client objects based on configuration settings and helps to manage credentials for different environments.</p>
 <p>A ServiceBuilder can source information from an array, an XML file, SimpleXMLElement, or JSON file:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">use</span> <span class="nx">Guzzle\Service\Builder\ServiceBuilder</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Guzzle\Service\Builder\ServiceBuilder</span><span class="p">;</span>
 
 <span class="c1">// Source service definitions from a JSON file</span>
 <span class="nv">$builder</span> <span class="o">=</span> <span class="nx">ServiceBuilder</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="s1">&#39;services.json&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Clients are referenced using a customizable name you provide in your service definition.  The ServiceBuilder is a sort of multiton object&#8211; it will only instantiate a client once and return that client for subsequent retrievals.  You can get a &#8220;throwaway&#8221; client (a client that is not persisted by the ServiceBuilder) by passing <tt class="docutils literal"><span class="pre">TRUE</span></tt> in the second argument of <tt class="docutils literal"><span class="pre">ServiceBuilder::get()</span></tt>.</p>
-<p>Here&#8217;s an example of retrieving an Unfuddle client from your ServiceBuilder:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;unfuddle&#39;</span><span class="p">);</span>
-<span class="c1">// You can also use the ServiceBuilder object as an array</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="nv">$builder</span><span class="p">[</span><span class="s1">&#39;unfuddle&#39;</span><span class="p">];</span>
-</pre></div>
-</div>
+<dl class="docutils">
+<dt>Here&#8217;s an example of retrieving an Unfuddle client from your ServiceBuilder::</dt>
+<dd>$client = $builder-&gt;get(&#8216;unfuddle&#8217;);
+// You can also use the ServiceBuilder object as an array
+$client = $builder[&#8216;unfuddle&#8217;];</dd>
+</dl>
 <div class="section" id="sourcing-data-from-xml">
 <h4>Sourcing data from XML<a class="headerlink" href="#sourcing-data-from-xml" title="Permalink to this headline">¶</a></h4>
 <p>A ServiceBuilder can get information from an XML file or a SimpleXMLElement.  The XML file includes <tt class="docutils literal"><span class="pre">&lt;service&gt;</span></tt> elements that describe each web service client you will use.  Parameters need to be specified in each <tt class="docutils literal"><span class="pre">&lt;service&gt;</span></tt> element to tell a <tt class="docutils literal"><span class="pre">Guzzle\Service\Builder\ServiceBuilder</span></tt> object how to build the web service client.  Clients are given names which are handy for using multiple accounts for the same service or creating development clients vs. production clients.  Here&#8217;s an example of a services.xml that uses several <a class="reference external" href="http://aws.amazon.com/">Amazon Web Services</a> clients and the <a class="reference external" href="http://www.unfuddle.com/">Unfuddle</a> web service:</p>
@@ -237,8 +234,7 @@
 <div class="section" id="sourcing-from-an-array">
 <h4>Sourcing from an Array<a class="headerlink" href="#sourcing-from-an-array" title="Permalink to this headline">¶</a></h4>
 <p>Web service clients can be defined using an array of data.:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="nv">$builder</span> <span class="o">=</span> <span class="nx">ServiceBuilder</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$builder</span> <span class="o">=</span> <span class="nx">ServiceBuilder</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;aws&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;access_key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;xyz&#39;</span><span class="p">,</span>
         <span class="s1">&#39;secret&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;abc&#39;</span>
@@ -264,8 +260,8 @@
 </div>
 <div class="section" id="sourcing-from-a-json-document">
 <h4>Sourcing from a JSON document<a class="headerlink" href="#sourcing-from-a-json-document" title="Permalink to this headline">¶</a></h4>
-<p>The above array could be represented as a JSON array.  Note that <tt class="docutils literal"><span class="pre">includes</span></tt> and <tt class="docutils literal"><span class="pre">class</span></tt> are optional:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="p">{</span>
+<p>The above array could be represented as a JSON array.  Note that <tt class="docutils literal"><span class="pre">includes</span></tt> and <tt class="docutils literal"><span class="pre">class</span></tt> are optional.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;includes&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;/path/to/file.json&quot;</span><span class="p">],</span>
     <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Foo\Bar&quot;</span>
     <span class="s2">&quot;services&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -274,14 +270,14 @@
             <span class="s2">&quot;secret&quot;</span><span class="o">:</span> <span class="s2">&quot;abc&quot;</span>
         <span class="p">},</span>
         <span class="s2">&quot;s3&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Guzzle</span><span class="se">\\</span><span class="s2">Aws</span><span class="se">\\</span><span class="s2">S3</span><span class="se">\\</span><span class="s2">S3Client&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Guzzle\\Aws\\S3\\S3Client&quot;</span><span class="p">,</span>
             <span class="s2">&quot;extends&quot;</span><span class="o">:</span> <span class="s2">&quot;aws&quot;</span><span class="p">,</span>
             <span class="s2">&quot;params&quot;</span><span class="o">:</span> <span class="p">{</span>
                 <span class="s2">&quot;subdomain&quot;</span><span class="o">:</span> <span class="s2">&quot;michael&quot;</span>
             <span class="p">}</span>
         <span class="p">},</span>
         <span class="s2">&quot;unfuddle&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Guzzle</span><span class="se">\\</span><span class="s2">Unfuddle</span><span class="se">\\</span><span class="s2">UnfuddleClient&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;Guzzle\\Unfuddle\\UnfuddleClient&quot;</span><span class="p">,</span>
             <span class="s2">&quot;params&quot;</span><span class="o">:</span> <span class="p">{</span>
                 <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;test-user&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;test-password&quot;</span><span class="p">,</span>
@@ -295,11 +291,11 @@
 </div>
 <div class="section" id="referencing-other-clients-in-parameters">
 <h4>Referencing other clients in parameters<a class="headerlink" href="#referencing-other-clients-in-parameters" title="Permalink to this headline">¶</a></h4>
-<p>If one of your clients depends on another client as one of its parameters, you can reference that client by name by enclosing the client&#8217;s reference key in <tt class="docutils literal"><span class="pre">{</span> <span class="pre">}</span></tt>:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="p">{</span>
+<p>If one of your clients depends on another client as one of its parameters, you can reference that client by name by enclosing the client&#8217;s reference key in <tt class="docutils literal"><span class="pre">{</span> <span class="pre">}</span></tt>.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;services&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;token&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;My</span><span class="se">\T</span><span class="s2">oken</span><span class="se">\T</span><span class="s2">okenFactory&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;My\Token\TokenFactory&quot;</span><span class="p">,</span>
             <span class="s2">&quot;params&quot;</span><span class="o">:</span> <span class="p">{</span>
                 <span class="s2">&quot;access_key&quot;</span><span class="o">:</span> <span class="s2">&quot;xyz&quot;</span>
             <span class="p">}</span>
@@ -332,9 +328,7 @@
 </ol>
 <p>Notice how any sub-namespace beneath <tt class="docutils literal"><span class="pre">Command</span></tt> is converted from <tt class="docutils literal"><span class="pre">\</span></tt> to <tt class="docutils literal"><span class="pre">.</span></tt> (a period).  CamelCasing is converted to lowercased snake_casing (e.g. GetAcl == get_acl).</p>
 <p>Here&#8217;s how you would get the Amazon S3 client from the ServiceBuilder and execute a GetObject command to retrieve an object from Amazon S3:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Retrieve the client by name</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="c1">// Retrieve the client by name</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="nv">$serviceBuilder</span><span class="p">[</span><span class="s1">&#39;s3&#39;</span><span class="p">];</span>
 
 <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getCommand</span><span class="p">(</span><span class="s1">&#39;bucket.get_bucket&#39;</span><span class="p">);</span>
@@ -348,9 +342,7 @@
 </pre></div>
 </div>
 <p>The GetObject command just returns the HTTP response object when it is executed.  This is the default behavior of Guzzle commands unless specified otherwise in the docblock of the <tt class="docutils literal"><span class="pre">getResult()</span></tt> method of a specific command.  Commands don&#8217;t have to just return the HTTP response; commands might return more valuable information when executed:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Get a command from the Amazon S3 client</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="c1">// Get a command from the Amazon S3 client</span>
 <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getCommand</span><span class="p">(</span><span class="s1">&#39;bucket.list_bucket&#39;</span><span class="p">);</span>
 <span class="nv">$command</span><span class="o">-&gt;</span><span class="na">setBucket</span><span class="p">(</span><span class="s1">&#39;mybucket&#39;</span><span class="p">);</span>
 
@@ -370,18 +362,14 @@
 </div>
 <p>The ListBucket command above returns a <tt class="docutils literal"><span class="pre">Guzzle\Aws\S3\Model\BucketIterator</span></tt> which will iterate over the entire contents of a bucket.</p>
 <p>You can take some shortcuts in your code by passing key-value pair arguments to a command:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$objects</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getCommand</span><span class="p">(</span><span class="s1">&#39;bucket.list_bucket&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;bucket&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_bucket&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$objects</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getCommand</span><span class="p">(</span><span class="s1">&#39;bucket.list_bucket&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;bucket&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_bucket&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="executing-commands-in-parallel-using-commandsets">
 <h3>Executing commands in parallel using CommandSets<a class="headerlink" href="#executing-commands-in-parallel-using-commandsets" title="Permalink to this headline">¶</a></h3>
 <p>Commands can be sent in parallel using <tt class="docutils literal"><span class="pre">Guzzle\Service\Command\CommandSet</span></tt> objects:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$client</span> <span class="o">=</span> <span class="nv">$serviceBuilder</span><span class="p">[</span><span class="s1">&#39;simple_db&#39;</span><span class="p">];</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$client</span> <span class="o">=</span> <span class="nv">$serviceBuilder</span><span class="p">[</span><span class="s1">&#39;simple_db&#39;</span><span class="p">];</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
     <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getCommand</span><span class="p">(</span><span class="s1">&#39;get_attributes&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;domain&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span>
@@ -401,9 +389,7 @@
 </pre></div>
 </div>
 <p>Guzzle doesn&#8217;t require that all of the commands in a CommandSet originate from the same client.  This allows you to write extremely efficient code when you need to send several requests to multiple services:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">use</span> <span class="nx">Guzzle\Service\Command\CommandSet</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Guzzle\Service\Command\CommandSet</span><span class="p">;</span>
 
 <span class="c1">// Get all of the commands from a registered client object</span>
 <span class="nv">$set</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CommandSet</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>

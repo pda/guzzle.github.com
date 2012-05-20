@@ -7,18 +7,18 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Building web service clients &mdash; Guzzle 2.0.0 documentation</title>
+    <title>Building web service clients &mdash; Guzzle 2.6.2 documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap.css?v=2" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css?v=5" type="text/css" />
-    <link rel="stylesheet" href="../_static/prettify/prettify.css?v=1" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap.css?v=3" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css?v=6" type="text/css" />
+    <link rel="stylesheet" href="../_static/prettify/prettify.css?v=2" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0',
+        VERSION:     '2.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/prettify/prettify.js"></script>
-    <link rel="top" title="Guzzle 2.0.0 documentation" href="../index.html" />
+    <link rel="top" title="Guzzle 2.6.2 documentation" href="../index.html" />
     <link rel="up" title="Tour" href="index.html" />
     <link rel="next" title="Guides" href="../guide/index.html" />
     <link rel="prev" title="Consuming web services using web service clients" href="using_services.html" />
@@ -98,19 +98,19 @@
         <a class="brand" href="../index.html">Guzzle</a>
         <ul class="nav">
           <li>
-            <a href="../index.html">home</a>
+            <a href="../index.html">Home</a>
           </li>
           <li>
-            <a href="../docs.html">docs</a>
+            <a href="../docs.html">Docs</a>
           </li>
           <li>
             <a href="https://github.com/guzzle/guzzle">github</a>
           </li>
           <li>
-            <a href="https://groups.google.com/forum/?hl=en#!forum/guzzle">forum</a>
+            <a href="https://groups.google.com/forum/?hl=en#!forum/guzzle">Forum</a>
           </li>
           <li>
-            <a href="irc:irc.freenode.com/#guzzlephp">irc</a>
+            <a href="irc:irc.freenode.com/#guzzlephp">IRC</a>
           </li>
         </ul>
         <ul class="nav secondary-nav">
@@ -239,9 +239,7 @@ of a response.  Keep each HTTP response in a separate file.</td>
 <p class="last">Your client will not work with a service builder if you do not create a factory method.</p>
 </div>
 <p>Let&#8217;s start creating a custom web service client.  First we will extend the <tt class="docutils literal"><span class="pre">Guzzle\Service\Client</span></tt> class.  Next we will create a constructor that accepts several web service specific arguments.  After creating your constructor, you must create a factory method that accepts an array of configuration data.  The factory method accepts parameters, adds default parameters, validates that required parameters are present, creates a new client, attaches any observers needed for the client, and returns the client object:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">Guzzle\MyService</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Guzzle\MyService</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Guzzle\Service\Inspector</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Guzzle\Service\Client</span><span class="p">;</span>
@@ -320,9 +318,7 @@ of a response.  Keep each HTTP response in a separate file.</td>
 <div class="section" id="docblock-annotations-for-commands">
 <h3>Docblock annotations for commands<a class="headerlink" href="#docblock-annotations-for-commands" title="Permalink to this headline">¶</a></h3>
 <p>The required parameters of a command are validated based on docblock annotations on the command class.  Docblock annotations are also responsible for adding default parameters, setting static parameters on a command that cannot be changed, and enforcing type safety on different command parameters:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">Guzzle\MyService\Command</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Guzzle\MyService\Command</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Guzzle\Service\Command\AbstractCommand</span><span class="p">;</span>
 
@@ -410,9 +406,7 @@ not provided before executing the command.</td>
 <div class="section" id="commands-can-turn-http-responses-into-something-more-valuable">
 <h3>Commands can turn HTTP responses into something more valuable<a class="headerlink" href="#commands-can-turn-http-responses-into-something-more-valuable" title="Permalink to this headline">¶</a></h3>
 <p>Commands can turn HTTP responses into something more valuable for your application.  After a command is executed, it calls the <tt class="docutils literal"><span class="pre">process()</span></tt> method of the command.  The AbstractCommand class will automatically set the result of the command to SimpleXMLElement if the response received by the command has a Content-Type of <tt class="docutils literal"><span class="pre">application/xml</span></tt> or an array if the Content-Type is <tt class="docutils literal"><span class="pre">application/json</span></tt>.  If you want to provide more valuable results from your commands, you can override the <tt class="docutils literal"><span class="pre">process()</span></tt> method and return any value you want.  To help developers who use code completion, be sure to update the <tt class="docutils literal"><span class="pre">&#64;return</span></tt> annotation of your <tt class="docutils literal"><span class="pre">getResult()</span></tt> method if you return a custom result (this will require you to override the <tt class="docutils literal"><span class="pre">getResult()</span></tt> method too):</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">Guzzle\MyService\Command</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Guzzle\MyService\Command</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Guzzle\Service\Command\AbstractCommand</span><span class="p">;</span>
 
@@ -461,9 +455,7 @@ not provided before executing the command.</td>
 </div>
 <p>There&#8217;s our implemented command.  The <tt class="docutils literal"><span class="pre">build()</span></tt> method is responsible for creating an HTTP request to send to the web service.  This command will send a request to a web service that uses the <tt class="docutils literal"><span class="pre">key</span></tt> parameter as part of the path of the request, and adds an <tt class="docutils literal"><span class="pre">X-Header</span></tt> header value to the request using the <tt class="docutils literal"><span class="pre">other_value</span></tt> parameter of the command.  Parameters passed to a command can be referenced by calling <tt class="docutils literal"><span class="pre">$this-&gt;get($parameterName)</span></tt> or <tt class="docutils literal"><span class="pre">$this[$parameterName]</span></tt>.  This command will return an <tt class="docutils literal"><span class="pre">AwesomeObject</span></tt> when the <tt class="docutils literal"><span class="pre">getResult()</span></tt> method is called on the command.  We are overriding the <tt class="docutils literal"><span class="pre">getResult()</span></tt> method in our command so that developers who use code completion will know what type of object is returned from the command.  You will notice that there are setter methods on the client for setting the keys referenced in the docblock.  These are strongly encouraged to help developers to quickly use your command with code completion.  You can also do fancy stuff to the values provided to setter methods, like creating objects or extra validation.  There&#8217;s no need to create a setter method for the <tt class="docutils literal"><span class="pre">headers</span></tt> key, as that is implicitly managed by the <tt class="docutils literal"><span class="pre">AbstractCommand</span></tt> object.</p>
 <p>Here&#8217;s how you would execute this command using the client we created:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Create your client using the factory method (use a service builder in your production app)</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="c1">// Create your client using the factory method (use a service builder in your production app)</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="nx">MyServiceClient</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span>
     <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;shh!secret&#39;</span>
