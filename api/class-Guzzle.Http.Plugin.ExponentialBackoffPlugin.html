@@ -210,6 +210,16 @@ exponential backoff.</p>
 			
 <p>Construct a new exponential backoff plugin</p>
 
+<p>$failureCodes can be a list of numeric codes that match the response code, a
+list of reason phrases that can match the reason phrase of a request, or a list
+of cURL error code integers. By default, this plugin retries 500 and 503
+responses as well as various CURL connection errors. You can pass in a callable
+that will be used to determine if a response failed and must be retried.</p>
+
+<p>A custom callback function for $delayFunction must accept an integer
+containing the current number of retries and return an integer representing
+representing how many seconds to delay</p>
+
 
 
 				<h4>Parameters</h4>
@@ -217,16 +227,9 @@ exponential backoff.</p>
 					<dt><var>$maxRetries</var></dt>
 					<dd><code>integer</code><br> The maximum number of time to retry a request</dd>
 					<dt><var>$failureCodes</var></dt>
-					<dd><code>array|callable</code><br> Pass a custom list of failure codes. This can be a list of numeric codes that
-match the response code, a list of reason phrases that can match the reason
-phrase of a request, or a list of cURL error code integers. By default, this
-plugin retries 500 and 503 responses as well as various CURL connection errors.
-You can pass in a callable that will be used to determine if a response failed
-and must be retried.</dd>
+					<dd><code>array|callable</code><br> List of failure codes or function.</dd>
 					<dt><var>$delayFunction</var></dt>
-					<dd><code>callable</code><br> Method used to calculate the delay between requests. The method must accept an
-integer containing the current number of retries and return an integer
-representing how many seconds to delay</dd>
+					<dd><code>callable</code><br> Method used to calculate the delay between requests.</dd>
 				</dl></div>
 
 

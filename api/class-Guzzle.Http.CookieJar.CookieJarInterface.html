@@ -390,6 +390,18 @@ of ports http_only (bool) - HTTP only cookie<br />
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cookieData</var></dt>
+					<dd><code>array</code><br> Cookie information, including the following: domain (string, required) - Domain
+of the cookie path (string, required) - Path of the cookie cookie - Array of
+cookie name (0) and value (1) max_age (int, required) - Lifetime of the cookie
+in seconds version (int) - Version of the cookie specification. Default is 0.
+RFC 2965 is 1 secure (bool) - If it is a secure cookie discard (bool) - If it is
+a discardable cookie comment (string) - How the cookie is intended to be used
+comment_url (str) - URL with info on how it will be used port (string) - CSV
+list of ports http_only (bool) - HTTP only cookie</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
@@ -397,17 +409,6 @@ of ports http_only (bool) - HTTP only cookie<br />
 				</div>
 
 
-				<h4>Parm</h4>
-				<div class="list">
-						array $cookieData Cookie information, including the following: domain (string,
-required) - Domain of the cookie path (string, required) - Path of the cookie
-cookie - Array of cookie name (0) and value (1) max_age (int, required) -
-Lifetime of the cookie in seconds version (int) - Version of the cookie
-specification. Default is 0. RFC 2965 is 1 secure (bool) - If it is a secure
-cookie discard (bool) - If it is a discardable cookie comment (string) - How the
-cookie is intended to be used comment_url (str) - URL with info on how it will
-be used port (string) - CSV list of ports http_only (bool) - HTTP only cookie<br />
-				</div>
 
 		</div>
 		</div></td>

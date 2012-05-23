@@ -219,7 +219,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span>string <var>$method</var></span>, <span>string|Url <var>$url</var></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code>__construct( <span>string <var>$method</var></span>, <span>string|Url <var>$url</var></span>, <span>array|Collection <var>$headers</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			
@@ -242,7 +242,7 @@
 the full URL. If query string parameters are present they will be parsed as
 well.</dd>
 					<dt><var>$headers</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
+					<dd><code>array|Collection</code><br> HTTP headers</dd>
 				</dl></div>
 
 
@@ -324,7 +324,7 @@ well.</dd>
 					<dd><code>string</code><br> Content-Type to set. Leave null to use an existing Content-Type or to guess the
 Content-Type</dd>
 					<dt><var>$tryChunkedTransfer</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to try to use Tranfer-Encoding chunked</dd>
+					<dd><code>boolean</code><br> Set to TRUE to try to use Transfer-Encoding chunked</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -409,7 +409,7 @@ Content-Type</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$field</var></dt>
-					<dd><code>string</code><br> Field to retrive</dd>
+					<dd><code>string</code><br> Field to retrieve</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -462,41 +462,48 @@ Content-Type</dd>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getPostFiles" id="_getPostFiles">
+	<tr data-order="setPostField" id="_setPostField">
 
 		<td class="attributes"><code>
 			 public 
-			array
+			<code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getPostFiles">#</a>
-		<code>getPostFiles( )</code>
+		<a class="anchor" href="#_setPostField">#</a>
+		<code>setPostField( <span>string <var>$key</var></span>, <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Returns an associative array of POST field names and file paths</p>
+<p>Set a POST field value</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Returns an associative array of POST field names and file paths</p>
+<p>Set a POST field value</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd><code>string</code><br> Key to set</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>string</code><br> Value to set</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code><br />
+					<code><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code></code><br />
 				</div>
 
 
 
 				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_getPostFiles">Guzzle\Http\Message\EntityEnclosingRequestInterface::getPostFiles</a></code></div>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_setPostField">Guzzle\Http\Message\EntityEnclosingRequestInterface::setPostField</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -543,98 +550,6 @@ Content-Type</dd>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="setPostField" id="_setPostField">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setPostField">#</a>
-		<code>setPostField( <span>string <var>$key</var></span>, <span>string <var>$value</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Set a POST field value</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Set a POST field value</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd><code>string</code><br> Key to set</dd>
-					<dt><var>$value</var></dt>
-					<dd><code>string</code><br> Value to set</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code></code><br />
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_setPostField">Guzzle\Http\Message\EntityEnclosingRequestInterface::setPostField</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="addPostFiles" id="_addPostFiles">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_addPostFiles">#</a>
-		<code>addPostFiles( <span>array <var>$files</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Add POST files to use in the upload</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Add POST files to use in the upload</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$files</var></dt>
-					<dd><code>array</code><br> An array of filenames to POST</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code></code><br />
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br>if the file cannot be read<br />
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_addPostFiles">Guzzle\Http\Message\EntityEnclosingRequestInterface::addPostFiles</a></code></div>
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="removePostField" id="_removePostField">
 
 		<td class="attributes"><code>
@@ -675,6 +590,235 @@ Content-Type</dd>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_removePostField">Guzzle\Http\Message\EntityEnclosingRequestInterface::removePostField</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPostFiles" id="_getPostFiles">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPostFiles">#</a>
+		<code>getPostFiles( )</code>
+
+		<div class="description short">
+			
+<p>Returns an associative array of POST field names to an array of (path,
+Content-Type)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns an associative array of POST field names to an array of (path,
+Content-Type)</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_getPostFiles">Guzzle\Http\Message\EntityEnclosingRequestInterface::getPostFiles</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPostFile" id="_getPostFile">
+
+		<td class="attributes"><code>
+			 public 
+			array|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPostFile">#</a>
+		<code>getPostFile( <span>string <var>$fieldName</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get a POST file from the request</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a POST file from the request</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$fieldName</var></dt>
+					<dd><code>string</code><br> POST fields to retrieve</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array|null</code><br>Returns an array wrapping an array of (field name, path, and Content-Type)<br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_getPostFile">Guzzle\Http\Message\EntityEnclosingRequestInterface::getPostFile</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removePostFile" id="_removePostFile">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removePostFile">#</a>
+		<code>removePostFile( <span>string <var>$fieldName</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Remove a POST file from the request</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Remove a POST file from the request</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$fieldName</var></dt>
+					<dd><code>string</code><br> POST file field name to remove</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code></code><br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_removePostFile">Guzzle\Http\Message\EntityEnclosingRequestInterface::removePostFile</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addPostFile" id="_addPostFile">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addPostFile">#</a>
+		<code>addPostFile( <span>string <var>$fieldName</var></span>, <span>string <var>$path</var></span>, <span>string <var>$contentType</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$process</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Add a POST file to the upload</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Add a POST file to the upload</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$fieldName</var></dt>
+					<dd><code>string</code><br> POST field to use (e.g. file). Used to reference content from the server.</dd>
+					<dt><var>$path</var></dt>
+					<dd><code>string</code><br> Full path to the file. Do not include the @ symbol.</dd>
+					<dt><var>$contentType</var></dt>
+					<dd><code>string</code><br> Optional Content-Type to add to the Content-Disposition. Default behavior is to
+guess. Set to false to not specify.</dd>
+					<dt><var>$process</var></dt>
+					<dd><code>boolean</code><br> Set to false to not process POST fields immediately.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br>if the file cannot be read<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_addPostFile">Guzzle\Http\Message\EntityEnclosingRequestInterface::addPostFile</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addPostFiles" id="_addPostFiles">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addPostFiles">#</a>
+		<code>addPostFiles( <span>array <var>$files</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Add POST files to use in the upload</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Add POST files to use in the upload</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$files</var></dt>
+					<dd><code>array</code><br> An array of POST fields =&gt; filenames. If a filename is an array, it must
+contain a 'file' and 'type' key mapping to the path to the file and the
+Content-Type of the file.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">Guzzle\Http\Message\EntityEnclosingRequest</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br>if the file cannot be read<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html#_addPostFiles">Guzzle\Http\Message\EntityEnclosingRequestInterface::addPostFiles</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -866,6 +1010,33 @@ Content-Type</dd>
 			<div class="description detailed hidden">
 				
 <p>POST fields to use in the EntityBody</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="postFiles" id="$postFiles">
+
+		<td class="attributes"><code>
+			protected 
+			array
+		</code></td>
+
+		<td class="name">
+<var>$postFiles</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$postFiles" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>POST files to send with the request</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>POST files to send with the request</p>
 
 
 			</div>

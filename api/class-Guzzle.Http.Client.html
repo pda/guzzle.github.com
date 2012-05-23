@@ -622,13 +622,20 @@ object will be created if one does not exist.</p>
 
 		<div class="description short">
 			
-<p>Create and return a new <code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> configured for the client</p>
+<p>Create and return a new <code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> configured for the
+client.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Create and return a new <code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> configured for the client</p>
+<p>Create and return a new <code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> configured for the
+client.</p>
+
+<p>Use an absolute path to override the base path of the client, or a relative
+path to append to the base path of the client. The URI can contain the query
+string as well. Use an array to provide a URI template and additional variables
+to use in the URI template expansion.</p>
 
 
 
@@ -637,10 +644,7 @@ object will be created if one does not exist.</p>
 					<dt><var>$method</var></dt>
 					<dd><code>string</code><br> HTTP method. Defaults to GET</dd>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> Resource URI. Use an absolute path to override the base path of the client, or
-a relative path to append to the base path of the client. The URI can contain
-the querystring as well. Use an array to provide a URI template and additional
-variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI.</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
@@ -809,14 +813,14 @@ behaviors and properties to the request.</p>
 		<div class="description short">
 			
 <p>Set the name of your application and application version that will be
-appended to the User-Agent header of all reqeusts.</p>
+appended to the User-Agent header of all requests.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
 <p>Set the name of your application and application version that will be
-appended to the User-Agent header of all reqeusts.</p>
+appended to the User-Agent header of all requests.</p>
 
 
 
@@ -825,7 +829,7 @@ appended to the User-Agent header of all reqeusts.</p>
 					<dt><var>$userAgent</var></dt>
 					<dd><code>string</code><br> User agent string</dd>
 					<dt><var>$includeDefault</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to append the default Guzzle user agent</dd>
+					<dd><code>boolean</code><br> Set to TRUE to append the default Guzzle use agent</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -868,9 +872,7 @@ appended to the User-Agent header of all reqeusts.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
-a relative path to append. Use an array to provide a URI template and additional
-variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
@@ -883,6 +885,10 @@ variables to use in the URI template expansion.</dd>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
+				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_get">Guzzle\Http\ClientInterface::get</a></code></div>
@@ -917,9 +923,7 @@ variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
-a relative path to append. Use an array to provide a URI template and additional
-variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 				</dl></div>
@@ -930,6 +934,10 @@ variables to use in the URI template expansion.</dd>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
+				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_head">Guzzle\Http\ClientInterface::head</a></code></div>
@@ -964,9 +972,7 @@ variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
-a relative path to append. Use an array to provide a URI template and additional
-variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 				</dl></div>
@@ -977,6 +983,10 @@ variables to use in the URI template expansion.</dd>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
+				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_delete">Guzzle\Http\ClientInterface::delete</a></code></div>
@@ -1011,9 +1021,7 @@ variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
-a relative path to append. Use an array to provide a URI template and additional
-variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
@@ -1026,6 +1034,10 @@ variables to use in the URI template expansion.</dd>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
+				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_put">Guzzle\Http\ClientInterface::put</a></code></div>
@@ -1060,9 +1072,7 @@ variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
-a relative path to append. Use an array to provide a URI template and additional
-variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
@@ -1075,6 +1085,10 @@ variables to use in the URI template expansion.</dd>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
+				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_patch">Guzzle\Http\ClientInterface::patch</a></code></div>
@@ -1109,9 +1123,7 @@ variables to use in the URI template expansion.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
-a relative path to append. Use an array to provide a URI template and additional
-variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$postBody</var></dt>
@@ -1126,6 +1138,10 @@ reference a file.</dd>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
+				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_post">Guzzle\Http\ClientInterface::post</a></code></div>
@@ -1160,9 +1176,7 @@ reference a file.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd><code>string|array</code><br> Resource URI of the request. Use an absolute path to override the base path, or
-a relative path to append. Use an array to provide a URI template and additional
-variables to use in the URI template expansion.</dd>
+					<dd><code>string|array</code><br> Resource URI</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1171,6 +1185,10 @@ variables to use in the URI template expansion.</dd>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
+				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_options">Guzzle\Http\ClientInterface::options</a></code></div>
@@ -1250,7 +1268,7 @@ requests.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$curlMulti</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">Guzzle\Http\Curl\CurlMultiInterface</a></code></code><br> Mulit object</dd>
+					<dd><code><code><a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">Guzzle\Http\Curl\CurlMultiInterface</a></code></code><br> multi object</dd>
 				</dl></div>
 
 				<h4>Returns</h4>

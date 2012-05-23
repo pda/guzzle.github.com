@@ -292,12 +292,21 @@ current resources</dd>
 			
 <p>Apply the callback to the contents of the resource iterator</p>
 
-<p>Calling this method dispatches four events: before_apply -- Before adding a
-resource to a batch. Context is the resource after_apply -- After adding the
-resource to a batch. Context is the resource before_batch -- Before a batch
-request is sent if one is sent. Context is an array of resources after_batch --
-After a batch request is sent if one is sent. Context is an array of
-resources</p>
+<p>Calling this method dispatches four events:</p>
+
+<ul>
+	<li>before_apply: Before adding a resource to a batch. Context is the
+	resource</li>
+
+	<li>after_apply: After adding the resource to a batch. Context is the
+	resource</li>
+
+	<li>before_batch: Before a batch request is sent if one is sent. Context is an
+	array of resources</li>
+
+	<li>after_batch: After a batch request is sent if one is sent. Context is an
+	array of resources</li>
+</ul>
 
 
 
@@ -413,7 +422,7 @@ resources</p>
 
 		<td class="attributes"><code>
 			protected 
-			<code><a href="class-Closure.html">Closure</a></code>|array
+			callable|array
 		</code></td>
 
 		<td class="name">

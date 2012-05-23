@@ -214,7 +214,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_factory">#</a>
-		<code>factory( <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var></span> )</code>
+		<code>factory( <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			
@@ -233,7 +233,7 @@ to build more complex clients.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$config</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Configuartion data</dd>
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Configuration data</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -363,10 +363,10 @@ enabled on the client to use this functionality.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$behavior</var></dt>
-					<dd><code>integer</code><br> Behavior to use when a missing method is called. Set to
-Client::MAGIC_CALL_DISABLED to disable magic method calls Set to
-Client::MAGIC_CALL_EXECUTE to execute commands and return the result Set to
-Client::MAGIC_CALL_RETURN to instantiate and return the command</dd>
+					<dd><code>integer</code><br> Behavior to use when a missing method is called. - Client::MAGIC_CALL_DISABLED:
+Disable magic method calls - Client::MAGIC_CALL_EXECUTE: Execute commands and
+return the result - Client::MAGIC_CALL_RETURN: Instantiate and return the
+command</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -550,8 +550,7 @@ InvalidArgumentException is thrown.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$command</var></dt>
-					<dd><code>string|<code><a href="class-Guzzle.Service.Command.CommandInterface.html">Guzzle\Service\Command\CommandInterface</a></code></code><br> Command class or command name. Passing a command name will have the client
-create the command for you using $commandOptions array.</dd>
+					<dd><code>string|<code><a href="class-Guzzle.Service.Command.CommandInterface.html">Guzzle\Service\Command\CommandInterface</a></code></code><br> Command class or command name.</dd>
 					<dt><var>$commandOptions</var></dt>
 					<dd><code>array</code><br> Command options used when creating commands.</dd>
 					<dt><var>$iteratorOptions</var></dt>
@@ -648,11 +647,10 @@ is passed<br />
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$service</var></dt>
-					<dd><code><code><a href="class-Guzzle.Service.Description.ServiceDescription.html">Guzzle\Service\Description\ServiceDescription</a></code></code><br> Service description that describes all of the commands and information of the
-client</dd>
+					<dd><code><code><a href="class-Guzzle.Service.Description.ServiceDescription.html">Guzzle\Service\Description\ServiceDescription</a></code></code><br> Service description</dd>
 					<dt><var>$updateFactory</var></dt>
 					<dd><code>boolean</code><br> Set to FALSE to not update the service description based command factory if it
-is not already present on the client</dd>
+is not already on the client.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>

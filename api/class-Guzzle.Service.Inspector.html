@@ -564,6 +564,45 @@ type:string; choice:a,b,c; choice:'a','b','c'; etc...</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="initConfig" id="_initConfig">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initConfig">#</a>
+		<code>initConfig( <span>array <var>$params</var></span>, <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Initialize a configuration collection with static and default parameters</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Initialize a configuration collection with static and default parameters</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd><code>array</code><br> Array of ApiParam objects</dd>
+					<dt><var>$config</var></dt>
+					<dd><code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Collection of configuration options</dd>
+				</dl></div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="validateConfig" id="_validateConfig">
 
 		<td class="attributes"><code>
@@ -575,7 +614,7 @@ type:string; choice:a,b,c; choice:'a','b','c'; etc...</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_validateConfig">#</a>
-		<code>validateConfig( <span>array <var>$params</var></span>, <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$validate</var> = <span class="php-keyword1">true</span></span> )</code>
+		<code>validateConfig( <span>array <var>$params</var></span>, <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">true</span></span> )</code>
 
 		<div class="description short">
 			
@@ -602,10 +641,7 @@ object.</p>
 					<dt><var>$config</var></dt>
 					<dd><code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Configuration settings</dd>
 					<dt><var>$strict</var></dt>
-					<dd><code>boolean</code><br> Set to FALSE to allow missing required fields</dd>
-					<dt><var>$validate</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE or FALSE to validate data. Set to false when you only need to add
-default values and statics.</dd>
+					<dd><code>boolean</code><br> Set to false to allow missing required fields</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
