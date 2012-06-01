@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://guzzlephp.org/pear</id>
-    <updated>2012-05-23T00:28:20-07:00</updated>
+    <updated>2012-05-31T22:23:24-07:00</updated>
     <title>Guzzle PEAR channel Latest Releases</title>
     <link href="http://guzzlephp.org/pear/feed.xml" rel="self" />
     <author>
@@ -9,6 +9,19 @@
     </author>
 
     <entry>
+        <title>guzzle 2.6.4 (stable)</title>
+        <link href="http://guzzlephp.org/pear/get/guzzle-2.6.4.tgz" />
+        <id>http://guzzlephp.org/pear/get/guzzle-2.6.4.tgz</id>
+        <author>
+            <name>mtdowling</name>
+        </author>
+        <updated>2012-06-01T05:23:22-07:00</updated>
+        <content>
+            
+HTTP client
+ 
+        </content>
+    </entry>    <entry>
         <title>guzzle 2.6.3 (stable)</title>
         <link href="http://guzzlephp.org/pear/get/guzzle-2.6.3.tgz" />
         <id>http://guzzlephp.org/pear/get/guzzle-2.6.3.tgz</id>

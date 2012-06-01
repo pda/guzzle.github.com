@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Service\Description\ApiCommand | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2131279572"></script>
+	<script type="text/javascript" src="elementlist.js?3268928207"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -213,18 +213,70 @@ command - doc: Method documentation - method: HTTP method of the command - uri:
 URI routing information of the command - class: Concrete class that implements
 this command - params: Associative array of parameters for the command with each
 parameter containing the following keys: - name: Parameter name - type: Type of
-variable (boolean, integer, string, array, class name, etc...) - required:
-Whether or not the parameter is required - default: Default value - doc:
-Documentation - min_length: Minimum length - max_length: Maximum length -
-location: One of query, path, header, or body - static: Whether or not the param
-can be changed from this value - prepend: Text to prepend when adding this value
-- append: Text to append when adding this value - filters: Comma separated list
-of filters to run the value through. Must be a callable. Can call static class
-methods by separating the class and function with ::.</dd>
+variable (boolean, integer, string, array, class name, etc...) - type_args:
+Argument(s) to pass to the type validation - required: Whether or not the
+parameter is required - default: Default value - doc: Documentation -
+min_length: Minimum length - max_length: Maximum length - location: One of
+query, path, header, or body - location_key: Location key mapping value (e.g.
+query string value name) - static: Whether or not the param can be changed from
+this value - prepend: Text to prepend when adding this value - append: Text to
+append when adding this value - filters: Comma separated list of filters to run
+the value through. Must be a callable. Can call static class methods by
+separating the class and function with ::.</dd>
 				</dl></div>
 
 
 
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fromCommand" id="_fromCommand">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-Guzzle.Service.Description.ApiCommand.html">Guzzle\Service\Description\ApiCommand</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fromCommand">#</a>
+		<code>fromCommand( <span>string <var>$className</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Create an ApiCommand object from a class and its docblock</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Create an ApiCommand object from a class and its docblock</p>
+
+<p>The following is the format for @guzzle arguments:</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$className</var></dt>
+					<dd><code>string</code><br> Name of the class</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Service.Description.ApiCommand.html">Guzzle\Service\Description\ApiCommand</a></code></code><br />
+				</div>
+
+
+				<h4>Guzzle</h4>
+				<div class="list">
+						argument_name [default="default value"] [required="true|false"]
+[type="registered constraint name"] [type_args=""] [doc="Description of
+argument"] Example: @guzzle my_argument default="hello" required="true" doc="Set
+the argument to control the widget..."<br />
+				</div>
 
 		</div>
 		</div></td>
@@ -522,6 +574,55 @@ methods by separating the class and function with ::.</dd>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="validate" id="_validate">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate">#</a>
+		<code>validate( <span><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$config</var></span>, <span><code><a href="class-Guzzle.Service.Inspector.html">Guzzle\Service\Inspector</a></code> <var>$inspector</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Validates that all required args are included in a config object, and if not,
+throws an InvalidArgumentException with a helpful error message. Adds default
+args to the passed config object if the parameter was not set in the config
+object.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Validates that all required args are included in a config object, and if not,
+throws an InvalidArgumentException with a helpful error message. Adds default
+args to the passed config object if the parameter was not set in the config
+object.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$config</var></dt>
+					<dd><code><code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> Configuration settings</dd>
+					<dt><var>$inspector</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Service.Exception.ValidationException.html">Guzzle\Service\Exception\ValidationException</a></code></code><br>when validation errors occur<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 
@@ -549,6 +650,31 @@ methods by separating the class and function with ::.</dd>
 			<div class="description detailed hidden">
 				
 <p>Default command class to use when none is specified</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="GUZZLE_ANNOTATION" id="GUZZLE_ANNOTATION">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>GUZZLE_ANNOTATION</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'@guzzle'</span></code></td>
+		<td class="description"><div>
+			<a href="#GUZZLE_ANNOTATION" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Annotation used to specify Guzzle service description info</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Annotation used to specify Guzzle service description info</p>
 
 
 			</div>
@@ -717,6 +843,33 @@ methods by separating the class and function with ::.</dd>
 			<div class="description detailed hidden">
 				
 <p>Class of the command object</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="apiCommandCache" id="$apiCommandCache">
+
+		<td class="attributes"><code>
+			protected static
+			array
+		</code></td>
+
+		<td class="name">
+<var>$apiCommandCache</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$apiCommandCache" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Cache of parsed Command class ApiCommands</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Cache of parsed Command class ApiCommands</p>
 
 
 			</div>

@@ -7,7 +7,7 @@
 	<title>Interface Guzzle\Http\Message\EntityEnclosingRequestInterface | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2131279572"></script>
+	<script type="text/javascript" src="elementlist.js?3268928207"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -100,6 +100,7 @@
 				<li><a href="class-Guzzle.Http.Message.EntityEnclosingRequest.html">EntityEnclosingRequest</a></li>
 				<li><a href="class-Guzzle.Http.Message.Header.html">Header</a></li>
 				<li><a href="class-Guzzle.Http.Message.HeaderComparison.html">HeaderComparison</a></li>
+				<li><a href="class-Guzzle.Http.Message.PostFile.html">PostFile</a></li>
 				<li><a href="class-Guzzle.Http.Message.Request.html">Request</a></li>
 				<li><a href="class-Guzzle.Http.Message.RequestFactory.html">RequestFactory</a></li>
 				<li><a href="class-Guzzle.Http.Message.Response.html">Response</a></li>
@@ -109,6 +110,7 @@
 			<ul>
 				<li class="active"><a href="class-Guzzle.Http.Message.EntityEnclosingRequestInterface.html">EntityEnclosingRequestInterface</a></li>
 				<li><a href="class-Guzzle.Http.Message.MessageInterface.html">MessageInterface</a></li>
+				<li><a href="class-Guzzle.Http.Message.PostFileInterface.html">PostFileInterface</a></li>
 				<li><a href="class-Guzzle.Http.Message.RequestFactoryInterface.html">RequestFactoryInterface</a></li>
 				<li><a href="class-Guzzle.Http.Message.RequestInterface.html">RequestInterface</a></li>
 			</ul>
@@ -497,15 +499,15 @@ Content-Type</dd>
 
 		<div class="description short">
 			
-<p>Returns an associative array of POST field names to an array of (path,
-Content-Type)</p>
+<p>Returns an associative array of POST field names to PostFileInterface
+objects</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Returns an associative array of POST field names to an array of (path,
-Content-Type)</p>
+<p>Returns an associative array of POST field names to PostFileInterface
+objects</p>
 
 
 
@@ -553,7 +555,7 @@ Content-Type)</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array|null</code><br>Returns an array wrapping an array of (field name, path, and Content-Type)<br />
+					<code>array|null</code><br>Returns an array wrapping an array of PostFileInterface objects<br />
 				</div>
 
 
@@ -613,7 +615,7 @@ Content-Type)</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addPostFile">#</a>
-		<code>addPostFile( <span>string <var>$fieldName</var></span>, <span>string <var>$path</var></span>, <span>string <var>$contentType</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>addPostFile( <span>string <var>$fieldName</var></span>, <span>string <var>$filename</var></span>, <span>string <var>$contentType</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -631,7 +633,7 @@ Content-Type)</p>
 				<div class="list"><dl>
 					<dt><var>$fieldName</var></dt>
 					<dd><code>string</code><br> POST field to use (e.g. file). Used to reference content from the server.</dd>
-					<dt><var>$path</var></dt>
+					<dt><var>$filename</var></dt>
 					<dd><code>string</code><br> Full path to the file. Do not include the @ symbol.</dd>
 					<dt><var>$contentType</var></dt>
 					<dd><code>string</code><br> Optional Content-Type to add to the Content-Disposition. Default behavior is to
@@ -676,9 +678,8 @@ guess. Set to false to not specify.</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$files</var></dt>
-					<dd><code>array</code><br> An array of POST fields =&gt; filenames. If a filename is an array, it must
-contain a 'file' and 'type' key mapping to the path to the file and the
-Content-Type of the file.</dd>
+					<dd><code>array</code><br> An array of POST fields =&gt; filenames where filename can be a string or
+PostFileInterface</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
