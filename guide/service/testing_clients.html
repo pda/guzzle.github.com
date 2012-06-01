@@ -221,15 +221,8 @@
 <p>You can perform integration testing with a web service over the internet by making calls directly to the service.  If the web service you are requesting uses a complex signing algorithm or some other specific implementation, then you may want to include at least one actual network test that can be run specifically through the command line using <a class="reference external" href="http://www.phpunit.de/manual/current/en/appendixes.annotations.html#appendixes.annotations.group">PHPUnit group annotations</a>.</p>
 <div class="section" id="group-internet-annotation">
 <h4>&#64;group internet annotation<a class="headerlink" href="#group-internet-annotation" title="Permalink to this headline">¶</a></h4>
-<p>When creating tests that require an internet connection, it is recommended that you add <tt class="docutils literal"><span class="pre">&#64;group</span> <span class="pre">internet</span></tt> annotations to your unit tests to specify which tests require network connectivity.  You can then <a class="reference external" href="http://www.phpunit.de/manual/current/en/appendixes.configuration.html">modify your phpunit.xml.dist</a> file to exclude the internet group by default:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;groups&gt;</span>
-  <span class="nt">&lt;exclude&gt;</span>
-    <span class="nt">&lt;group&gt;</span>internet<span class="nt">&lt;/group&gt;</span>
-  <span class="nt">&lt;/exclude&gt;</span>
-<span class="nt">&lt;/groups&gt;</span>
-</pre></div>
-</div>
-<p>You can then <a class="reference external" href="http://www.phpunit.de/manual/current/en/textui.html">run PHPUnit tests</a> on the internet group by running <tt class="docutils literal"><span class="pre">phpunit</span> <span class="pre">--group</span> <span class="pre">internet</span></tt>.</p>
+<p>When creating tests that require an internet connection, it is recommended that you add <tt class="docutils literal"><span class="pre">&#64;group</span> <span class="pre">internet</span></tt> annotations to your unit tests to specify which tests require network connectivity.</p>
+<p>You can then <a class="reference external" href="http://www.phpunit.de/manual/current/en/textui.html">run PHPUnit tests</a> that exclude the &#64;internet group by running <tt class="docutils literal"><span class="pre">phpunit</span> <span class="pre">--exclude-group</span> <span class="pre">internet</span></tt>.</p>
 </div>
 <div class="section" id="api-credentials">
 <h4>API credentials<a class="headerlink" href="#api-credentials" title="Permalink to this headline">¶</a></h4>
@@ -275,8 +268,13 @@ Content-Type: application/xml
 <span class="nv">$plugin</span><span class="o">-&gt;</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span> <span class="nx">Guzzle\Http\Message\Response</span><span class="p">(</span><span class="mi">200</span><span class="p">));</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Guzzle\Http\Client</span><span class="p">();</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">);</span>
+
 <span class="c1">// The following request will get the mock response from the plugin in FIFO order</span>
-<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="nv">$request</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+
+<span class="c1">// The MockPlugin maintains a list of requests that were mocked</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertArrayContains</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$plugin</span><span class="o">-&gt;</span><span class="na">getReceivedRequests</span><span class="p">());</span>
 </pre></div>
 </div>
 </div>

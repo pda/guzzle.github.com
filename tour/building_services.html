@@ -200,7 +200,7 @@
 ├── composer.json
 </pre></div>
 </div>
-<p>After running the phing build target to generate the project&#8217;s skeleton, you will need to modify the <em>FooBarClient.php</em> file by updating the factory method, adding a constructor if needed, and adding any class properties.</p>
+<p>After running the phing build target to generate the project&#8217;s skeleton, you will need to modify the <em>FooBarClient.php</em> file by updating the static factory method, adding a constructor if needed, and adding any class properties.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="25%" />
@@ -233,10 +233,11 @@ of a response.  Keep each HTTP response in a separate file.</td>
 </div>
 <div class="section" id="create-a-client">
 <h2>Create a client<a class="headerlink" href="#create-a-client" title="Permalink to this headline">¶</a></h2>
-<p>Now that the directory structure is in place, you can start creating your web service client.  Rename Client.php to the CamelCase name of the web service you are interacting with.  Next you will need to create your client&#8217;s constructor.  Your client&#8217;s constructor can require any number of arguments that your client needs.  In order for a ServiceBuilder to create your client using a parameterized array, you&#8217;ll need to implement a <tt class="docutils literal"><span class="pre">factory()</span></tt> method that maps an array of parameters into an instantiated client object.  Any class composition should be handled in your client&#8217;s factory method.</p>
+<p>Now that the directory structure is in place, you can start creating your web service client.  Rename Client.php to the CamelCase name of the web service you are interacting with.  Next you will need to create your client&#8217;s constructor.  Your client&#8217;s constructor can require any number of arguments that your client needs.</p>
+<p>In order for a ServiceBuilder to create your client using a parameterized array, you&#8217;ll need to implement a static <tt class="docutils literal"><span class="pre">factory()</span></tt> method that maps an array of parameters into an instantiated client object.  Any class composition based on configuration settings should be handled in your client&#8217;s <a class="reference external" href="http://twofoos.org/content/static-factory-methods/">static factory method</a>.  This method is used to flatten the configuration settings of a client into a simplified key value pair array so that the client can easily be configured, utilize default configuration settings, provides simplified validation, and can easily be serialized into various configuration formats.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Your client will not work with a service builder if you do not create a factory method.</p>
+<p class="last">Your client will not work with a service builder if you do not create a static factory method.</p>
 </div>
 <p>Let&#8217;s start creating a custom web service client.  First we will extend the <tt class="docutils literal"><span class="pre">Guzzle\Service\Client</span></tt> class.  Next we will create a constructor that accepts several web service specific arguments.  After creating your constructor, you must create a factory method that accepts an array of configuration data.  The factory method accepts parameters, adds default parameters, validates that required parameters are present, creates a new client, attaches any observers needed for the client, and returns the client object:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Guzzle\MyService</span><span class="p">;</span>
@@ -305,7 +306,7 @@ of a response.  Keep each HTTP response in a separate file.</td>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">Inspector::prepareConfig</span></tt> method is responsible for adding default parameters to a configuration object and ensuring that required parameters are in the configuration.   The factory method in the above example will be very similar to the code you will need in your client&#8217;s factory method.  Any object composition required to build the client should be added in the factory method (for example, attaching event observers to the client based on configuration settings).</p>
+<p>The <tt class="docutils literal"><span class="pre">Inspector::prepareConfig</span></tt> method is responsible for adding default parameters to a configuration object and ensuring that required parameters are in the configuration.   The static factory method in the above example will be very similar to the code you will need in your client&#8217;s factory method.  Any object composition required to build the client should be added in the factory method (for example, attaching event observers to the client based on configuration settings).</p>
 <p>Miscellaneous helper methods for your web service can also be put in the client.  For example, the Amazon S3 client has methods to create a signed URL.</p>
 </div>
 <div class="section" id="create-commands">
