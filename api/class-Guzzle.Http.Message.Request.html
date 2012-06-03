@@ -599,7 +599,7 @@ object, and set other data associated with the request.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br>on a request error<br />
+					<code><code><a href="class-Guzzle.Common.Exception.RuntimeException.html">Guzzle\Common\Exception\RuntimeException</a></code></code><br>if a client is not associated with the request<br />
 				</div>
 
 
@@ -1269,7 +1269,7 @@ href="http://www.ietf.org/rfc/rfc2617.txt">http://www.ietf.org/rfc/rfc2617.txt</
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getResourceUri" id="_getResourceUri">
+	<tr data-order="getResource" id="_getResource">
 
 		<td class="attributes"><code>
 			 public 
@@ -1279,20 +1279,20 @@ href="http://www.ietf.org/rfc/rfc2617.txt">http://www.ietf.org/rfc/rfc2617.txt</
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getResourceUri">#</a>
-		<code>getResourceUri( )</code>
+		<a class="anchor" href="#_getResource">#</a>
+		<code>getResource( )</code>
 
 		<div class="description short">
 			
-<p>Get the URI of the request (e.g. '/', '/index.html', '/index.html?q=1) This
-is the path plus the query string, fragment</p>
+<p>Get the resource part of the the request, including the path, query string,
+and fragment</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the URI of the request (e.g. '/', '/index.html', '/index.html?q=1) This
-is the path plus the query string, fragment</p>
+<p>Get the resource part of the the request, including the path, query string,
+and fragment</p>
 
 
 
@@ -1305,7 +1305,7 @@ is the path plus the query string, fragment</p>
 
 
 				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestInterface.html#_getResourceUri">Guzzle\Http\Message\RequestInterface::getResourceUri</a></code></div>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestInterface.html#_getResource">Guzzle\Http\Message\RequestInterface::getResource</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -1652,28 +1652,66 @@ send the entity body to a socket, file, or some other custom stream.</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getCookies" id="_getCookies">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCookies">#</a>
+		<code>getCookies( )</code>
+
+		<div class="description short">
+			
+<p>Get an array of cookies</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get an array of cookies</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestInterface.html#_getCookies">Guzzle\Http\Message\RequestInterface::getCookies</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getCookie" id="_getCookie">
 
 		<td class="attributes"><code>
 			 public 
-			null|string|<code><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></code>
+			null|string|array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCookie">#</a>
-		<code>getCookie( <span>string <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>getCookie( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Get an array of Cookies or a specific cookie from the request</p>
+<p>Get a cookie value by name</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get an array of Cookies or a specific cookie from the request</p>
+<p>Get a cookie value by name</p>
 
 
 
@@ -1685,59 +1723,13 @@ send the entity body to a socket, file, or some other custom stream.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>null|string|<code><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></code></code><br>Returns null if not found by name, a Cookie object if no $name is supplied, or
-the cookie value by name if found If a Cookie object is returned, changes to the
-cookie object does not modify the request's cookies. You will need to set the
-cookie back on the request after modifying the object.<br />
+					<code>null|string|array</code><br />
 				</div>
 
 
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestInterface.html#_getCookie">Guzzle\Http\Message\RequestInterface::getCookie</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setCookie" id="_setCookie">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setCookie">#</a>
-		<code>setCookie( <span>array|<code><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></code> <var>$cookies</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Set the Cookie header using an array or Cookie object</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Set the Cookie header using an array or Cookie object</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$cookies</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></code></code><br> Cookie data to set on the request</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestInterface.html#_setCookie">Guzzle\Http\Message\RequestInterface::setCookie</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -1797,25 +1789,24 @@ cookie back on the request after modifying the object.<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_removeCookie">#</a>
-		<code>removeCookie( <span>string <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>removeCookie( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Remove the cookie header or a specific cookie value by name</p>
+<p>Remove a specific cookie value by name</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Remove the cookie header or a specific cookie value by name</p>
+<p>Remove a specific cookie value by name</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$name</var></dt>
-					<dd><code>string</code><br> Cookie to remove by name. If no value is provided, the entire Cookie header is
-removed from the request</dd>
+					<dd><code>string</code><br> Cookie to remove by name</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1987,6 +1978,52 @@ removed from the request</dd>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Common.HasDispatcherInterface.html#_dispatch">Guzzle\Common\HasDispatcherInterface::dispatch</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addSubscriber" id="_addSubscriber">
+
+		<td class="attributes"><code>
+			 public 
+			AbstractHasDispatcher
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addSubscriber">#</a>
+		<code>addSubscriber( <span>Symfony\Component\EventDispatcher\EventSubscriberInterface <var>$subscriber</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Add an event subscriber to the dispatcher</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Add an event subscriber to the dispatcher</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$subscriber</var></dt>
+					<dd><code>Symfony\Component\EventDispatcher\EventSubscriberInterface</code><br> Event subscriber</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>AbstractHasDispatcher</code><br />
+				</div>
+
+
+				<h4>CodeCoverageIgnore</h4>
+				<div class="list">
+				</div>
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.HasDispatcherInterface.html#_addSubscriber">Guzzle\Common\HasDispatcherInterface::addSubscriber</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -2172,8 +2209,6 @@ like cache-control</p>
 	<caption>Constants inherited from <a href="class-Guzzle.Http.Message.RequestInterface.html#constants">Guzzle\Http\Message\RequestInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-Guzzle.Http.Message.RequestInterface.html#AUTH_BASIC"><b>AUTH_BASIC</b></a>, 
-			<a href="class-Guzzle.Http.Message.RequestInterface.html#AUTH_DIGEST"><b>AUTH_DIGEST</b></a>, 
 			<a href="class-Guzzle.Http.Message.RequestInterface.html#CONNECT"><b>CONNECT</b></a>, 
 			<a href="class-Guzzle.Http.Message.RequestInterface.html#DELETE"><b>DELETE</b></a>, 
 			<a href="class-Guzzle.Http.Message.RequestInterface.html#GET"><b>GET</b></a>, 
@@ -2370,33 +2405,6 @@ like cache-control</p>
 			<div class="description detailed hidden">
 				
 <p>State of the request object</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="cookie" id="$cookie">
-
-		<td class="attributes"><code>
-			protected 
-			<code><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></code>
-		</code></td>
-
-		<td class="name">
-<var>$cookie</var>		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$cookie" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>Cookies to send with the request</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>Cookies to send with the request</p>
 
 
 			</div>

@@ -863,12 +863,14 @@ PostFileInterfaces</dd>
 		<td><code>
 			<a href="class-Guzzle.Http.Message.Request.html#___clone">__clone()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_addCookie">addCookie()</a>, 
+			<a href="class-Guzzle.Http.Message.Request.html#_addSubscriber">addSubscriber()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_canCache">canCache()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_changedHeader">changedHeader()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_dispatch">dispatch()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getAllEvents">getAllEvents()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getClient">getClient()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getCookie">getCookie()</a>, 
+			<a href="class-Guzzle.Http.Message.Request.html#_getCookies">getCookies()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getCurlOptions">getCurlOptions()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getEventArray">getEventArray()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getEventDispatcher">getEventDispatcher()</a>, 
@@ -880,7 +882,7 @@ PostFileInterfaces</dd>
 			<a href="class-Guzzle.Http.Message.Request.html#_getProtocolVersion">getProtocolVersion()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getQuery">getQuery()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getRawHeaders">getRawHeaders()</a>, 
-			<a href="class-Guzzle.Http.Message.Request.html#_getResourceUri">getResourceUri()</a>, 
+			<a href="class-Guzzle.Http.Message.Request.html#_getResource">getResource()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getResponse">getResponse()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getResponseBody">getResponseBody()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_getScheme">getScheme()</a>, 
@@ -895,7 +897,6 @@ PostFileInterfaces</dd>
 			<a href="class-Guzzle.Http.Message.Request.html#_send">send()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_setAuth">setAuth()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_setClient">setClient()</a>, 
-			<a href="class-Guzzle.Http.Message.Request.html#_setCookie">setCookie()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_setEventDispatcher">setEventDispatcher()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_setHost">setHost()</a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#_setPath">setPath()</a>, 
@@ -940,8 +941,6 @@ PostFileInterfaces</dd>
 	<caption>Constants inherited from <a href="class-Guzzle.Http.Message.RequestInterface.html#constants">Guzzle\Http\Message\RequestInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-Guzzle.Http.Message.RequestInterface.html#AUTH_BASIC"><b>AUTH_BASIC</b></a>, 
-			<a href="class-Guzzle.Http.Message.RequestInterface.html#AUTH_DIGEST"><b>AUTH_DIGEST</b></a>, 
 			<a href="class-Guzzle.Http.Message.RequestInterface.html#CONNECT"><b>CONNECT</b></a>, 
 			<a href="class-Guzzle.Http.Message.RequestInterface.html#DELETE"><b>DELETE</b></a>, 
 			<a href="class-Guzzle.Http.Message.RequestInterface.html#GET"><b>GET</b></a>, 
@@ -1050,7 +1049,6 @@ PostFileInterfaces</dd>
 	<tr>
 		<td><code>
 			<a href="class-Guzzle.Http.Message.Request.html#$client"><var>$client</var></a>, 
-			<a href="class-Guzzle.Http.Message.Request.html#$cookie"><var>$cookie</var></a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#$curlOptions"><var>$curlOptions</var></a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#$eventDispatcher"><var>$eventDispatcher</var></a>, 
 			<a href="class-Guzzle.Http.Message.Request.html#$method"><var>$method</var></a>, 

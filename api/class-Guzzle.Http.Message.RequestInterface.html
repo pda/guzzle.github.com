@@ -1069,7 +1069,7 @@ href="http://www.ietf.org/rfc/rfc2617.txt">http://www.ietf.org/rfc/rfc2617.txt</
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getResourceUri" id="_getResourceUri">
+	<tr data-order="getResource" id="_getResource">
 
 		<td class="attributes"><code>
 			 public 
@@ -1079,20 +1079,20 @@ href="http://www.ietf.org/rfc/rfc2617.txt">http://www.ietf.org/rfc/rfc2617.txt</
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getResourceUri">#</a>
-		<code>getResourceUri( )</code>
+		<a class="anchor" href="#_getResource">#</a>
+		<code>getResource( )</code>
 
 		<div class="description short">
 			
-<p>Get the URI of the request (e.g. '/', '/index.html', '/index.html?q=1) This
-is the path plus the query string, fragment</p>
+<p>Get the resource part of the the request, including the path, query string,
+and fragment</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the URI of the request (e.g. '/', '/index.html', '/index.html?q=1) This
-is the path plus the query string, fragment</p>
+<p>Get the resource part of the the request, including the path, query string,
+and fragment</p>
 
 
 
@@ -1434,28 +1434,64 @@ the response for send()</dd>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getCookies" id="_getCookies">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCookies">#</a>
+		<code>getCookies( )</code>
+
+		<div class="description short">
+			
+<p>Get an array of Cookies</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get an array of Cookies</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getCookie" id="_getCookie">
 
 		<td class="attributes"><code>
 			 public 
-			null|string|<code><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></code>
+			null|string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCookie">#</a>
-		<code>getCookie( <span>string <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>getCookie( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Get an array of Cookies or a specific cookie from the request</p>
+<p>Get a cookie value by name</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get an array of Cookies or a specific cookie from the request</p>
+<p>Get a cookie value by name</p>
 
 
 
@@ -1467,51 +1503,7 @@ the response for send()</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>null|string|<code><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></code></code><br>Returns null if not found by name, a Cookie object if no $name is supplied, or
-the cookie value by name if found If a Cookie object is returned, changes to the
-cookie object does not modify the request's cookies. You will need to set the
-cookie back on the request after modifying the object.<br />
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setCookie" id="_setCookie">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setCookie">#</a>
-		<code>setCookie( <span>array|<code><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></code> <var>$cookies</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Set the Cookie header using an array or Cookie object</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Set the Cookie header using an array or Cookie object</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$cookies</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Http.Cookie.html">Guzzle\Http\Cookie</a></code></code><br> Cookie data to set on the request</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
+					<code>null|string</code><br />
 				</div>
 
 
@@ -1573,25 +1565,24 @@ cookie back on the request after modifying the object.<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_removeCookie">#</a>
-		<code>removeCookie( <span>string <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>removeCookie( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Remove the cookie header or a specific cookie value by name</p>
+<p>Remove a specific cookie value by name</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Remove the cookie header or a specific cookie value by name</p>
+<p>Remove a specific cookie value by name</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$name</var></dt>
-					<dd><code>string</code><br> Cookie to remove by name. If no value is provided, the entire Cookie header is
-removed from the request</dd>
+					<dd><code>string</code><br> Cookie to remove by name</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1669,6 +1660,7 @@ removed from the request</dd>
 	<caption>Methods inherited from <a href="class-Guzzle.Common.HasDispatcherInterface.html#methods">Guzzle\Common\HasDispatcherInterface</a></caption>
 	<tr>
 		<td><code>
+			<a href="class-Guzzle.Common.HasDispatcherInterface.html#_addSubscriber">addSubscriber()</a>, 
 			<a href="class-Guzzle.Common.HasDispatcherInterface.html#_dispatch">dispatch()</a>, 
 			<a href="class-Guzzle.Common.HasDispatcherInterface.html#_getAllEvents">getAllEvents()</a>, 
 			<a href="class-Guzzle.Common.HasDispatcherInterface.html#_getEventDispatcher">getEventDispatcher()</a>, 
@@ -1754,48 +1746,6 @@ removed from the request</dd>
 		<td class="value"><code><span class="php-quote">'error'</span></code></td>
 		<td class="description"><div>
 			<a href="#STATE_ERROR" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="AUTH_BASIC" id="AUTH_BASIC">
-
-		<td class="attributes"><code>
-			string
-		</code></td>
-		<td class="name"><code>
-<b>AUTH_BASIC</b>		</code></td>
-		<td class="value"><code><span class="php-quote">'Basic'</span></code></td>
-		<td class="description"><div>
-			<a href="#AUTH_BASIC" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="AUTH_DIGEST" id="AUTH_DIGEST">
-
-		<td class="attributes"><code>
-			string
-		</code></td>
-		<td class="name"><code>
-<b>AUTH_DIGEST</b>		</code></td>
-		<td class="value"><code><span class="php-quote">'Digest'</span></code></td>
-		<td class="description"><div>
-			<a href="#AUTH_DIGEST" class="anchor">#</a>
 
 			<div class="description short">
 				

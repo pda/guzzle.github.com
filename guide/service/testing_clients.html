@@ -267,7 +267,7 @@ Content-Type: application/xml
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$plugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Guzzle\Http\Plugin\MockPlugin</span><span class="p">();</span>
 <span class="nv">$plugin</span><span class="o">-&gt;</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span> <span class="nx">Guzzle\Http\Message\Response</span><span class="p">(</span><span class="mi">200</span><span class="p">));</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Guzzle\Http\Client</span><span class="p">();</span>
-<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">);</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">);</span>
 
 <span class="c1">// The following request will get the mock response from the plugin in FIFO order</span>
 <span class="nv">$request</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://www.test.com/&#39;</span><span class="p">);</span>

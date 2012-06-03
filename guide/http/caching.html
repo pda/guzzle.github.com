@@ -176,7 +176,7 @@
 <span class="nv">$cache</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CachePlugin</span><span class="p">(</span><span class="nv">$adapter</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="s1">&#39;http://www.wikipedia.org&#39;</span><span class="p">);</span>
-<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getEventDispatcher</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$cache</span><span class="p">);</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">addSubscriber</span><span class="p">(</span><span class="nv">$cache</span><span class="p">);</span>
 
 <span class="nv">$response1</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
 
