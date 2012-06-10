@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Service\Description\ApiCommand | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3268928207"></script>
+	<script type="text/javascript" src="elementlist.js?3672949386"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -36,6 +36,8 @@
 						<ul>
 				<li><a href="namespace-Guzzle.Common.html">Common<span></span></a>
 						<ul>
+				<li><a href="namespace-Guzzle.Common.Batch.html">Batch</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Cache.html">Cache</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
@@ -209,20 +211,24 @@
 				<div class="list"><dl>
 					<dt><var>$config</var></dt>
 					<dd><code>array</code><br> Array of configuration data using the following keys - name: Name of the
-command - doc: Method documentation - method: HTTP method of the command - uri:
-URI routing information of the command - class: Concrete class that implements
-this command - params: Associative array of parameters for the command with each
-parameter containing the following keys: - name: Parameter name - type: Type of
-variable (boolean, integer, string, array, class name, etc...) - type_args:
-Argument(s) to pass to the type validation - required: Whether or not the
-parameter is required - default: Default value - doc: Documentation -
-min_length: Minimum length - max_length: Maximum length - location: One of
-query, path, header, or body - location_key: Location key mapping value (e.g.
-query string value name) - static: Whether or not the param can be changed from
-this value - prepend: Text to prepend when adding this value - append: Text to
-append when adding this value - filters: Comma separated list of filters to run
-the value through. Must be a callable. Can call static class methods by
-separating the class and function with ::.</dd>
+command - doc: Method documentation - doc_url: URL pointing to an online
+reference about the command - method: HTTP method of the command - uri: URI
+routing information of the command - class: Concrete class that implements this
+command - result_type: Optional string containing the type of result created by
+the command - result_doc: Optional string containing the description of the
+result - deprecated: Set to true if this is a deprecated command - params:
+Associative array of parameters for the command with each parameter containing
+the following keys: - name: Parameter name - type: Type of variable (boolean,
+integer, string, array, class name, etc...) - type_args: Argument(s) to pass to
+the type validation - required: Whether or not the parameter is required -
+default: Default value - doc: Documentation - min_length: Minimum length -
+max_length: Maximum length - location: One of query, path, header, or body -
+location_key: Location key mapping value (e.g. query string value name) -
+static: Whether or not the param can be changed from this value - prepend: Text
+to prepend when adding this value - append: Text to append when adding this
+value - filters: Comma separated list of filters to run the value through. Must
+be a callable. Can call static class methods by separating the class and
+function with ::.</dd>
 				</dl></div>
 
 
@@ -398,7 +404,7 @@ the argument to control the widget..."<br />
 
 		<td class="attributes"><code>
 			 public 
-			string
+			string|null
 			
 			</code>
 		</td>
@@ -422,7 +428,7 @@ the argument to control the widget..."<br />
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br />
+					<code>string|null</code><br />
 				</div>
 
 
@@ -470,7 +476,7 @@ the argument to control the widget..."<br />
 
 		<td class="attributes"><code>
 			 public 
-			string
+			string|null
 			
 			</code>
 		</td>
@@ -494,7 +500,7 @@ the argument to control the widget..."<br />
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br />
+					<code>string|null</code><br />
 				</div>
 
 
@@ -506,7 +512,7 @@ the argument to control the widget..."<br />
 
 		<td class="attributes"><code>
 			 public 
-			string
+			string|null
 			
 			</code>
 		</td>
@@ -530,7 +536,151 @@ the argument to control the widget..."<br />
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br />
+					<code>string|null</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDocUrl" id="_getDocUrl">
+
+		<td class="attributes"><code>
+			 public 
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDocUrl">#</a>
+		<code>getDocUrl( )</code>
+
+		<div class="description short">
+			
+<p>Get the documentation URL of the command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the documentation URL of the command</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|null</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getResultType" id="_getResultType">
+
+		<td class="attributes"><code>
+			 public 
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getResultType">#</a>
+		<code>getResultType( )</code>
+
+		<div class="description short">
+			
+<p>Get the type of data stored in the result of the command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the type of data stored in the result of the command</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|null</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getResultDoc" id="_getResultDoc">
+
+		<td class="attributes"><code>
+			 public 
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getResultDoc">#</a>
+		<code>getResultDoc( )</code>
+
+		<div class="description short">
+			
+<p>Get the documentation specific to the result of the command</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the documentation specific to the result of the command</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|null</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isDeprecated" id="_isDeprecated">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isDeprecated">#</a>
+		<code>isDeprecated( )</code>
+
+		<div class="description short">
+			
+<p>Get whether or not the command is deprecated</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get whether or not the command is deprecated</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
 				</div>
 
 
@@ -843,6 +993,114 @@ object.</p>
 			<div class="description detailed hidden">
 				
 <p>Class of the command object</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="resultType" id="$resultType">
+
+		<td class="attributes"><code>
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$resultType</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$resultType" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Result type generated by the command</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Result type generated by the command</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="resultDoc" id="$resultDoc">
+
+		<td class="attributes"><code>
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$resultDoc</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$resultDoc" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Result type generated by the command</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Result type generated by the command</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="deprecated" id="$deprecated">
+
+		<td class="attributes"><code>
+			protected 
+			boolean
+		</code></td>
+
+		<td class="name">
+<var>$deprecated</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$deprecated" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Whether or not the command is deprecated</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Whether or not the command is deprecated</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="docUrl" id="$docUrl">
+
+		<td class="attributes"><code>
+			protected 
+			string
+		</code></td>
+
+		<td class="name">
+<var>$docUrl</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$docUrl" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Reference URL of the command</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Reference URL of the command</p>
 
 
 			</div>
