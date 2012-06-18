@@ -197,8 +197,9 @@
 
 <span class="c1">// BatchRequestTransfer acts as both the divisor and transfer strategy</span>
 <span class="nv">$transferStrategy</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BatchRequestTransfer</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="nv">$divisorStrategy</span> <span class="o">=</span> <span class="nv">$transferStrategy</span><span class="p">;</span>
 
-<span class="nv">$batch</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Batch</span><span class="p">(</span><span class="nv">$transferStrategy</span><span class="p">,</span> <span class="nv">$transferStrategy</span><span class="p">);</span>
+<span class="nv">$batch</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Batch</span><span class="p">(</span><span class="nv">$transferStrategy</span><span class="p">,</span> <span class="nv">$divisorStrategy</span><span class="p">);</span>
 
 <span class="c1">// Add some requests to the batch queue</span>
 <span class="nv">$batch</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$request1</span><span class="p">)</span>
