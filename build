@@ -47,6 +47,8 @@ fi
 
 cd src
 
+mkdir -p build/artifacts/logs
+
 phing test-init
 
 # Get the latest tag (minus the leading 'v')
@@ -98,15 +100,15 @@ wait || exit 1
 cd ..
 
 # Only overwrite the phar if it exists
-if [ -f "src/guzzle.phar" ]; then
+if [ -f "src/build/artifacts/guzzle.phar" ]; then
     echo "guzzle.phar built successfully. Copying to repo"
-    cp src/guzzle.phar ./
+    cp src/build/artifacts/guzzle.phar ./
 fi
 
 # Only overwrite the phar if it exists
-if [ -f "src/guzzle-min.phar" ]; then
+if [ -f "src/build/artifacts/guzzle-min.phar" ]; then
     echo "guzzle-min.phar built successfully. Copying to repo"
-    cp src/guzzle-min.phar ./
+    cp src/build/artifacts/guzzle-min.phar ./
 fi
 
 # Push to github to publish the site

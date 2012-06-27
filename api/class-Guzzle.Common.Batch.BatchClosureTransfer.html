@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Common\Batch\BatchClosureTransfer | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?8737235"></script>
+	<script type="text/javascript" src="elementlist.js?1564139270"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -86,6 +86,8 @@
 						</li>
 				<li><a href="namespace-Guzzle.Service.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Service.Plugin.html">Plugin</a>
+						</li>
 				<li><a href="namespace-Guzzle.Service.Resource.html">Resource</a>
 						</li>
 							</ul></li></ul></li>
@@ -103,6 +105,7 @@
 				<li><a href="class-Guzzle.Common.Batch.AbstractBatchDecorator.html">AbstractBatchDecorator</a></li>
 				<li><a href="class-Guzzle.Common.Batch.Batch.html">Batch</a></li>
 				<li><a href="class-Guzzle.Common.Batch.BatchBuilder.html">BatchBuilder</a></li>
+				<li><a href="class-Guzzle.Common.Batch.BatchClosureDivisor.html">BatchClosureDivisor</a></li>
 				<li class="active"><a href="class-Guzzle.Common.Batch.BatchClosureTransfer.html">BatchClosureTransfer</a></li>
 				<li><a href="class-Guzzle.Common.Batch.BatchSizeDivisor.html">BatchSizeDivisor</a></li>
 				<li><a href="class-Guzzle.Common.Batch.ExceptionBufferingBatch.html">ExceptionBufferingBatch</a></li>
@@ -207,7 +210,7 @@ This class is to be used with <code><a href="class-Guzzle.Common.Batch.BatchInte
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span><code><a href="class-Closure.html">Closure</a></code> <var>$closure</var></span> )</code>
+		<code>__construct( <span>mixed <var>$callable</var></span>, <span>mixed <var>$context</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -223,9 +226,11 @@ This class is to be used with <code><a href="class-Guzzle.Common.Batch.BatchInte
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$closure</var></dt>
-					<dd><code><code><a href="class-Closure.html">Closure</a></code></code><br> A closure that performs the transfer. The closure should have a single argument
-(array $batch) identical to the BatchTransferInterface::transfer method.</dd>
+					<dt><var>$callable</var></dt>
+					<dd><code>mixed</code><br> Callable that performs the transfer. This function should accept two arguments:
+(array $batch, mixed $context).</dd>
+					<dt><var>$context</var></dt>
+					<dd><code>mixed</code><br> Optional context to pass to the batch divisor</dd>
 				</dl></div>
 
 
@@ -283,18 +288,18 @@ This class is to be used with <code><a href="class-Guzzle.Common.Batch.BatchInte
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="closure" id="$closure">
+	<tr data-order="callable" id="$callable">
 
 		<td class="attributes"><code>
 			protected 
-			<code><a href="class-Closure.html">Closure</a></code>
+			callable
 		</code></td>
 
 		<td class="name">
-<var>$closure</var>		</td>
+<var>$callable</var>		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$closure" class="anchor">#</a>
+			<a href="#$callable" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -305,6 +310,33 @@ This class is to be used with <code><a href="class-Guzzle.Common.Batch.BatchInte
 			<div class="description detailed hidden">
 				
 <p>A closure that performs the transfer</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="context" id="$context">
+
+		<td class="attributes"><code>
+			protected 
+			mixed
+		</code></td>
+
+		<td class="name">
+<var>$context</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$context" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>$context Context passed to the callable</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>$context Context passed to the callable</p>
 
 
 			</div>
