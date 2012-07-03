@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Class Guzzle\Inflection\Inflector | Guzzle</title>
+	<title>Class Guzzle\Parser\ParserRegistry | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?1564139270"></script>
+	<script type="text/javascript" src="elementlist.js?3670918546"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -42,6 +42,8 @@
 						</li>
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Inflection.html">Inflection</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
@@ -57,22 +59,20 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
-						<ul>
-				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
-						</li>
-							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li class="active"><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+				<li class="active"><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
 						</li>
+				<li><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
@@ -102,15 +102,9 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Guzzle.Inflection.Inflector.html">Inflector</a></li>
-				<li><a href="class-Guzzle.Inflection.MemoizingInflector.html">MemoizingInflector</a></li>
-				<li><a href="class-Guzzle.Inflection.PreComputedInflector.html">PreComputedInflector</a></li>
+				<li class="active"><a href="class-Guzzle.Parser.ParserRegistry.html">ParserRegistry</a></li>
 			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li><a href="class-Guzzle.Inflection.InflectorInterface.html">InflectorInterface</a></li>
-			</ul>
 
 
 
@@ -136,7 +130,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Guzzle.Inflection.html" title="Summary of Guzzle\Inflection"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Parser.html" title="Summary of Guzzle\Parser"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -151,24 +145,15 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Inflector</h1>
+	<h1>Class ParserRegistry</h1>
 
 
 	<div class="description">
 	
-<p>Default inflection implementation</p>
+<p>Registry of parsers used by the application</p>
 
 	</div>
 
-	<dl class="tree">
-		<dd style="padding-left:0px">
-<b><span>Guzzle\Inflection\Inflector</span></b>			
-			 implements 
-				<a href="class-Guzzle.Inflection.InflectorInterface.html"><span>Guzzle\Inflection\InflectorInterface</span></a>
-			
-			
-		</dd>
-	</dl>
 
 
 
@@ -180,44 +165,49 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Inflection.html">Inflection</a><br />
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Parser.html">Parser</a><br />
 		
 
-		<b>Located at</b> Guzzle/Inflection/Inflector.php<br />
+		<b>Located at</b> Guzzle/Parser/ParserRegistry.php<br />
 	</div>
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="getDefault" id="_getDefault">
+	<tr data-order="get" id="_get">
 
 		<td class="attributes"><code>
 			 public static
-			<code><a href="class-Guzzle.Inflection.MemoizingInflector.html">Guzzle\Inflection\MemoizingInflector</a></code>
+			mixed|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getDefault">#</a>
-		<code>getDefault( )</code>
+		<a class="anchor" href="#_get">#</a>
+		<code>get( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Get the default inflector object that has support for caching</p>
+<p>Get a specific parser by handle name</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the default inflector object that has support for caching</p>
+<p>Get a specific parser by handle name</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br> Name of the parser to retrieve</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Inflection.MemoizingInflector.html">Guzzle\Inflection\MemoizingInflector</a></code></code><br />
+					<code>mixed|null</code><br>Returns null if the parser is not found or cannot be instantiated<br />
 				</div>
 
 
@@ -225,91 +215,42 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="snake" id="_snake">
+	<tr data-order="set" id="_set">
 
 		<td class="attributes"><code>
-			 public 
-			string
+			 public static
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_snake">#</a>
-		<code>snake( <span>string <var>$word</var></span> )</code>
+		<a class="anchor" href="#_set">#</a>
+		<code>set( <span>string <var>$name</var></span>, <span>mixed <var>$parser</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Converts strings from camel case to snake case (e.g. CamelCase
-camel_case).</p>
+<p>Register a custom parser by name with the register</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Converts strings from camel case to snake case (e.g. CamelCase
-camel_case).</p>
+<p>Register a custom parser by name with the register</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$word</var></dt>
-					<dd><code>string</code><br> Word to convert to snake case</dd>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br> Name or handle of the parser to register</dd>
+					<dt><var>$parser</var></dt>
+					<dd><code>mixed</code><br> Instantiated parser to register</dd>
 				</dl></div>
 
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br />
-				</div>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Inflection.InflectorInterface.html#_snake">Guzzle\Inflection\InflectorInterface::snake</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="camel" id="_camel">
-
-		<td class="attributes"><code>
-			 public 
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_camel">#</a>
-		<code>camel( <span>string <var>$word</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Converts strings from snake_case to upper CamelCase</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Converts strings from snake_case to upper CamelCase</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$word</var></dt>
-					<dd><code>string</code><br> Value to convert into upper CamelCase</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br />
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Inflection.InflectorInterface.html#_camel">Guzzle\Inflection\InflectorInterface::camel</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -323,25 +264,61 @@ camel_case).</p>
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="default" id="$default">
+	<tr data-order="instances" id="$instances">
 
 		<td class="attributes"><code>
 			protected static
-			<code><a href="class-Guzzle.Inflection.InflectorInterface.html">Guzzle\Inflection\InflectorInterface</a></code>
+			array
 		</code></td>
 
 		<td class="name">
-<var>$default</var>		</td>
-		<td class="value"><code></code></td>
+<var>$instances</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
 		<td class="description"><div>
-			<a href="#$default" class="anchor">#</a>
+			<a href="#$instances" class="anchor">#</a>
 
 			<div class="description short">
 				
+<p>Array of parser instances</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>Array of parser instances</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="mapping" id="$mapping">
+
+		<td class="attributes"><code>
+			protected static
+			array
+		</code></td>
+
+		<td class="name">
+<var>$mapping</var>		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(
+    <span class="php-quote">'message'</span>      =&gt; <span class="php-quote">'Guzzle\\Parser\\Message\\MessageParser'</span>,
+    <span class="php-quote">'cookie'</span>       =&gt; <span class="php-quote">'Guzzle\\Parser\\Cookie\\CookieParser'</span>,
+    <span class="php-quote">'url'</span>          =&gt; <span class="php-quote">'Guzzle\\Parser\\Url\\UrlParser'</span>,
+    <span class="php-quote">'uri_template'</span> =&gt; <span class="php-quote">'Guzzle\\Parser\\UriTemplate\\UriTemplate'</span>,
+)</code></td>
+		<td class="description"><div>
+			<a href="#$mapping" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Mapping of parser name to default class</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Mapping of parser name to default class</p>
+
 
 			</div>
 		</div></td>

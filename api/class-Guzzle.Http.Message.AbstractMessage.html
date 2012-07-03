@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Message\AbstractMessage | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?1564139270"></script>
+	<script type="text/javascript" src="elementlist.js?3670918546"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -42,6 +42,8 @@
 						</li>
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Inflection.html">Inflection</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
@@ -57,22 +59,20 @@
 						</li>
 				<li class="active"><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
-						<ul>
-				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
-						</li>
-							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+				<li><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
 						</li>
+				<li><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
@@ -395,7 +395,7 @@ to TRUE. Returns a Header object if a matching header is found.<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getHeaders">#</a>
-		<code>getHeaders( )</code>
+		<code>getHeaders( <span>$asObjects <var>$asObjects</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -409,6 +409,11 @@ to TRUE. Returns a Header object if a matching header is found.<br />
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$asObjects</var></dt>
+					<dd><code>$asObjects</code><br>Set to true to retrieve a collection of Header objects</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
@@ -419,6 +424,44 @@ to TRUE. Returns a Header object if a matching header is found.<br />
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_getHeaders">Guzzle\Http\Message\MessageInterface::getHeaders</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getHeaderLines" id="_getHeaderLines">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getHeaderLines">#</a>
+		<code>getHeaderLines( )</code>
+
+		<div class="description short">
+			
+<p>Get an array of message header lines</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get an array of message header lines</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Http.Message.MessageInterface.html#_getHeaderLines">Guzzle\Http\Message\MessageInterface::getHeaderLines</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -903,42 +946,6 @@ like cache-control</p>
 					<dd><code>string</code><br> Header that changed</dd>
 				</dl></div>
 
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getHeaderString" id="_getHeaderString">
-
-		<td class="attributes"><code>
-			 protected 
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getHeaderString">#</a>
-		<code>getHeaderString( )</code>
-
-		<div class="description short">
-			
-<p>Get headers as a string</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Get headers as a string</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>string</code><br />
-				</div>
 
 
 

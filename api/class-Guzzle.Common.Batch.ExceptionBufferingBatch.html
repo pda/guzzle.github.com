@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Common\Batch\ExceptionBufferingBatch | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?1564139270"></script>
+	<script type="text/javascript" src="elementlist.js?3670918546"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -42,6 +42,8 @@
 						</li>
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Inflection.html">Inflection</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
@@ -57,22 +59,20 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
-						<ul>
-				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
-						</li>
-							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+				<li><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
 						</li>
+				<li><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
@@ -165,9 +165,9 @@
 
 	<div class="description">
 	
-<p>BatchInterface decorator used to buffer exceptions when an exception occurs
-during a transfer. The exceptions can then later be processed after a batch
-flush has completed.</p>
+<p>BatchInterface decorator used to buffer exceptions encountered during a
+transfer. The exceptions can then later be processed after a batch flush has
+completed.</p>
 
 	</div>
 
@@ -207,49 +207,6 @@ flush has completed.</p>
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="add" id="_add">
-
-		<td class="attributes"><code>
-			 public 
-			self
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_add">#</a>
-		<code>add( <span>mixed <var>$item</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Add an item to the queue</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Add an item to the queue</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$item</var></dt>
-					<dd><code>mixed</code><br> Item to add</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>self</code><br />
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Common.Batch.BatchInterface.html#_add">Guzzle\Common\Batch\BatchInterface::add</a></code></div>
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="flush" id="_flush">
 
 		<td class="attributes"><code>
@@ -316,7 +273,7 @@ flush has completed.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code><br />
+					<code>array</code><br>Array of BatchTransferException objects<br />
 				</div>
 
 
@@ -364,8 +321,9 @@ flush has completed.</p>
 		<td><code>
 			<a href="class-Guzzle.Common.Batch.AbstractBatchDecorator.html#___call">__call()</a>, 
 			<a href="class-Guzzle.Common.Batch.AbstractBatchDecorator.html#___construct">__construct()</a>, 
-			<a href="class-Guzzle.Common.Batch.AbstractBatchDecorator.html#_count">count()</a>, 
-			<a href="class-Guzzle.Common.Batch.AbstractBatchDecorator.html#_getDecorators">getDecorators()</a>
+			<a href="class-Guzzle.Common.Batch.AbstractBatchDecorator.html#_add">add()</a>, 
+			<a href="class-Guzzle.Common.Batch.AbstractBatchDecorator.html#_getDecorators">getDecorators()</a>, 
+			<a href="class-Guzzle.Common.Batch.AbstractBatchDecorator.html#_isEmpty">isEmpty()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -392,13 +350,13 @@ flush has completed.</p>
 
 			<div class="description short">
 				
-<p>Exceptions encountered</p>
+<p>Array of BatchTransferException exceptions</p>
 
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>Exceptions encountered</p>
+<p>Array of BatchTransferException exceptions</p>
 
 
 			</div>

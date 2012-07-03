@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Plugin\CachePlugin | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?1564139270"></script>
+	<script type="text/javascript" src="elementlist.js?3670918546"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -42,6 +42,8 @@
 						</li>
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Inflection.html">Inflection</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
@@ -57,22 +59,20 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
-						<ul>
-				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
-						</li>
-							</ul></li>
 				<li class="active"><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+				<li><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
 						</li>
+				<li><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
@@ -165,6 +165,17 @@ cacheable response headers. This is a simple implementation of RFC 2616 and
 should be considered a private transparent proxy cache (authorization and
 private data can be cached).</p>
 
+<p>Various params can be set on a request to modify the behavior of the cache
+plugin:</p>
+
+<ul>
+	<li>cache.key_filter: Filtered headers and query string parameters to remove
+	from a request when creating a cache key</li>
+
+	<li>cache.filter_strategy: Method to invoke when determining if a request can be
+	cached. Must accept a request object and return boolean.</li>
+</ul>
+
 	</div>
 
 	<dl class="tree">
@@ -207,7 +218,7 @@ private data can be cached).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span><code><a href="class-Guzzle.Common.Cache.CacheAdapterInterface.html">Guzzle\Common\Cache\CacheAdapterInterface</a></code> <var>$adapter</var></span>, <span>boolean <var>$serialize</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$defaultLifetime</var> = <span class="php-num">3600</span></span> )</code>
+		<code>__construct( <span><code><a href="class-Guzzle.Common.Cache.CacheAdapterInterface.html">Guzzle\Common\Cache\CacheAdapterInterface</a></code> <var>$adapter</var></span>, <span>integer <var>$defaultLifetime</var> = <span class="php-num">3600</span></span> )</code>
 
 		<div class="description short">
 			
@@ -225,12 +236,10 @@ private data can be cached).</p>
 				<div class="list"><dl>
 					<dt><var>$adapter</var></dt>
 					<dd><code><code><a href="class-Guzzle.Common.Cache.CacheAdapterInterface.html">Guzzle\Common\Cache\CacheAdapterInterface</a></code></code><br> Cache adapter to write and read cache data</dd>
-					<dt><var>$serialize</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to serialize data before writing</dd>
 					<dt><var>$defaultLifetime</var></dt>
-					<dd><code>integer</code><br> The number of seconds that a cache entry should be considered fresh when no
+					<dd><code>integer</code><br> Number of seconds that a cache entry should be considered fresh when no
 explicit freshness information is provided in a response. Explicit Cache-Control
-or Expires headers override this value</dd>
+or Expires headers override this value.</dd>
 				</dl></div>
 
 
@@ -261,42 +270,6 @@ or Expires headers override this value</dd>
 
 
 
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getCacheAdapter" id="_getCacheAdapter">
-
-		<td class="attributes"><code>
-			 public 
-			CacheAdapter
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getCacheAdapter">#</a>
-		<code>getCacheAdapter( )</code>
-
-		<div class="description short">
-			
-<p>Get the cache adapter object</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Get the cache adapter object</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>CacheAdapter</code><br />
-				</div>
 
 
 
@@ -572,8 +545,7 @@ or Expires headers override this value</dd>
 <var>$excludeResponseHeaders</var>		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>(
     <span class="php-quote">'Connection'</span>, <span class="php-quote">'Keep-Alive'</span>, <span class="php-quote">'Proxy-Authenticate'</span>, <span class="php-quote">'Proxy-Authorization'</span>,
-    <span class="php-quote">'TE'</span>, <span class="php-quote">'Trailers'</span>, <span class="php-quote">'Transfer-Encoding'</span>, <span class="php-quote">'Upgrade'</span>, <span class="php-quote">'Set-Cookie'</span>,
-    <span class="php-quote">'Set-Cookie2'</span>
+    <span class="php-quote">'TE'</span>, <span class="php-quote">'Trailers'</span>, <span class="php-quote">'Transfer-Encoding'</span>, <span class="php-quote">'Upgrade'</span>, <span class="php-quote">'Set-Cookie'</span>, <span class="php-quote">'Set-Cookie2'</span>
 )</code></td>
 		<td class="description"><div>
 			<a href="#$excludeResponseHeaders" class="anchor">#</a>

@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Interface Guzzle\Http\Parser\Url\UrlParserInterface | Guzzle</title>
+	<title>Namespace Guzzle\Parser | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?1564139270"></script>
+	<script type="text/javascript" src="elementlist.js?3670918546"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -42,12 +42,14 @@
 						</li>
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Inflection.html">Inflection</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
 						</li>
 							</ul></li>
-				<li class="active"><a href="namespace-Guzzle.Http.html">Http<span></span></a>
+				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
@@ -57,22 +59,20 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
-						<ul>
-				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
-						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
-						</li>
-							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+				<li class="active"><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
 						</li>
+				<li><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
@@ -102,13 +102,9 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.Parser.Url.UrlParser.html">UrlParser</a></li>
+				<li><a href="class-Guzzle.Parser.ParserRegistry.html">ParserRegistry</a></li>
 			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li class="active"><a href="class-Guzzle.Http.Parser.Url.UrlParserInterface.html">UrlParserInterface</a></li>
-			</ul>
 
 
 
@@ -133,10 +129,9 @@
 			<li>
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
-			<li>
-				<a href="namespace-Guzzle.Http.Parser.Url.html" title="Summary of Guzzle\Http\Parser\Url"><span>Namespace</span></a>
-			</li>
 			<li class="active">
+<span>Namespace</span>			</li>
+			<li>
 <span>Class</span>			</li>
 		</ul>
 		<ul>
@@ -148,91 +143,33 @@
 		</ul>
 	</div>
 
-<div id="content" class="class">
-	<h1>Interface UrlParserInterface</h1>
+<div id="content" class="namespace">
+	<h1>Namespace <a href="namespace-Guzzle.html">Guzzle</a>\Parser</h1>
 
-
-	<div class="description">
-	
-<p>URL parser interface</p>
-
-	</div>
-
-
-
-
-
-	<div>
-		<h4>Direct known implementers</h4>
-			<a href="class-Guzzle.Http.Parser.Url.UrlParser.html">Guzzle\Http\Parser\Url\UrlParser</a>
-	</div>
-
-
-
-
-	<div class="info">
-		
-		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Parser.html">Parser</a>\<a href="namespace-Guzzle.Http.Parser.Url.html">Url</a><br />
-		
-
-		<b>Located at</b> Guzzle/Http/Parser/Url/UrlParserInterface.php<br />
-	</div>
-
-
-	<table class="summary" id="methods">
-	<caption>Methods summary</caption>
-	<tr data-order="parseUrl" id="_parseUrl">
-
-		<td class="attributes"><code>
-			 public 
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_parseUrl">#</a>
-		<code>parseUrl( <span>string <var>$url</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Parse a URL using special handling for a subset of UTF-8 characters in the
-query string if needed.</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Parse a URL using special handling for a subset of UTF-8 characters in the
-query string if needed.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$url</var></dt>
-					<dd><code>string</code><br> URL to parse</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array</code><br>Returns an array identical to what is returned from parse_url(). When an array
-key is missing from this array, you must fill it in with NULL to avoid warnings
-in calling code.<br />
-				</div>
-
-
-
-		</div>
-		</div></td>
+	<table class="summary" id="namespaces">
+	<caption>Namespaces summary</caption>
+	<tr>
+		<td class="name"><a href="namespace-Guzzle.Parser.Cookie.html">Guzzle\Parser\Cookie</a></td>
+	</tr>
+	<tr>
+		<td class="name"><a href="namespace-Guzzle.Parser.Message.html">Guzzle\Parser\Message</a></td>
+	</tr>
+	<tr>
+		<td class="name"><a href="namespace-Guzzle.Parser.UriTemplate.html">Guzzle\Parser\UriTemplate</a></td>
+	</tr>
+	<tr>
+		<td class="name"><a href="namespace-Guzzle.Parser.Url.html">Guzzle\Parser\Url</a></td>
 	</tr>
 	</table>
 
 
-
-
-
+<table class="summary" id="classes">
+<caption>Classes summary</caption>
+<tr>
+	<td class="name"><a href="class-Guzzle.Parser.ParserRegistry.html">ParserRegistry</a></td>
+	<td>Registry of parsers used by the application</td>
+</tr>
+</table>
 
 
 

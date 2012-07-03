@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Namespace Guzzle\Http\Parser\Message | Guzzle</title>
+	<title>Class Guzzle\Parser\UriTemplate\UriTemplate | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?1564139270"></script>
+	<script type="text/javascript" src="elementlist.js?3670918546"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -42,12 +42,14 @@
 						</li>
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Inflection.html">Inflection</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
 						</li>
 							</ul></li>
-				<li class="active"><a href="namespace-Guzzle.Http.html">Http<span></span></a>
+				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
@@ -57,22 +59,20 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
-						<ul>
-				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
-						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
-						</li>
-							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+				<li class="active"><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
 						</li>
+				<li><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li class="active"><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
@@ -102,14 +102,12 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.Parser.Message.AbstractMessageParser.html">AbstractMessageParser</a></li>
-				<li><a href="class-Guzzle.Http.Parser.Message.MessageParser.html">MessageParser</a></li>
-				<li><a href="class-Guzzle.Http.Parser.Message.PeclHttpMessageParser.html">PeclHttpMessageParser</a></li>
+				<li class="active"><a href="class-Guzzle.Parser.UriTemplate.UriTemplate.html">UriTemplate</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html">MessageParserInterface</a></li>
+				<li><a href="class-Guzzle.Parser.UriTemplate.UriTemplateInterface.html">UriTemplateInterface</a></li>
 			</ul>
 
 
@@ -135,9 +133,10 @@
 			<li>
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
-			<li class="active">
-<span>Namespace</span>			</li>
 			<li>
+				<a href="namespace-Guzzle.Parser.UriTemplate.html" title="Summary of Guzzle\Parser\UriTemplate"><span>Namespace</span></a>
+			</li>
+			<li class="active">
 <span>Class</span>			</li>
 		</ul>
 		<ul>
@@ -149,34 +148,99 @@
 		</ul>
 	</div>
 
-<div id="content" class="namespace">
-	<h1>Namespace <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Parser.html">Parser</a>\Message</h1>
+<div id="content" class="class">
+	<h1>Class UriTemplate</h1>
+
+
+	<div class="description">
+	
+<p>Expands URI templates using an array of variables</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Guzzle\Parser\UriTemplate\UriTemplate</span></b>			
+			 implements 
+				<a href="class-Guzzle.Parser.UriTemplate.UriTemplateInterface.html"><span>Guzzle\Parser\UriTemplate\UriTemplateInterface</span></a>
+			
+			
+		</dd>
+	</dl>
 
 
 
-<table class="summary" id="classes">
-<caption>Classes summary</caption>
-<tr>
-	<td class="name"><a href="class-Guzzle.Http.Parser.Message.AbstractMessageParser.html">AbstractMessageParser</a></td>
-	<td>Implements shared message parsing functionality</td>
-</tr>
-<tr>
-	<td class="name"><a href="class-Guzzle.Http.Parser.Message.MessageParser.html">MessageParser</a></td>
-	<td>Default request and response parser used by Guzzle. Optimized for speed.</td>
-</tr>
-<tr>
-	<td class="name"><a href="class-Guzzle.Http.Parser.Message.PeclHttpMessageParser.html">PeclHttpMessageParser</a></td>
-	<td>Pecl HTTP message parser</td>
-</tr>
-</table>
 
-<table class="summary" id="interfaces">
-<caption>Interfaces summary</caption>
-<tr>
-	<td class="name"><a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html">MessageParserInterface</a></td>
-	<td>HTTP message parser interface used to parse HTTP messages into an array</td>
-</tr>
-</table>
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Parser.html">Parser</a>\<a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a><br />
+		
+
+				<b>Link:</b>
+				<a href="http://tools.ietf.org/html/draft-gregorio-uritemplate-08">http://tools.ietf.org/html/draft-gregorio-uritemplate-08</a><br />
+		<b>Located at</b> Guzzle/Parser/UriTemplate/UriTemplate.php<br />
+	</div>
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="expand" id="_expand">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_expand">#</a>
+		<code>expand( <span>string <var>$template</var></span>, <span>array <var>$variables</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Expand the URI template using the supplied variables</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Expand the URI template using the supplied variables</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$template</var></dt>
+					<dd><code>string</code><br> URI Template to expand</dd>
+					<dt><var>$variables</var></dt>
+					<dd><code>array</code><br> Variables to use with the expansion</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Returns the expanded template<br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Parser.UriTemplate.UriTemplateInterface.html#_expand">Guzzle\Parser\UriTemplate\UriTemplateInterface::expand</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
 
 
 

@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Class Guzzle\Http\Parser\Message\MessageParser | Guzzle</title>
+	<title>Interface Guzzle\Parser\Message\MessageParserInterface | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?1564139270"></script>
+	<script type="text/javascript" src="elementlist.js?3670918546"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -42,12 +42,14 @@
 						</li>
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Inflection.html">Inflection</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
 						</li>
 							</ul></li>
-				<li class="active"><a href="namespace-Guzzle.Http.html">Http<span></span></a>
+				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
@@ -57,22 +59,20 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
-						<ul>
-				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
-						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
-						</li>
-							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+				<li class="active"><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
 						</li>
+				<li class="active"><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
@@ -102,14 +102,14 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.Parser.Message.AbstractMessageParser.html">AbstractMessageParser</a></li>
-				<li class="active"><a href="class-Guzzle.Http.Parser.Message.MessageParser.html">MessageParser</a></li>
-				<li><a href="class-Guzzle.Http.Parser.Message.PeclHttpMessageParser.html">PeclHttpMessageParser</a></li>
+				<li><a href="class-Guzzle.Parser.Message.AbstractMessageParser.html">AbstractMessageParser</a></li>
+				<li><a href="class-Guzzle.Parser.Message.MessageParser.html">MessageParser</a></li>
+				<li><a href="class-Guzzle.Parser.Message.PeclHttpMessageParser.html">PeclHttpMessageParser</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html">MessageParserInterface</a></li>
+				<li class="active"><a href="class-Guzzle.Parser.Message.MessageParserInterface.html">MessageParserInterface</a></li>
 			</ul>
 
 
@@ -136,7 +136,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Guzzle.Http.Parser.Message.html" title="Summary of Guzzle\Http\Parser\Message"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Parser.Message.html" title="Summary of Guzzle\Parser\Message"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -151,46 +151,39 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class MessageParser</h1>
+	<h1>Interface MessageParserInterface</h1>
 
 
 	<div class="description">
 	
-<p>Default request and response parser used by Guzzle. Optimized for speed.</p>
+<p>HTTP message parser interface used to parse HTTP messages into an array</p>
 
 	</div>
 
-	<dl class="tree">
-		<dd style="padding-left:0px">
-			<a href="class-Guzzle.Http.Parser.Message.AbstractMessageParser.html"><span>Guzzle\Http\Parser\Message\AbstractMessageParser</span></a>
-			
-			 implements 
-				<a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html"><span>Guzzle\Http\Parser\Message\MessageParserInterface</span></a>
-			
-			
-		</dd>
-		<dd style="padding-left:30px">
-			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>Guzzle\Http\Parser\Message\MessageParser</span></b>			
-			
-			
-		</dd>
-	</dl>
 
 
 
 
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-Guzzle.Parser.Message.AbstractMessageParser.html">Guzzle\Parser\Message\AbstractMessageParser</a>
+	</div>
 
+	<div>
+		<h4>Indirect known implementers</h4>
+			<a href="class-Guzzle.Parser.Message.MessageParser.html">Guzzle\Parser\Message\MessageParser</a>, 
+			<a href="class-Guzzle.Parser.Message.PeclHttpMessageParser.html">Guzzle\Parser\Message\PeclHttpMessageParser</a>
+	</div>
 
 
 
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Parser.html">Parser</a>\<a href="namespace-Guzzle.Http.Parser.Message.html">Message</a><br />
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Parser.html">Parser</a>\<a href="namespace-Guzzle.Parser.Message.html">Message</a><br />
 		
 
-		<b>Located at</b> Guzzle/Http/Parser/Message/MessageParser.php<br />
+		<b>Located at</b> Guzzle/Parser/Message/MessageParserInterface.php<br />
 	</div>
 
 
@@ -234,8 +227,6 @@
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html#_parseRequest">Guzzle\Http\Parser\Message\MessageParserInterface::parseRequest</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -277,62 +268,11 @@
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html#_parseResponse">Guzzle\Http\Parser\Message\MessageParserInterface::parseResponse</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="parseMessage" id="_parseMessage">
-
-		<td class="attributes"><code>
-			 protected 
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_parseMessage">#</a>
-		<code>parseMessage( <span>string <var>$message</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Parse a message into parts</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Parse a message into parts</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$message</var></dt>
-					<dd><code>string</code><br> Message to parse</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array</code><br />
-				</div>
-
-
-
 		</div>
 		</div></td>
 	</tr>
 	</table>
 
-	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-Guzzle.Http.Parser.Message.AbstractMessageParser.html#methods">Guzzle\Http\Parser\Message\AbstractMessageParser</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Guzzle.Http.Parser.Message.AbstractMessageParser.html#_getUrlPartsFromMessage">getUrlPartsFromMessage()</a>
-		</code></td>
-	</tr>
-	</table>
 
 
 

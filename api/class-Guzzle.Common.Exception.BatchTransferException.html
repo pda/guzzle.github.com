@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Common\Exception\BatchTransferException | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?1564139270"></script>
+	<script type="text/javascript" src="elementlist.js?3670918546"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -42,6 +42,8 @@
 						</li>
 				<li class="active"><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Inflection.html">Inflection</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
@@ -57,22 +59,20 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
-						<ul>
-				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
-						</li>
-							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+				<li><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
 						</li>
+				<li><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
@@ -206,7 +206,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span>array <var>$batch</var></span>, <span><code><a href="class-Exception.html">Exception</a></code> <var>$exception</var></span>, <span><code><a href="class-Guzzle.Common.Batch.BatchTransferInterface.html">Guzzle\Common\Batch\BatchTransferInterface</a></code> <var>$transferStrategy</var> = <span class="php-keyword1">null</span></span>, <span><code><a href="class-Guzzle.Common.Batch.BatchDivisorInterface.html">Guzzle\Common\Batch\BatchDivisorInterface</a></code> <var>$divisorStrategy</var> = <span class="php-keyword1">null</span> </span> )</code>
+		<code>__construct( <span>array <var>$batch</var></span>, <span>array <var>$transferredItems</var></span>, <span><code><a href="class-Exception.html">Exception</a></code> <var>$exception</var></span>, <span><code><a href="class-Guzzle.Common.Batch.BatchTransferInterface.html">Guzzle\Common\Batch\BatchTransferInterface</a></code> <var>$transferStrategy</var> = <span class="php-keyword1">null</span></span>, <span><code><a href="class-Guzzle.Common.Batch.BatchDivisorInterface.html">Guzzle\Common\Batch\BatchDivisorInterface</a></code> <var>$divisorStrategy</var> = <span class="php-keyword1">null</span> </span> )</code>
 
 		<div class="description short">
 			
@@ -220,6 +220,8 @@
 				<div class="list"><dl>
 					<dt><var>$batch</var></dt>
 					<dd><code>array</code><br> The batch being sent when the exception occurred</dd>
+					<dt><var>$transferredItems</var></dt>
+					<dd><code>array</code><br> Items transferred at the point in which the exception was encountered</dd>
 					<dt><var>$exception</var></dt>
 					<dd><code><code><a href="class-Exception.html">Exception</a></code></code><br> Exception encountered</dd>
 					<dt><var>$transferStrategy</var></dt>
@@ -256,6 +258,44 @@
 		<div class="description detailed hidden">
 			
 <p>Get the batch that we being sent when the exception occurred</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTransferredItems" id="_getTransferredItems">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTransferredItems">#</a>
+		<code>getTransferredItems( )</code>
+
+		<div class="description short">
+			
+<p>Get the items transferred at the point in which the exception was
+encountered</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the items transferred at the point in which the exception was
+encountered</p>
 
 
 
@@ -443,6 +483,33 @@
 			<div class="description detailed hidden">
 				
 <p>The divisor strategy in use when the exception occurred</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="transferredItems" id="$transferredItems">
+
+		<td class="attributes"><code>
+			protected 
+			array
+		</code></td>
+
+		<td class="name">
+<var>$transferredItems</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$transferredItems" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Items transferred at the point in which the exception was encountered</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Items transferred at the point in which the exception was encountered</p>
 
 
 			</div>

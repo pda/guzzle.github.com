@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.6.1" />
 
-	<title>Class Guzzle\Http\Parser\Message\AbstractMessageParser | Guzzle</title>
+	<title>Class Guzzle\Parser\Url\UrlParser | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?1564139270"></script>
+	<script type="text/javascript" src="elementlist.js?3670918546"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -42,12 +42,14 @@
 						</li>
 				<li><a href="namespace-Guzzle.Common.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-Guzzle.Common.Inflection.html">Inflection</a>
+						</li>
 				<li><a href="namespace-Guzzle.Common.Log.html">Log</a>
 						</li>
 				<li><a href="namespace-Guzzle.Common.Validation.html">Validation</a>
 						</li>
 							</ul></li>
-				<li class="active"><a href="namespace-Guzzle.Http.html">Http<span></span></a>
+				<li><a href="namespace-Guzzle.Http.html">Http<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Http.CookieJar.html">CookieJar</a>
 						</li>
@@ -57,22 +59,20 @@
 						</li>
 				<li><a href="namespace-Guzzle.Http.Message.html">Message</a>
 						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Parser.html">Parser<span></span></a>
-						<ul>
-				<li><a href="namespace-Guzzle.Http.Parser.Cookie.html">Cookie</a>
-						</li>
-				<li class="active"><a href="namespace-Guzzle.Http.Parser.Message.html">Message</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.UriTemplate.html">UriTemplate</a>
-						</li>
-				<li><a href="namespace-Guzzle.Http.Parser.Url.html">Url</a>
-						</li>
-							</ul></li>
 				<li><a href="namespace-Guzzle.Http.Plugin.html">Plugin</a>
 						</li>
 							</ul></li>
-				<li><a href="namespace-Guzzle.Inflection.html">Inflection</a>
+				<li class="active"><a href="namespace-Guzzle.Parser.html">Parser<span></span></a>
+						<ul>
+				<li><a href="namespace-Guzzle.Parser.Cookie.html">Cookie</a>
 						</li>
+				<li><a href="namespace-Guzzle.Parser.Message.html">Message</a>
+						</li>
+				<li><a href="namespace-Guzzle.Parser.UriTemplate.html">UriTemplate</a>
+						</li>
+				<li class="active"><a href="namespace-Guzzle.Parser.Url.html">Url</a>
+						</li>
+							</ul></li>
 				<li><a href="namespace-Guzzle.Service.html">Service<span></span></a>
 						<ul>
 				<li><a href="namespace-Guzzle.Service.Builder.html">Builder</a>
@@ -102,14 +102,12 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Guzzle.Http.Parser.Message.AbstractMessageParser.html">AbstractMessageParser</a></li>
-				<li><a href="class-Guzzle.Http.Parser.Message.MessageParser.html">MessageParser</a></li>
-				<li><a href="class-Guzzle.Http.Parser.Message.PeclHttpMessageParser.html">PeclHttpMessageParser</a></li>
+				<li class="active"><a href="class-Guzzle.Parser.Url.UrlParser.html">UrlParser</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html">MessageParserInterface</a></li>
+				<li><a href="class-Guzzle.Parser.Url.UrlParserInterface.html">UrlParserInterface</a></li>
 			</ul>
 
 
@@ -136,7 +134,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Guzzle.Http.Parser.Message.html" title="Summary of Guzzle\Http\Parser\Message"><span>Namespace</span></a>
+				<a href="namespace-Guzzle.Parser.Url.html" title="Summary of Guzzle\Parser\Url"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -151,31 +149,26 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class AbstractMessageParser</h1>
+	<h1>Class UrlParser</h1>
 
 
 	<div class="description">
 	
-<p>Implements shared message parsing functionality</p>
+<p>Parses URLs into parts using PHP's built-in parse_url() function</p>
 
 	</div>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-<b><span>Guzzle\Http\Parser\Message\AbstractMessageParser</span></b>			
+<b><span>Guzzle\Parser\Url\UrlParser</span></b>			
 			 implements 
-				<a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html"><span>Guzzle\Http\Parser\Message\MessageParserInterface</span></a>
+				<a href="class-Guzzle.Parser.Url.UrlParserInterface.html"><span>Guzzle\Parser\Url\UrlParserInterface</span></a>
 			
 			
 		</dd>
 	</dl>
 
 
-	<div>
-		<h4>Direct known subclasses</h4>
-			<a href="class-Guzzle.Http.Parser.Message.MessageParser.html">Guzzle\Http\Parser\Message\MessageParser</a>, 
-			<a href="class-Guzzle.Http.Parser.Message.PeclHttpMessageParser.html">Guzzle\Http\Parser\Message\PeclHttpMessageParser</a>
-	</div>
 
 
 
@@ -183,69 +176,100 @@
 
 
 	<div class="info">
-		<b>Abstract</b><br />
 		
-		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Http.html">Http</a>\<a href="namespace-Guzzle.Http.Parser.html">Parser</a>\<a href="namespace-Guzzle.Http.Parser.Message.html">Message</a><br />
+		
+		<b>Namespace:</b> <a href="namespace-Guzzle.html">Guzzle</a>\<a href="namespace-Guzzle.Parser.html">Parser</a>\<a href="namespace-Guzzle.Parser.Url.html">Url</a><br />
 		
 
-		<b>Located at</b> Guzzle/Http/Parser/Message/AbstractMessageParser.php<br />
+		<b>Located at</b> Guzzle/Parser/Url/UrlParser.php<br />
 	</div>
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="getUrlPartsFromMessage" id="_getUrlPartsFromMessage">
+	<tr data-order="setUtf8Support" id="_setUtf8Support">
 
 		<td class="attributes"><code>
-			 protected 
-			array
+			 public 
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getUrlPartsFromMessage">#</a>
-		<code>getUrlPartsFromMessage( <span>array <var>$requestUrl</var></span>, <span>array <var>$parts</var></span> )</code>
+		<a class="anchor" href="#_setUtf8Support">#</a>
+		<code>setUtf8Support( <span>boolean <var>$utf8</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Create URL parts from HTTP message parts</p>
+<p>Set whether or not to attempt to handle UTF-8 strings (still WIP)</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Create URL parts from HTTP message parts</p>
+<p>Set whether or not to attempt to handle UTF-8 strings (still WIP)</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$requestUrl</var></dt>
-					<dd><code>array</code><br>$parts HTTP message parts</dd>
-					<dt><var>$parts</var></dt>
-					<dd></dd>
+					<dt><var>$utf8</var></dt>
+					<dd><code>boolean</code><br>$handleUtf Set to TRUE to handle UTF string</dd>
 				</dl></div>
 
-				<h4>Returns</h4>
-				<div class="list">
-					<code>array</code><br />
-				</div>
 
 
 
 		</div>
 		</div></td>
 	</tr>
-	</table>
+	<tr data-order="parseUrl" id="_parseUrl">
 
-	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html#methods">Guzzle\Http\Parser\Message\MessageParserInterface</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html#_parseRequest">parseRequest()</a>, 
-			<a href="class-Guzzle.Http.Parser.Message.MessageParserInterface.html#_parseResponse">parseResponse()</a>
-		</code></td>
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parseUrl">#</a>
+		<code>parseUrl( <span>string <var>$url</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Parse a URL using special handling for a subset of UTF-8 characters in the
+query string if needed.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Parse a URL using special handling for a subset of UTF-8 characters in the
+query string if needed.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$url</var></dt>
+					<dd><code>string</code><br> URL to parse</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>Returns an array identical to what is returned from parse_url(). When an array
+key is missing from this array, you must fill it in with NULL to avoid warnings
+in calling code.<br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Parser.Url.UrlParserInterface.html#_parseUrl">Guzzle\Parser\Url\UrlParserInterface::parseUrl</a></code></div>
+		</div>
+		</div></td>
 	</tr>
 	</table>
 
@@ -254,6 +278,37 @@
 
 
 
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="utf8" id="$utf8">
+
+		<td class="attributes"><code>
+			protected 
+			boolean
+		</code></td>
+
+		<td class="name">
+<var>$utf8</var>		</td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="description"><div>
+			<a href="#$utf8" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Whether or not to work with UTF-8 strings</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Whether or not to work with UTF-8 strings</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 
 
