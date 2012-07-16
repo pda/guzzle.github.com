@@ -501,7 +501,7 @@
 <h3>Send HTTP requests in parallel<a class="headerlink" href="#send-http-requests-in-parallel" title="Permalink to this headline">¶</a></h3>
 <p>Sending many HTTP requests serially (one at a time) can cause an unnecessary delay in a script&#8217;s execution. Each request must complete before a subsequent request can be sent. By sending requests in parallel, a pool of HTTP requests can complete at the speed of the slowest request in the pool, significantly reducing the amount of time needed to execute multiple HTTP requests. Guzzle provides a wrapper for the curl_multi functions in PHP.</p>
 <p>You can pass a single request or an array of requests to a client&#8217;s <tt class="docutils literal"><span class="pre">send()</span></tt> method.  Here&#8217;s an example of sending three requests in parallel using a client object:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Guzzle\Common\ExceptionCollection</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Guzzle\Common\Exception\ExceptionCollection</span><span class="p">;</span>
 
 <span class="k">try</span> <span class="p">{</span>
     <span class="nv">$responses</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
@@ -517,7 +517,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>A single request failure will not cause the entire pool of requests to fail.  Any exceptions thrown while transferring a pool of requests will be aggregated into a <tt class="docutils literal"><span class="pre">Guzzle\Common\ExceptionCollection</span></tt> exception.</p>
+<p>A single request failure will not cause the entire pool of requests to fail.  Any exceptions thrown while transferring a pool of requests will be aggregated into a <tt class="docutils literal"><span class="pre">Guzzle\Common\Exception\ExceptionCollection</span></tt> exception.</p>
 </div>
 <div class="section" id="managed-persistent-http-connections">
 <h3>Managed persistent HTTP connections<a class="headerlink" href="#managed-persistent-http-connections" title="Permalink to this headline">¶</a></h3>
@@ -543,6 +543,13 @@
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Guzzle\Http\Client</span><span class="p">(</span><span class="s1">&#39;https://example.com/&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;curl.blacklist&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nx">CURLOPT_ENCODING</span><span class="p">,</span> <span class="s1">&#39;header.Accept&#39;</span><span class="p">)</span>
 <span class="p">));</span>
+</pre></div>
+</div>
+<p>If you are using <a class="reference internal" href="../guide/service/service_descriptions.html"><em>Service Descriptions</em></a> then you can override the cURL options within the definition, for example:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;command</span> <span class="na">name=</span><span class="s">&quot;get_users&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span> <span class="na">uri=</span><span class="s">&quot;/users&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;doc&gt;</span>Get a list of users<span class="nt">&lt;/doc&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;curl.CURLOPT_CONNECTTIMEOUT&quot;</span> <span class="na">default=</span><span class="s">&quot;100&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/command&gt;</span>
 </pre></div>
 </div>
 </div>

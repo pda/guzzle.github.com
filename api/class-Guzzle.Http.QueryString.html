@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\QueryString | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3670918546"></script>
+	<script type="text/javascript" src="elementlist.js?536163967"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -286,7 +286,7 @@ aggregating those parameters together as a string.</p>
 	<tr data-order="aggregateUsingPhp" id="_aggregateUsingPhp">
 
 		<td class="attributes"><code>
-			 public 
+			 public static
 			array
 			
 			</code>
@@ -294,7 +294,7 @@ aggregating those parameters together as a string.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_aggregateUsingPhp">#</a>
-		<code>aggregateUsingPhp( <span>string <var>$key</var></span>, <span>array <var>$value</var></span>, <span>boolean <var>$encodeFields</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$encodeValues</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code>aggregateUsingPhp( <span>string <var>$key</var></span>, <span>array <var>$value</var></span>, <span>boolean <var>$encode</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -314,10 +314,8 @@ aggregating those parameters together as a string.</p>
 					<dd><code>string</code><br> The name of the query string parameter</dd>
 					<dt><var>$value</var></dt>
 					<dd><code>array</code><br> The values of the parameter</dd>
-					<dt><var>$encodeFields</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to encode field names</dd>
-					<dt><var>$encodeValues</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to encode values</dd>
+					<dt><var>$encode</var></dt>
+					<dd><code>boolean</code><br> Set to TRUE to encode field names and values</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -333,7 +331,7 @@ aggregating those parameters together as a string.</p>
 	<tr data-order="aggregateUsingComma" id="_aggregateUsingComma">
 
 		<td class="attributes"><code>
-			 public 
+			 public static
 			array
 			
 			</code>
@@ -341,7 +339,7 @@ aggregating those parameters together as a string.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_aggregateUsingComma">#</a>
-		<code>aggregateUsingComma( <span>string <var>$key</var></span>, <span>array <var>$value</var></span>, <span>boolean <var>$encodeFields</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$encodeValues</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code>aggregateUsingComma( <span>string <var>$key</var></span>, <span>array <var>$value</var></span>, <span>boolean <var>$encode</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -353,24 +351,6 @@ aggregating those parameters together as a string.</p>
 			
 <p>Aggregate multi-valued parameters by joining the values using a comma</p>
 
-<pre>
-<span class="php-var">$q</span> = <span
-class="php-keyword1">new</span> \Guzzle\Http\QueryString(<span
-class="php-keyword1">array</span>(
-    <span
-class="php-quote">'value'</span> =&gt; <span
-class="php-keyword1">array</span>(<span class="php-num">1</span>, <span
-class="php-num">2</span>, <span class="php-num">3</span>)
-));
-<span
-class="php-var">$q</span>-&gt;setAggregateFunction(<span
-class="php-keyword1">array</span>(<span class="php-var">$q</span>, <span
-class="php-quote">'aggregateUsingComma'</span>));
-<span
-class="php-keyword1">echo</span> <span class="php-var">$q</span>; <span
-class="php-comment">// outputs: ?value=1,2,3</span>
-</pre>
-
 
 
 				<h4>Parameters</h4>
@@ -379,10 +359,8 @@ class="php-comment">// outputs: ?value=1,2,3</span>
 					<dd><code>string</code><br> The name of the query string parameter</dd>
 					<dt><var>$value</var></dt>
 					<dd><code>array</code><br> The values of the parameter</dd>
-					<dt><var>$encodeFields</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to encode field names</dd>
-					<dt><var>$encodeValues</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to encode values</dd>
+					<dt><var>$encode</var></dt>
+					<dd><code>boolean</code><br> Set to TRUE to encode field names and values</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -398,7 +376,7 @@ class="php-comment">// outputs: ?value=1,2,3</span>
 	<tr data-order="aggregateUsingDuplicates" id="_aggregateUsingDuplicates">
 
 		<td class="attributes"><code>
-			 public 
+			 public static
 			array
 			
 			</code>
@@ -406,7 +384,7 @@ class="php-comment">// outputs: ?value=1,2,3</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_aggregateUsingDuplicates">#</a>
-		<code>aggregateUsingDuplicates( <span>string <var>$key</var></span>, <span>array <var>$value</var></span>, <span>boolean <var>$encodeFields</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$encodeValues</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code>aggregateUsingDuplicates( <span>string <var>$key</var></span>, <span>array <var>$value</var></span>, <span>boolean <var>$encode</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -431,10 +409,8 @@ href="http://test.com?q=1&amp;q=2">http://test.com?q=1&q=2</a></p>
 					<dd><code>string</code><br> The name of the query string parameter</dd>
 					<dt><var>$value</var></dt>
 					<dd><code>array</code><br> The values of the parameter</dd>
-					<dt><var>$encodeFields</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to encode field names</dd>
-					<dt><var>$encodeValues</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to encode values</dd>
+					<dt><var>$encode</var></dt>
+					<dd><code>boolean</code><br> Set to TRUE to encode field names and values</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -555,7 +531,7 @@ href="http://test.com?q=1&amp;q=2">http://test.com?q=1&q=2</a></p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="isEncodingFields" id="_isEncodingFields">
+	<tr data-order="isUrlEncoding" id="_isUrlEncoding">
 
 		<td class="attributes"><code>
 			 public 
@@ -565,58 +541,18 @@ href="http://test.com?q=1&amp;q=2">http://test.com?q=1&q=2</a></p>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_isEncodingFields">#</a>
-		<code>isEncodingFields( )</code>
+		<a class="anchor" href="#_isUrlEncoding">#</a>
+		<code>isUrlEncoding( )</code>
 
 		<div class="description short">
 			
-<p>Returns whether or not field names are being urlencoded when converting the
-query string object to a string</p>
+<p>Returns whether or not field names and values will be urlencoded</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Returns whether or not field names are being urlencoded when converting the
-query string object to a string</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>boolean</code><br />
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isEncodingValues" id="_isEncodingValues">
-
-		<td class="attributes"><code>
-			 public 
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isEncodingValues">#</a>
-		<code>isEncodingValues( )</code>
-
-		<div class="description short">
-			
-<p>Returns whether or not values are being urlencoded when converting the query
-string object to a string</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Returns whether or not values are being urlencoded when converting the query
-string object to a string</p>
+<p>Returns whether or not field names and values will be urlencoded</p>
 
 
 
@@ -680,7 +616,7 @@ combined values. Set to null to remove any custom aggregator.</dd>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="setEncodeFields" id="_setEncodeFields">
+	<tr data-order="useUrlEncoding" id="_useUrlEncoding">
 
 		<td class="attributes"><code>
 			 public 
@@ -690,70 +626,25 @@ combined values. Set to null to remove any custom aggregator.</dd>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setEncodeFields">#</a>
-		<code>setEncodeFields( <span>boolean <var>$encode</var></span> )</code>
+		<a class="anchor" href="#_useUrlEncoding">#</a>
+		<code>useUrlEncoding( <span>boolean <var>$encode</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Set whether or not field names should be urlencoded when converting the query
-string object to a string</p>
+<p>Set whether or not field names and values should be rawurlencoded</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Set whether or not field names should be urlencoded when converting the query
-string object to a string</p>
+<p>Set whether or not field names and values should be rawurlencoded</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$encode</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to encode field names, FALSE to not encode field names</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code></code><br />
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setEncodeValues" id="_setEncodeValues">
-
-		<td class="attributes"><code>
-			 public 
-			<code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setEncodeValues">#</a>
-		<code>setEncodeValues( <span>boolean <var>$encode</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Set whether or not field values should be urlencoded when converting the
-query string object to a string</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Set whether or not field values should be urlencoded when converting the
-query string object to a string</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$encode</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to encode field values, FALSE to not encode field values</dd>
+					<dd><code>boolean</code><br> Set whether or not to encode</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -936,7 +827,7 @@ query string object to a string</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_encodeData">#</a>
-		<code>encodeData( <span>array <var>$data</var></span>, <span>boolean <var>$encodeFields</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$encodeValues</var> = <span class="php-keyword1">true</span></span> )</code>
+		<code>encodeData( <span>array <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -959,10 +850,6 @@ function</p>
 				<div class="list"><dl>
 					<dt><var>$data</var></dt>
 					<dd><code>array</code><br> The data to encode</dd>
-					<dt><var>$encodeFields</var></dt>
-					<dd><code>boolean</code><br> Toggle URL encoding of fields</dd>
-					<dt><var>$encodeValues</var></dt>
-					<dd><code>boolean</code><br> Toggle URL encoding of values</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1010,6 +897,34 @@ function</p>
 
 
 
+	<table class="summary" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="BLANK" id="BLANK">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>BLANK</b>		</code></td>
+		<td class="value"><code><span class="php-quote">&quot;_guzzle_blank_&quot;</span></code></td>
+		<td class="description"><div>
+			<a href="#BLANK" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Constant used to create blank query string values (e.g. ?foo)</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Constant used to create blank query string values (e.g. ?foo)</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 
 
@@ -1096,7 +1011,7 @@ function</p>
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="encodeFields" id="$encodeFields">
+	<tr data-order="urlEncode" id="$urlEncode">
 
 		<td class="attributes"><code>
 			protected 
@@ -1104,47 +1019,20 @@ function</p>
 		</code></td>
 
 		<td class="name">
-<var>$encodeFields</var>		</td>
+<var>$urlEncode</var>		</td>
 		<td class="value"><code><span class="php-keyword1">true</span></code></td>
 		<td class="description"><div>
-			<a href="#$encodeFields" class="anchor">#</a>
+			<a href="#$urlEncode" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>Are the field names being urlencoded?</p>
+<p>URL encode fields and values?</p>
 
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>Are the field names being urlencoded?</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="encodeValues" id="$encodeValues">
-
-		<td class="attributes"><code>
-			protected 
-			boolean
-		</code></td>
-
-		<td class="name">
-<var>$encodeValues</var>		</td>
-		<td class="value"><code><span class="php-keyword1">true</span></code></td>
-		<td class="description"><div>
-			<a href="#$encodeValues" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>Are the field values being urlencoded?</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>Are the field values being urlencoded?</p>
+<p>URL encode fields and values?</p>
 
 
 			</div>
@@ -1154,12 +1042,12 @@ function</p>
 
 		<td class="attributes"><code>
 			protected 
-			function
+			callable
 		</code></td>
 
 		<td class="name">
 <var>$aggregator</var>		</td>
-		<td class="value"><code><span class="php-keyword1">null</span></code></td>
+		<td class="value"><code><span class="php-keyword1">array</span>(__CLASS__, <span class="php-quote">'aggregateUsingPhp'</span>)</code></td>
 		<td class="description"><div>
 			<a href="#$aggregator" class="anchor">#</a>
 

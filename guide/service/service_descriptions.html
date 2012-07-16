@@ -378,26 +378,33 @@ not provided before executing the command.</td>
 <p>The <strong>location</strong> attribute can be one of the following values:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="9%" />
-<col width="91%" />
+<col width="11%" />
+<col width="89%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>query</td>
 <td>Sets a query string value using the key and value of the parameter.  A custom query string key
 can be used by providing the custom key after the query location separated by a colon
-(e.g. <tt class="docutils literal"><span class="pre">location=&quot;query:QueryKey</span></tt>)&#8221;</td>
+(e.g. <tt class="docutils literal"><span class="pre">location=&quot;query:QueryKey&quot;</span></tt>)</td>
 </tr>
 <tr class="row-even"><td>header</td>
 <td>The parameter will be added as a header.  The header will be set as the name of the parameter
 or you can specify a custom header by providing the custom header after the header location
 separated by a colon (e.g. <tt class="docutils literal"><span class="pre">location=&quot;header:X-Custom-Header&quot;</span></tt>)</td>
 </tr>
-<tr class="row-odd"><td rowspan="2">body</td>
-<td rowspan="2">The parameter value will be used as the body of the generated HTTP request</td>
+<tr class="row-odd"><td>body</td>
+<td>The parameter value will be used as the body of the generated HTTP request</td>
 </tr>
-<tr class="row-even"></tr>
-<tr class="row-odd"><td>data</td>
+<tr class="row-even"><td>data</td>
 <td>This is the default location of parameters that do not contain a location attribute</td>
+</tr>
+<tr class="row-odd"><td>post_field</td>
+<td>Sets a post string value using the key and value of the parameter.  A custom post string key
+can be used by providing the custom key after the post location separated by a colon
+(e.g. <tt class="docutils literal"><span class="pre">location=&quot;post_field:FieldKey&quot;</span></tt>)</td>
+</tr>
+<tr class="row-even"><td>post_file</td>
+<td>Sets a path to file that should be send as post file</td>
 </tr>
 </tbody>
 </table>

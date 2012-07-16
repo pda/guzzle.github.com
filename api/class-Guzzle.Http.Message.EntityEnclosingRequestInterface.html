@@ -7,7 +7,7 @@
 	<title>Interface Guzzle\Http\Message\EntityEnclosingRequestInterface | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?3670918546"></script>
+	<script type="text/javascript" src="elementlist.js?536163967"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -621,7 +621,7 @@ objects</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addPostFile">#</a>
-		<code>addPostFile( <span>string <var>$fieldName</var></span>, <span>string <var>$filename</var></span>, <span>string <var>$contentType</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>addPostFile( <span>string <var>$field</var></span>, <span>string <var>$filename</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$contentType</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -637,7 +637,7 @@ objects</p>
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$fieldName</var></dt>
+					<dt><var>$field</var></dt>
 					<dd><code>string</code><br> POST field to use (e.g. file). Used to reference content from the server.</dd>
 					<dt><var>$filename</var></dt>
 					<dd><code>string</code><br> Full path to the file. Do not include the @ symbol.</dd>
@@ -782,6 +782,51 @@ PostFileInterface</dd>
 
 
 
+	<table class="summary" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="URL_ENCODED" id="URL_ENCODED">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>URL_ENCODED</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'application/x-www-form-urlencoded'</span></code></td>
+		<td class="description"><div>
+			<a href="#URL_ENCODED" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="MULTIPART" id="MULTIPART">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>MULTIPART</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'multipart/form-data'</span></code></td>
+		<td class="description"><div>
+			<a href="#MULTIPART" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 	<table class="summary inherited">
 	<caption>Constants inherited from <a href="class-Guzzle.Http.Message.RequestInterface.html#constants">Guzzle\Http\Message\RequestInterface</a></caption>
