@@ -479,13 +479,13 @@ User-Agent: Guzzle/0.9 (Language=PHP/5.3.5; curl=7.21.2; Host=x86_64-apple-darwi
 <div class="section" id="plugin-collection-plugin">
 <h3>Plugin Collection Plugin<a class="headerlink" href="#plugin-collection-plugin" title="Permalink to this headline">¶</a></h3>
 <p>This plugin can be used to attached plugins to every client created by a <tt class="docutils literal"><span class="pre">Guzzle\Service\Builder\ServiceBuilder</span></tt>. The following example demonstrates adding a HistoryPlugin to each client created by a service builder.</p>
-<p>..code-block:: php</p>
-<blockquote>
-<div><p>use GuzzleServiceBuilderServiceBuilder;
-use GuzzleServicePluginPluginCollectionPlugin;</p>
-<p>$builder = ServiceBuilder::factory(&#8216;config.json&#8217;);
-$builder-&gt;addSubsriber(new PluginCollectionPlugin(array(new HistoryPlugin())));</p>
-</div></blockquote>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Guzzle\Service\Builder\ServiceBuilder</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Guzzle\Service\Plugin\PluginCollectionPlugin</span><span class="p">;</span>
+
+<span class="nv">$builder</span> <span class="o">=</span> <span class="nx">ServiceBuilder</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="s1">&#39;config.json&#39;</span><span class="p">);</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">addSubsriber</span><span class="p">(</span><span class="k">new</span> <span class="nx">PluginCollectionPlugin</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="k">new</span> <span class="nx">HistoryPlugin</span><span class="p">())));</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="third-party-plugins">
 <h3>Third-party plugins<a class="headerlink" href="#third-party-plugins" title="Permalink to this headline">¶</a></h3>
