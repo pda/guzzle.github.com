@@ -31,7 +31,7 @@
     <link rel="top" title="Guzzle 2.6.2 documentation" href="../../index.html" />
     <link rel="up" title="Guides" href="../index.html" />
     <link rel="next" title="Creating Plugins and Observers" href="../http/creating_plugins.html" />
-    <link rel="prev" title="Guides" href="../index.html" />
+    <link rel="prev" title="Plugins" href="../plugins.html" />
 
 <script type="text/javascript">var _gaq = []; _gaq.push(['_setAccount', 'UA-22752917-1'], ['_trackPageview']);</script>
 
@@ -274,7 +274,7 @@ Content-Type: application/xml
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 
 <span class="c1">// The MockPlugin maintains a list of requests that were mocked</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertArrayContains</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$plugin</span><span class="o">-&gt;</span><span class="na">getReceivedRequests</span><span class="p">());</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertContainsOnly</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$plugin</span><span class="o">-&gt;</span><span class="na">getReceivedRequests</span><span class="p">());</span>
 </pre></div>
 </div>
 </div>
@@ -310,7 +310,7 @@ Content-Type: application/xml
        
          
 <div class="breadcrumb" style="margin: 24px 0; color:#999; text-align: center;">
-  <a class="btn info" href="../index.html" title="previous chapter">&laquo; Guides</a>
+  <a class="btn info" href="../plugins.html" title="previous chapter">&laquo; Plugins</a>
   <a class="btn info" href="../http/creating_plugins.html" title="next chapter">Creating Plugins and Observers &raquo;</a>
 </div>
          <div id="comments">

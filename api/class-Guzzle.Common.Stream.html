@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Common\Stream | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2741680583"></script>
+	<script type="text/javascript" src="elementlist.js?3597566982"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -114,6 +114,7 @@
 				<li><a href="class-Guzzle.Common.FromConfigInterface.html">FromConfigInterface</a></li>
 				<li><a href="class-Guzzle.Common.GuzzleException.html">GuzzleException</a></li>
 				<li><a href="class-Guzzle.Common.HasDispatcherInterface.html">HasDispatcherInterface</a></li>
+				<li><a href="class-Guzzle.Common.StreamInterface.html">StreamInterface</a></li>
 			</ul>
 
 
@@ -160,10 +161,19 @@
 
 	<div class="description">
 	
-<p>OO interface to PHP streams</p>
+<p>PHP stream implementation</p>
 
 	</div>
 
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Guzzle\Common\Stream</span></b>			
+			 implements 
+				<a href="class-Guzzle.Common.StreamInterface.html"><span>Guzzle\Common\StreamInterface</span></a>
+			
+			
+		</dd>
+	</dl>
 
 
 	<div>
@@ -218,8 +228,8 @@
 					<dt><var>$stream</var></dt>
 					<dd><code>resource</code><br> Stream resource to wrap</dd>
 					<dt><var>$size</var></dt>
-					<dd><code>integer</code><br> Size of the stream in bytes. Only pass this parameter if the size cannot be
-obtained from the stream.</dd>
+					<dd><code>integer</code><br> Size of the stream in bytes. Only pass if the size cannot be obtained from the
+stream.</dd>
 				</dl></div>
 
 
@@ -254,38 +264,6 @@ obtained from the stream.</dd>
 		<div class="description detailed hidden">
 			
 <p>Closes the stream when the helper is destructed</p>
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="rebuildCache" id="_rebuildCache">
-
-		<td class="attributes"><code>
-			 protected 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_rebuildCache">#</a>
-		<code>rebuildCache( )</code>
-
-		<div class="description short">
-			
-<p>Reprocess stream metadata</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Reprocess stream metadata</p>
 
 
 
@@ -333,6 +311,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#___toString">Guzzle\Common\StreamInterface::__toString</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -364,7 +344,7 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$key</var></dt>
-					<dd><code>string</code><br> Specific metdata to retrieve</dd>
+					<dd><code>string</code><br> Specific metadata to retrieve</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -374,6 +354,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_getMetaData">Guzzle\Common\StreamInterface::getMetaData</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -410,6 +392,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_getStream">Guzzle\Common\StreamInterface::getStream</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -446,6 +430,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_getWrapper">Guzzle\Common\StreamInterface::getWrapper</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -482,6 +468,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_getWrapperData">Guzzle\Common\StreamInterface::getWrapperData</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -518,6 +506,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_getStreamType">Guzzle\Common\StreamInterface::getStreamType</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -554,6 +544,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_getUri">Guzzle\Common\StreamInterface::getUri</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -561,7 +553,7 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 		<td class="attributes"><code>
 			 public 
-			integer|false
+			integer|boolean
 			
 			</code>
 		</td>
@@ -585,11 +577,13 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>integer|false</code><br />
+					<code>integer|boolean</code><br />
 				</div>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_getSize">Guzzle\Common\StreamInterface::getSize</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -626,6 +620,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_isReadable">Guzzle\Common\StreamInterface::isReadable</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -662,6 +658,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_isWritable">Guzzle\Common\StreamInterface::isWritable</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -698,6 +696,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_isConsumed">Guzzle\Common\StreamInterface::isConsumed</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -734,6 +734,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_isLocal">Guzzle\Common\StreamInterface::isLocal</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -770,6 +772,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_isSeekable">Guzzle\Common\StreamInterface::isSeekable</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -811,6 +815,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_setSize">Guzzle\Common\StreamInterface::setSize</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -853,11 +859,9 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 				</div>
 
 
-				<h4>Link</h4>
-				<div class="list">
-						<a href="http://www.php.net/manual/en/function.fseek.php">http://www.php.net/manual/en/function.fseek.php</a><br />
-				</div>
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_seek">Guzzle\Common\StreamInterface::seek</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -899,6 +903,8 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_read">Guzzle\Common\StreamInterface::read</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -938,6 +944,78 @@ string does not affect an actual cURL request using non-repeatable streams.</p>
 					<code>integer|boolean</code><br>Returns the number of bytes written to the stream on success or FALSE on
 failure.<br />
 				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_write">Guzzle\Common\StreamInterface::write</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ftell" id="_ftell">
+
+		<td class="attributes"><code>
+			 public 
+			integer|boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ftell">#</a>
+		<code>ftell( )</code>
+
+		<div class="description short">
+			
+<p>Returns the current position of the file read/write pointer</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the current position of the file read/write pointer</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer|boolean</code><br>Returns the position of the file pointer or false on error<br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.StreamInterface.html#_ftell">Guzzle\Common\StreamInterface::ftell</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rebuildCache" id="_rebuildCache">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rebuildCache">#</a>
+		<code>rebuildCache( )</code>
+
+		<div class="description short">
+			
+<p>Reprocess stream metadata</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Reprocess stream metadata</p>
+
+
+
+
 
 
 
@@ -1175,14 +1253,14 @@ failure.<br />
 <var>$readWriteHash</var>		</td>
 		<td class="value"><code><span class="php-keyword1">array</span>(
     <span class="php-quote">'read'</span> =&gt; <span class="php-keyword1">array</span>(
-        <span class="php-quote">'r'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>,
-        <span class="php-quote">'rb'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+b'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>,
-        <span class="php-quote">'rt'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+t'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>
+        <span class="php-quote">'r'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+'</span> =&gt; <span class="php-keyword1">true</span>,
+        <span class="php-quote">'rb'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+b'</span> =&gt; <span class="php-keyword1">true</span>,
+        <span class="php-quote">'rt'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+t'</span> =&gt; <span class="php-keyword1">true</span>
     ),
     <span class="php-quote">'write'</span> =&gt; <span class="php-keyword1">array</span>(
-        <span class="php-quote">'w'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'rw'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>,
-        <span class="php-quote">'w+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+b'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>,
-        <span class="php-quote">'w+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+t'</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>
+        <span class="php-quote">'w'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'w+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'rw'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+'</span> =&gt; <span class="php-keyword1">true</span>,
+        <span class="php-quote">'w+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+b'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+b'</span> =&gt; <span class="php-keyword1">true</span>,
+        <span class="php-quote">'w+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'r+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'x+t'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'c+t'</span> =&gt; <span class="php-keyword1">true</span>
     )
 )</code></td>
 		<td class="description"><div>

@@ -7,7 +7,7 @@
 	<title>Interface Guzzle\Http\Message\EntityEnclosingRequestInterface | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2741680583"></script>
+	<script type="text/javascript" src="elementlist.js?3597566982"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -213,7 +213,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setBody">#</a>
-		<code>setBody( <span>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var></span>, <span>string <var>$contentType</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$tryChunkedTransfer</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code>setBody( <span>string|resource|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code> <var>$body</var></span>, <span>string <var>$contentType</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$tryChunkedTransfer</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -230,12 +230,12 @@
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$body</var></dt>
-					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Body to use in the entity body of the request</dd>
+					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code></code><br> Body to use in the entity body of the request</dd>
 					<dt><var>$contentType</var></dt>
 					<dd><code>string</code><br> Content-Type to set. Leave null to use an existing Content-Type or to guess the
 Content-Type</dd>
 					<dt><var>$tryChunkedTransfer</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to try to use Transfer-Encoding chunked</dd>
+					<dd><code>boolean</code><br> Try to use chunked Transfer-Encoding</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -245,7 +245,7 @@ Content-Type</dd>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code>RequestException</code><br>if the protocol is &lt; 1.1 and Content-Length can not be determined<br />
+					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br>if the protocol is &lt; 1.1 and Content-Length can not be determined<br />
 				</div>
 
 
@@ -256,7 +256,7 @@ Content-Type</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code>|null
+			<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code>|null
 			
 			</code>
 		</td>
@@ -280,7 +280,7 @@ Content-Type</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code>|null</code><br />
+					<code><code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code>|null</code><br />
 				</div>
 
 
@@ -704,7 +704,6 @@ PostFileInterface</dd>
 	<caption>Methods inherited from <a href="class-Guzzle.Http.Message.RequestInterface.html#methods">Guzzle\Http\Message\RequestInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-Guzzle.Http.Message.RequestInterface.html#___construct">__construct()</a>, 
 			<a href="class-Guzzle.Http.Message.RequestInterface.html#___toString">__toString()</a>, 
 			<a href="class-Guzzle.Http.Message.RequestInterface.html#_addCookie">addCookie()</a>, 
 			<a href="class-Guzzle.Http.Message.RequestInterface.html#_canCache">canCache()</a>, 

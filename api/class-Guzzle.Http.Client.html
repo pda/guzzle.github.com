@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Client | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2741680583"></script>
+	<script type="text/javascript" src="elementlist.js?3597566982"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -102,11 +102,13 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
+				<li><a href="class-Guzzle.Http.AbstractEntityBodyDecorator.html">AbstractEntityBodyDecorator</a></li>
 				<li><a href="class-Guzzle.Http.BatchRequestTransfer.html">BatchRequestTransfer</a></li>
 				<li class="active"><a href="class-Guzzle.Http.Client.html">Client</a></li>
 				<li><a href="class-Guzzle.Http.Cookie.html">Cookie</a></li>
 				<li><a href="class-Guzzle.Http.EntityBody.html">EntityBody</a></li>
 				<li><a href="class-Guzzle.Http.QueryString.html">QueryString</a></li>
+				<li><a href="class-Guzzle.Http.ReadLimitEntityBody.html">ReadLimitEntityBody</a></li>
 				<li><a href="class-Guzzle.Http.Url.html">Url</a></li>
 				<li><a href="class-Guzzle.Http.Utils.html">Utils</a></li>
 			</ul>
@@ -114,6 +116,7 @@
 			<h3>Interfaces</h3>
 			<ul>
 				<li><a href="class-Guzzle.Http.ClientInterface.html">ClientInterface</a></li>
+				<li><a href="class-Guzzle.Http.EntityBodyInterface.html">EntityBodyInterface</a></li>
 				<li><a href="class-Guzzle.Http.HttpException.html">HttpException</a></li>
 			</ul>
 
@@ -320,7 +323,7 @@
 
 		<td class="attributes"><code>
 			final public 
-			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+			<code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code>
 			
 			</code>
 		</td>
@@ -350,7 +353,7 @@ Pass an array or a Collection object.</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code></code><br />
 				</div>
 
 
@@ -447,7 +450,7 @@ client's config.</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+			<code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code>
 			
 			</code>
 		</td>
@@ -476,7 +479,7 @@ client's config.</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code></code><br />
 				</div>
 
 
@@ -535,7 +538,7 @@ client's config.</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+			<code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code>
 			
 			</code>
 		</td>
@@ -564,7 +567,7 @@ client's config.</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code></code><br />
 				</div>
 
 
@@ -589,15 +592,13 @@ client's config.</dd>
 
 		<div class="description short">
 			
-<p>Get the URI template expander used by the client. A default UriTemplate
-object will be created if one does not exist.</p>
+<p>Get the URI template expander used by the client</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the URI template expander used by the client. A default UriTemplate
-object will be created if one does not exist.</p>
+<p>Get the URI template expander used by the client</p>
 
 
 
@@ -625,7 +626,7 @@ object will be created if one does not exist.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createRequest">#</a>
-		<code>createRequest( <span>string <var>$method</var> = <code><a href="class-Guzzle.Http.Message.RequestInterface.html#GET">Guzzle\Http\Message\RequestInterface::<b>GET</b></a></code></span>, <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>createRequest( <span>string <var>$method</var> = <code><a href="class-Guzzle.Http.Message.RequestInterface.html#GET">Guzzle\Http\Message\RequestInterface::<b>GET</b></a></code></span>, <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -639,11 +640,6 @@ client.</p>
 <p>Create and return a new <code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> configured for the
 client.</p>
 
-<p>Use an absolute path to override the base path of the client, or a relative
-path to append to the base path of the client. The URI can contain the query
-string as well. Use an array to provide a URI template and additional variables
-to use in the URI template expansion.</p>
-
 
 
 				<h4>Parameters</h4>
@@ -655,7 +651,7 @@ to use in the URI template expansion.</p>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
-					<dd><code>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Entity body of request (POST/PUT) or response (GET)</dd>
+					<dd><code>string|resource|array|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code></code><br> Entity body of request (POST/PUT) or response (GET)</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -672,49 +668,6 @@ followed by template variables<br />
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_createRequest">Guzzle\Http\ClientInterface::createRequest</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="prepareRequest" id="_prepareRequest">
-
-		<td class="attributes"><code>
-			 protected 
-			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_prepareRequest">#</a>
-		<code>prepareRequest( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Prepare a request to be sent from the Client by adding client specific
-behaviors and properties to the request.</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Prepare a request to be sent from the Client by adding client specific
-behaviors and properties to the request.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$request</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to prepare for the client</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
-				</div>
-
-
-
 		</div>
 		</div></td>
 	</tr>
@@ -765,7 +718,7 @@ behaviors and properties to the request.</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+			<code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code>
 			
 			</code>
 		</td>
@@ -794,7 +747,7 @@ behaviors and properties to the request.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code></code><br />
 				</div>
 
 
@@ -808,7 +761,7 @@ behaviors and properties to the request.</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+			<code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code>
 			
 			</code>
 		</td>
@@ -841,7 +794,7 @@ appended to the User-Agent header of all requests.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code></code><br />
 				</div>
 
 
@@ -855,14 +808,14 @@ appended to the User-Agent header of all requests.</p>
 
 		<td class="attributes"><code>
 			 public 
-			Request
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code>get( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>get( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|array|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -883,19 +836,15 @@ appended to the User-Agent header of all requests.</p>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
-					<dd><code>string|resource|array|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Where to store the response entity body</dd>
+					<dd><code>string|resource|array|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code></code><br> Where to store the response entity body</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>Request</code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
-				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_get">Guzzle\Http\ClientInterface::get</a></code></div>
@@ -906,7 +855,7 @@ appended to the User-Agent header of all requests.</p>
 
 		<td class="attributes"><code>
 			 public 
-			Request
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -937,14 +886,10 @@ appended to the User-Agent header of all requests.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>Request</code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
-				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_head">Guzzle\Http\ClientInterface::head</a></code></div>
@@ -955,14 +900,14 @@ appended to the User-Agent header of all requests.</p>
 
 		<td class="attributes"><code>
 			 public 
-			Request
+			EntityEnclosingRequestInterface
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code>delete( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>delete( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -982,18 +927,16 @@ appended to the User-Agent header of all requests.</p>
 					<dd><code>string|array</code><br> Resource URI</dd>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
+					<dt><var>$body</var></dt>
+					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code></code><br> Body to send in the request</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>Request</code><br />
+					<code>EntityEnclosingRequestInterface</code><br />
 				</div>
 
 
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
-				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_delete">Guzzle\Http\ClientInterface::delete</a></code></div>
@@ -1004,14 +947,14 @@ appended to the User-Agent header of all requests.</p>
 
 		<td class="attributes"><code>
 			 public 
-			EntityEnclosingRequest
+			EntityEnclosingRequestInterface
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_put">#</a>
-		<code>put( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>put( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1032,19 +975,15 @@ appended to the User-Agent header of all requests.</p>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
-					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Body to send in the request</dd>
+					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code></code><br> Body to send in the request</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>EntityEnclosingRequest</code><br />
+					<code>EntityEnclosingRequestInterface</code><br />
 				</div>
 
 
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
-				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_put">Guzzle\Http\ClientInterface::put</a></code></div>
@@ -1055,14 +994,14 @@ appended to the User-Agent header of all requests.</p>
 
 		<td class="attributes"><code>
 			 public 
-			EntityEnclosingRequest
+			EntityEnclosingRequestInterface
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_patch">#</a>
-		<code>patch( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>patch( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>string|resource|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code> <var>$body</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1083,19 +1022,15 @@ appended to the User-Agent header of all requests.</p>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$body</var></dt>
-					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Body to send in the request</dd>
+					<dd><code>string|resource|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code></code><br> Body to send in the request</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>EntityEnclosingRequest</code><br />
+					<code>EntityEnclosingRequestInterface</code><br />
 				</div>
 
 
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
-				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_patch">Guzzle\Http\ClientInterface::patch</a></code></div>
@@ -1106,14 +1041,14 @@ appended to the User-Agent header of all requests.</p>
 
 		<td class="attributes"><code>
 			 public 
-			EntityEnclosingRequest
+			EntityEnclosingRequestInterface
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_post">#</a>
-		<code>post( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|string|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$postBody</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code>post( <span>string|array <var>$uri</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code> <var>$headers</var> = <span class="php-keyword1">null</span></span>, <span>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|string|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code> <var>$postBody</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1134,21 +1069,17 @@ appended to the User-Agent header of all requests.</p>
 					<dt><var>$headers</var></dt>
 					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code></code><br> HTTP headers</dd>
 					<dt><var>$postBody</var></dt>
-					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|string|<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> POST body. Can be a string, EntityBody, or associative array of POST fields to
+					<dd><code>array|<code><a href="class-Guzzle.Common.Collection.html">Guzzle\Common\Collection</a></code>|string|<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code></code><br> POST body. Can be a string, EntityBody, or associative array of POST fields to
 send in the body of the request. Prefix a value in the array with the @ symbol
-reference a file.</dd>
+to reference a file.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>EntityEnclosingRequest</code><br />
+					<code>EntityEnclosingRequestInterface</code><br />
 				</div>
 
 
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
-				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_post">Guzzle\Http\ClientInterface::post</a></code></div>
@@ -1159,7 +1090,7 @@ reference a file.</dd>
 
 		<td class="attributes"><code>
 			 public 
-			Request
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -1188,14 +1119,10 @@ reference a file.</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>Request</code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-Guzzle.Http.Client.html#_createRequest">Guzzle\Http\Client::createRequest()</a></code></code><br />
-				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_options">Guzzle\Http\ClientInterface::options</a></code></div>
@@ -1249,7 +1176,7 @@ reference a file.</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+			<code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code>
 			
 			</code>
 		</td>
@@ -1275,12 +1202,12 @@ requests.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$curlMulti</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">Guzzle\Http\Curl\CurlMultiInterface</a></code></code><br> multi object</dd>
+					<dd><code><code><a href="class-Guzzle.Http.Curl.CurlMultiInterface.html">Guzzle\Http\Curl\CurlMultiInterface</a></code></code><br> Multi object</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code></code><br />
 				</div>
 
 
@@ -1305,13 +1232,15 @@ requests.</p>
 
 		<div class="description short">
 			
-<p>Get the curl multi object used with the client</p>
+<p>Get the curl multi object to be used internally by the client for
+transferring requests.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the curl multi object used with the client</p>
+<p>Get the curl multi object to be used internally by the client for
+transferring requests.</p>
 
 
 
@@ -1332,7 +1261,7 @@ requests.</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code>
+			<code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code>
 			
 			</code>
 		</td>
@@ -1361,13 +1290,56 @@ requests.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Client.html">Guzzle\Http\Client</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.ClientInterface.html">Guzzle\Http\ClientInterface</a></code></code><br />
 				</div>
 
 
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.ClientInterface.html#_setRequestFactory">Guzzle\Http\ClientInterface::setRequestFactory</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prepareRequest" id="_prepareRequest">
+
+		<td class="attributes"><code>
+			 protected 
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prepareRequest">#</a>
+		<code>prepareRequest( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Prepare a request to be sent from the Client by adding client specific
+behaviors and properties to the request.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Prepare a request to be sent from the Client by adding client specific
+behaviors and properties to the request.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to prepare for the client</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
+				</div>
+
+
+
 		</div>
 		</div></td>
 	</tr>

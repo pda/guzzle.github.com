@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Message\Request | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2741680583"></script>
+	<script type="text/javascript" src="elementlist.js?3597566982"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -289,8 +289,6 @@ well.</dd>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestInterface.html#___construct">Guzzle\Http\Message\RequestInterface::__construct</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -411,7 +409,7 @@ received.</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -440,7 +438,7 @@ received.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -530,14 +528,14 @@ received.</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setUrl">#</a>
-		<code>setUrl( <span>string|<code><a href="class-Guzzle.Http.Url.html">Guzzle\Http\Url</a></code> <var>$url</var></span> )</code>
+		<code>setUrl( <span>string <var>$url</var></span> )</code>
 
 		<div class="description short">
 			
@@ -549,20 +547,17 @@ received.</p>
 			
 <p>Set the URL of the request</p>
 
-<p>Warning: Calling this method will modify headers, rewrite the query string
-object, and set other data associated with the request.</p>
-
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$url</var></dt>
-					<dd><code>string|<code><a href="class-Guzzle.Http.Url.html">Guzzle\Http\Url</a></code></code><br> Full URL to set including query string</dd>
+					<dd><code>string</code><br>$url|Url Full URL to set including query string</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -605,7 +600,7 @@ object, and set other data associated with the request.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Common.Exception.RuntimeException.html">Guzzle\Common\Exception\RuntimeException</a></code></code><br>if a client is not associated with the request<br />
+					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br>on a request error<br />
 				</div>
 
 
@@ -658,14 +653,14 @@ been sent</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code>|string
+			QueryString
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getQuery">#</a>
-		<code>getQuery( <span>boolean <var>$asString</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code>getQuery( <span> <var>$asString</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -681,15 +676,10 @@ in the request</p>
 
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$asString</var></dt>
-					<dd><code>boolean</code><br> Set to TRUE to get the query as string</dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.QueryString.html">Guzzle\Http\QueryString</a></code>|string</code><br />
+					<code>QueryString</code><br />
 				</div>
 
 
@@ -779,7 +769,7 @@ in the request</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -808,7 +798,7 @@ in the request</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -860,7 +850,7 @@ in the request</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -871,13 +861,15 @@ in the request</p>
 
 		<div class="description short">
 			
-<p>Set the host of the request.</p>
+<p>Set the host of the request. Including a port in the host will modify the
+port of the request.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Set the host of the request.</p>
+<p>Set the host of the request. Including a port in the host will modify the
+port of the request.</p>
 
 
 
@@ -885,12 +877,12 @@ in the request</p>
 				<div class="list"><dl>
 					<dt><var>$host</var></dt>
 					<dd><code>string</code><br> Host to set (e.g. <a href="http://www.yahoo.com">www.yahoo.com</a>, <a
-href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
+href="http://www.yahoo.com:80">www.yahoo.com:80</a>)</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -942,7 +934,7 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -971,7 +963,7 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -1023,7 +1015,7 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -1052,7 +1044,7 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -1104,7 +1096,7 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -1133,7 +1125,7 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -1230,7 +1222,7 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setAuth">#</a>
-		<code>setAuth( <span>string|false <var>$user</var></span>, <span>string <var>$password</var> = <span class="php-quote">''</span></span>, <span>string <var>$scheme</var> = CURLAUTH_BASIC</span> )</code>
+		<code>setAuth( <span>string|boolean <var>$user</var></span>, <span>string <var>$password</var> = <span class="php-quote">''</span></span>, <span>string <var>$scheme</var> = CURLAUTH_BASIC</span> )</code>
 
 		<div class="description short">
 			
@@ -1247,11 +1239,11 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$user</var></dt>
-					<dd><code>string|false</code><br> User name or false disable authentication</dd>
+					<dd><code>string|boolean</code><br> User name or false disable authentication</dd>
 					<dt><var>$password</var></dt>
 					<dd><code>string</code><br> Password</dd>
 					<dt><var>$scheme</var></dt>
-					<dd><code>string</code><br> Curl authentication scheme to use</dd>
+					<dd><code>string</code><br> Authentication scheme to use (Basic, Digest)</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1264,11 +1256,6 @@ href="http://www.yahoo.com">www.yahoo.com</a>)</dd>
 					<code><code><a href="class-Guzzle.Http.Exception.RequestException.html">Guzzle\Http\Exception\RequestException</a></code></code><br />
 				</div>
 
-				<h4>See</h4>
-				<div class="list">
-						<a
-href="http://www.ietf.org/rfc/rfc2617.txt">http://www.ietf.org/rfc/rfc2617.txt</a><br />
-				</div>
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Guzzle.Http.Message.RequestInterface.html#_setAuth">Guzzle\Http\Message\RequestInterface::setAuth</a></code></div>
@@ -1346,7 +1333,7 @@ scheme://username:password@domain:port/path?query_string#fragment</p>
 				<div class="list"><dl>
 					<dt><var>$asObject</var></dt>
 					<dd><code>boolean</code><br> Set to TRUE to retrieve the URL as a clone of the URL object owned by the
-request</dd>
+request.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1403,7 +1390,7 @@ request</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -1432,7 +1419,7 @@ request</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -1527,7 +1514,7 @@ request</dd>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -1546,10 +1533,6 @@ request</dd>
 			
 <p>Manually set a response for the request.</p>
 
-<p>This method is useful for specifying a mock response for the request or
-setting the response using a cache. Manually setting a response will bypass the
-actual sending of a request.</p>
-
 
 
 				<h4>Parameters</h4>
@@ -1563,7 +1546,7 @@ the response for send()</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br>Returns a reference to the object.<br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br>Returns a reference to the object.<br />
 				</div>
 
 
@@ -1584,7 +1567,7 @@ the response for send()</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setResponseBody">#</a>
-		<code>setResponseBody( <span><code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code> <var>$body</var></span> )</code>
+		<code>setResponseBody( <span><code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code> <var>$body</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1596,16 +1579,12 @@ the response for send()</dd>
 			
 <p>Set the EntityBody that will hold the response message's entity body.</p>
 
-<p>This method should be invoked when you need to send the response's entity
-body somewhere other than the normal php://temp buffer. For example, you can
-send the entity body to a socket, file, or some other custom stream.</p>
-
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$body</var></dt>
-					<dd><code><code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br> Response body object</dd>
+					<dd><code><code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code></code><br> Response body object</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1673,13 +1652,13 @@ send the entity body to a socket, file, or some other custom stream.</p>
 
 		<div class="description short">
 			
-<p>Get an array of cookies</p>
+<p>Get an array of Cookies</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get an array of cookies</p>
+<p>Get an array of Cookies</p>
 
 
 
@@ -1700,7 +1679,7 @@ send the entity body to a socket, file, or some other custom stream.</p>
 
 		<td class="attributes"><code>
 			 public 
-			null|string|array
+			null|string
 			
 			</code>
 		</td>
@@ -1729,7 +1708,7 @@ send the entity body to a socket, file, or some other custom stream.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>null|string|array</code><br />
+					<code>null|string</code><br />
 				</div>
 
 
@@ -1743,7 +1722,7 @@ send the entity body to a socket, file, or some other custom stream.</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -1774,7 +1753,7 @@ send the entity body to a socket, file, or some other custom stream.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -1788,7 +1767,7 @@ send the entity body to a socket, file, or some other custom stream.</p>
 
 		<td class="attributes"><code>
 			 public 
-			<code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code>
+			<code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
@@ -1817,7 +1796,7 @@ send the entity body to a socket, file, or some other custom stream.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-Guzzle.Http.Message.Request.html">Guzzle\Http\Message\Request</a></code></code><br />
+					<code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br />
 				</div>
 
 
@@ -2076,7 +2055,7 @@ like cache-control</p>
 
 		<td class="attributes"><code>
 			 protected 
-			<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code>
+			
 			
 			</code>
 		</td>
@@ -2087,21 +2066,13 @@ like cache-control</p>
 
 		<div class="description short">
 			
-<p>Get the EntityBody that will store the received response entity body</p>
-
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Get the EntityBody that will store the received response entity body</p>
 
 
 
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code></code><br />
-				</div>
 
 
 
@@ -2364,7 +2335,7 @@ like cache-control</p>
 
 		<td class="attributes"><code>
 			protected 
-			<code><a href="class-Guzzle.Http.EntityBody.html">Guzzle\Http\EntityBody</a></code>
+			<code><a href="class-Guzzle.Http.EntityBodyInterface.html">Guzzle\Http\EntityBodyInterface</a></code>
 		</code></td>
 
 		<td class="name">
@@ -2418,7 +2389,7 @@ like cache-control</p>
 
 		<td class="attributes"><code>
 			protected 
-			
+			string
 		</code></td>
 
 		<td class="name">
@@ -2429,15 +2400,15 @@ like cache-control</p>
 
 			<div class="description short">
 				
+<p>Authentication username</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>Authentication username</p>
 
-					<h4>Param</h4>
-					<div class="list">
-							<code>string</code><br>Auth username<br />
-					</div>
+
 			</div>
 		</div></td>
 	</tr>
@@ -2445,7 +2416,7 @@ like cache-control</p>
 
 		<td class="attributes"><code>
 			protected 
-			
+			string
 		</code></td>
 
 		<td class="name">
@@ -2456,15 +2427,15 @@ like cache-control</p>
 
 			<div class="description short">
 				
+<p>Auth password</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>Auth password</p>
 
-					<h4>Param</h4>
-					<div class="list">
-							<code>string</code><br>Auth password<br />
-					</div>
+
 			</div>
 		</div></td>
 	</tr>

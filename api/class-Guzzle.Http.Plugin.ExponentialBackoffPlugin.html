@@ -7,7 +7,7 @@
 	<title>Class Guzzle\Http\Plugin\ExponentialBackoffPlugin | Guzzle</title>
 
 	<script type="text/javascript" src="resources/combined.js?144019575"></script>
-	<script type="text/javascript" src="elementlist.js?2741680583"></script>
+	<script type="text/javascript" src="elementlist.js?3597566982"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1532301413" />
 
 	<script type="text/javascript">
@@ -106,6 +106,7 @@
 				<li><a href="class-Guzzle.Http.Plugin.CachePlugin.html">CachePlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.CookiePlugin.html">CookiePlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.CurlAuthPlugin.html">CurlAuthPlugin</a></li>
+				<li><a href="class-Guzzle.Http.Plugin.ExponentialBackoffLogger.html">ExponentialBackoffLogger</a></li>
 				<li class="active"><a href="class-Guzzle.Http.Plugin.ExponentialBackoffPlugin.html">ExponentialBackoffPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.HistoryPlugin.html">HistoryPlugin</a></li>
 				<li><a href="class-Guzzle.Http.Plugin.LogPlugin.html">LogPlugin</a></li>
@@ -166,6 +167,15 @@ exponential backoff.</p>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
+			<a href="class-Guzzle.Common.AbstractHasDispatcher.html"><span>Guzzle\Common\AbstractHasDispatcher</span></a>
+			
+			 implements 
+				<a href="class-Guzzle.Common.HasDispatcherInterface.html"><span>Guzzle\Common\HasDispatcherInterface</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
 <b><span>Guzzle\Http\Plugin\ExponentialBackoffPlugin</span></b>			
 			 implements 
 <span>Symfony\Component\EventDispatcher\EventSubscriberInterface</span>
@@ -277,6 +287,44 @@ representing how many seconds to delay</p>
 
 
 
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAllEvents" id="_getAllEvents">
+
+		<td class="attributes"><code>
+			 public static
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAllEvents">#</a>
+		<code>getAllEvents( )</code>
+
+		<div class="description short">
+			
+<p>Get a list of all of the events emitted from the class</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a list of all of the events emitted from the class</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Guzzle.Common.HasDispatcherInterface.html#_getAllEvents">Guzzle\Common\HasDispatcherInterface::getAllEvents</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -594,7 +642,7 @@ exponential backoff</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_retryRequest">#</a>
-		<code>retryRequest( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span> )</code>
+		<code>retryRequest( <span><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code> <var>$request</var></span>, <span><code><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></code> <var>$response</var> = <span class="php-keyword1">null</span></span>, <span><code><a href="class-Guzzle.Http.Curl.CurlHandle.html">Guzzle\Http\Curl\CurlHandle</a></code> <var>$handle</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -612,6 +660,10 @@ exponential backoff</p>
 				<div class="list"><dl>
 					<dt><var>$request</var></dt>
 					<dd><code><code><a href="class-Guzzle.Http.Message.RequestInterface.html">Guzzle\Http\Message\RequestInterface</a></code></code><br> Request to retry</dd>
+					<dt><var>$response</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Message.Response.html">Guzzle\Http\Message\Response</a></code></code><br> Response received</dd>
+					<dt><var>$handle</var></dt>
+					<dd><code><code><a href="class-Guzzle.Http.Curl.CurlHandle.html">Guzzle\Http\Curl\CurlHandle</a></code></code><br> Curl handle</dd>
 				</dl></div>
 
 
@@ -622,6 +674,17 @@ exponential backoff</p>
 	</tr>
 	</table>
 
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Guzzle.Common.AbstractHasDispatcher.html#methods">Guzzle\Common\AbstractHasDispatcher</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Guzzle.Common.AbstractHasDispatcher.html#_addSubscriber">addSubscriber()</a>, 
+			<a href="class-Guzzle.Common.AbstractHasDispatcher.html#_dispatch">dispatch()</a>, 
+			<a href="class-Guzzle.Common.AbstractHasDispatcher.html#_getEventDispatcher">getEventDispatcher()</a>, 
+			<a href="class-Guzzle.Common.AbstractHasDispatcher.html#_setEventDispatcher">setEventDispatcher()</a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -658,6 +721,27 @@ exponential backoff</p>
 		<td class="value"><code><span class="php-quote">'plugins.exponential_backoff.retry_count'</span></code></td>
 		<td class="description"><div>
 			<a href="#RETRY_PARAM" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="RETRY_EVENT" id="RETRY_EVENT">
+
+		<td class="attributes"><code>
+			string
+		</code></td>
+		<td class="name"><code>
+<b>RETRY_EVENT</b>		</code></td>
+		<td class="value"><code><span class="php-quote">'plugins.exponential_backoff.retry'</span></code></td>
+		<td class="description"><div>
+			<a href="#RETRY_EVENT" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -839,6 +923,14 @@ exponential backoff</p>
 	</tr>
 	</table>
 
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Guzzle.Common.AbstractHasDispatcher.html#properties">Guzzle\Common\AbstractHasDispatcher</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Guzzle.Common.AbstractHasDispatcher.html#$eventDispatcher"><var>$eventDispatcher</var></a>
+		</code></td>
+	</tr>
+	</table>
 
 
 </div>
