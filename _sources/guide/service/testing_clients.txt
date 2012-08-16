@@ -23,11 +23,11 @@ In order to unit test your client, a developer would need to copy phpunit.xml.di
 Bootstrapping
 ~~~~~~~~~~~~~
 
-Your web service client should have a tests/ folder that contains a bootstrap.php file. The bootstrap.php file responsible for autoloading and configuring a ``Guzzle\Service\ServiceBuilder`` that is used throughout your unit tests for loading a configured client.
+Your web service client should have a tests/ folder that contains a bootstrap.php file. The bootstrap.php file responsible for autoloading and configuring a ``Guzzle\Service\Builder\ServiceBuilder`` that is used throughout your unit tests for loading a configured client.
 
 .. code-block:: php
 
-    Guzzle\Tests\GuzzleTestCase::setServiceBuilder(Guzzle\Service\ServiceBuilder::factory(array(
+    Guzzle\Tests\GuzzleTestCase::setServiceBuilder(Guzzle\Service\Builder\ServiceBuilder::factory(array(
         'test.unfuddle' => array(
             'class' => 'Guzzle.Unfuddle.UnfuddleClient',
             'params' => array(

@@ -190,8 +190,8 @@
 </div>
 <div class="section" id="bootstrapping">
 <h3>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this headline">¶</a></h3>
-<p>Your web service client should have a tests/ folder that contains a bootstrap.php file. The bootstrap.php file responsible for autoloading and configuring a <tt class="docutils literal"><span class="pre">Guzzle\Service\ServiceBuilder</span></tt> that is used throughout your unit tests for loading a configured client.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nx">Guzzle\Tests\GuzzleTestCase</span><span class="o">::</span><span class="na">setServiceBuilder</span><span class="p">(</span><span class="nx">Guzzle\Service\ServiceBuilder</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<p>Your web service client should have a tests/ folder that contains a bootstrap.php file. The bootstrap.php file responsible for autoloading and configuring a <tt class="docutils literal"><span class="pre">Guzzle\Service\Builder\ServiceBuilder</span></tt> that is used throughout your unit tests for loading a configured client.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nx">Guzzle\Tests\GuzzleTestCase</span><span class="o">::</span><span class="na">setServiceBuilder</span><span class="p">(</span><span class="nx">Guzzle\Service\Builder\ServiceBuilder</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;test.unfuddle&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Guzzle.Unfuddle.UnfuddleClient&#39;</span><span class="p">,</span>
         <span class="s1">&#39;params&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
